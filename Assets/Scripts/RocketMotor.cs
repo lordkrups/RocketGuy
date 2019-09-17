@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RocketMotor : MonoBehaviour
 {
+    public GameSceneManager gameSceneManager;
     public Rigidbody rb;
 
     public Vector3 force;//variable for lift
@@ -13,20 +14,16 @@ public class RocketMotor : MonoBehaviour
     public float liftSpeed;//determines how much force to apply
     public float turnSpeed;//determines how much torque to apply
 
-	public float height;
+    public float height;
+    public float maxHeightReached;
 
-	public float fuel;
+    public float fuel;
 	public float fuelConsumptionRate;
 
-	public float health = 10f;
-	public bool canTakeDmg;
-
-	// Start is called before the first frame update
-	void Start()
-    {
-        //relativeTorque = new Vector3(0, 0, 10);
-
-    }
+    public float health = 10f;
+    public float dmgMultiplier = 1f;
+    public bool isDead;
+    public bool canTakeDmg;
 
 	// Update is called once per frame
 	void FixedUpdate()
@@ -35,57 +32,89 @@ public class RocketMotor : MonoBehaviour
 		{
 			canTakeDmg = true;
 		}
-
-		if (Input.GetKey(KeyCode.Space))
+        if (!isDead)
         {
-            if (force.y < maxForce)
+            if (Input.GetKey(KeyCode.Space))
             {
-                force.y = force.y + liftSpeed;
+                if (force.y < maxForce)
+                {
+                    force.y = force.y + liftSpeed;
+                }
+                if (fuel > 0)
+                {
+                    fuel = fuel - fuelConsumptionRate;
+                    rb.AddRelativeForce(force);
+                }
             }
-            if (fuel > 0)
+            if (Input.GetKey(KeyCode.A))
             {
-                fuel = fuel - fuelConsumptionRate;
-                rb.AddRelativeForce(force);
+                relativeTorque.z = relativeTorque.z + turnSpeed;
+                Quaternion deltaRotation = Quaternion.Euler(relativeTorque * Time.deltaTime);
+                rb.MoveRotation(rb.rotation * deltaRotation);
             }
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            relativeTorque.z = relativeTorque.z + turnSpeed;
-            Quaternion deltaRotation = Quaternion.Euler(relativeTorque * Time.deltaTime);
-            rb.MoveRotation(rb.rotation * deltaRotation);
-        }
-        if (Input.GetKey(KeyCode.D))
-        {
-            relativeTorque.z = relativeTorque.z + turnSpeed;
-            Quaternion deltaRotation = Quaternion.Euler(-relativeTorque * Time.deltaTime);
-            rb.MoveRotation(rb.rotation * deltaRotation);
+            if (Input.GetKey(KeyCode.D))
+            {
+                relativeTorque.z = relativeTorque.z + turnSpeed;
+                Quaternion deltaRotation = Quaternion.Euler(-relativeTorque * Time.deltaTime);
+                rb.MoveRotation(rb.rotation * deltaRotation);
+            }
+
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                force.y = 0f;
+            }
+            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            {
+                relativeTorque.z = 0;
+            }
         }
 
-        if (Input.GetKeyUp(KeyCode.Space))
-        {
-            force.y = 0f;
-        }
-        if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
-        {
-            relativeTorque.z = 0;
-        }
 
         height = rb.position.y;
+        if (maxHeightReached <= height)
+        {
+            maxHeightReached = height;
+        }
+
+        if (isDead)
+        {
+            StartCoroutine(PlayerDied());
+        }
     }
 
 	private void OnCollisionEnter(Collision collision)
 	{
-		if (canTakeDmg)
-		{
-			health = health - 1f;
-		}
-	}
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            if (canTakeDmg && !isDead)
+            {
+                health = health - (1f * dmgMultiplier);
+                if (health <= 0f)
+                {
+                    isDead = true;
+                }
+            }
+        }
+    }
 
     private void OnCollisionStay(Collision collision)
 	{
-		if (canTakeDmg)
-		{
-			health = health - 1f;
-		}
+        if (collision.gameObject.tag == "Obstacle")
+        {
+            if (canTakeDmg && !isDead)
+            {
+                health = health - (1f * dmgMultiplier);
+                if (health <= 0f)
+                {
+                    isDead = true;
+                }
+            }
+        }
 	}
+
+    IEnumerator PlayerDied()
+    {
+        yield return new WaitForSeconds(1f);
+        gameSceneManager.ShowGameOver();
+    }
 }

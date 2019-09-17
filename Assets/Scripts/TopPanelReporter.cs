@@ -6,26 +6,29 @@ using UnityEngine.UI;
 
 public class TopPanelReporter : MonoBehaviour
 {
-    public RocketMotor rocketMotor;
+    public GameSceneManager gameSceneManager;
 
-    public Text healthText;
-    public Text fuelText;
-    public Text boosterText;
-    public Text speedText;
-    public Text heightText;
+    public Text healthValue;
+    public Text fuelValue;
+    public Text boosterValue;
+    public Text speedValue;
+    public Text heightValue;
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (gameSceneManager == null)
+        {
+            gameSceneManager = this.GetComponentInParent<GameSceneManager>();
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthText.text = rocketMotor.health.ToString() + "HP";
-        fuelText.text = (((int)Mathf.Abs(rocketMotor.fuel)).ToString() + "L");
-        //healthText.text = rocketMotor.health.ToString() + "HP";
-        speedText.text = (Mathf.Abs(rocketMotor.rb.velocity.y).ToString() + " KMH");
-        heightText.text = (((int)Mathf.Abs(rocketMotor.height)).ToString() + " M");
+        healthValue.text = gameSceneManager.playerRocket.health.ToString() + "HP";
+        fuelValue.text = (((int)Mathf.Abs(gameSceneManager.playerRocket.fuel)).ToString() + "L");
+        //healthValue.Value = rocketMotor.health.ToString() + "HP";
+        speedValue.text = (Mathf.Abs(gameSceneManager.playerRocket.rb.velocity.y).ToString() + " KMH");
+        heightValue.text = (((int)Mathf.Abs(gameSceneManager.playerRocket.height)).ToString() + " M");
     }
 }

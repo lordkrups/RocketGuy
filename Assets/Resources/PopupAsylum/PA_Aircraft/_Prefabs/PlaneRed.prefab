@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7694431798056567636}
   m_Layer: 0
   m_Name: PlaneRed
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,9 +47,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b8474d2f1584bc4835b4ba7eb2b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 7694431798056567637}
   velocity: 1
-  flyLeft: 0
+  flyLeft: 1
   flyRight: 0
   flyUp: 0
   flyDown: 0

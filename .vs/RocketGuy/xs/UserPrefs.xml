@@ -1,0 +1,29 @@
+﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RocketMotor.cs">
+    <Files>
+      <File FileName="Assets/Scripts/RocketMotor.cs" Line="18" Column="35" />
+      <File FileName="Assets/Scripts/GameSceneManager.cs" Line="17" Column="51" />
+      <File FileName="Assets/Scripts/TopPanelReporter.cs" Line="33" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="RocketGuy" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="RocketMotor.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="ce1bbfd0-5bfe-4b62-8d1b-06ee07d54edb" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
