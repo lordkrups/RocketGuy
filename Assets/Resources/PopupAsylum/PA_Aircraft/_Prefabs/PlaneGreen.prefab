@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 3320558133011784715}
   - component: {fileID: 3355510661707306940}
   - component: {fileID: 417856470764085162}
-  - component: {fileID: 3247770078319326148}
+  - component: {fileID: 9016648296300643942}
   m_Layer: 0
   m_Name: PlaneGreen
   m_TagString: Obstacle
@@ -104,7 +104,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3320558133011822635}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 14.29, z: 0}
+  m_LocalPosition: {x: -4.721814, y: 345.82202, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3320558133011784713}
@@ -125,7 +125,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 417856470764085162}
-  velocity: 2
+  velocity: 3.5
+  dirChange: 0
   flyLeft: 0
   flyRight: 1
   flyUp: 0
@@ -146,8 +147,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
---- !u!136 &3247770078319326148
-CapsuleCollider:
+--- !u!65 &9016648296300643942
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -156,10 +157,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.97
-  m_Height: 7.2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 2.1, z: 6.5}
+  m_Center: {x: 0.5, y: 0, z: 0}
 --- !u!1 &3320558133011822639
 GameObject:
   m_ObjectHideFlags: 0

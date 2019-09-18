@@ -165,9 +165,9 @@ GameObject:
   - component: {fileID: 6434804543044901703}
   - component: {fileID: 7071077461841981823}
   - component: {fileID: 6434804543028058228}
-  - component: {fileID: 6434804543028058234}
+  - component: {fileID: 9160856732443296842}
   m_Layer: 0
-  m_Name: BluePlane
+  m_Name: PlaneBlue
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6434804543045060455}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.09, y: 20.93, z: -0}
+  m_LocalPosition: {x: 23.278187, y: 321.82202, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6434804543044901697}
@@ -203,6 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 6434804543028058228}
   velocity: 2
+  dirChange: 0
   flyLeft: 1
   flyRight: 0
   flyUp: 0
@@ -223,8 +224,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
---- !u!136 &6434804543028058234
-CapsuleCollider:
+--- !u!65 &9160856732443296842
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -233,7 +234,6 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.97
-  m_Height: 7.2
-  m_Direction: 2
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 2.1, z: 6.5}
+  m_Center: {x: -0.5, y: 0, z: 0}

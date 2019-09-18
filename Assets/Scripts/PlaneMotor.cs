@@ -7,6 +7,8 @@ public class PlaneMotor : MonoBehaviour
     public Rigidbody rb;
     public float velocity = 1f;
 
+    public bool dirChange;
+
     public bool flyLeft;
     public bool flyRight;
 
@@ -19,7 +21,7 @@ public class PlaneMotor : MonoBehaviour
         rb.constraints = RigidbodyConstraints.None;
     }
     // Start is called before the first frame update
-    void Start()
+    void Init()
     {
         rb = GetComponent<Rigidbody>();
         if (flyLeft)
@@ -32,15 +34,21 @@ public class PlaneMotor : MonoBehaviour
             Quaternion deltaRotation = Quaternion.Euler(0, 90, 0);
             rb.rotation = deltaRotation;
         }
-
-
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        rb.MovePosition(transform.position + transform.forward * (velocity * Time.fixedDeltaTime));
-        if (rb.transform.position.y < 1f)
+        if (dirChange)
+        {
+            flyLeft = !flyLeft;
+            flyRight = !flyRight;
+            dirChange = false;
+            Init();
+        }
+
+        rb.MovePosition(transform.localPosition + transform.forward * (velocity * Time.fixedDeltaTime));
+        if (rb.transform.localPosition.y < 1f)
         {
             Destroy(gameObject);
         }

@@ -64,10 +64,12 @@
   <ItemGroup>
     <Compile Include="Assets\Resources\PowerUps FullPackage\Scripts\PowerUpAnimation.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\CollectibleObj.cs" />
     <Compile Include="Assets\Scripts\GameSceneManager.cs" />
     <Compile Include="Assets\Scripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\PlaneMotor.cs" />
     <Compile Include="Assets\Scripts\RocketMotor.cs" />
+    <Compile Include="Assets\Scripts\ThingsSpawner.cs" />
     <Compile Include="Assets\Scripts\TopPanelReporter.cs" />
     <None Include="Assets\Resources\PowerUps FullPackage\Readme.txt" />
     <Reference Include="Unity.Timeline.Editor">
