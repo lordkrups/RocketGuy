@@ -7,7 +7,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
 {
     public string currentPhase;
 
-    public RocketMotor playerRocket;
+    public RocketMotorNGUI playerRocket;
 
     public UIPanel pauseMenuPanel;
     public UIPanel gameOverPanel;

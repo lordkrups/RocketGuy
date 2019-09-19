@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThingsSpawner : MonoBehaviour
 {
-    public GameSceneManagerNGUI gameSceneManager;
+    public GameSceneManager gameSceneManager;
     public GameObject obstacleContainer;
 
     public float spawnOffset;

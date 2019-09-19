@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RocketMotor : MonoBehaviour
 {
-    public GameSceneManagerNGUI gameSceneManager;
+    public GameSceneManager gameSceneManager;
     public Rigidbody rb;
     public Collider cl;
 
@@ -20,6 +20,9 @@ public class RocketMotor : MonoBehaviour
     public float height;
     public float maxHeightReached;
     public bool isRocketing;
+    public bool flyPressed;
+    public bool rotLeft;
+    public bool rotRight;
 
     public int moneyEarned;
 
@@ -40,6 +43,30 @@ public class RocketMotor : MonoBehaviour
             flamesList[i].gameObject.SetActive(true);
         }
     }
+    public void FlyButtonPressed()
+    {
+        flyPressed = true;
+    }
+    public void FlyButtonReleased()
+    {
+        flyPressed = false;
+    }
+    public void LeftButtonPressed()
+    {
+        rotLeft = true;
+    }
+    public void LeftButtonReleased()
+    {
+        rotLeft = false;
+    }
+    public void RightButtonPressed()
+    {
+        rotRight = true;
+    }
+    public void RightButtonReleased()
+    {
+        rotRight = false;
+    }
     // Update is called once per frame
     void FixedUpdate()
 	{
@@ -49,7 +76,7 @@ public class RocketMotor : MonoBehaviour
 		}
         if (!isDead)
         {
-            if (Input.GetKey(KeyCode.Space))
+            if (Input.GetKey(KeyCode.Space) || flyPressed)
             {
                 if (force.y < maxForce)
                 {
@@ -61,18 +88,18 @@ public class RocketMotor : MonoBehaviour
                     rb.AddRelativeForce(force);
                     isRocketing = true;
                 }
-                if (fuel < 1)
-                {
-                    isRocketing = false;
-                }
             }
-            if (Input.GetKey(KeyCode.A))
+            if (fuel < 1 || !flyPressed)
+            {
+                isRocketing = false;
+            }
+            if (Input.GetKey(KeyCode.A) || rotLeft)
             {
                 relativeTorque.z = relativeTorque.z + turnSpeed;
                 Quaternion deltaRotation = Quaternion.Euler(relativeTorque * Time.deltaTime);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
-            if (Input.GetKey(KeyCode.D))
+            if (Input.GetKey(KeyCode.D) || rotRight)
             {
                 relativeTorque.z = relativeTorque.z + turnSpeed;
                 Quaternion deltaRotation = Quaternion.Euler(-relativeTorque * Time.deltaTime);
