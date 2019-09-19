@@ -91,6 +91,7 @@ public class RocketMotorNGUI : MonoBehaviour
             }
             if (fuel < 1 || !flyPressed)
             {
+                force.y = 0f;
                 isRocketing = false;
             }
             if (Input.GetKey(KeyCode.A) || rotLeft)

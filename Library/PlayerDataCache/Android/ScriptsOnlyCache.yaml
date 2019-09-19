@@ -47,6 +47,8 @@ ScriptsOnlyBuild:
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
     - UnityEditor.Graphs.AnimatorControllerTool
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.EventTrigger
@@ -854,18 +856,6 @@ ScriptsOnlyBuild:
     className: GameSceneManager
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.Advertisements.dll
-    namespaceName: UnityEngine.Advertisements
-    className: CallbackExecutor
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: UnityEngine.Advertisements.dll
-    namespaceName: UnityEngine.Advertisements.Editor
-    className: Placeholder
-  - hash:
-      serializedVersion: 2
       Hash: 1696a0d89f8a752ee49d67e468778906
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1202,7 +1192,7 @@ ScriptsOnlyBuild:
     className: GameOverPanel
   - hash:
       serializedVersion: 2
-      Hash: 419e35c79c71d1d7d611ed446d6f61db
+      Hash: cccbcbb1ae82bafbe15fea3648a5636d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameSceneManagerNGUI

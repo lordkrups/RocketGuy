@@ -1909,7 +1909,7 @@ MonoBehaviour:
   onHoverOut: []
   onPress:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: OpenPauseMenu
+    mMethodName: TogglePause
     mParameters: []
     oneShot: 0
   onRelease: []
@@ -2128,7 +2128,7 @@ MonoBehaviour:
   onHoverOut: []
   onPress:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: ClosePauseMenu
+    mMethodName: TogglePause
     mParameters: []
     oneShot: 0
   onRelease: []
@@ -6064,7 +6064,7 @@ Light:
   serializedVersion: 9
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -6120,13 +6120,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1863393699}
-  m_LocalRotation: {x: 0.31428427, y: -0, z: -0, w: 0.9493289}
+  m_LocalRotation: {x: 0.26807296, y: -0.10810643, z: 0.041449796, w: 0.95641613}
   m_LocalPosition: {x: 0, y: 9.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 36.635002, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 31.449001, y: -12.495001, z: 1.432}
 --- !u!1 &1872287941
 GameObject:
   m_ObjectHideFlags: 0
@@ -6801,6 +6801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentPhase: 
   playerRocket: {fileID: 5273244822035379961}
+  isGamePaused: 0
   pauseMenuPanel: {fileID: 854686862}
   gameOverPanel: {fileID: 1186824507}
   goHeightValue: {fileID: 185734913}
@@ -6820,13 +6821,13 @@ MonoBehaviour:
   gameSceneManager: {fileID: 1611845907110888659}
   collectibleContainer: {fileID: 7050432820230211984}
   obstacleContainer: {fileID: 999078785128455330}
-  spawnOffset: 50
+  spawnOffset: 80
   curHeight: 0
-  prevHeight: -51
+  prevHeight: -81
   numberOfGoodThingsToSpawn: 10
-  numberOfBadThingsToSpawn: 15
-  xDist: 50
-  yDist: 50
+  numberOfBadThingsToSpawn: 20
+  xDist: 80
+  yDist: 80
   collectibleList:
   - {fileID: 4642331740324991483, guid: df0b83899e439495782f350df44b4e27, type: 3}
   - {fileID: 3300058248785501000, guid: e3d93f77ff4064e8ca6cdb7975c62713, type: 3}

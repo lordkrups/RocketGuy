@@ -9,6 +9,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
 
     public RocketMotorNGUI playerRocket;
 
+    public bool isGamePaused;
     public UIPanel pauseMenuPanel;
     public UIPanel gameOverPanel;
     public UILabel goHeightValue;
@@ -37,15 +38,20 @@ public class GameSceneManagerNGUI : MonoBehaviour
             currentPhase = "High";
         }
     }
-    public void OpenPauseMenu()
+    public void TogglePause()
     {
-        Time.timeScale = 0;
-        pauseMenuPanel.gameObject.SetActive(true);
-    }
-    public void ClosePauseMenu()
-    {
-        Time.timeScale = 1;
-        pauseMenuPanel.gameObject.SetActive(false);
+        isGamePaused = !isGamePaused;
+
+        if (isGamePaused)
+        {
+            Time.timeScale = 0;
+            pauseMenuPanel.gameObject.SetActive(true);
+        }
+        if (!isGamePaused)
+        {
+            Time.timeScale = 1;
+            pauseMenuPanel.gameObject.SetActive(false);
+        }
     }
     public void ShowGameOver()
     {
