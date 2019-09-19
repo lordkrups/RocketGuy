@@ -13,6 +13,7 @@ public class TopPanelReporter : MonoBehaviour
     public Text boosterValue;
     public Text speedValue;
     public Text heightValue;
+    public Text phaseValue;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,5 +31,6 @@ public class TopPanelReporter : MonoBehaviour
         //healthValue.Value = rocketMotor.health.ToString() + "HP";
         speedValue.text = (Mathf.Abs(gameSceneManager.playerRocket.rb.velocity.y).ToString() + " KMH");
         heightValue.text = (((int)Mathf.Abs(gameSceneManager.playerRocket.height)).ToString() + " M");
+        phaseValue.text = gameSceneManager.currentPhase;
     }
 }

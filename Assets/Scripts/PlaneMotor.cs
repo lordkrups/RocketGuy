@@ -5,8 +5,12 @@ using UnityEngine;
 public class PlaneMotor : MonoBehaviour
 {
     public Rigidbody rb;
+
+    public float despawnHeight = 3f;
+
     public float velocity = 1f;
 
+    public bool flyReversed;
     public bool dirChange;
 
     public bool flyLeft;
@@ -21,17 +25,46 @@ public class PlaneMotor : MonoBehaviour
         rb.constraints = RigidbodyConstraints.None;
     }
     // Start is called before the first frame update
-    void Init()
+    void Start()
     {
         rb = GetComponent<Rigidbody>();
-        if (flyLeft)
+
+        int randomInt = Random.Range(0, 51);
+
+        if (randomInt < 24)
+        {
+            flyLeft = false;
+            flyRight = true;
+        }
+        else
+        {
+            flyLeft = true;
+            flyRight = false;
+        }
+               
+
+        if (flyLeft && !flyReversed)
         {
             Quaternion deltaRotation = Quaternion.Euler(0, 270f, 0);
+            //transform.rotation = deltaRotation;
             rb.rotation = deltaRotation;
         }
-        if (flyRight)
+        if (flyRight && !flyReversed)
         {
             Quaternion deltaRotation = Quaternion.Euler(0, 90, 0);
+            //transform.rotation = deltaRotation;
+            rb.rotation = deltaRotation;
+        }
+        if (flyLeft && flyReversed)
+        {
+            Quaternion deltaRotation = Quaternion.Euler(0, 90f, 0);
+            //transform.rotation = deltaRotation;
+            rb.rotation = deltaRotation;
+        }
+        if (flyRight && flyReversed)
+        {
+            Quaternion deltaRotation = Quaternion.Euler(0, 270, 0);
+            //transform.rotation = deltaRotation;
             rb.rotation = deltaRotation;
         }
     }
@@ -44,11 +77,17 @@ public class PlaneMotor : MonoBehaviour
             flyLeft = !flyLeft;
             flyRight = !flyRight;
             dirChange = false;
-            Init();
+            Start();
         }
 
-        rb.MovePosition(transform.localPosition + transform.forward * (velocity * Time.fixedDeltaTime));
-        if (rb.transform.localPosition.y < 1f)
+        if (flyReversed)
+        {
+            rb.MovePosition(transform.position - transform.forward * (velocity * Time.fixedDeltaTime));
+        } else
+        {
+            rb.MovePosition(transform.position + transform.forward * (velocity * Time.fixedDeltaTime));
+        }
+        if (rb.transform.localPosition.y < despawnHeight)
         {
             Destroy(gameObject);
         }

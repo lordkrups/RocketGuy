@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RocketMotor : MonoBehaviour
 {
-    public GameSceneManager gameSceneManager;
+    public GameSceneManagerNGUI gameSceneManager;
     public Rigidbody rb;
     public Collider cl;
 
@@ -60,7 +60,10 @@ public class RocketMotor : MonoBehaviour
                     fuel = fuel - fuelConsumptionRate;
                     rb.AddRelativeForce(force);
                     isRocketing = true;
-
+                }
+                if (fuel < 1)
+                {
+                    isRocketing = false;
                 }
             }
             if (Input.GetKey(KeyCode.A))

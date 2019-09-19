@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6434804543044901697}
   - component: {fileID: 6434804543048293217}
   - component: {fileID: 6434804543047326113}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_BiplaneBody
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 6434804543044901699}
   - component: {fileID: 6434804543048293219}
   - component: {fileID: 6434804543047326115}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PA_BiplanePropella
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 7071077461841981823}
   - component: {fileID: 6434804543028058228}
   - component: {fileID: 9160856732443296842}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlaneBlue
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6434804543045060455}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 23.278187, y: 321.82202, z: 0}
+  m_LocalPosition: {x: 47.78412, y: 1697.5604, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 6434804543044901697}
@@ -202,7 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 6434804543028058228}
+  despawnHeight: 3
   velocity: 2
+  flyReversed: 0
   dirChange: 0
   flyLeft: 1
   flyRight: 0
@@ -235,5 +237,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 2.1, z: 6.5}
-  m_Center: {x: -0.5, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 6.5}
+  m_Center: {x: 0, y: 0, z: 0}

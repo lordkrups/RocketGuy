@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ThingsSpawner : MonoBehaviour
 {
-    public GameSceneManager gameSceneManager;
+    public GameSceneManagerNGUI gameSceneManager;
     public GameObject obstacleContainer;
 
     public float spawnOffset;
@@ -17,7 +17,8 @@ public class ThingsSpawner : MonoBehaviour
     public int yDist;
 
     public List<CollectibleObj> collectibleList;
-    public List<PlaneMotor> obstacleList;
+    public List<PlaneMotor> lowObstacleList;
+    public List<PlaneMotor> medObstacleList;
 
     public List<CollectibleObj> spawnedCollectibleList;
     public List<PlaneMotor> spawnedObstacleList;
@@ -31,50 +32,80 @@ public class ThingsSpawner : MonoBehaviour
             SpawnObstaclesInFrontOfPlayer();
             SpawnCollectiblesInFrontOfPlayer();
         }
-        Debug.Log("curHeight: " + curHeight);
-        Debug.Log("prevHeight + spawnOffset: " + (prevHeight + spawnOffset));
+        //Debug.Log("curHeight: " + curHeight);
+        //Debug.Log("prevHeight + spawnOffset: " + (prevHeight + spawnOffset));
 
     }
 
     public void SpawnCollectiblesInFrontOfPlayer()
     {
         Debug.Log("SpawnCollectiblesInFrontOfPlayer");
-        for (int i = 0; i < numberOfGoodThingsToSpawn; i++)
+        if (gameSceneManager.currentPhase == "Low")
         {
-            int ran = Random.Range(0, collectibleList.Count);
-            var thingToSpawn = collectibleList[ran];
+            for (int i = 0; i < numberOfGoodThingsToSpawn; i++)
+            {
+                int ran = Random.Range(0, collectibleList.Count);
+                var thingToSpawn = collectibleList[ran];
 
-            int xPos = Random.Range(-xDist, xDist + 1);
-            int yPos = Random.Range(yDist / 5, yDist + 1);
-            Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x - xPos,
-                                        gameSceneManager.playerRocket.transform.position.y + yPos,
-                                            0f);
+                int xPos = Random.Range(-xDist, xDist + 1);
+                int yPos = Random.Range(yDist / 5, yDist + 1);
+                Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x - xPos,
+                                            gameSceneManager.playerRocket.transform.position.y + yPos,
+                                                0f);
 
-            thingToSpawn.transform.position = pos;
-            Instantiate(thingToSpawn, obstacleContainer.transform, true);
+                thingToSpawn.transform.position = pos;
+                Instantiate(thingToSpawn, obstacleContainer.transform, true);
 
-            spawnedCollectibleList.Add(thingToSpawn);
+                spawnedCollectibleList.Add(thingToSpawn);
+            }
         }
     }
 
     public void SpawnObstaclesInFrontOfPlayer()
     {
+
+
         Debug.Log("SpawnObstaclesInFrontOfPlayer");
-        for (int i = 0; i < numberOfBadThingsToSpawn; i++)
+        if (gameSceneManager.currentPhase == "Low")
         {
-            int ran = Random.Range(0, obstacleList.Count);
-            var thingToSpawn = obstacleList[ran];
+            Debug.Log("Low Spawns");
+            for (int i = 0; i < numberOfBadThingsToSpawn; i++)
+            {
+                int ran = Random.Range(0, lowObstacleList.Count);
+                var thingToSpawn = lowObstacleList[ran];
 
-            int xPos = Random.Range(-xDist, xDist + 1);
-            int yPos = Random.Range(yDist / 5, yDist + 1);
-            Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x - xPos,
-                                        gameSceneManager.playerRocket.transform.position.y + yPos,
-                                            0f);
+                int xPos = Random.Range(-xDist, xDist + 1);
+                int yPos = Random.Range(yDist / 5, yDist + 1);
+                Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x - xPos,
+                                            gameSceneManager.playerRocket.transform.position.y + yPos,
+                                                0f);
 
-            thingToSpawn.transform.position = pos;
-            Instantiate(thingToSpawn,obstacleContainer.transform, true);
+                thingToSpawn.transform.position = pos;
+                Instantiate(thingToSpawn, obstacleContainer.transform, true);
 
-            spawnedObstacleList.Add(thingToSpawn);
+                spawnedObstacleList.Add(thingToSpawn);
+            }
+        }
+
+        if (gameSceneManager.currentPhase == "Medium")
+        {
+            Debug.Log("Medium Spawns");
+            for (int i = 0; i < numberOfBadThingsToSpawn; i++)
+            {
+                int ran = Random.Range(0, medObstacleList.Count);
+                var thingToSpawn = medObstacleList[ran];
+
+                int xPos = Random.Range(-xDist, xDist + 1);
+                int yPos = Random.Range(yDist / 5, yDist + 1);
+                Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x - xPos,
+                                            gameSceneManager.playerRocket.transform.position.y + yPos,
+                                                0f);
+
+                thingToSpawn.transform.position = pos;
+                Instantiate(thingToSpawn, obstacleContainer.transform, true);
+
+                spawnedObstacleList.Add(thingToSpawn);
+            }
         }
     }
 }

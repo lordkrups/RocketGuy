@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3305930}
   - component: {fileID: 2305930}
   - component: {fileID: 11405930}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Jerry Can Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -112,7 +112,7 @@ GameObject:
   - component: {fileID: 8857750717862955881}
   - component: {fileID: 7351482004308905341}
   - component: {fileID: 9049030686191086295}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Jerry Can Red
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 105930}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -48.721813, y: 332.82202, z: 0}
+  m_LocalPosition: {x: 34, y: 45.996094, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 405928}
@@ -146,7 +146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e64ce6e412e044e148c79579151f2416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
+  rb: {fileID: 9049030686191086295}
+  despawnHeight: 3
   fuel: 1
   boosterFuel: 0
   health: 0

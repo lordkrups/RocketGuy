@@ -20,12 +20,12 @@ public class GameSceneManager : MonoBehaviour
         Time.timeScale = 1;
         pauseMenuPanel.gameObject.SetActive(false);
         gameOverPanel.gameObject.SetActive(false);
-        currentPhase = "Low";
+        currentPhase = "Ground";
     }
 
     void Update()
     {
-        if (playerRocket.rb.position.y < 1000f)
+        if (playerRocket.rb.position.y > 2.5f && playerRocket.rb.position.y < 1000f)
         {
             currentPhase = "Low";
         }
