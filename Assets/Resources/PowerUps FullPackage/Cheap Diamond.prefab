@@ -127,7 +127,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 772264445128383727}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 104.44444, y: 106.30431, z: 0}
+  m_LocalPosition: {x: 43.121788, y: 170.55757, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_Children:
   - {fileID: 772264445128608521}
@@ -152,6 +152,7 @@ MonoBehaviour:
   boosterFuel: 0
   health: 0
   money: 1
+  timeToDie: 1
   value: 5
 --- !u!65 &6637855831284235624
 BoxCollider:

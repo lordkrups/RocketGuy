@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2607282927729197812}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 102.44444, y: 109.30431, z: 0}
+  m_LocalPosition: {x: -11.87821, y: 168.55757, z: 0}
   m_LocalScale: {x: 6, y: 6, z: 8}
   m_Children:
   - {fileID: 2607282928226265154}
@@ -55,6 +55,7 @@ MonoBehaviour:
   flyRight: 0
   flyUp: 0
   flyDown: 0
+  timeToDie: 1
 --- !u!54 &2607282927729197810
 Rigidbody:
   m_ObjectHideFlags: 0
