@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlaneMotor : MonoBehaviour
 {
     public Rigidbody rb;
-
-    public float despawnHeight = 3f;
+    public ThingsSpawnerNGUI thingsSpawnerNGUI;
 
     public float velocity = 1f;
 
@@ -22,16 +21,18 @@ public class PlaneMotor : MonoBehaviour
     public bool timeToDie;
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        rb.constraints = RigidbodyConstraints.None;
-    }
     // Start is called before the first frame update
-    void Start()
+    public void Init(ThingsSpawnerNGUI ts)
     {
         rb = GetComponent<Rigidbody>();
-        //Destroy(this.gameObject, 10f);
+        thingsSpawnerNGUI = ts;
+        timeToDie = false;
         int randomInt = Random.Range(0, 51);
+        velocity = randomInt / 10f;
+
+        //float ran = Random.Range(0.5, 10f);
+        //Vector3 s = new Vector3(ran, ran, ran);
+        //transform.localScale = s;
 
         if (randomInt < 24)
         {
@@ -74,14 +75,14 @@ public class PlaneMotor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (dirChange)
-        {
-            flyLeft = !flyLeft;
-            flyRight = !flyRight;
-            dirChange = false;
-            Start();
-        }
 
+        int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - rb.transform.position.x);
+        int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - rb.transform.position.y);
+
+        if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
+        {
+            SetToDie();
+        }
         if (flyReversed)
         {
             rb.MovePosition(transform.position - transform.forward * (velocity * Time.fixedDeltaTime));
@@ -89,19 +90,32 @@ public class PlaneMotor : MonoBehaviour
         {
             rb.MovePosition(transform.position + transform.forward * (velocity * Time.fixedDeltaTime));
         }
-        if (rb.transform.localPosition.y < despawnHeight)
+        if (rb.transform.localPosition.y < thingsSpawnerNGUI.despawnHeight)
         {
-            Destroy(gameObject);
+            SetToDie();
         }
         if (timeToDie == true)
         {
-            Destroy(gameObject);
+            DestroySoon();
         }
     }
-
+    public void SetToDie()
+    {
+        timeToDie = true;
+    }
     public void DestroySoon()
     {
+        thingsSpawnerNGUI.RemoveObstacle(this);
         Destroy(gameObject, 1f);
     }
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        rb.constraints = RigidbodyConstraints.None;
+        StartCoroutine(RemoveCollider());
+    }
+    IEnumerator RemoveCollider()
+    {
+        yield return new WaitForSeconds(1f);
+        GetComponent<Collider>().enabled = false;
+    }
 }

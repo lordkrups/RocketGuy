@@ -25,15 +25,15 @@ public class GameSceneManagerNGUI : MonoBehaviour
 
     void Update()
     {
-        if (playerRocket.rb.position.y > 2.5f && playerRocket.rb.position.y < 1000f)
+        if (playerRocket.rb.position.y > 2.5f && playerRocket.rb.position.y < 300f)
         {
             currentPhase = "Low";
         }
-        if (playerRocket.rb.position.y > 1000f && playerRocket.rb.position.y < 2000f)
+        if (playerRocket.rb.position.y > 300f && playerRocket.rb.position.y < 500f)
         {
             currentPhase = "Medium";
         }
-        if (playerRocket.rb.position.y > 2000f && playerRocket.rb.position.y < 3000f)
+        if (playerRocket.rb.position.y > 500f && playerRocket.rb.position.y < 3000f)
         {
             currentPhase = "High";
         }
@@ -57,7 +57,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
     {
         gameOverPanel.gameObject.SetActive(true);
         //goHeightValue.text = ((int)Mathf.Abs(playerRocket.height)).ToString() + "Meters";
-        //goMoneyValue.text = playerRocket.maxHeightReached.ToString() + "Meters";
+        goMoneyValue.text = playerRocket.moneyEarned.ToString() + "G";
         goHeightValue.text = (((int)playerRocket.maxHeightReached).ToString() + " M");
 
     }

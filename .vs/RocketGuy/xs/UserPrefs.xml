@@ -1,12 +1,14 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/CameraFollow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/PlaneMotor.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="49" Column="23" />
-      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="34" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" Line="31" Column="28" />
-      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" Line="20" Column="28" />
-      <File FileName="Assets/Scripts/GameScripts/CameraFollow.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="27" Column="27" />
+      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" />
+      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="32" Column="33" />
+      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" Line="33" Column="11" />
+      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" Line="62" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/CameraFollow.cs" />
+      <File FileName="Assets/Scripts/CloudObj.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="36" Column="80" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,18 +17,23 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
-                  <Node name="CameraFollow.cs" selected="True" />
+                  <Node name="PlaneMotor.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="RocketGuy" expanded="True" selected="True" />
+        </State>
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="21f4b14c-f9ed-499b-b49e-404b82b3dfb1" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c7098b7c-df2b-46d2-8998-2009f2acfc29" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

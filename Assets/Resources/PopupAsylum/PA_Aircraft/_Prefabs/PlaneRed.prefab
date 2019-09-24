@@ -48,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7694431798056567637}
+  thingsSpawnerNGUI: {fileID: 0}
   despawnHeight: 3
   velocity: 3
   flyReversed: 0
@@ -56,6 +57,8 @@ MonoBehaviour:
   flyRight: 0
   flyUp: 0
   flyDown: 0
+  timeToDie: 0
+  maxDespawnDistance: 10
 --- !u!54 &7694431798056567637
 Rigidbody:
   m_ObjectHideFlags: 0

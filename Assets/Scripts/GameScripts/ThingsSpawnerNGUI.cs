@@ -7,7 +7,8 @@ public class ThingsSpawnerNGUI : MonoBehaviour
     public GameSceneManagerNGUI gameSceneManager;
     public GameObject collectibleContainer;
     public GameObject obstacleContainer;
-
+    public float despawnHeight = 3f;
+    public int maxDespawnDistance;
     public bool firstSpawned;
     public float spawnOffset;
     public float curHeight;
@@ -20,12 +21,20 @@ public class ThingsSpawnerNGUI : MonoBehaviour
     public int xDist;
     public int yDist;
 
-    public List<CollectibleObj> collectibleList;
+    public CloudObj cloudObj;
+
+    public List<CollectibleObj> lowCollectibleList;
+    public List<CollectibleObj> medCollectibleList;
+    public List<CollectibleObj> highCollectibleList;
+
     public List<PlaneMotor> lowObstacleList;
     public List<PlaneMotor> medObstacleList;
+    public List<PlaneMotor> highObstacleList;
 
     public List<CollectibleObj> spawnedCollectibleList;
     public List<PlaneMotor> spawnedObstacleList;
+    public List<CloudObj> spawnedCloudsList;
+
     private void Start()
     {
         gameSceneManager = GetComponent<GameSceneManagerNGUI>();
@@ -37,51 +46,76 @@ public class ThingsSpawnerNGUI : MonoBehaviour
 
         if (curHeight > (prevHeight + spawnOffset) || curHeight < (prevHeight - spawnOffset))
         {
-            prevHeight = curHeight;
-            SpawnObstaclesInFrontOfPlayer();
-            SpawnCollectiblesInFrontOfPlayer();
-            int x = spawnedCollectibleList.Count + spawnedObstacleList.Count;
-            Debug.Log(x);
-
-            if (x > 50)
+            if (spawnedCloudsList.Count < numberOfGoodThingsToSpawn * 2)
             {
-                CullThings();
+                SpawnCloudsInFrontOfPlayer();
             }
+            if (spawnedCollectibleList.Count < numberOfGoodThingsToSpawn * 2)
+            {
+                SpawnCollectiblesInFrontOfPlayer();
+            }
+            if (spawnedObstacleList.Count < numberOfBadThingsToSpawn * 2)
+            {
+                SpawnObstaclesInFrontOfPlayer();
+            }
+            prevHeight = curHeight;
+
         }
+
         if (curWidth > (prevWidth + spawnOffset) || curWidth < (prevWidth - spawnOffset))
         {
-            prevWidth = curWidth;
-            SpawnObstaclesInFrontOfPlayer();
-            SpawnCollectiblesInFrontOfPlayer();
-
-            int x = spawnedCollectibleList.Count + spawnedObstacleList.Count;
-            Debug.Log(x);
-
-            if (x > 50)
+            if (spawnedCloudsList.Count < numberOfGoodThingsToSpawn * 2)
             {
-                CullThings();
+                SpawnCloudsInFrontOfPlayer();
+            }
+            if (spawnedCollectibleList.Count < numberOfGoodThingsToSpawn * 2)
+            {
+                SpawnCollectiblesInFrontOfPlayer();
+            }
+            if (spawnedObstacleList.Count < numberOfBadThingsToSpawn * 2)
+            {
+                SpawnObstaclesInFrontOfPlayer();
+            }
+            prevWidth = curWidth;
+        }
+    }
+
+    public void RemoveCloud(CloudObj co)
+    {
+        spawnedCloudsList.Remove(co);
+    }
+    public void RemoveCollectible(CollectibleObj co)
+    {
+        spawnedCollectibleList.Remove(co);
+    }
+    public void RemoveObstacle(PlaneMotor pm)
+    {
+        spawnedObstacleList.Remove(pm);
+    }
+
+    public void SpawnCloudsInFrontOfPlayer()
+    {
+        Debug.Log("SpawnCloudsInFrontOfPlayer");
+        if (gameSceneManager.currentPhase == "Low" || gameSceneManager.currentPhase == "Medium")
+        {
+            for (int i = 0; i < numberOfGoodThingsToSpawn; i++)
+            {
+                var thingToSpawn = Instantiate(cloudObj, collectibleContainer.transform, true);
+                thingToSpawn.Init(this);
+
+                int xPos = Random.Range(-xDist, xDist + 1);
+                int yPos = Random.Range(-yDist, yDist + 1);
+                Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
+                                            gameSceneManager.playerRocket.transform.position.y + yPos,
+                                                25f);
+
+                thingToSpawn.transform.position = pos;
+                //Instantiate(thingToSpawn, collectibleContainer.transform, true);
+
+                spawnedCloudsList.Add(thingToSpawn);
             }
         }
-        //Debug.Log("curHeight: " + curHeight);
-        //Debug.Log("prevHeight + spawnOffset: " + (prevHeight + spawnOffset));
-
-    }
-    public void CullThings()
-    {
-        int x = spawnedCollectibleList.Count - numberOfGoodThingsToSpawn;
-        int y = spawnedObstacleList.Count - numberOfBadThingsToSpawn;
-
-        while (spawnedCollectibleList.Count > x)
-        {
-            spawnedCollectibleList[0].timeToDie = true;
-            spawnedCollectibleList.Remove(spawnedCollectibleList[0]);
-        }
-        while (spawnedObstacleList.Count > y)
-        {
-            spawnedObstacleList[0].timeToDie = true;
-            spawnedObstacleList.Remove(spawnedObstacleList[0]);
-        }
-
+        firstSpawned = true;
     }
 
     public void SpawnCollectiblesInFrontOfPlayer()
@@ -91,8 +125,9 @@ public class ThingsSpawnerNGUI : MonoBehaviour
         {
             for (int i = 0; i < numberOfGoodThingsToSpawn; i++)
             {
-                int ran = Random.Range(0, collectibleList.Count);
-                var thingToSpawn = collectibleList[ran];
+                int ran = Random.Range(0, lowCollectibleList.Count);
+                var thingToSpawn = Instantiate(lowCollectibleList[ran], collectibleContainer.transform, true);
+                thingToSpawn.Init(this);
 
                 int xPos = Random.Range(-xDist, xDist + 1);
                 int yPos = Random.Range(-yDist, yDist + 1);
@@ -101,7 +136,29 @@ public class ThingsSpawnerNGUI : MonoBehaviour
                                                 0f);
 
                 thingToSpawn.transform.position = pos;
-                Instantiate(thingToSpawn, collectibleContainer.transform, true);
+
+                //Instantiate(thingToSpawn, collectibleContainer.transform, true);
+
+                spawnedCollectibleList.Add(thingToSpawn);
+            }
+        }
+        if (gameSceneManager.currentPhase == "Medium")
+        {
+            for (int i = 0; i < numberOfGoodThingsToSpawn; i++)
+            {
+                int ran = Random.Range(0, medCollectibleList.Count);
+                var thingToSpawn = Instantiate(medCollectibleList[ran], collectibleContainer.transform, true);
+                thingToSpawn.Init(this);
+
+                int xPos = Random.Range(-xDist, xDist + 1);
+                int yPos = Random.Range(-yDist, yDist + 1);
+                Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
+                                            gameSceneManager.playerRocket.transform.position.y + yPos,
+                                                0f);
+
+                thingToSpawn.transform.position = pos;
+
+                //Instantiate(thingToSpawn, collectibleContainer.transform, true);
 
                 spawnedCollectibleList.Add(thingToSpawn);
             }
@@ -118,7 +175,10 @@ public class ThingsSpawnerNGUI : MonoBehaviour
             for (int i = 0; i < numberOfBadThingsToSpawn; i++)
             {
                 int ran = Random.Range(0, lowObstacleList.Count);
-                var thingToSpawn = lowObstacleList[ran];
+                //var thingToSpawn = lowObstacleList[ran];
+                var thingToSpawn = Instantiate(lowObstacleList[ran], obstacleContainer.transform, true);
+
+                thingToSpawn.Init(this);
 
                 int xPos = Random.Range(-xDist, xDist + 1);
                 int yPos = Random.Range(-yDist, yDist + 1);
@@ -127,7 +187,7 @@ public class ThingsSpawnerNGUI : MonoBehaviour
                                                 0f);
 
                 thingToSpawn.transform.position = pos;
-                Instantiate(thingToSpawn, obstacleContainer.transform, true);
+                //Instantiate(thingToSpawn, obstacleContainer.transform, true);
 
                 spawnedObstacleList.Add(thingToSpawn);
             }
@@ -139,7 +199,9 @@ public class ThingsSpawnerNGUI : MonoBehaviour
             for (int i = 0; i < numberOfBadThingsToSpawn; i++)
             {
                 int ran = Random.Range(0, medObstacleList.Count);
-                var thingToSpawn = medObstacleList[ran];
+                //var thingToSpawn = medObstacleList[ran];
+                var thingToSpawn = Instantiate(medObstacleList[ran], obstacleContainer.transform, true);
+                thingToSpawn.Init(this);
 
                 int xPos = Random.Range(-xDist, xDist + 1);
                 int yPos = Random.Range(yDist / 5, yDist + 1);
@@ -148,7 +210,7 @@ public class ThingsSpawnerNGUI : MonoBehaviour
                                                 0f);
 
                 thingToSpawn.transform.position = pos;
-                Instantiate(thingToSpawn, obstacleContainer.transform, true);
+                //Instantiate(thingToSpawn, obstacleContainer.transform, true);
 
                 spawnedObstacleList.Add(thingToSpawn);
             }

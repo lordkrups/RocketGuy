@@ -8015,20 +8015,32 @@ MonoBehaviour:
   gameSceneManager: {fileID: 1611845907110888659}
   collectibleContainer: {fileID: 7050432820230211984}
   obstacleContainer: {fileID: 999078785128455330}
+  despawnHeight: 3
+  maxDespawnDistance: 60
   firstSpawned: 0
-  spawnOffset: 20
+  spawnOffset: 30
   curHeight: 0
   curWidth: 0
-  prevHeight: -31
+  prevHeight: -61
   prevWidth: 0
-  numberOfGoodThingsToSpawn: 10
-  numberOfBadThingsToSpawn: 10
-  xDist: 40
-  yDist: 40
-  collectibleList:
+  numberOfGoodThingsToSpawn: 12
+  numberOfBadThingsToSpawn: 12
+  xDist: 60
+  yDist: 60
+  cloudObj: {fileID: 6162382454825405854, guid: 6d438fac0e59e434da94903b4b4f806a,
+    type: 3}
+  lowCollectibleList:
   - {fileID: 4642331740324991483, guid: df0b83899e439495782f350df44b4e27, type: 3}
   - {fileID: 3300058248785501000, guid: e3d93f77ff4064e8ca6cdb7975c62713, type: 3}
   - {fileID: 7926079845737268069, guid: 64aeafd12a7db4026bdc71d46131ccb9, type: 3}
+  medCollectibleList:
+  - {fileID: 4434176724472787035, guid: 57b00a2a8d9464c798ac3db9d9a88209, type: 3}
+  - {fileID: 3569605308450741269, guid: aee4267014b704dad808e231ee829969, type: 3}
+  - {fileID: 2618414639520452029, guid: 0bdd3829d19e54a1fae864af5d0f2f33, type: 3}
+  highCollectibleList:
+  - {fileID: 3560247826524359501, guid: a6d54264944b84b918d2f18fc9e63165, type: 3}
+  - {fileID: 8121040680666023933, guid: f0fbd63fe8f3d433db6c6df5b86eeb9f, type: 3}
+  - {fileID: 6103675192693219135, guid: d7449d856f072437fb3f7560a6bece55, type: 3}
   lowObstacleList:
   - {fileID: 7409727653537282936, guid: c6db48e5514514b8eaf944c05f48d28e, type: 3}
   - {fileID: 2607282927729197811, guid: 94cb889290429400a8df72f474e423cd, type: 3}
@@ -8039,8 +8051,11 @@ MonoBehaviour:
   - {fileID: 1056510657364839353, guid: 657c8bbe332cd4a4d95474623b277cce, type: 3}
   - {fileID: 7694431798056567642, guid: 933fdd523c24d43eebdd72afb00f65b5, type: 3}
   - {fileID: 3355510661707306940, guid: ef181409ac55f4140bb6554ac2d8fe60, type: 3}
+  highObstacleList:
+  - {fileID: 423892454440921365, guid: 61a099e623774457d877b18ee14c6117, type: 3}
   spawnedCollectibleList: []
   spawnedObstacleList: []
+  spawnedCloudsList: []
 --- !u!33 &1620527728137090534
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -13114,7 +13129,7 @@ MonoBehaviour:
   fuelConsumptionRate: 0.05
   boosterFuel: 0
   boosterFuelConsumptionRate: 0
-  maxHealth: 100
+  maxHealth: 50
   health: 100
   dmgMultiplier: 2
   isDead: 0
@@ -17835,7 +17850,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9fdcd4cf97d584ecd9d4b21c7c7bda25, type: 2}
+  - {fileID: 2100000, guid: 01ad5a1f20c324994a274dcc5ebfe652, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

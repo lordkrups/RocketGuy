@@ -75,7 +75,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7409727653537282933}
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -16.87821, y: 90.55757, z: 0}
+  m_LocalPosition: {x: -8.571216, y: 66.14989, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 7409727651983456698}
@@ -95,15 +95,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 7409727653537282935}
+  thingsSpawnerNGUI: {fileID: 0}
   despawnHeight: 3
   velocity: 1
   flyReversed: 1
   dirChange: 0
   flyLeft: 0
-  flyRight: 0
+  flyRight: 1
   flyUp: 0
   flyDown: 0
   timeToDie: 1
+  maxDespawnDistance: 10
 --- !u!54 &7409727653537282935
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -147,12 +147,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3310506073354815728}
+  thingsSpawnerNGUI: {fileID: 0}
   despawnHeight: 3
   fuel: 0
   boosterFuel: 0
   health: 1
   money: 0
+  timeToDie: 0
   value: 25
+  maxDespawnDistance: 10
 --- !u!65 &2314380813758399942
 BoxCollider:
   m_ObjectHideFlags: 0

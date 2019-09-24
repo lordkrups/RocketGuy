@@ -229,6 +229,7 @@
     <Compile Include="Assets\Scripts\Characters\TimeRewardObj.cs" />
     <Compile Include="Assets\Scripts\Characters\TopDownPlayerMotor.cs" />
     <Compile Include="Assets\Scripts\Characters\WeaponStats.cs" />
+    <Compile Include="Assets\Scripts\CloudObj.cs" />
     <Compile Include="Assets\Scripts\EditorGUILayoutPopup.cs" />
     <Compile Include="Assets\Scripts\GameScripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\GameScripts\CollectibleObj.cs" />
