@@ -15,6 +15,11 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public UILabel goHeightValue;
     public UILabel goMoneyValue;
 
+    public float lowHeight;
+    public float medHeight;
+    public float highHeight;
+    public float spaceHeight;
+
     void Start()
     {
         Time.timeScale = 1;
@@ -25,17 +30,21 @@ public class GameSceneManagerNGUI : MonoBehaviour
 
     void Update()
     {
-        if (playerRocket.rb.position.y > 2.5f && playerRocket.rb.position.y < 300f)
+        if (playerRocket.rb.position.y > 2.5f && playerRocket.rb.position.y < lowHeight)
         {
             currentPhase = "Low";
         }
-        if (playerRocket.rb.position.y > 300f && playerRocket.rb.position.y < 500f)
+        if (playerRocket.rb.position.y > lowHeight && playerRocket.rb.position.y < medHeight)
         {
             currentPhase = "Medium";
         }
-        if (playerRocket.rb.position.y > 500f && playerRocket.rb.position.y < 3000f)
+        if (playerRocket.rb.position.y > medHeight && playerRocket.rb.position.y < spaceHeight)
         {
             currentPhase = "High";
+        }
+        if (playerRocket.rb.position.y > spaceHeight)
+        {
+            currentPhase = "Space";
         }
     }
     public void TogglePause()

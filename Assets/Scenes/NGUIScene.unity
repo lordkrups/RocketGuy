@@ -3496,6 +3496,36 @@ MonoBehaviour:
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
   useSortingOrder: 0
+--- !u!1 &886438562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 886438563}
+  m_Layer: 0
+  m_Name: CloudsContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &886438563
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 886438562}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &893488404
 GameObject:
   m_ObjectHideFlags: 0
@@ -7686,7 +7716,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 162
   mHeight: 46
-  mDepth: 11
+  mDepth: 100
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
@@ -8000,6 +8030,10 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1186824507}
   goHeightValue: {fileID: 185734913}
   goMoneyValue: {fileID: 1361989060}
+  lowHeight: 500
+  medHeight: 1000
+  highHeight: 2000
+  spaceHeight: 3000
 --- !u!114 &1611845907110888660
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8013,20 +8047,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameSceneManager: {fileID: 1611845907110888659}
+  cloudsContainer: {fileID: 886438562}
   collectibleContainer: {fileID: 7050432820230211984}
   obstacleContainer: {fileID: 999078785128455330}
   despawnHeight: 3
   maxDespawnDistance: 60
   firstSpawned: 0
-  spawnOffset: 30
+  spawnOffset: 45
   curHeight: 0
   curWidth: 0
-  prevHeight: -61
+  prevHeight: -31
   prevWidth: 0
-  numberOfGoodThingsToSpawn: 12
-  numberOfBadThingsToSpawn: 12
-  xDist: 60
-  yDist: 60
+  numberOfCloudsToSpawn: 0
+  numberOfGoodThingsToSpawn: 8
+  numberOfBadThingsToSpawn: 8
+  xDist: 40
+  yDist: 40
   cloudObj: {fileID: 6162382454825405854, guid: 6d438fac0e59e434da94903b4b4f806a,
     type: 3}
   lowCollectibleList:
@@ -17895,7 +17931,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6374482440659131849
 MeshFilter:

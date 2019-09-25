@@ -5,6 +5,7 @@ using UnityEngine;
 public class ThingsSpawnerNGUI : MonoBehaviour
 {
     public GameSceneManagerNGUI gameSceneManager;
+    public GameObject cloudsContainer;
     public GameObject collectibleContainer;
     public GameObject obstacleContainer;
     public float despawnHeight = 3f;
@@ -16,6 +17,7 @@ public class ThingsSpawnerNGUI : MonoBehaviour
     public float prevHeight;
     public float prevWidth;
 
+    public int numberOfCloudsToSpawn;
     public int numberOfGoodThingsToSpawn;
     public int numberOfBadThingsToSpawn;
     public int xDist;
@@ -64,7 +66,7 @@ public class ThingsSpawnerNGUI : MonoBehaviour
 
         if (curWidth > (prevWidth + spawnOffset) || curWidth < (prevWidth - spawnOffset))
         {
-            if (spawnedCloudsList.Count < numberOfGoodThingsToSpawn * 2)
+            if (spawnedCloudsList.Count < numberOfCloudsToSpawn * 2)
             {
                 SpawnCloudsInFrontOfPlayer();
             }
@@ -100,14 +102,28 @@ public class ThingsSpawnerNGUI : MonoBehaviour
         {
             for (int i = 0; i < numberOfGoodThingsToSpawn; i++)
             {
-                var thingToSpawn = Instantiate(cloudObj, collectibleContainer.transform, true);
+                var thingToSpawn = Instantiate(cloudObj, cloudsContainer.transform, true);
                 thingToSpawn.Init(this);
 
-                int xPos = Random.Range(-xDist, xDist + 1);
-                int yPos = Random.Range(-yDist, yDist + 1);
+                int rando = Random.Range(1, 10);
+
+                int xPos;
+                int yPos;
+
+                if (rando <= 4)
+                {
+                    xPos = Random.Range(-xDist, xDist + 1);
+                    yPos = Random.Range(yDist / 3, yDist + 1);
+                }
+                else
+                {
+                    xPos = Random.Range(-xDist, xDist + 1);
+                    yPos = Random.Range(-yDist, -yDist / 3);
+                }
+                int zPos = Random.Range(15, 40);
                 Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
                                             gameSceneManager.playerRocket.transform.position.y + yPos,
-                                                25f);
+                                                zPos);
 
                 thingToSpawn.transform.position = pos;
                 //Instantiate(thingToSpawn, collectibleContainer.transform, true);
@@ -121,47 +137,52 @@ public class ThingsSpawnerNGUI : MonoBehaviour
     public void SpawnCollectiblesInFrontOfPlayer()
     {
         Debug.Log("SpawnCollectiblesInFrontOfPlayer");
-        if (gameSceneManager.currentPhase == "Low")
+
+        int rando = Random.Range(1, 10);
+
+        int xPos;
+        int yPos;
+
+        if (rando <= 4)
         {
-            for (int i = 0; i < numberOfGoodThingsToSpawn; i++)
+            xPos = Random.Range(-xDist, xDist + 1);
+            yPos = Random.Range(yDist / 3, yDist + 1);
+        }
+        else
+        {
+            xPos = Random.Range(-xDist, xDist + 1);
+            yPos = Random.Range(-yDist, -yDist / 3);
+        }
+
+        Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
+                                    gameSceneManager.playerRocket.transform.position.y + yPos,
+                                        0f);
+
+        for (int i = 0; i < numberOfGoodThingsToSpawn; i++)
+        {
+            if (gameSceneManager.currentPhase == "Low")
             {
                 int ran = Random.Range(0, lowCollectibleList.Count);
                 var thingToSpawn = Instantiate(lowCollectibleList[ran], collectibleContainer.transform, true);
                 thingToSpawn.Init(this);
-
-                int xPos = Random.Range(-xDist, xDist + 1);
-                int yPos = Random.Range(-yDist, yDist + 1);
-                Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
-                                            gameSceneManager.playerRocket.transform.position.y + yPos,
-                                                0f);
-
                 thingToSpawn.transform.position = pos;
-
-                //Instantiate(thingToSpawn, collectibleContainer.transform, true);
 
                 spawnedCollectibleList.Add(thingToSpawn);
             }
-        }
-        if (gameSceneManager.currentPhase == "Medium")
-        {
-            for (int i = 0; i < numberOfGoodThingsToSpawn; i++)
+            if (gameSceneManager.currentPhase == "Medium")
             {
                 int ran = Random.Range(0, medCollectibleList.Count);
                 var thingToSpawn = Instantiate(medCollectibleList[ran], collectibleContainer.transform, true);
                 thingToSpawn.Init(this);
-
-                int xPos = Random.Range(-xDist, xDist + 1);
-                int yPos = Random.Range(-yDist, yDist + 1);
-                Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
-                                            gameSceneManager.playerRocket.transform.position.y + yPos,
-                                                0f);
-
                 thingToSpawn.transform.position = pos;
-
-                //Instantiate(thingToSpawn, collectibleContainer.transform, true);
 
                 spawnedCollectibleList.Add(thingToSpawn);
             }
+
+
+
+
+            
         }
         firstSpawned = true;
     }
@@ -169,52 +190,53 @@ public class ThingsSpawnerNGUI : MonoBehaviour
     public void SpawnObstaclesInFrontOfPlayer()
     {
         Debug.Log("SpawnObstaclesInFrontOfPlayer");
-        if (gameSceneManager.currentPhase == "Low")
-        {
-            Debug.Log("Low Spawns");
+
+            Debug.Log("SpawnObstaclesInFrontOfPlayer");
             for (int i = 0; i < numberOfBadThingsToSpawn; i++)
             {
-                int ran = Random.Range(0, lowObstacleList.Count);
-                //var thingToSpawn = lowObstacleList[ran];
-                var thingToSpawn = Instantiate(lowObstacleList[ran], obstacleContainer.transform, true);
+                int rando = Random.Range(1, 10);
 
-                thingToSpawn.Init(this);
+                int xPos;
+                int yPos;
 
-                int xPos = Random.Range(-xDist, xDist + 1);
-                int yPos = Random.Range(-yDist, yDist + 1);
+                if (rando <= 4)
+                {
+                    xPos = Random.Range(-xDist, xDist + 1);
+                    yPos = Random.Range(yDist / 3, yDist + 1);
+                }
+                else
+                {
+                    xPos = Random.Range(-xDist, xDist + 1);
+                    yPos = Random.Range(-yDist, -yDist / 3);
+                }
+
                 Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
-                                            gameSceneManager.playerRocket.transform.position.y + yPos,
-                                                0f);
+                                                    gameSceneManager.playerRocket.transform.position.y + yPos,
+                                                        0f);
+                if (gameSceneManager.currentPhase == "Low")
+                {
+                    int ran = Random.Range(0, lowObstacleList.Count);
+                    var thingToSpawn = Instantiate(lowObstacleList[ran], obstacleContainer.transform, true);
 
-                thingToSpawn.transform.position = pos;
-                //Instantiate(thingToSpawn, obstacleContainer.transform, true);
+                    thingToSpawn.Init(this);
 
-                spawnedObstacleList.Add(thingToSpawn);
+                    thingToSpawn.transform.position = pos;
+
+                    spawnedObstacleList.Add(thingToSpawn);
+                }
+                if (gameSceneManager.currentPhase == "Medium")
+                {
+                    int ran = Random.Range(0, medObstacleList.Count);
+                    //var thingToSpawn = medObstacleList[ran];
+                    var thingToSpawn = Instantiate(medObstacleList[ran], obstacleContainer.transform, true);
+                    thingToSpawn.Init(this);
+
+                    thingToSpawn.transform.position = pos;
+
+                    spawnedObstacleList.Add(thingToSpawn);
+                }
+
             }
-        }
-
-        if (gameSceneManager.currentPhase == "Medium")
-        {
-            Debug.Log("Medium Spawns");
-            for (int i = 0; i < numberOfBadThingsToSpawn; i++)
-            {
-                int ran = Random.Range(0, medObstacleList.Count);
-                //var thingToSpawn = medObstacleList[ran];
-                var thingToSpawn = Instantiate(medObstacleList[ran], obstacleContainer.transform, true);
-                thingToSpawn.Init(this);
-
-                int xPos = Random.Range(-xDist, xDist + 1);
-                int yPos = Random.Range(yDist / 5, yDist + 1);
-                Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x - xPos,
-                                            gameSceneManager.playerRocket.transform.position.y + yPos,
-                                                0f);
-
-                thingToSpawn.transform.position = pos;
-                //Instantiate(thingToSpawn, obstacleContainer.transform, true);
-
-                spawnedObstacleList.Add(thingToSpawn);
-            }
-        }
         firstSpawned = true;
     }
 }

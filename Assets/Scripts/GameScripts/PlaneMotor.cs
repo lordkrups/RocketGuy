@@ -27,14 +27,14 @@ public class PlaneMotor : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         thingsSpawnerNGUI = ts;
         timeToDie = false;
-        int randomInt = Random.Range(0, 51);
-        velocity = randomInt / 10f;
+        int randomInt = Random.Range(1, 52);
+        velocity = randomInt / 5;
 
         //float ran = Random.Range(0.5, 10f);
         //Vector3 s = new Vector3(ran, ran, ran);
         //transform.localScale = s;
 
-        if (randomInt < 24)
+        if (randomInt < 25)
         {
             flyLeft = false;
             flyRight = true;
