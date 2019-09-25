@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-    public Transform lookTarget;
+    public GameSceneManagerNGUI gameSceneManagerNGUI;
     public Vector3 offSet;
     public bool isCamera;
     public bool isBG;
@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        offSet = transform.position - lookTarget.position;
+        offSet = transform.position - gameSceneManagerNGUI.playerRocket.transform.position;
 
     }
 
@@ -21,21 +21,21 @@ public class CameraFollow : MonoBehaviour
     {
         if (isFloor)
         {
-            offSet.x = lookTarget.position.x;
+            offSet.x = gameSceneManagerNGUI.playerRocket.transform.position.x;
             offSet.y = transform.position.y;
             offSet.z = transform.position.z;
             transform.position = offSet;
         }
         if (isBG)
         {
-            offSet.x = lookTarget.position.x;
-            offSet.y = lookTarget.position.y;
+            offSet.x = gameSceneManagerNGUI.playerRocket.transform.position.x;
+            offSet.y = gameSceneManagerNGUI.playerRocket.transform.position.y;
             offSet.z = transform.position.z;
             transform.position = offSet;
         }
         if (isCamera)
         {
-            transform.position = lookTarget.position + offSet;
+            transform.position = gameSceneManagerNGUI.playerRocket.transform.position + offSet;
         }
     }
 }

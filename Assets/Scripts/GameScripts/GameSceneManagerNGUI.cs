@@ -20,6 +20,10 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public float highHeight;
     public float spaceHeight;
 
+    public bool flyPressed;
+    public bool rotLeft;
+    public bool rotRight;
+
     void Start()
     {
         Time.timeScale = 1;
@@ -73,6 +77,31 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MenuScene");
+    }
+
+    public void FlyButtonPressed()
+    {
+        flyPressed = true;
+    }
+    public void FlyButtonReleased()
+    {
+        flyPressed = false;
+    }
+    public void LeftButtonPressed()
+    {
+        rotLeft = true;
+    }
+    public void LeftButtonReleased()
+    {
+        rotLeft = false;
+    }
+    public void RightButtonPressed()
+    {
+        rotRight = true;
+    }
+    public void RightButtonReleased()
+    {
+        rotRight = false;
     }
 }
 

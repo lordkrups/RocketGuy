@@ -70,19 +70,24 @@ public class PlaneMotor : MonoBehaviour
             //transform.rotation = deltaRotation;
             rb.rotation = deltaRotation;
         }
+
+        Destroy(gameObject, 5f);
+
+
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
 
-        int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - rb.transform.position.x);
-        int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - rb.transform.position.y);
+        //int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - rb.transform.position.x);
+        //int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - rb.transform.position.y);
 
-        if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
-        {
-            SetToDie();
-        }
+        //if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
+        //{
+            //Debug.Log("Too far from player");
+            //SetToDie();
+        //}
         if (flyReversed)
         {
             rb.MovePosition(transform.position - transform.forward * (velocity * Time.fixedDeltaTime));

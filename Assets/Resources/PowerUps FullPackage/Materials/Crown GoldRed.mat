@@ -2,53 +2,38 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 3
+  serializedVersion: 6
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Crown GoldRed
-  m_Shader: {fileID: 23, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: []
+  m_Shader: {fileID: 10703, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
-    serializedVersion: 2
+    serializedVersion: 3
     m_TexEnvs:
-      data:
-        first:
-          name: _MainTex
-        second:
-          m_Texture: {fileID: 2800000, guid: 8442ddf5ed639e943b95691e72f89068, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _BumpMap
-        second:
-          m_Texture: {fileID: 2800000, guid: 0dc15589ab73c014183759868bc03fad, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _Cube
-        second:
-          m_Texture: {fileID: 8900000, guid: dc040cde3d92b624ca71f0f6c4d213f5, type: 2}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 0dc15589ab73c014183759868bc03fad, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Cube:
+        m_Texture: {fileID: 8900000, guid: dc040cde3d92b624ca71f0f6c4d213f5, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 8442ddf5ed639e943b95691e72f89068, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
-      data:
-        first:
-          name: _Shininess
-        second: .164847583
+    - _Shininess: 0.16484758
     m_Colors:
-      data:
-        first:
-          name: _Color
-        second: {r: .737254918, g: .693170249, b: .638954282, a: 1}
-      data:
-        first:
-          name: _SpecColor
-        second: {r: .735294104, g: .596363783, b: .297361612, a: 1}
-      data:
-        first:
-          name: _ReflectColor
-        second: {r: .882352948, g: .666239083, b: .201124549, a: .501960814}
+    - _Color: {r: 0.7372549, g: 0.69317025, b: 0.6389543, a: 1}
+    - _ReflectColor: {r: 0.88235295, g: 0.6662391, b: 0.20112455, a: 0.5019608}
+    - _SpecColor: {r: 0.7352941, g: 0.5963638, b: 0.2973616, a: 1}

@@ -21,17 +21,17 @@ public class CollectibleObj : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         thingsSpawnerNGUI = ts;
         timeToDie = false;
-        //Destroy(this.gameObject, 10f);
+        Destroy(gameObject, 5f);
     }
     private void FixedUpdate()
     {
-        int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - rb.transform.position.x);
-        int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - rb.transform.position.y);
+        //int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - rb.transform.position.x);
+        //int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - rb.transform.position.y);
 
-        if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
-        {
-            SetToDie();
-        }
+        //if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
+        //{
+            //SetToDie();
+        //}
 
         if (rb.transform.localPosition.y < thingsSpawnerNGUI.despawnHeight)
         {

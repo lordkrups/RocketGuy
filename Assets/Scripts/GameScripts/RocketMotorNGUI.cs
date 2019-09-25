@@ -6,7 +6,8 @@ public class RocketMotorNGUI : MonoBehaviour
 {
     public GameSceneManagerNGUI gameSceneManager;
     public Rigidbody rb;
-    public Collider cl;
+    public Collider smallCollider;
+    public Collider bigCollider;
 
     public List<ParticleSystem> flamesList;
 
@@ -20,9 +21,6 @@ public class RocketMotorNGUI : MonoBehaviour
     public float height;
     public float maxHeightReached;
     public bool isRocketing;
-    public bool flyPressed;
-    public bool rotLeft;
-    public bool rotRight;
 
     public int moneyEarned;
 
@@ -48,30 +46,7 @@ public class RocketMotorNGUI : MonoBehaviour
         health = maxHealth;
         fuel = maxFuel;
     }
-    public void FlyButtonPressed()
-    {
-        flyPressed = true;
-    }
-    public void FlyButtonReleased()
-    {
-        flyPressed = false;
-    }
-    public void LeftButtonPressed()
-    {
-        rotLeft = true;
-    }
-    public void LeftButtonReleased()
-    {
-        rotLeft = false;
-    }
-    public void RightButtonPressed()
-    {
-        rotRight = true;
-    }
-    public void RightButtonReleased()
-    {
-        rotRight = false;
-    }
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -81,7 +56,7 @@ public class RocketMotorNGUI : MonoBehaviour
         }
         if (!isDead)
         {
-            if (Input.GetKey(KeyCode.Space) || flyPressed)
+            if (Input.GetKey(KeyCode.Space) || gameSceneManager.flyPressed)
             {
                 if (force.y < maxForce)
                 {
@@ -94,18 +69,18 @@ public class RocketMotorNGUI : MonoBehaviour
                     isRocketing = true;
                 }
             }
-            if (fuel < 1 || !flyPressed)
+            if (fuel < 1 || !gameSceneManager.flyPressed)
             {
                 force.y = 0f;
                 isRocketing = false;
             }
-            if (Input.GetKey(KeyCode.A) || rotLeft)
+            if (Input.GetKey(KeyCode.A) || gameSceneManager.rotLeft)
             {
                 relativeTorque.z = relativeTorque.z + turnSpeed;
                 Quaternion deltaRotation = Quaternion.Euler(relativeTorque * Time.deltaTime);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
-            if (Input.GetKey(KeyCode.D) || rotRight)
+            if (Input.GetKey(KeyCode.D) || gameSceneManager.rotRight)
             {
                 relativeTorque.z = relativeTorque.z + turnSpeed;
                 Quaternion deltaRotation = Quaternion.Euler(-relativeTorque * Time.deltaTime);
@@ -154,7 +129,11 @@ public class RocketMotorNGUI : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collectible")
         {
-            Physics.IgnoreCollision(cl, collision.gameObject.GetComponent<Collider>());
+            if (smallCollider != null)
+            {
+                Physics.IgnoreCollision(smallCollider, collision.gameObject.GetComponent<Collider>());
+            }
+            Physics.IgnoreCollision(bigCollider, collision.gameObject.GetComponent<Collider>());
             var colObj = collision.gameObject.GetComponent<CollectibleObj>();
             if (colObj.fuel)
             {
