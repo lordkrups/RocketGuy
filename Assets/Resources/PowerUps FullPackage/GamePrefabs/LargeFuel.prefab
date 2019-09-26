@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8121040680666023933}
   - component: {fileID: 5657545980329244312}
   - component: {fileID: 5925573479497428159}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LargeFuel
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 2268744806918404928}
   - component: {fileID: 2268744806919699584}
   - component: {fileID: 2268744806928667616}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Jerry Can Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}

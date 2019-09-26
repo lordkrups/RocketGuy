@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 423892454440921365}
   - component: {fileID: 423892454440921364}
   - component: {fileID: 423892454440921367}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CargoPlane
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -97,6 +97,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PA_CargoAirCraft
       objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400026, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -140,6 +144,58 @@ PrefabInstance:
     - target: {fileID: 400026, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b327844a805c78b47a4b060ed7c9eb15, type: 3}

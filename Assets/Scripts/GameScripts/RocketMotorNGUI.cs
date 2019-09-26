@@ -9,6 +9,7 @@ public class RocketMotorNGUI : MonoBehaviour
     public Collider smallCollider;
     public Collider bigCollider;
 
+    public Light tailLight;
     public List<ParticleSystem> flamesList;
 
     public Vector3 force;//variable for lift
@@ -27,6 +28,7 @@ public class RocketMotorNGUI : MonoBehaviour
     public float maxFuel = 100f;
     public float fuel;
     public float fuelConsumptionRate;
+    public float maxBoosterFuel = 100f;
     public float boosterFuel;
     public float boosterFuelConsumptionRate;
 
@@ -42,6 +44,7 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             flamesList[i].gameObject.SetActive(true);
         }
+        tailLight.gameObject.SetActive(false);
 
         health = maxHealth;
         fuel = maxFuel;
@@ -50,7 +53,7 @@ public class RocketMotorNGUI : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!canTakeDmg && transform.position.y > 10f)
+        if (!canTakeDmg && transform.position.y > 2.5f)
         {
             canTakeDmg = true;
         }
@@ -103,6 +106,7 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[0].Play();
             flamesList[1].Play();
             flamesList[2].Play();
+            tailLight.gameObject.SetActive(true);
         }
         if (!isRocketing)
         {
@@ -112,6 +116,7 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[1].Clear();
             flamesList[2].Pause();
             flamesList[2].Clear();
+            tailLight.gameObject.SetActive(false);
         }
         height = rb.position.y;
         if (maxHeightReached <= height)
@@ -129,12 +134,11 @@ public class RocketMotorNGUI : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collectible")
         {
-            if (smallCollider != null)
-            {
-                Physics.IgnoreCollision(smallCollider, collision.gameObject.GetComponent<Collider>());
-            }
+            Physics.IgnoreCollision(smallCollider, collision.gameObject.GetComponent<Collider>());
             Physics.IgnoreCollision(bigCollider, collision.gameObject.GetComponent<Collider>());
+
             var colObj = collision.gameObject.GetComponent<CollectibleObj>();
+
             if (colObj.fuel)
             {
                 fuel += colObj.value;
@@ -160,6 +164,7 @@ public class RocketMotorNGUI : MonoBehaviour
             if (canTakeDmg && !isDead)
             {
                 health = health - (1f * dmgMultiplier);
+
                 if (health <= 0f)
                 {
                     isDead = true;
@@ -170,11 +175,28 @@ public class RocketMotorNGUI : MonoBehaviour
 
     private void OnCollisionStay(Collision collision)
     {
+        if (collision.gameObject.tag == "Enviroment")
+        {
+            if (canTakeDmg && !isDead)
+            {
+                health = health - (10f * dmgMultiplier);
+
+                if (health <= 0f)
+                {
+                    isDead = true;
+                    health = 0f;
+                }
+            }
+        }
         if (collision.gameObject.tag == "Obstacle")
         {
             if (canTakeDmg && !isDead)
             {
                 health = health - (1f * dmgMultiplier);
+
+                Physics.IgnoreCollision(smallCollider, collision.gameObject.GetComponent<Collider>());
+                Physics.IgnoreCollision(bigCollider, collision.gameObject.GetComponent<Collider>());
+
                 if (health <= 0f)
                 {
                     isDead = true;

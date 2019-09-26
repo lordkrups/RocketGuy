@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 3560247826524359501}
   - component: {fileID: 6757644136164018235}
   - component: {fileID: 4307463937230902967}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Large Diamond
-  m_TagString: Untagged
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 1969183682441346624}
   - component: {fileID: 1969183682442704896}
   - component: {fileID: 1969183682450548448}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Diamond Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -195,7 +195,7 @@ GameObject:
   - component: {fileID: 1969183682440543782}
   - component: {fileID: 1969183682425336160}
   - component: {fileID: 1969183682424711680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particles Diamond Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}

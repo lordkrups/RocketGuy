@@ -51,7 +51,8 @@ public class GameSceneManagerNGUI : MonoBehaviour
             currentPhase = "Space";
         }
     }
-    public void TogglePause()
+
+        public void TogglePause()
     {
         isGamePaused = !isGamePaused;
 
@@ -77,6 +78,10 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MenuScene");
+    }
+    public void ResetLevel()
+    {
+        SceneManager.LoadScene("NGUIScene");
     }
 
     public void FlyButtonPressed()

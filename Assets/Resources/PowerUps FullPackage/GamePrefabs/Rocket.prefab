@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 430606553}
   - component: {fileID: 430606552}
   - component: {fileID: 430606551}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FinLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 7154812175285049313}
   - component: {fileID: 429007684628150077}
   - component: {fileID: 8603679131906892015}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4855,7 +4855,7 @@ GameObject:
   - component: {fileID: 3454336506143433084}
   - component: {fileID: 9207473420355460242}
   - component: {fileID: 6166155733885953308}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FinRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4945,7 +4945,7 @@ GameObject:
   - component: {fileID: 6383194428452833869}
   - component: {fileID: 3858465064230284470}
   - component: {fileID: 420328420566906566}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9698,7 +9698,7 @@ GameObject:
   - component: {fileID: 4588973654220280867}
   - component: {fileID: 6843595139792328450}
   - component: {fileID: 1418713646437494265}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9791,9 +9791,9 @@ GameObject:
   - component: {fileID: 6156358621690559481}
   - component: {fileID: 4090184715491917483}
   - component: {fileID: 5229262039833040749}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rocket
-  m_TagString: Player
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9943,7 +9943,7 @@ GameObject:
   - component: {fileID: 7420046041310268071}
   - component: {fileID: 4075444870812993528}
   - component: {fileID: 5009383249695942664}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}

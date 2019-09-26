@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 6637855831284235624}
   - component: {fileID: 772610126589434932}
   m_Layer: 9
-  m_Name: Cheap Diamond
+  m_Name: SmallDiamond
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -71,7 +71,7 @@ public class PlaneMotor : MonoBehaviour
             rb.rotation = deltaRotation;
         }
 
-        Destroy(gameObject, 5f);
+        //Destroy(gameObject, 5f);
 
 
     }
@@ -80,14 +80,14 @@ public class PlaneMotor : MonoBehaviour
     void FixedUpdate()
     {
 
-        //int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - rb.transform.position.x);
-        //int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - rb.transform.position.y);
+        int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - rb.transform.position.x);
+        int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - rb.transform.position.y);
 
-        //if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
-        //{
-            //Debug.Log("Too far from player");
-            //SetToDie();
-        //}
+        if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
+        {
+            SetToDie();
+        }
+
         if (flyReversed)
         {
             rb.MovePosition(transform.position - transform.forward * (velocity * Time.fixedDeltaTime));
@@ -121,6 +121,6 @@ public class PlaneMotor : MonoBehaviour
     IEnumerator RemoveCollider()
     {
         yield return new WaitForSeconds(1f);
-        GetComponent<Collider>().enabled = false;
+        //GetComponent<Collider>().enabled = false;
     }
 }

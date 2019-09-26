@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketMotorNGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/PlaneMotor.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="105" Column="6" />
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="134" Column="103" />
-      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="34" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="92" Column="11" />
-      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" Line="74" Column="30" />
-      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" Line="24" Column="30" />
-      <File FileName="Assets/Scripts/CloudObj.cs" Line="24" Column="30" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="85" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="32" Column="18" />
+      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="36" Column="76" />
+      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="126" Column="49" />
+      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" Line="124" Column="11" />
+      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" Line="24" Column="11" />
+      <File FileName="Assets/Scripts/CloudObj.cs" Line="30" Column="100" />
       <File FileName="Assets/Scripts/GameScripts/CameraFollow.cs" Line="38" Column="77" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="12" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,7 +18,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
-                  <Node name="RocketMotorNGUI.cs" selected="True" />
+                  <Node name="PlaneMotor.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -33,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="2fa6dce3-0959-43aa-ad50-c61570884bff" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d1ded939-3110-48d1-a46f-4e8ce5aa9e5a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
