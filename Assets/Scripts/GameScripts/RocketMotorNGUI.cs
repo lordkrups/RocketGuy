@@ -9,7 +9,7 @@ public class RocketMotorNGUI : MonoBehaviour
     public Collider smallCollider;
     public Collider bigCollider;
 
-    public Light tailLight;
+    public Light lightOne, lightTwo, lightThree;
     public List<ParticleSystem> flamesList;
 
     public Vector3 force;//variable for lift
@@ -44,7 +44,7 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             flamesList[i].gameObject.SetActive(true);
         }
-        tailLight.gameObject.SetActive(false);
+       // lightOne.gameObject.SetActive(false);
 
         health = maxHealth;
         fuel = maxFuel;
@@ -106,7 +106,7 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[0].Play();
             flamesList[1].Play();
             flamesList[2].Play();
-            tailLight.gameObject.SetActive(true);
+            //tailLight.gameObject.SetActive(true);
         }
         if (!isRocketing)
         {
@@ -116,7 +116,7 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[1].Clear();
             flamesList[2].Pause();
             flamesList[2].Clear();
-            tailLight.gameObject.SetActive(false);
+            //tailLight.gameObject.SetActive(false);
         }
         height = rb.position.y;
         if (maxHeightReached <= height)
