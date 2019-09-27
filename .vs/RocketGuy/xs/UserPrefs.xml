@@ -1,15 +1,15 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/PlaneMotor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/MainMenuManager.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="85" Column="1" />
       <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="32" Column="18" />
-      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="36" Column="76" />
-      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="126" Column="49" />
+      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" />
+      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="29" Column="1" />
       <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" Line="124" Column="11" />
-      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" Line="24" Column="11" />
-      <File FileName="Assets/Scripts/CloudObj.cs" Line="30" Column="100" />
-      <File FileName="Assets/Scripts/GameScripts/CameraFollow.cs" Line="38" Column="77" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="12" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" />
+      <File FileName="Assets/Scripts/CloudObj.cs" />
+      <File FileName="Assets/Scripts/GameScripts/CameraFollow.cs" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="9" Column="42" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -18,7 +18,7 @@
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
-                  <Node name="PlaneMotor.cs" selected="True" />
+                  <Node name="MainMenuManager.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
@@ -34,7 +34,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d1ded939-3110-48d1-a46f-4e8ce5aa9e5a" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="d3ef245f-c775-4ad8-97de-bcccccac5eaf" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

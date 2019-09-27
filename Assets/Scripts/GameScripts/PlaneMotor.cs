@@ -19,20 +19,30 @@ public class PlaneMotor : MonoBehaviour
     public bool flyDown;
 
     public bool timeToDie;
+    public bool demoMode;
 
 
     // Start is called before the first frame update
-    public void Init(ThingsSpawnerNGUI ts)
+    public void Init(ThingsSpawnerNGUI ts = null, bool demo = false)
     {
-        rb = GetComponent<Rigidbody>();
-        thingsSpawnerNGUI = ts;
+        demoMode = demo;
         timeToDie = false;
-        int randomInt = Random.Range(1, 52);
-        velocity = randomInt / 5;
+        rb = GetComponent<Rigidbody>();
 
-        //float ran = Random.Range(0.5, 10f);
-        //Vector3 s = new Vector3(ran, ran, ran);
-        //transform.localScale = s;
+
+        int randomInt = Random.Range(1, 52);
+
+        if (demoMode)
+        {
+            //rb.useGravity = true;
+            rb.constraints = RigidbodyConstraints.None;
+        }
+
+        if (!demoMode)
+        {
+            thingsSpawnerNGUI = ts;
+            velocity = randomInt / 5;
+        }
 
         if (randomInt < 25)
         {
@@ -79,26 +89,38 @@ public class PlaneMotor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (!demoMode)
+        {
 
-        int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - rb.transform.position.x);
-        int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - rb.transform.position.y);
 
-        if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
+            int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - rb.transform.position.x);
+            int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - rb.transform.position.y);
+
+            if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
+            {
+                SetToDie();
+            }
+            if (rb.transform.localPosition.y < thingsSpawnerNGUI.despawnHeight)
+            {
+                SetToDie();
+            }
+        }
+        if (rb.transform.localPosition.y < 10f)
         {
             SetToDie();
         }
-
         if (flyReversed)
-        {
-            rb.MovePosition(transform.position - transform.forward * (velocity * Time.fixedDeltaTime));
-        } else
-        {
-            rb.MovePosition(transform.position + transform.forward * (velocity * Time.fixedDeltaTime));
-        }
-        if (rb.transform.localPosition.y < thingsSpawnerNGUI.despawnHeight)
-        {
-            SetToDie();
-        }
+            {
+                rb.MovePosition(transform.position - transform.forward * (velocity * Time.fixedDeltaTime));
+            }
+            else
+            {
+                rb.MovePosition(transform.position + transform.forward * (velocity * Time.fixedDeltaTime));
+            }
+
+
+        
+
         if (timeToDie == true)
         {
             DestroySoon();
@@ -110,7 +132,10 @@ public class PlaneMotor : MonoBehaviour
     }
     public void DestroySoon()
     {
-        thingsSpawnerNGUI.RemoveObstacle(this);
+        if (!demoMode)
+        {
+            thingsSpawnerNGUI.RemoveObstacle(this);
+        }
         Destroy(gameObject, 1f);
     }
     private void OnCollisionEnter(Collision collision)
