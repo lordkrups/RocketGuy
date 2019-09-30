@@ -46,53 +46,33 @@ public class ThingsSpawnerNGUI : MonoBehaviour
         curHeight = gameSceneManager.playerRocket.rb.position.y;
         curWidth = gameSceneManager.playerRocket.rb.position.x;
 
-        if (curHeight > (prevHeight + spawnOffset) || curHeight < (prevHeight - spawnOffset))
+        if (curHeight > (prevHeight + spawnOffset))
         {
-            /*if (spawnedCloudsList.Count < numberOfGoodThingsToSpawn * 2)
-            {
-                SpawnCloudsInFrontOfPlayer();
-            }
-            if (spawnedCollectibleList.Count < numberOfGoodThingsToSpawn * 2)
-            {
-                SpawnCollectiblesInFrontOfPlayer();
-            }
-            if (spawnedObstacleList.Count < numberOfBadThingsToSpawn * 2)
-            {
-                SpawnObstaclesInFrontOfPlayer();
-            } */
-            SpawnCloudsInFrontOfPlayer();
-
-            SpawnCollectiblesInFrontOfPlayer();
-
-            SpawnObstaclesInFrontOfPlayer();
+            //StartCoroutine(SpawnObstaclesInFrontOfPlayer("Up"));
+            SpawnObstaclesInFrontOfPlayer("Up");
             prevHeight = curHeight;
-
         }
-
-        if (curWidth > (prevWidth + spawnOffset) || curWidth < (prevWidth - spawnOffset))
+        if (curHeight < (prevHeight - spawnOffset))
         {
-            SpawnCloudsInFrontOfPlayer();
-
-            SpawnCollectiblesInFrontOfPlayer();
-
-            SpawnObstaclesInFrontOfPlayer();
-            /* if (spawnedCloudsList.Count < numberOfCloudsToSpawn * 2)
-             {
-                 SpawnCloudsInFrontOfPlayer();
-             }
-             if (spawnedCollectibleList.Count < numberOfGoodThingsToSpawn * 2)
-             {
-                 SpawnCollectiblesInFrontOfPlayer();
-             }
-             if (spawnedObstacleList.Count < numberOfBadThingsToSpawn * 2)
-             {
-                 SpawnObstaclesInFrontOfPlayer();
-             }*/
+            //StartCoroutine(SpawnObstaclesInFrontOfPlayer("Down"));
+            SpawnObstaclesInFrontOfPlayer("Down");
+            prevHeight = curHeight;
+        }
+        if (curWidth < (prevWidth - spawnOffset))//Left
+        {
+            //StartCoroutine(SpawnObstaclesInFrontOfPlayer("Left"));
+            SpawnObstaclesInFrontOfPlayer("Left");
             prevWidth = curWidth;
-        } 
+        }
+        if (curWidth > (prevWidth + spawnOffset))
+        {
+            //StartCoroutine(SpawnObstaclesInFrontOfPlayer("Right"));
+            SpawnObstaclesInFrontOfPlayer("Right");
+            prevWidth = curWidth;
+        }
     }
 
-        public void RemoveCloud(CloudObj co)
+    public void RemoveCloud(CloudObj co)
     {
         spawnedCloudsList.Remove(co);
     }
@@ -103,6 +83,69 @@ public class ThingsSpawnerNGUI : MonoBehaviour
     public void RemoveObstacle(PlaneMotor pm)
     {
         spawnedObstacleList.Remove(pm);
+    }
+
+    public void DirectionalObsSpawner(string dirToSpawn)
+    {
+        Debug.Log("DirectionalObsSpawner");
+        Debug.Log("dirToSpawn " + dirToSpawn);
+
+        int xPos = 0;
+        int yPos = 0;
+        int ran;
+        var thingToSpawn = new PlaneMotor();
+        Vector3 pos = new Vector3(0,0,0);
+        for (int i = 0; i < numberOfBadThingsToSpawn; i++)
+        {
+
+            if (dirToSpawn == "Up")
+            {
+                xPos = Random.Range(-xDist, xDist + 1);
+                yPos = Random.Range(yDist / 2, yDist);
+            }
+            if (dirToSpawn == "Down")
+            {
+                xPos = Random.Range(-xDist, xDist + 1);
+                yPos = Random.Range(-yDist, -yDist / 2);
+            }
+
+            if (dirToSpawn == "Left")
+            {
+                xPos = Random.Range(-xDist, -xDist / 2);
+                yPos = Random.Range(yDist, yDist);
+            }
+
+            if (dirToSpawn == "Right")
+            {
+                xPos = Random.Range(xDist / 2, -xDist);
+                yPos = Random.Range(yDist, yDist);
+            }
+            Debug.Log("for spawn ");
+
+
+            pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
+            gameSceneManager.playerRocket.transform.position.y + yPos, 0f);
+
+            if (gameSceneManager.currentPhase == "Low")
+            {
+                ran = Random.Range(0, lowObstacleList.Count);
+                thingToSpawn = Instantiate(lowObstacleList[ran], obstacleContainer.transform, true);
+
+                thingToSpawn.Init(this);
+            }
+            if (gameSceneManager.currentPhase == "Medium")
+            {
+                ran = Random.Range(0, medObstacleList.Count);
+                thingToSpawn = Instantiate(medObstacleList[ran], obstacleContainer.transform, true);
+
+                thingToSpawn.Init(this);
+            }
+        }
+
+
+        thingToSpawn.transform.position = pos;
+        spawnedObstacleList.Add(thingToSpawn);
+        firstSpawned = true;
     }
 
     public void SpawnCloudsInFrontOfPlayer()
@@ -211,26 +254,37 @@ public class ThingsSpawnerNGUI : MonoBehaviour
         firstSpawned = true;
     }
 
-    public void SpawnObstaclesInFrontOfPlayer()
+    private void SpawnObstaclesInFrontOfPlayer(string dirToSpawn)
     {
-         //Debug.Log("SpawnObstaclesInFrontOfPlayer");
+        Debug.Log("dirToSpawn: " + dirToSpawn);
+        //yield return new WaitForSeconds(0.5f);
 
-            for (int i = 0; i < numberOfBadThingsToSpawn; i++)
+        for (int i = 0; i < numberOfBadThingsToSpawn; i++)
             {
-                int rando = Random.Range(1, 10);
+                int xPos = 0;
+                int yPos = 0;
 
-                int xPos;
-                int yPos;
-
-                if (rando <= 4)
+                if (dirToSpawn == "Up")
                 {
                     xPos = Random.Range(-xDist, xDist + 1);
-                    yPos = Random.Range(yDist / 2, yDist + 1);
+                    yPos = Random.Range(yDist / 2, yDist);
                 }
-                else
+                if (dirToSpawn == "Down")
                 {
                     xPos = Random.Range(-xDist, xDist + 1);
                     yPos = Random.Range(-yDist, -yDist / 2);
+                }
+
+                if (dirToSpawn == "Left")
+                {
+                    xPos = Random.Range(-xDist, -xDist / 2);
+                    yPos = Random.Range(-yDist, yDist+1);
+                }
+
+                if (dirToSpawn == "Right")
+                {
+                    xPos = Random.Range(xDist / 2, xDist);
+                    yPos = Random.Range(-yDist, yDist+1);
                 }
 
                 Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
@@ -243,16 +297,11 @@ public class ThingsSpawnerNGUI : MonoBehaviour
 
                     thingToSpawn.Init(this);
 
-                if (i <= numberOfBadThingsToSpawn / 2)
-                {
                     thingToSpawn.transform.position = pos;
+
+                    spawnedObstacleList.Add(thingToSpawn);
                 }
-                else
-                {
-                    thingToSpawn.transform.position = -pos;
-                }
-                spawnedObstacleList.Add(thingToSpawn);
-                }
+
                 if (gameSceneManager.currentPhase == "Medium")
                 {
                     int ran = Random.Range(0, medObstacleList.Count);
@@ -260,19 +309,13 @@ public class ThingsSpawnerNGUI : MonoBehaviour
                     var thingToSpawn = Instantiate(medObstacleList[ran], obstacleContainer.transform, true);
                     thingToSpawn.Init(this);
 
-                if (i <= numberOfBadThingsToSpawn / 2)
-                {
                     thingToSpawn.transform.position = pos;
-                }
-                else
-                {
-                    thingToSpawn.transform.position = -pos;
-                }
-                spawnedObstacleList.Add(thingToSpawn);
-                }
 
-            }
+                    spawnedObstacleList.Add(thingToSpawn);
+                }
+        }
         firstSpawned = true;
+        //yield return new WaitForSeconds(0f);
     }
 }
 

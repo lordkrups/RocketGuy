@@ -25,7 +25,7 @@ public class CloudObj : MonoBehaviour
         }
         for (int i = 0; i < sphereList.Count; i++)
         {
-            float ran = Random.Range(0.5f, 1.6f);
+            float ran = Random.Range(0.8f, 2f);
             Vector3 s = new Vector3(ran, ran, ran);
             sphereList[i].transform.localScale = s;
         }

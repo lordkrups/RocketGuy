@@ -10,7 +10,7 @@ public class MainMenuManager : MonoBehaviour
     public CloudObj cloudObj;
     public bool spawnThings;
     public GameObject obstacleContainer;
-    public int xDist;
+    public int xDist, yDist;
 
     public void StartGame()
     {
@@ -39,7 +39,7 @@ public class MainMenuManager : MonoBehaviour
             int ran = Random.Range(0, thingsToSpawn.Count);
             var thingToSpawn = Instantiate(thingsToSpawn[ran], obstacleContainer.transform, true);
             thingToSpawn.Init(null, true);
-            Vector3 pos = new Vector3(xPos, 25f, 0f);
+            Vector3 pos = new Vector3(xPos, yDist, 0f);
             thingToSpawn.transform.position = pos;
 
             yield return new WaitForSeconds(1f);
@@ -48,7 +48,7 @@ public class MainMenuManager : MonoBehaviour
             ran = Random.Range(10, 40);
             var cloud = Instantiate(cloudObj, obstacleContainer.transform, true);
             cloud.Init(null, true);
-            pos = new Vector3(xPos, 35f, ran);
+            pos = new Vector3(xPos, yDist, ran);
             cloud.transform.position = pos;
         }
 

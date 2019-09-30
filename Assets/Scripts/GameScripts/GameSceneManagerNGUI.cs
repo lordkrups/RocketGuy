@@ -10,6 +10,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public RocketMotorNGUI playerRocket;
 
     public bool isGamePaused;
+    public UISprite blindSprite;
     public UIPanel pauseMenuPanel;
     public UIPanel gameOverPanel;
     public UILabel goHeightValue;
@@ -26,12 +27,23 @@ public class GameSceneManagerNGUI : MonoBehaviour
 
     void Start()
     {
+        blindSprite.On();
         Time.timeScale = 1;
         pauseMenuPanel.gameObject.SetActive(false);
         gameOverPanel.gameObject.SetActive(false);
         currentPhase = "Ground";
+
+        StartCoroutine(CloseBlind());
     }
 
+    IEnumerator CloseBlind()
+    {
+        while (blindSprite.alpha > 0f)
+        {
+            blindSprite.alpha -= 0.1f;
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
     void Update()
     {
         if (playerRocket.rb.position.y > 2.5f && playerRocket.rb.position.y < lowHeight)

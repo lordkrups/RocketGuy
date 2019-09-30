@@ -1,24 +1,30 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketMotorNGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="85" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="30" Column="26" />
       <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="47" Column="10" />
-      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" />
-      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" />
-      <File FileName="Assets/Scripts/CloudObj.cs" />
-      <File FileName="Assets/Scripts/GameScripts/CameraFollow.cs" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="22" Column="6" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="64" Column="48" />
+      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" Line="38" Column="15" />
+      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/CloudObj.cs" Line="28" Column="41" />
+      <File FileName="Assets/Scripts/GameScripts/CameraFollow.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RocketGuy" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="NGUI" expanded="True">
+                  <Node name="Scripts" expanded="True">
+                    <Node name="Internal" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
-                  <Node name="RocketMotorNGUI.cs" selected="True" />
+                  <Node name="GameSceneManagerNGUI.cs" selected="True" />
                 </Node>
               </Node>
             </Node>
