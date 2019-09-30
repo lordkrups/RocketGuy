@@ -29,6 +29,7 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator SpawnThings()
     {
+
         for (int i = 0; i < 10; i++)
         {
             int xPos;
@@ -38,10 +39,17 @@ public class MainMenuManager : MonoBehaviour
             int ran = Random.Range(0, thingsToSpawn.Count);
             var thingToSpawn = Instantiate(thingsToSpawn[ran], obstacleContainer.transform, true);
             thingToSpawn.Init(null, true);
-            Vector3 pos = new Vector3(xPos, 20f, 0f);
+            Vector3 pos = new Vector3(xPos, 25f, 0f);
             thingToSpawn.transform.position = pos;
 
             yield return new WaitForSeconds(1f);
+
+            xPos = Random.Range(-xDist, xDist + 1);
+            ran = Random.Range(10, 40);
+            var cloud = Instantiate(cloudObj, obstacleContainer.transform, true);
+            cloud.Init(null, true);
+            pos = new Vector3(xPos, 35f, ran);
+            cloud.transform.position = pos;
         }
 
         spawnThings = false;

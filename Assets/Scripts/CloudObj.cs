@@ -7,14 +7,22 @@ public class CloudObj : MonoBehaviour
     public ThingsSpawnerNGUI thingsSpawnerNGUI;
 
     public List<GameObject> sphereList;
+    public Rigidbody rb;
 
     public bool timeToDie;
+    public bool demoMode;
 
     // Start is called before the first frame update
-    public void Init(ThingsSpawnerNGUI ts)
+    public void Init(ThingsSpawnerNGUI ts = null, bool demo = false)
     {
         thingsSpawnerNGUI = ts;
-
+        demoMode = demo;
+        rb = GetComponent<Rigidbody>();
+        if (!demoMode)
+        {
+            //rb.useGravity = true;
+            Destroy(rb);
+        }
         for (int i = 0; i < sphereList.Count; i++)
         {
             float ran = Random.Range(0.5f, 1.6f);
@@ -26,12 +34,15 @@ public class CloudObj : MonoBehaviour
     }
     private void Update()
     {
-        int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - transform.position.x);
-        int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - transform.position.y);
-
-        if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
+        if (!demoMode)
         {
-            SetToDie();
+            int distX = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.x - transform.position.x);
+            int distY = (int)Mathf.Abs(thingsSpawnerNGUI.gameSceneManager.playerRocket.rb.position.y - transform.position.y);
+
+            if (distY > thingsSpawnerNGUI.maxDespawnDistance || distX > thingsSpawnerNGUI.maxDespawnDistance)
+            {
+                SetToDie();
+            }
         }
 
         if (transform.localPosition.y < 0f)
@@ -50,7 +61,9 @@ public class CloudObj : MonoBehaviour
     }
     public void DestroySoon()
     {
-        thingsSpawnerNGUI.RemoveCloud(this);
+        if (!demoMode)
+            thingsSpawnerNGUI.RemoveCloud(this);
+
         Destroy(gameObject, 1f);
     }
 }
