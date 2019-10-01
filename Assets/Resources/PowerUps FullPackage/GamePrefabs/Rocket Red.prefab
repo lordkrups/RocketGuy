@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672260316}
   - component: {fileID: 672260317}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19120,9 +19120,9 @@ GameObject:
   - component: {fileID: 4775134670131495445}
   - component: {fileID: 61547945720048302}
   - component: {fileID: 3932371409181539739}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Rocket Red
-  m_TagString: Collectible
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19182,7 +19182,7 @@ MonoBehaviour:
   boosterFuelConsumptionRate: 0
   maxHealth: 50
   health: 100
-  dmgMultiplier: 2
+  dmgMultiplier: 10
   isDead: 0
   canTakeDmg: 0
 --- !u!136 &61547945720048302
@@ -19228,7 +19228,7 @@ GameObject:
   - component: {fileID: 8746584519839498838}
   - component: {fileID: 8746584519831497682}
   - component: {fileID: 1697679353}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Rocket Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}

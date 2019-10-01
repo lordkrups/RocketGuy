@@ -90,6 +90,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MenuScene");
+        Time.timeScale = 1;
     }
     public void ResetLevel()
     {

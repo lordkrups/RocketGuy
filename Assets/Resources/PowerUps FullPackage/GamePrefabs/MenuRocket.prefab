@@ -11,9 +11,11 @@ GameObject:
   - component: {fileID: 1992849452457027508}
   - component: {fileID: 7066345473750191468}
   - component: {fileID: 6077762408157764185}
-  m_Layer: 9
+  - component: {fileID: 206258965}
+  - component: {fileID: 206258969}
+  m_Layer: 0
   m_Name: MenuRocket
-  m_TagString: Collectible
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -55,14 +57,45 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1992849452457325524}
   serializedVersion: 2
-  m_Mass: 1.1
+  m_Mass: 50
   m_Drag: 0.25
   m_AngularDrag: 1
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 56
+  m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!95 &206258965
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992849452457325524}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 125a0abd0a5de4752a87882db2532d63, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &206258969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1992849452457325524}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f7731d03b0d4443e985427c044626f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1992849452457325530
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +109,7 @@ GameObject:
   - component: {fileID: 1992849452459320724}
   - component: {fileID: 1992849452450253840}
   - component: {fileID: 7118531037611499579}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Rocket Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +226,7 @@ GameObject:
   - component: {fileID: 3648898065534101303}
   - component: {fileID: 7751678227727921736}
   - component: {fileID: 8000093852378399005}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Particle System (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4944,7 +4977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7118531036451718942}
   - component: {fileID: 7118531036451718943}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5036,7 +5069,7 @@ GameObject:
   - component: {fileID: 4639609483755629611}
   - component: {fileID: 4350144835096580626}
   - component: {fileID: 5100373646064294757}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Particle System (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9788,7 +9821,7 @@ GameObject:
   - component: {fileID: 3009797023483215379}
   - component: {fileID: 3621122975386072171}
   - component: {fileID: 8863332608900260084}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Particle System (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

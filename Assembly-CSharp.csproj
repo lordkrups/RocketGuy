@@ -236,10 +236,12 @@
     <Compile Include="Assets\Scripts\GameScripts\CollectibleObj.cs" />
     <Compile Include="Assets\Scripts\GameScripts\GameSceneManagerNGUI.cs" />
     <Compile Include="Assets\Scripts\GameScripts\MainMenuManager.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\MenuRocket.cs" />
     <Compile Include="Assets\Scripts\GameScripts\PlaneMotor.cs" />
     <Compile Include="Assets\Scripts\GameScripts\RocketMotorNGUI.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ThingsSpawnerNGUI.cs" />
     <Compile Include="Assets\Scripts\GameScripts\TopPanelReporterNGUI.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\UpgradesStore.cs" />
     <Compile Include="Assets\Scripts\Helper\DamagePopup.cs" />
     <Compile Include="Assets\Scripts\Helper\MerchantObj.cs" />
     <Compile Include="Assets\Scripts\Helper\PlayerInfoWidget.cs" />

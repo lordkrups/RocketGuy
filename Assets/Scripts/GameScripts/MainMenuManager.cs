@@ -12,6 +12,9 @@ public class MainMenuManager : MonoBehaviour
     public GameObject obstacleContainer;
     public int xDist, yDist;
 
+    private void Awake()
+    {
+    }
     public void StartGame()
     {
         //SceneManager.LoadScene("GameScene");

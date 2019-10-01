@@ -9,7 +9,7 @@ public class RocketMotorNGUI : MonoBehaviour
     public Collider smallCollider;
     public Collider bigCollider;
 
-    public Light lightOne, lightTwo, lightThree;
+    public Light lightOne;
     public List<ParticleSystem> flamesList;
 
     public Vector3 force;//variable for lift
@@ -106,7 +106,9 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[0].Play();
             flamesList[1].Play();
             flamesList[2].Play();
-            //tailLight.gameObject.SetActive(true);
+            //lightOne.gameObject.SetActive(true);
+            flamesList[3].Play();
+
         }
         if (!isRocketing)
         {
@@ -116,6 +118,9 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[1].Clear();
             flamesList[2].Pause();
             flamesList[2].Clear();
+            flamesList[3].Pause();
+            flamesList[3].Clear();
+
             //tailLight.gameObject.SetActive(false);
         }
         height = rb.position.y;
