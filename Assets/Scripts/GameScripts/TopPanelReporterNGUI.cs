@@ -10,6 +10,7 @@ public class TopPanelReporterNGUI : MonoBehaviour
     public UISlider healthSlider;
     public UILabel fuelValue;
     public UISlider fuelSlider;
+    public UILabel timeValue;
     public UILabel boosterValue;
     public UISlider boosterFuelSlider;
     public UILabel speedValue;
@@ -35,6 +36,7 @@ public class TopPanelReporterNGUI : MonoBehaviour
         boosterValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.boosterFuel)).ToString() + "/" + gameSceneManager.playerRocket.maxBoosterFuel.ToString();
         boosterFuelSlider.value = gameSceneManager.playerRocket.boosterFuel / gameSceneManager.playerRocket.maxBoosterFuel;
 
+        timeValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.flightTime)).ToString() + " s";
         speedValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.rb.velocity.y)).ToString() + " m/s";
         heightValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.height)).ToString() + " M";
         phaseValue.text = gameSceneManager.currentPhase;

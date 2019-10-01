@@ -42,10 +42,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -103,75 +101,75 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9364}
     - Class: 114
-      Script: {instanceID: 9384}
+      Script: {instanceID: 9380}
     - Class: 114
-      Script: {instanceID: 9430}
+      Script: {instanceID: 9386}
     - Class: 114
-      Script: {instanceID: 9472}
+      Script: {instanceID: 9432}
     - Class: 114
-      Script: {instanceID: 9522}
+      Script: {instanceID: 9474}
     - Class: 114
-      Script: {instanceID: 9572}
+      Script: {instanceID: 9524}
     - Class: 114
-      Script: {instanceID: 9596}
+      Script: {instanceID: 9574}
     - Class: 114
-      Script: {instanceID: 9902}
+      Script: {instanceID: 9598}
     - Class: 114
-      Script: {instanceID: 9936}
+      Script: {instanceID: 9904}
     - Class: 114
-      Script: {instanceID: 9948}
+      Script: {instanceID: 9938}
     - Class: 114
-      Script: {instanceID: 9956}
+      Script: {instanceID: 9950}
     - Class: 114
-      Script: {instanceID: 10006}
+      Script: {instanceID: 9958}
     - Class: 114
-      Script: {instanceID: 10044}
+      Script: {instanceID: 10008}
     - Class: 114
-      Script: {instanceID: 10182}
+      Script: {instanceID: 10046}
     - Class: 114
-      Script: {instanceID: 10262}
+      Script: {instanceID: 10184}
     - Class: 114
-      Script: {instanceID: 10274}
+      Script: {instanceID: 10264}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 10276}
     - Class: 114
-      Script: {instanceID: 10324}
+      Script: {instanceID: 10302}
     - Class: 114
-      Script: {instanceID: 10334}
+      Script: {instanceID: 10326}
     - Class: 114
-      Script: {instanceID: 10350}
+      Script: {instanceID: 10336}
     - Class: 114
-      Script: {instanceID: 10432}
+      Script: {instanceID: 10352}
     - Class: 114
-      Script: {instanceID: 10456}
+      Script: {instanceID: 10436}
     - Class: 114
-      Script: {instanceID: 10520}
+      Script: {instanceID: 10460}
     - Class: 114
-      Script: {instanceID: 10536}
+      Script: {instanceID: 10524}
     - Class: 114
-      Script: {instanceID: 10784}
+      Script: {instanceID: 10540}
     - Class: 114
       Script: {instanceID: 10788}
     - Class: 114
-      Script: {instanceID: 10926}
+      Script: {instanceID: 10792}
     - Class: 114
-      Script: {instanceID: 10974}
+      Script: {instanceID: 10930}
     - Class: 114
-      Script: {instanceID: 11056}
+      Script: {instanceID: 10978}
     - Class: 114
-      Script: {instanceID: 11202}
+      Script: {instanceID: 11060}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11226}
+      Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11292}
+      Script: {instanceID: 11230}
     - Class: 114
-      Script: {instanceID: 11326}
+      Script: {instanceID: 11296}
     - Class: 114
-      Script: {instanceID: 11356}
+      Script: {instanceID: 11330}
     - Class: 114
-      Script: {instanceID: 19440}
+      Script: {instanceID: 11360}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -236,39 +234,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9364}
     - Class: 114
-      Script: {instanceID: 9384}
+      Script: {instanceID: 9386}
     - Class: 114
-      Script: {instanceID: 9472}
+      Script: {instanceID: 9474}
     - Class: 114
-      Script: {instanceID: 9734}
+      Script: {instanceID: 9736}
     - Class: 114
-      Script: {instanceID: 9878}
+      Script: {instanceID: 9880}
     - Class: 114
-      Script: {instanceID: 9902}
+      Script: {instanceID: 9904}
     - Class: 114
-      Script: {instanceID: 9936}
+      Script: {instanceID: 9938}
     - Class: 114
-      Script: {instanceID: 10044}
+      Script: {instanceID: 10046}
     - Class: 114
-      Script: {instanceID: 10182}
+      Script: {instanceID: 10184}
     - Class: 114
-      Script: {instanceID: 10300}
+      Script: {instanceID: 10302}
     - Class: 114
-      Script: {instanceID: 10334}
+      Script: {instanceID: 10336}
     - Class: 114
-      Script: {instanceID: 10606}
+      Script: {instanceID: 10610}
     - Class: 114
-      Script: {instanceID: 10874}
+      Script: {instanceID: 10878}
     - Class: 114
-      Script: {instanceID: 11056}
+      Script: {instanceID: 11060}
     - Class: 114
-      Script: {instanceID: 11202}
+      Script: {instanceID: 11206}
     - Class: 114
-      Script: {instanceID: 11218}
+      Script: {instanceID: 11222}
     - Class: 114
-      Script: {instanceID: 11226}
+      Script: {instanceID: 11230}
     - Class: 114
-      Script: {instanceID: 11326}
+      Script: {instanceID: 11330}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -378,6 +376,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp-Editor.dll
     namespaceName: 
     className: SpriteSelector
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuRocket
   - hash:
       serializedVersion: 2
       Hash: 5427dcdb9cf0a0d574df4d90d881df6e
@@ -1635,6 +1639,12 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: UpgradesStore
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp-Editor.dll
     namespaceName: 
     className: UIToggleInspector
@@ -2502,18 +2512,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: UpgradesStore
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: MenuRocket
   platform: 13
   scenePathNames:
   - Assets/Scenes/MenuScene.unity

@@ -1,17 +1,28 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Xml/store_stats.xml">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="93" Column="28" />
-      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="78" Column="55" />
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" />
-      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" />
-      <File FileName="Assets/Scripts/CloudObj.cs" />
-      <File FileName="Assets/Scripts/GameScripts/CameraFollow.cs" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="17" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/UpgradesStore.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="11" Column="27" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="78" Column="55" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="276" Column="20" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="38" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/CloudObj.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/CameraFollow.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="17" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/UpgradesStore.cs" Line="26" Column="39" NotebookId="1" />
+      <File FileName="Assets/Resources/Xml/store_stats.xml" Line="28" Column="2" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/StoreStats.cs" Line="44" Column="32" NotebookId="2" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="930" Y="23" Width="971" Height="929">
+        <Files>
+          <File FileName="Assets/Scripts/Loaders/GameStatsLoader.cs" Line="1" Column="1" />
+          <File FileName="Assets/Scripts/Loaders/GameStatsContainer.cs" Line="1" Column="1" />
+          <File FileName="Assets/Scripts/Loaders/GameStats.cs" Line="13" Column="1" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -23,11 +34,14 @@
                     <Node name="Internal" expanded="True" />
                   </Node>
                 </Node>
+                <Node name="Xml" expanded="True">
+                  <Node name="store_stats.xml" selected="True" />
+                </Node>
               </Node>
               <Node name="Scripts" expanded="True">
-                <Node name="GameScripts" expanded="True">
-                  <Node name="ThingsSpawnerNGUI.cs" selected="True" />
-                </Node>
+                <Node name="GameScripts" expanded="True" />
+                <Node name="Loaders" expanded="True" />
+                <Node name="Managers" expanded="True" />
               </Node>
             </Node>
           </Node>

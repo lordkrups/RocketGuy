@@ -8,6 +8,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public string currentPhase;
 
     public RocketMotorNGUI playerRocket;
+    public Transform floor;
 
     public bool isGamePaused;
     public UISprite blindSprite;

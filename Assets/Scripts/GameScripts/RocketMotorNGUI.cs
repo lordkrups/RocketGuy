@@ -5,6 +5,9 @@ using UnityEngine;
 public class RocketMotorNGUI : MonoBehaviour
 {
     public GameSceneManagerNGUI gameSceneManager;
+
+    public GameObject launchPad;
+
     public Rigidbody rb;
     public Collider smallCollider;
     public Collider bigCollider;
@@ -22,6 +25,8 @@ public class RocketMotorNGUI : MonoBehaviour
     public float height;
     public float maxHeightReached;
     public bool isRocketing;
+    public bool isBoosting;
+    public float boostTimer;
 
     public int moneyEarned;
 
@@ -35,6 +40,8 @@ public class RocketMotorNGUI : MonoBehaviour
     public float maxHealth = 100f;
     public float health;
     public float dmgMultiplier = 1f;
+    public float flightTime;
+    public bool gameStarted;
     public bool isDead;
     public bool canTakeDmg;
 
@@ -44,33 +51,73 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             flamesList[i].gameObject.SetActive(true);
         }
-       // lightOne.gameObject.SetActive(false);
-
+        // lightOne.gameObject.SetActive(false);
+        //rb.drag = 0.1f;
         health = maxHealth;
         fuel = maxFuel;
     }
+    private void FireEngine()
+    {
+        if (force.y < maxForce)
+        {
+            force.y = force.y + liftSpeed;
+        }
 
+        if (boosterFuel > 0)
+        {
+            if (isBoosting)
+            {
+                force.y = force.y + (liftSpeed / 2);
+                boosterFuel = boosterFuel - boosterFuelConsumptionRate;
+                rb.AddRelativeForce(force);
+                flamesList[3].Play();
+            }
+        }
+        else
+        {
+            isBoosting = false;
+        }
+
+        if (fuel > 0)
+        {
+            fuel = fuel - fuelConsumptionRate;
+            rb.AddRelativeForce(force);
+            isRocketing = true;
+        } else
+        {
+            isRocketing = false;
+        }
+
+
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!canTakeDmg && transform.position.y > 2.5f)
+        if (gameStarted)
+        {
+            flightTime += Time.deltaTime;
+            if (launchPad != null)
+            {
+                Destroy(launchPad);
+            }
+        }
+
+        if (!canTakeDmg && transform.position.y > 4f)
         {
             canTakeDmg = true;
+            gameStarted = true;
         }
+        if (gameSceneManager.floor.transform.position.x <= -2f || gameSceneManager.floor.transform.position.x >= 2f)
+        {
+            canTakeDmg = true;
+            gameStarted = true;
+        }
+
         if (!isDead)
         {
             if (Input.GetKey(KeyCode.Space) || gameSceneManager.flyPressed)
             {
-                if (force.y < maxForce)
-                {
-                    force.y = force.y + liftSpeed;
-                }
-                if (fuel > 0)
-                {
-                    fuel = fuel - fuelConsumptionRate;
-                    rb.AddRelativeForce(force);
-                    isRocketing = true;
-                }
+                FireEngine();
             }
             if (fuel < 1 || !gameSceneManager.flyPressed)
             {
@@ -107,8 +154,16 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[1].Play();
             flamesList[2].Play();
             //lightOne.gameObject.SetActive(true);
-            flamesList[3].Play();
-
+            boostTimer += Time.deltaTime;
+        }
+        if (boostTimer >= 3f)
+        {
+            isBoosting = true;
+        }
+        if (!isBoosting)
+        {
+            flamesList[3].Pause();
+            flamesList[3].Clear();
         }
         if (!isRocketing)
         {
@@ -118,12 +173,15 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[1].Clear();
             flamesList[2].Pause();
             flamesList[2].Clear();
-            flamesList[3].Pause();
-            flamesList[3].Clear();
+
+            isBoosting = false;
+            boostTimer = 0f;
 
             //tailLight.gameObject.SetActive(false);
         }
+
         height = rb.position.y;
+
         if (maxHeightReached <= height)
         {
             maxHeightReached = height;
@@ -131,7 +189,10 @@ public class RocketMotorNGUI : MonoBehaviour
 
         if (isDead)
         {
-            StartCoroutine(PlayerDied());
+            if (gameStarted)
+            {
+                StartCoroutine(PlayerDied());
+            }
         }
     }
 
@@ -177,46 +238,46 @@ public class RocketMotorNGUI : MonoBehaviour
             }
         }
     }
+    private void TakeDamage()
+    {
+        health = health - (1f * dmgMultiplier);
 
+        if (health <= 0f)
+        {
+            isDead = true;
+            canTakeDmg = false;
+            health = 0f;
+        }
+    }
     private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag == "Enviroment")
         {
             if (canTakeDmg && !isDead)
             {
-                health = health - (10f * dmgMultiplier);
-
-                if (health <= 0f)
-                {
-                    isDead = true;
-                    health = 0f;
-                }
+                TakeDamage();
             }
         }
         if (collision.gameObject.tag == "Obstacle")
         {
             if (canTakeDmg && !isDead)
             {
-                health = health - (1f * dmgMultiplier);
 
                 Physics.IgnoreCollision(smallCollider, collision.gameObject.GetComponent<Collider>());
                 Physics.IgnoreCollision(bigCollider, collision.gameObject.GetComponent<Collider>());
 
-                if (health <= 0f)
-                {
-                    isDead = true;
-                    health = 0f;
-                }
+                TakeDamage();
             }
         }
     }
 
     IEnumerator PlayerDied()
     {
+        gameStarted = false;
         yield return new WaitForSeconds(1f);
         gameSceneManager.ShowGameOver();
         yield return new WaitForSeconds(1f);
-        Time.timeScale = 0;
-
+        rb.drag = rb.drag / 2;
+        //Time.timeScale = 0;
     }
 }
