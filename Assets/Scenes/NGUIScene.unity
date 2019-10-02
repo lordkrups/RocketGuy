@@ -4189,7 +4189,7 @@ PrefabInstance:
     - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
       propertyPath: liftSpeed
-      value: 0.3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
@@ -8554,9 +8554,9 @@ MonoBehaviour:
   curWidth: 0
   prevHeight: -55
   prevWidth: 0
-  numberOfCloudsToSpawn: 6
-  numberOfGoodThingsToSpawn: 8
-  numberOfBadThingsToSpawn: 6
+  numberOfCloudsToSpawn: 2
+  numberOfGoodThingsToSpawn: 2
+  numberOfBadThingsToSpawn: 2
   xDist: 40
   yDist: 70
   cloudObj: {fileID: 6162382454825405854, guid: 6d438fac0e59e434da94903b4b4f806a,

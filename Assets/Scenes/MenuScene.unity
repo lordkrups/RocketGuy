@@ -2588,7 +2588,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Paper Background
+  mSpriteName: Window
   mFixedAspect: 0
   mFillCenter: 1
 --- !u!1 &675762923
@@ -3427,16 +3427,16 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mColor: {r: 0.7735849, g: 0.7699359, b: 0.7699359, a: 1}
   mPivot: 4
-  mWidth: 450
+  mWidth: 500
   mHeight: 400
   mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.125
+  aspectRatio: 1.25
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -3938,6 +3938,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1043410753}
   - component: {fileID: 1043410752}
+  - component: {fileID: 1043410754}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -3982,6 +3983,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1043410754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043410751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce596360b5fee44fc8f25fc455cc8ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthLvlLabel: {fileID: 624589883}
+  engineLvlLabel: {fileID: 2063947190}
+  boosterEngineLvlLabel: {fileID: 2087167278}
+  controlLvlLabel: {fileID: 1034170528}
+  armourLvlLabel: {fileID: 1530412046}
+  fuelTankLvlLabel: {fileID: 213436902}
+  boosterTankLvlLabel: {fileID: 487575214}
+  airResistanceLvlLabel: {fileID: 212843176}
+  nummmyLvlLabel: {fileID: 1910488441}
+  fuelConsumptionLvlLabel: {fileID: 958559693}
+  boosterFuelConsumptionLvlLabel: {fileID: 1217043768}
+  diamondValueLvlLabel: {fileID: 1064002010}
 --- !u!1 &1044988364
 GameObject:
   m_ObjectHideFlags: 0
@@ -5863,6 +5888,85 @@ MonoBehaviour:
   mSpriteName: Icon Wrenches Red
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!1 &1526931764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1526931765}
+  - component: {fileID: 1526931766}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1526931765
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526931764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.2722576, y: 46.451843, z: 0.35229492}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1526931766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526931764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f8e306613e5047548cb82dc81a7d9a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  persistantMaxHealth: 0
+  persistantEngineUpgrade: 0
+  persistantBoosterEngineUpgrade: 0
+  persistantTurnSpeed: 0
+  persistantDamageMultiplier: 0
+  persistantMaxFuel: 0
+  persistantMaxBoosterFuel: 0
+  persistantAirReistance: 0
+  persistantFuelConsumptionRate: 0
+  persistantBoosterFuelConsumptionRate: 0
+  persistantNummyMultiplier: 0
+  persistantDiamonValue: 0
+  healthStatValues: 
+  healthStatCost: 
+  mainEngineStatValue: []
+  mainEngineCost: 
+  boosterEngineStatValue: []
+  boosterEngineCost: 
+  turnSpeedStatValue: []
+  turnSpeedCost: 
+  damageMultiplierStatValue: []
+  damageMultiplierCost: 
+  maxFuelStatValue: []
+  maxFuelCost: 
+  maxBoosterFuelStatValue: []
+  maxBoosterFuelCost: 
+  airReistanceStatValue: []
+  airReistanceCost: 
+  fuelConsumptionRateStatValue: []
+  fuelConsumptionRateCost: 
+  boosterFuelConsumptionRateStatValue: []
+  boosterFuelConsumptionRateCost: 
+  nummyMultiplierStatValue: []
+  nummyMultiplierCost: 
+  diamonValueStatValue: []
+  diamonValueCost: 
 --- !u!1 &1530412044
 GameObject:
   m_ObjectHideFlags: 0
@@ -6943,7 +7047,7 @@ GameObject:
   - component: {fileID: 1925134557}
   - component: {fileID: 1925134556}
   m_Layer: 5
-  m_Name: Multiplier
+  m_Name: Nummy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

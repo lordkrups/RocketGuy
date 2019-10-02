@@ -578,3 +578,38 @@ public class GameManager : MonoBehaviour
         updateLevels = false;
     }
 }
+
+/*
+     public List<float> mainEngineStatValue;
+    public List<int> mainEngineCost;
+
+    public List<float> boosterEngineStatValue;
+    public List<int> boosterEngineCost;
+
+    public List<float> turnSpeedStatValue;
+    public List<int> turnSpeedCost;
+
+    public List<float> damageMultiplierStatValue;
+    public List<int> damageMultiplierCost;
+
+    public List<float> maxFuelValue;
+    public List<int> maxFuelCost;
+
+    public List<float> maxBoosterFuelStatValue;
+    public List<int> maxBoosterFuelCost;
+
+    public List<float> airReistanceStatValue;
+    public List<int> airReistanceCost;
+
+    public List<float> fuelConsumptionRateStatValue;
+    public List<int> fuelConsumptionRateCost;
+
+    public List<float> boosterFuelConsumptionRateStatValue;
+    public List<int> boosterFuelConsumptionRateCost;
+
+    public List<float> nummyMultiplierStatValue;
+    public List<int> nummyMultiplierCost;
+
+    public List<float> diamonValueStatValue;
+    public List<int> diamonValueCost;
+ * */

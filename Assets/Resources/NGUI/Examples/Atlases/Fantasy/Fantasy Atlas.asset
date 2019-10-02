@@ -2723,10 +2723,10 @@ MonoBehaviour:
     y: 2340
     width: 254
     height: 169
-    borderLeft: 8
-    borderRight: 8
-    borderTop: 8
-    borderBottom: 8
+    borderLeft: 5
+    borderRight: 5
+    borderTop: 5
+    borderBottom: 5
     paddingLeft: 0
     paddingRight: 0
     paddingTop: 0
