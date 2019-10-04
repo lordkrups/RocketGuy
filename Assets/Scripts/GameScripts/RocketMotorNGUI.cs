@@ -18,9 +18,6 @@ public class RocketMotorNGUI : MonoBehaviour
     public Vector3 force;//variable for lift
     public Vector3 relativeTorque;//variable for torque
 
-    public float maxForce;//determines how much force to apply
-    public float liftSpeed;//determines how much force to apply
-    public float turnSpeed;//determines how much torque to apply
 
     public float height;
     public float maxHeightReached;
@@ -30,16 +27,21 @@ public class RocketMotorNGUI : MonoBehaviour
 
     public int moneyEarned;
 
-    public float maxFuel = 100f;
-    public float fuel;
+    public float maxHealth;
+    public float liftSpeed;//determines how much force to apply
+    public float maxForce;//determines how much force to apply
+    public float turnSpeed;//determines how much torque to apply
+    public float dmgMultiplier;
+    public float maxFuel;
+    public float maxBoosterFuel;
+    public float dragAirResis;
     public float fuelConsumptionRate;
-    public float maxBoosterFuel = 100f;
-    public float boosterFuel;
     public float boosterFuelConsumptionRate;
 
-    public float maxHealth = 100f;
     public float health;
-    public float dmgMultiplier = 1f;
+    public float fuel;
+    public float boosterFuel;
+
     public float flightTime;
     public bool gameStarted;
     public bool isDead;
@@ -47,14 +49,28 @@ public class RocketMotorNGUI : MonoBehaviour
 
     private void Start()
     {
+        maxHealth = RocketGameManager.Instance.StoreStatsInfos[0].itemStat[RocketGameManager.Instance.persistantMaxHealth];
+        liftSpeed = RocketGameManager.Instance.StoreStatsInfos[1].itemStat[RocketGameManager.Instance.persistantEngineUpgrade];
+        maxForce = RocketGameManager.Instance.StoreStatsInfos[2].itemStat[RocketGameManager.Instance.persistantBoosterEngineUpgrade];
+        turnSpeed = RocketGameManager.Instance.StoreStatsInfos[3].itemStat[RocketGameManager.Instance.persistantTurnSpeed];
+        dmgMultiplier = RocketGameManager.Instance.StoreStatsInfos[4].itemStat[RocketGameManager.Instance.persistantDamageMultiplier];
+        maxFuel = RocketGameManager.Instance.StoreStatsInfos[5].itemStat[RocketGameManager.Instance.persistantMaxFuel];
+        maxBoosterFuel = RocketGameManager.Instance.StoreStatsInfos[6].itemStat[RocketGameManager.Instance.persistantMaxBoosterFuel];
+        dragAirResis = RocketGameManager.Instance.StoreStatsInfos[7].itemStat[RocketGameManager.Instance.persistantAirReistance];
+        fuelConsumptionRate = RocketGameManager.Instance.StoreStatsInfos[9].itemStat[RocketGameManager.Instance.persistantFuelConsumptionRate];
+        boosterFuelConsumptionRate = RocketGameManager.Instance.StoreStatsInfos[10].itemStat[RocketGameManager.Instance.persistantBoosterFuelConsumptionRate];
+
+
         for (int i = 0; i < flamesList.Count; i++)
         {
             flamesList[i].gameObject.SetActive(true);
         }
         // lightOne.gameObject.SetActive(false);
-        //rb.drag = 0.1f;
         health = maxHealth;
         fuel = maxFuel;
+        boosterFuel = maxBoosterFuel;
+        rb.drag = dragAirResis;
+
     }
     private void FireEngine()
     {

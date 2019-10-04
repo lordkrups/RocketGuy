@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour
 {
+    public StoreManager storeManager;
+    public UIPanel MenuPanel;
+    public UIPanel StorePanel;
 
     public List<PlaneMotor> thingsToSpawn;
     public CloudObj cloudObj;
@@ -20,7 +23,18 @@ public class MainMenuManager : MonoBehaviour
         //SceneManager.LoadScene("GameScene");
         SceneManager.LoadScene("NGUIScene");
     }
-
+    public void OpenStore()
+    {
+        MenuPanel.Off();
+        StorePanel.On();
+        storeManager.Init();
+    }
+    public void CloseStore()
+    {
+        MenuPanel.On();
+        StorePanel.Off();
+        RocketGameManager.Instance.SavePersistatStats();
+    }
     private void Update()
     {
         if (!spawnThings)

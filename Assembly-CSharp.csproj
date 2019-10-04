@@ -238,13 +238,13 @@
     <Compile Include="Assets\Scripts\GameScripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\GameScripts\MenuRocket.cs" />
     <Compile Include="Assets\Scripts\GameScripts\PlaneMotor.cs" />
-    <Compile Include="Assets\Scripts\GameScripts\RocketGameEverythingLoader.cs" />
     <Compile Include="Assets\Scripts\GameScripts\RocketGameManager.cs" />
     <Compile Include="Assets\Scripts\GameScripts\RocketMotorNGUI.cs" />
     <Compile Include="Assets\Scripts\GameScripts\StoreManager.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ThingsSpawnerNGUI.cs" />
     <Compile Include="Assets\Scripts\GameScripts\TopPanelReporterNGUI.cs" />
     <Compile Include="Assets\Scripts\GameScripts\UpgradesStore.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\ValueToPass.cs" />
     <Compile Include="Assets\Scripts\GameScripts\XML Loaders\StoreStats.cs" />
     <Compile Include="Assets\Scripts\GameScripts\XML Loaders\StoreStatsContainer.cs" />
     <Compile Include="Assets\Scripts\GameScripts\XML Loaders\StoreStatsLoader.cs" />
@@ -256,7 +256,6 @@
     <Compile Include="Assets\Scripts\Helper\RevealPowerUp.cs" />
     <Compile Include="Assets\Scripts\Helper\SlotsHolder.cs" />
     <Compile Include="Assets\Scripts\Helper\Toast.cs" />
-    <Compile Include="Assets\Scripts\Helper\ValueToPass.cs" />
     <Compile Include="Assets\Scripts\Helper\VirtualController.cs" />
     <Compile Include="Assets\Scripts\Helper\WheelController.cs" />
     <Compile Include="Assets\Scripts\Helper\XmlDataExtension.cs" />

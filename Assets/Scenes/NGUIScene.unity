@@ -4214,7 +4214,7 @@ PrefabInstance:
     - target: {fileID: 3932371409181539739, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
       propertyPath: m_Drag
-      value: 0.65
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3932371409181539739, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}

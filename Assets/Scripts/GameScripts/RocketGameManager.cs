@@ -19,6 +19,8 @@ public class RocketGameManager : MonoBehaviour
     }
     public Dictionary<int, StoreStats> StoreStatsInfos { get; private set; }
 
+    public int playedBefore;
+
     public int persistantMaxHealth;
     public int persistantEngineUpgrade;
     public int persistantBoosterEngineUpgrade;
@@ -27,9 +29,9 @@ public class RocketGameManager : MonoBehaviour
     public int persistantMaxFuel;
     public int persistantMaxBoosterFuel;
     public int persistantAirReistance;
+    public int persistantNummyMultiplier;
     public int persistantFuelConsumptionRate;
     public int persistantBoosterFuelConsumptionRate;
-    public int persistantNummyMultiplier;
     public int persistantDiamonValue;
 
     public List<int> healthStatValues;
@@ -77,11 +79,33 @@ public class RocketGameManager : MonoBehaviour
         StoreStatsLoader storeStatsLoader = new StoreStatsLoader();
         StoreStatsInfos = storeStatsLoader.GetDict();
 
+        playedBefore = PlayerPrefs.GetInt("FirstPlay");
+
+        if (PlayerPrefs.GetInt("FirstPlay") == 0)
+        {
+            playedBefore = 1;
+            //PlayerPrefs.GetInt("FirstPlay", 1);
+            PlayerPrefs.SetInt("persistantMaxHealth", 1);
+            PlayerPrefs.SetInt("persistantEngineUpgrade", 1);
+            PlayerPrefs.SetInt("persistantBoosterEngineUpgrade", 1);
+            PlayerPrefs.SetInt("persistantTurnSpeed", 1);
+            PlayerPrefs.SetInt("persistantDamageMultiplier", 1);
+            PlayerPrefs.SetInt("persistantMaxFuel", 1);
+            PlayerPrefs.SetInt("persistantMaxBoosterFuel", 1);
+            PlayerPrefs.SetInt("persistantAirReistance", 1);
+            PlayerPrefs.SetInt("persistantFuelConsumptionRate", 1);
+            PlayerPrefs.SetInt("persistantBoosterFuelConsumptionRate", 1);
+            PlayerPrefs.SetInt("persistantNummyMultiplier", 1);
+            PlayerPrefs.SetInt("persistantDiamonValue", 1);
+        }    
+
+
         RetrievePersistatStats();
 
     }
-    private void SavePersistatStats()
+    public void SavePersistatStats()
     {
+        PlayerPrefs.SetInt("FirstPlay", playedBefore);
         PlayerPrefs.SetInt("persistantMaxHealth", persistantMaxHealth);
         PlayerPrefs.SetInt("persistantEngineUpgrade", persistantEngineUpgrade);
         PlayerPrefs.SetInt("persistantBoosterEngineUpgrade", persistantBoosterEngineUpgrade);
@@ -97,18 +121,18 @@ public class RocketGameManager : MonoBehaviour
     }
     private void RetrievePersistatStats()
     {
-        PlayerPrefs.GetInt("persistantMaxHealth", persistantMaxHealth);
-        PlayerPrefs.GetInt("persistantEngineUpgrade", persistantEngineUpgrade);
-        PlayerPrefs.GetInt("persistantBoosterEngineUpgrade", persistantBoosterEngineUpgrade);
-        PlayerPrefs.GetInt("persistantTurnSpeed", persistantTurnSpeed);
-        PlayerPrefs.GetInt("persistantDamageMultiplier", persistantDamageMultiplier);
-        PlayerPrefs.GetInt("persistantMaxFuel", persistantMaxFuel);
-        PlayerPrefs.GetInt("persistantMaxBoosterFuel", persistantMaxBoosterFuel);
-        PlayerPrefs.GetInt("persistantAirReistance", persistantAirReistance);
-        PlayerPrefs.GetInt("persistantFuelConsumptionRate", persistantFuelConsumptionRate);
-        PlayerPrefs.GetInt("persistantBoosterFuelConsumptionRate", persistantBoosterFuelConsumptionRate);
-        PlayerPrefs.GetInt("persistantNummyMultiplier", persistantNummyMultiplier);
-        PlayerPrefs.GetInt("persistantDiamonValue", persistantDiamonValue);
+        persistantMaxHealth = PlayerPrefs.GetInt("persistantMaxHealth");
+        persistantEngineUpgrade = PlayerPrefs.GetInt("persistantEngineUpgrade");
+        persistantBoosterEngineUpgrade = PlayerPrefs.GetInt("persistantBoosterEngineUpgrade");
+        persistantTurnSpeed = PlayerPrefs.GetInt("persistantTurnSpeed");
+        persistantDamageMultiplier =PlayerPrefs.GetInt("persistantDamageMultiplier");
+        persistantMaxFuel =PlayerPrefs.GetInt("persistantMaxFuel");
+        persistantMaxBoosterFuel = PlayerPrefs.GetInt("persistantMaxBoosterFuel");
+        persistantAirReistance = PlayerPrefs.GetInt("persistantAirReistance");
+        persistantFuelConsumptionRate = PlayerPrefs.GetInt("persistantFuelConsumptionRate");
+        persistantBoosterFuelConsumptionRate = PlayerPrefs.GetInt("persistantBoosterFuelConsumptionRate");
+        persistantNummyMultiplier = PlayerPrefs.GetInt("persistantNummyMultiplier");
+        persistantDiamonValue = PlayerPrefs.GetInt("persistantDiamonValue");
 
 
         int[] hpVals = Array.ConvertAll(StoreStatsInfos[0].stat.Split(','), int.Parse);
@@ -116,7 +140,8 @@ public class RocketGameManager : MonoBehaviour
         for (int x = 0; x < hpVals.Length; x++)
         {
             //Debug.Log("unlockedGods 1");
-
+            //StoreStatsInfos[0].itemStat.Add(hpVals[x]);
+            //StoreStatsInfos[0].itemCost.Add(hpCosts[x]);
             healthStatValues.Add(hpVals[x]);
             healthStatCost.Add(hpCosts[x]);
         }

@@ -25,6 +25,8 @@ public class StoreStats : MonoBehaviour
     [XmlAttribute("description")]
     public string description;
 
+    public List<float> itemStat = new List<float>();
+    public List<int> itemCost = new List<int>();
 
     public StoreStats Set(XElement e)
     {
@@ -36,6 +38,16 @@ public class StoreStats : MonoBehaviour
         description = e.GetString("description");
 
 
+        float[] Vals = Array.ConvertAll(stat.Split(','), float.Parse);
+        int[] Costs = Array.ConvertAll(cost.Split(','), int.Parse);
+        for (int x = 0; x < Vals.Length; x++)
+        {
+            //Debug.Log("unlockedGods 1");
+
+            itemStat.Add(Vals[x]);
+            itemCost.Add(Costs[x]);
+        }
+        
         return this;
     }
 }

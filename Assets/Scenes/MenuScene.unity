@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 9565286}
   - component: {fileID: 9565285}
   - component: {fileID: 9565284}
+  - component: {fileID: 9565287}
   m_Layer: 5
   m_Name: Booster Tank
   m_TagString: Untagged
@@ -169,7 +170,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 9565287}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -249,6 +256,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &9565287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9565282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 6
+  stringToPass: 
 --- !u!1 &31216506
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,6 +456,7 @@ GameObject:
   - component: {fileID: 132651642}
   - component: {fileID: 132651641}
   - component: {fileID: 132651640}
+  - component: {fileID: 132651643}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -472,7 +494,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 132651643}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -552,6 +580,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &132651643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132651638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 3
+  stringToPass: 
 --- !u!1 &168588600
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +605,7 @@ GameObject:
   - component: {fileID: 168588601}
   - component: {fileID: 168588602}
   m_Layer: 5
-  m_Name: Title
+  m_Name: Item Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,7 +998,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &238104832
 Transform:
   m_ObjectHideFlags: 0
@@ -972,6 +1014,7 @@ Transform:
   - {fileID: 658387177}
   - {fileID: 978429080}
   - {fileID: 1136827723}
+  - {fileID: 1393801135}
   m_Father: {fileID: 218913107}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1025,6 +1068,107 @@ MonoBehaviour:
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
   useSortingOrder: 0
+--- !u!1 &245680786
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 245680787}
+  - component: {fileID: 245680788}
+  m_Layer: 5
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &245680787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245680786}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1393801135}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &245680788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 245680786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 200
+  mHeight: 70
+  mDepth: 100
+  mMat: {fileID: 0}
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2.857143
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 12800000, guid: 8c66abba73b0b47d0854cc3f7b77cd46, type: 3}
+  mFont: {fileID: 0}
+  mText: close
+  mFontSize: 40
+  mFontStyle: 0
+  mAlignment: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 0
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mOverflow: 0
+  mApplyGradient: 1
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mUseFloatSpacing: 0
+  mFloatSpacingX: 0
+  mFloatSpacingY: 0
+  mOverflowEllipsis: 0
+  mOverflowWidth: 0
+  mOverflowHeight: 0
+  mModifier: 1
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
 --- !u!1 &285293292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1565,7 @@ Transform:
   m_Children:
   - {fileID: 1516994473}
   m_Father: {fileID: 1136827723}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &329794227
 MonoBehaviour:
@@ -1491,6 +1635,7 @@ GameObject:
   - component: {fileID: 362721812}
   - component: {fileID: 362721811}
   - component: {fileID: 362721810}
+  - component: {fileID: 362721813}
   m_Layer: 5
   m_Name: Armor
   m_TagString: Untagged
@@ -1528,7 +1673,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 362721813}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -1608,6 +1759,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &362721813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362721808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 4
+  stringToPass: 
 --- !u!1 &380348077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1884,6 +2049,107 @@ MonoBehaviour:
   mSpriteName: Icon Lightning Yellow
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!1 &496369281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 496369282}
+  - component: {fileID: 496369283}
+  m_Layer: 5
+  m_Name: Label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &496369282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496369281}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2, y: 3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1950475213}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &496369283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 496369281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 200
+  mHeight: 70
+  mDepth: 100
+  mMat: {fileID: 0}
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2.857143
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 12800000, guid: 8c66abba73b0b47d0854cc3f7b77cd46, type: 3}
+  mFont: {fileID: 0}
+  mText: "store\t"
+  mFontSize: 40
+  mFontStyle: 0
+  mAlignment: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 0
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 1, y: 1}
+  mOverflow: 0
+  mApplyGradient: 1
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mUseFloatSpacing: 0
+  mFloatSpacingX: 0
+  mFloatSpacingY: 0
+  mOverflowEllipsis: 0
+  mOverflowWidth: 0
+  mOverflowHeight: 0
+  mModifier: 1
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
 --- !u!1 &527632494
 GameObject:
   m_ObjectHideFlags: 0
@@ -2437,7 +2703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &650552321
 Transform:
   m_ObjectHideFlags: 0
@@ -2451,6 +2717,7 @@ Transform:
   m_Children:
   - {fileID: 1169475142}
   - {fileID: 1122066714}
+  - {fileID: 1950475213}
   m_Father: {fileID: 218913107}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2493,7 +2760,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3004
+  startingRenderQueue: 3000
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -2725,6 +2992,7 @@ GameObject:
   - component: {fileID: 712090460}
   - component: {fileID: 712090459}
   - component: {fileID: 712090458}
+  - component: {fileID: 712090461}
   m_Layer: 5
   m_Name: Engine
   m_TagString: Untagged
@@ -2762,7 +3030,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 712090461}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -2842,6 +3116,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &712090461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712090456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 1
+  stringToPass: 
 --- !u!1 &717089345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2940,8 +3228,10 @@ GameObject:
   m_Component:
   - component: {fileID: 778803803}
   - component: {fileID: 778803804}
+  - component: {fileID: 778803806}
+  - component: {fileID: 778803805}
   m_Layer: 5
-  m_Name: Sprite
+  m_Name: Buy Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2993,14 +3283,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 190
-  mHeight: 60
+  mWidth: 256
+  mHeight: 90
   mDepth: 5
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 3.1666667
+  aspectRatio: 2.8444445
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -3018,6 +3308,48 @@ MonoBehaviour:
   mSpriteName: bt_common_blue
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &778803805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778803802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e862f287df53bb64db191162f851a296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onHoverOver: []
+  onHoverOut: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: BuyItemUpgrade
+    mParameters: []
+    oneShot: 0
+  onRelease: []
+  onSelect: []
+  onDeselect: []
+  onClick: []
+  onDoubleClick: []
+  onDragStart: []
+  onDragEnd: []
+  onDragOver: []
+  onDragOut: []
+  onDrag: []
+--- !u!65 &778803806
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778803802}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 190, y: 60, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &864866539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3290,7 +3622,7 @@ GameObject:
   - component: {fileID: 922226656}
   - component: {fileID: 922226657}
   m_Layer: 5
-  m_Name: HealthSprite
+  m_Name: Item Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3736,7 +4068,7 @@ GameObject:
   - component: {fileID: 1012211961}
   - component: {fileID: 1012211962}
   m_Layer: 5
-  m_Name: CostValue (1)
+  m_Name: Label
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3787,19 +4119,19 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 150
-  mHeight: 52
+  mWidth: 206
+  mHeight: 70
   mDepth: 100
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.8846154
+  aspectRatio: 2.942857
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 8c66abba73b0b47d0854cc3f7b77cd46, type: 3}
   mFont: {fileID: 0}
-  mText: "buy\t"
-  mFontSize: 20
+  mText: buy
+  mFontSize: 50
   mFontStyle: 0
   mAlignment: 0
   mEncoding: 1
@@ -3958,6 +4290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8bc0ab70f0b34fa48db51b345cc689f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  storeManager: {fileID: 1043410754}
+  MenuPanel: {fileID: 650552322}
+  StorePanel: {fileID: 238104833}
   thingsToSpawn:
   - {fileID: 7409727653537282936, guid: c6db48e5514514b8eaf944c05f48d28e, type: 3}
   - {fileID: 4648607684815959382, guid: 6d3b66a002fb048338df220133e7fcdb, type: 3}
@@ -4007,6 +4342,12 @@ MonoBehaviour:
   fuelConsumptionLvlLabel: {fileID: 958559693}
   boosterFuelConsumptionLvlLabel: {fileID: 1217043768}
   diamondValueLvlLabel: {fileID: 1064002010}
+  highlightedItem: 0
+  itemName: {fileID: 168588602}
+  itemImage: {fileID: 922226657}
+  itemLevel: {fileID: 1462748284}
+  itemCost: {fileID: 1668388088}
+  itemDescription: {fileID: 1516994474}
 --- !u!1 &1044988364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4106,6 +4447,7 @@ GameObject:
   - component: {fileID: 1056352503}
   - component: {fileID: 1056352502}
   - component: {fileID: 1056352501}
+  - component: {fileID: 1056352504}
   m_Layer: 5
   m_Name: Booster Engine
   m_TagString: Untagged
@@ -4143,7 +4485,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 1056352504}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -4223,6 +4571,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1056352504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056352499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 2
+  stringToPass: 
 --- !u!1 &1064002008
 GameObject:
   m_ObjectHideFlags: 0
@@ -4337,6 +4699,7 @@ GameObject:
   - component: {fileID: 1077125265}
   - component: {fileID: 1077125264}
   - component: {fileID: 1077125263}
+  - component: {fileID: 1077125266}
   m_Layer: 5
   m_Name: Fuel Tank
   m_TagString: Untagged
@@ -4374,7 +4737,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 1077125266}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -4454,6 +4823,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1077125266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077125261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 5
+  stringToPass: 
 --- !u!1 &1093652836
 GameObject:
   m_ObjectHideFlags: 0
@@ -4705,8 +5088,8 @@ Transform:
   - {fileID: 940502685}
   - {fileID: 168588601}
   - {fileID: 922226656}
-  - {fileID: 329794226}
   - {fileID: 2052852800}
+  - {fileID: 329794226}
   - {fileID: 778803803}
   m_Father: {fileID: 238104832}
   m_RootOrder: 3
@@ -5053,6 +5436,7 @@ GameObject:
   - component: {fileID: 1228438633}
   - component: {fileID: 1228438632}
   - component: {fileID: 1228438631}
+  - component: {fileID: 1228438634}
   m_Layer: 5
   m_Name: Booster Consumption
   m_TagString: Untagged
@@ -5090,7 +5474,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 1228438634}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -5170,6 +5560,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1228438634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228438629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 10
+  stringToPass: 
 --- !u!1 &1238078529
 GameObject:
   m_ObjectHideFlags: 0
@@ -5340,6 +5744,139 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1393801134
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1393801135}
+  - component: {fileID: 1393801138}
+  - component: {fileID: 1393801137}
+  - component: {fileID: 1393801136}
+  m_Layer: 5
+  m_Name: CloseStoreButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1393801135
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393801134}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -574, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 245680787}
+  m_Father: {fileID: 238104832}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1393801136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393801134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 1393801134}
+  hover: {r: 0.5163379, g: 0.9339623, b: 0.46257564, a: 1}
+  pressed: {r: 0.0041707507, g: 0.7924528, b: 0, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick:
+  - mTarget: {fileID: 1043410752}
+    mMethodName: CloseStore
+    mParameters: []
+    oneShot: 0
+--- !u!65 &1393801137
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393801134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 206, y: 86, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1393801138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393801134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 206
+  mHeight: 86
+  mDepth: 1
+  mMat: {fileID: 0}
+  autoResizeBoxCollider: 1
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2.3953488
+  mType: 1
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
+  mSpriteName: bt_common_red
+  mFixedAspect: 0
+  mFillCenter: 1
 --- !u!1 &1432121215
 GameObject:
   m_ObjectHideFlags: 0
@@ -5352,6 +5889,7 @@ GameObject:
   - component: {fileID: 1432121219}
   - component: {fileID: 1432121218}
   - component: {fileID: 1432121217}
+  - component: {fileID: 1432121220}
   m_Layer: 5
   m_Name: HealthOBj
   m_TagString: Untagged
@@ -5389,7 +5927,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 1432121220}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -5469,6 +6013,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1432121220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432121215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 0
+  stringToPass: 
 --- !u!1 &1445473292
 GameObject:
   m_ObjectHideFlags: 0
@@ -5481,6 +6039,7 @@ GameObject:
   - component: {fileID: 1445473296}
   - component: {fileID: 1445473295}
   - component: {fileID: 1445473294}
+  - component: {fileID: 1445473297}
   m_Layer: 5
   m_Name: Air Resistance
   m_TagString: Untagged
@@ -5518,7 +6077,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 1445473297}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -5598,6 +6163,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1445473297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445473292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 7
+  stringToPass: 
 --- !u!1 &1462748282
 GameObject:
   m_ObjectHideFlags: 0
@@ -5609,7 +6188,7 @@ GameObject:
   - component: {fileID: 1462748283}
   - component: {fileID: 1462748284}
   m_Layer: 5
-  m_Name: LevelValue
+  m_Name: Item Level
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5710,7 +6289,7 @@ GameObject:
   - component: {fileID: 1516994473}
   - component: {fileID: 1516994474}
   m_Layer: 5
-  m_Name: Label
+  m_Name: Item Desc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5931,6 +6510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8e306613e5047548cb82dc81a7d9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playedBefore: 0
   persistantMaxHealth: 0
   persistantEngineUpgrade: 0
   persistantBoosterEngineUpgrade: 0
@@ -5939,9 +6519,9 @@ MonoBehaviour:
   persistantMaxFuel: 0
   persistantMaxBoosterFuel: 0
   persistantAirReistance: 0
+  persistantNummyMultiplier: 0
   persistantFuelConsumptionRate: 0
   persistantBoosterFuelConsumptionRate: 0
-  persistantNummyMultiplier: 0
   persistantDiamonValue: 0
   healthStatValues: 
   healthStatCost: 
@@ -6168,6 +6748,7 @@ GameObject:
   - component: {fileID: 1559259981}
   - component: {fileID: 1559259980}
   - component: {fileID: 1559259979}
+  - component: {fileID: 1559259982}
   m_Layer: 5
   m_Name: Fuel Consumption
   m_TagString: Untagged
@@ -6205,7 +6786,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 1559259982}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -6285,6 +6872,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1559259982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559259977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 9
+  stringToPass: 
 --- !u!1 &1594010134
 GameObject:
   m_ObjectHideFlags: 0
@@ -6501,7 +7102,7 @@ GameObject:
   - component: {fileID: 1668388087}
   - component: {fileID: 1668388088}
   m_Layer: 5
-  m_Name: CostValue
+  m_Name: Item Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7046,6 +7647,7 @@ GameObject:
   - component: {fileID: 1925134558}
   - component: {fileID: 1925134557}
   - component: {fileID: 1925134556}
+  - component: {fileID: 1925134559}
   m_Layer: 5
   m_Name: Nummy
   m_TagString: Untagged
@@ -7083,7 +7685,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 1925134559}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -7163,6 +7771,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1925134559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925134554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 8
+  stringToPass: 
 --- !u!1 &1937025738
 GameObject:
   m_ObjectHideFlags: 0
@@ -7175,6 +7797,7 @@ GameObject:
   - component: {fileID: 1937025742}
   - component: {fileID: 1937025741}
   - component: {fileID: 1937025740}
+  - component: {fileID: 1937025743}
   m_Layer: 5
   m_Name: Diamond Value
   m_TagString: Untagged
@@ -7212,7 +7835,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onHoverOver: []
   onHoverOut: []
-  onPress: []
+  onPress:
+  - mTarget: {fileID: 1043410754}
+    mMethodName: SelectItem
+    mParameters:
+    - obj: {fileID: 1937025743}
+      field: valueToPass
+    oneShot: 0
   onRelease: []
   onSelect: []
   onDeselect: []
@@ -7292,6 +7921,20 @@ MonoBehaviour:
   mSpriteName: main_bt_base
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1937025743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937025738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d299b6efe1063475db8b64c7231a9525, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  valueToPass: 11
+  stringToPass: 
 --- !u!1 &1939067114
 GameObject:
   m_ObjectHideFlags: 0
@@ -7369,6 +8012,139 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1950475212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1950475213}
+  - component: {fileID: 1950475216}
+  - component: {fileID: 1950475215}
+  - component: {fileID: 1950475214}
+  m_Layer: 5
+  m_Name: StoreButton
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1950475213
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950475212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -498, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 496369282}
+  m_Father: {fileID: 650552321}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1950475214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950475212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fdca5042b1d12a4890ec1bd4f04290d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tweenTarget: {fileID: 1950475212}
+  hover: {r: 0.5163379, g: 0.9339623, b: 0.46257564, a: 1}
+  pressed: {r: 0.0041707507, g: 0.7924528, b: 0, a: 1}
+  disabledColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  duration: 0.2
+  dragHighlight: 0
+  hoverSprite: 
+  pressedSprite: 
+  disabledSprite: 
+  hoverSprite2D: {fileID: 0}
+  pressedSprite2D: {fileID: 0}
+  disabledSprite2D: {fileID: 0}
+  pixelSnap: 0
+  onClick:
+  - mTarget: {fileID: 1043410752}
+    mMethodName: OpenStore
+    mParameters: []
+    oneShot: 0
+--- !u!65 &1950475215
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950475212}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 256, y: 90, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1950475216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950475212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 256
+  mHeight: 90
+  mDepth: 1
+  mMat: {fileID: 0}
+  autoResizeBoxCollider: 1
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 2.8444445
+  mType: 1
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
+  mSpriteName: bt_common_blue
+  mFixedAspect: 0
+  mFillCenter: 1
 --- !u!1 &1978325359
 GameObject:
   m_ObjectHideFlags: 0
@@ -7575,7 +8351,7 @@ Transform:
   - {fileID: 2133242255}
   - {fileID: 1668388087}
   m_Father: {fileID: 1136827723}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2052852801
 MonoBehaviour:
@@ -7910,7 +8686,7 @@ MonoBehaviour:
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 8c66abba73b0b47d0854cc3f7b77cd46, type: 3}
   mFont: {fileID: 0}
-  mText: 'cost:'
+  mText: Upgrade Cost
   mFontSize: 20
   mFontStyle: 0
   mAlignment: 0
