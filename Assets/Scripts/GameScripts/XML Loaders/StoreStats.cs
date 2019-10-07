@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 
-public class StoreStats : MonoBehaviour
+public class StoreStats
 {
     [XmlAttribute("id")]
     public int id;

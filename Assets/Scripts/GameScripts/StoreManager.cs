@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class StoreManager : MonoBehaviour
 {
+    public Toast toast;
+    public UILabel playerMoneyLabel;
 
     public UILabel healthLvlLabel;
     public UILabel engineLvlLabel;
@@ -30,8 +32,9 @@ public class StoreManager : MonoBehaviour
     // Start is called before the first frame update
     public void Init()
     {
-        healthLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantMaxHealth.ToString() + "/" + (RocketGameManager.Instance.healthStatValues.Count-1).ToString();
+        playerMoneyLabel.text = RocketGameManager.Instance.persistantPlayerCoins.ToString();
 
+        healthLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantMaxHealth.ToString() + "/" + (RocketGameManager.Instance.healthStatValues.Count-1).ToString();
         engineLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantEngineUpgrade.ToString() + "/" + (RocketGameManager.Instance.mainEngineStatValue.Count-1).ToString();
         boosterEngineLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantBoosterEngineUpgrade.ToString() + "/" + (RocketGameManager.Instance.boosterEngineStatValue.Count-1).ToString();
         controlLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantTurnSpeed.ToString() + "/" + (RocketGameManager.Instance.turnSpeedStatValue.Count-1).ToString();
@@ -115,83 +118,176 @@ public class StoreManager : MonoBehaviour
 
     }
 
+    public bool MakeStorePurchase()
+    {
+        bool canBuy = false;
+
+
+
+        return canBuy;
+    }
+
     public void BuyItemUpgrade()
     {
-        switch (highlightedItem)
-        {
-            case 0:
-                if (RocketGameManager.Instance.persistantMaxHealth < RocketGameManager.Instance.healthStatValues.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantMaxHealth += 1;
-                }
+            switch (highlightedItem)
+            {
+                case 0:
+                    if (RocketGameManager.Instance.persistantMaxHealth < RocketGameManager.Instance.healthStatValues.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantMaxHealth += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
+                    break;
+                case 1:
+                    if (RocketGameManager.Instance.persistantEngineUpgrade < RocketGameManager.Instance.mainEngineStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantEngineUpgrade += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
                 break;
-            case 1:
-                if (RocketGameManager.Instance.persistantEngineUpgrade < RocketGameManager.Instance.mainEngineStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantEngineUpgrade += 1;
-                }
+                case 2:
+                    if (RocketGameManager.Instance.persistantBoosterEngineUpgrade < RocketGameManager.Instance.boosterEngineStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantBoosterEngineUpgrade += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
                 break;
-            case 2:
-                if (RocketGameManager.Instance.persistantBoosterEngineUpgrade < RocketGameManager.Instance.boosterEngineStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantBoosterEngineUpgrade += 1;
-                }
+                case 3:
+                    if (RocketGameManager.Instance.persistantTurnSpeed < RocketGameManager.Instance.turnSpeedStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantTurnSpeed += 1;
+                        }
+                    else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
                 break;
-            case 3:
-                if (RocketGameManager.Instance.persistantTurnSpeed < RocketGameManager.Instance.turnSpeedStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantTurnSpeed += 1;
-                }
+                case 4:
+                    if (RocketGameManager.Instance.persistantDamageMultiplier < RocketGameManager.Instance.damageMultiplierStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantDamageMultiplier += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
                 break;
-            case 4:
-                if (RocketGameManager.Instance.persistantDamageMultiplier < RocketGameManager.Instance.damageMultiplierStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantDamageMultiplier += 1;
-                }
-                break;
-            case 5:
-                if (RocketGameManager.Instance.persistantMaxFuel < RocketGameManager.Instance.maxFuelStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantMaxFuel += 1;
-                }
-                break;
-            case 6:
-                if (RocketGameManager.Instance.persistantMaxBoosterFuel < RocketGameManager.Instance.maxBoosterFuelStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantMaxBoosterFuel += 1;
-                }
-                break;
-            case 7:
-                if (RocketGameManager.Instance.persistantAirReistance < RocketGameManager.Instance.airReistanceStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantAirReistance += 1;
-                }
-                break;
-            case 8:
-                if (RocketGameManager.Instance.persistantNummyMultiplier < RocketGameManager.Instance.nummyMultiplierStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantNummyMultiplier += 1;
-                }
-                break;
-            case 9:
-                if (RocketGameManager.Instance.persistantFuelConsumptionRate < RocketGameManager.Instance.fuelConsumptionRateStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantFuelConsumptionRate += 1;
-                }
-                break;
-            case 10:
-                if (RocketGameManager.Instance.persistantBoosterFuelConsumptionRate < RocketGameManager.Instance.boosterFuelConsumptionRateStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantBoosterFuelConsumptionRate += 1;
-                }
-                break;
-            case 11:
-                if (RocketGameManager.Instance.persistantDiamonValue < RocketGameManager.Instance.diamonValueStatValue.Count - 1)
-                {
-                    RocketGameManager.Instance.persistantDiamonValue += 1;
-                }
-                break;
-        }
+                case 5:
+                    if (RocketGameManager.Instance.persistantMaxFuel < RocketGameManager.Instance.maxFuelStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantMaxFuel += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
+                    break;
+                case 6:
+                    if (RocketGameManager.Instance.persistantMaxBoosterFuel < RocketGameManager.Instance.maxBoosterFuelStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantMaxBoosterFuel += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
+                    break;
+                case 7:
+                    if (RocketGameManager.Instance.persistantAirReistance < RocketGameManager.Instance.airReistanceStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantAirReistance += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
+                    break;
+                case 8:
+                    if (RocketGameManager.Instance.persistantNummyMultiplier < RocketGameManager.Instance.nummyMultiplierStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantNummyMultiplier += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
+                    break;
+                case 9:
+                    if (RocketGameManager.Instance.persistantFuelConsumptionRate < RocketGameManager.Instance.fuelConsumptionRateStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantFuelConsumptionRate += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
+                    break;
+                case 10:
+                    if (RocketGameManager.Instance.persistantBoosterFuelConsumptionRate < RocketGameManager.Instance.boosterFuelConsumptionRateStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantBoosterFuelConsumptionRate += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
+                    break;
+                case 11:
+                    if (RocketGameManager.Instance.persistantDiamonValue < RocketGameManager.Instance.diamonValueStatValue.Count - 1)
+                    {
+                        if (RocketGameManager.Instance.PurchaseWithCoins(RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1]))
+                        {
+                            RocketGameManager.Instance.persistantDiamonValue += 1;
+                        }
+                        else
+                        {
+                            toast.ToastSetting("Not enough coins!");
+                        }
+                    }
+                    break;
+            }
         Init();
         //UpdateItemInfoBox();
     }

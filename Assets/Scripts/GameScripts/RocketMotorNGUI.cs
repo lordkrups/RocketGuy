@@ -23,7 +23,9 @@ public class RocketMotorNGUI : MonoBehaviour
     public float maxHeightReached;
     public bool isRocketing;
     public bool isBoosting;
+    public bool isFalling;
     public float boostTimer;
+    public float fallTimer;
 
     public int moneyEarned;
 
@@ -99,6 +101,7 @@ public class RocketMotorNGUI : MonoBehaviour
             fuel = fuel - fuelConsumptionRate;
             rb.AddRelativeForce(force);
             isRocketing = true;
+            fallTimer = 0;
         } else
         {
             isRocketing = false;
@@ -163,6 +166,14 @@ public class RocketMotorNGUI : MonoBehaviour
                 relativeTorque.z = 0;
             }
         }
+        if (isFalling)
+        {
+            rb.drag = rb.drag / 4;
+        }
+        else
+        {
+            rb.drag = dragAirResis;
+        }
 
         if (isRocketing)
         {
@@ -171,6 +182,11 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[2].Play();
             //lightOne.gameObject.SetActive(true);
             boostTimer += Time.deltaTime;
+            isFalling = false;
+        }
+        if (fallTimer >= 3f)
+        {
+            isFalling = true;
         }
         if (boostTimer >= 3f)
         {
@@ -183,6 +199,8 @@ public class RocketMotorNGUI : MonoBehaviour
         }
         if (!isRocketing)
         {
+            fallTimer += Time.deltaTime;
+
             flamesList[0].Pause();
             flamesList[0].Clear();
             flamesList[1].Pause();
@@ -292,8 +310,8 @@ public class RocketMotorNGUI : MonoBehaviour
         gameStarted = false;
         yield return new WaitForSeconds(1f);
         gameSceneManager.ShowGameOver();
+        rb.drag = rb.drag / 4;
         yield return new WaitForSeconds(1f);
-        rb.drag = rb.drag / 2;
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
     }
 }

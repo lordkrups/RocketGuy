@@ -21,7 +21,7 @@ public class RocketGameManager : MonoBehaviour
 
     public int playedBefore;
 
-    public int persistantPlayerMoney;
+    public int persistantPlayerCoins;
 
     public int persistantMaxHealth;
     public int persistantEngineUpgrade;
@@ -87,7 +87,7 @@ public class RocketGameManager : MonoBehaviour
         {
             playedBefore = 1;
             //PlayerPrefs.GetInt("FirstPlay", 1);
-            PlayerPrefs.SetInt("persistantPlayerMoney", 100000);
+            PlayerPrefs.SetInt("persistantPlayerCoins", 10000);
             PlayerPrefs.SetInt("persistantMaxHealth", 1);
             PlayerPrefs.SetInt("persistantEngineUpgrade", 1);
             PlayerPrefs.SetInt("persistantBoosterEngineUpgrade", 1);
@@ -109,7 +109,7 @@ public class RocketGameManager : MonoBehaviour
     public void SavePersistatStats()
     {
         PlayerPrefs.SetInt("FirstPlay", playedBefore);
-        PlayerPrefs.SetInt("persistantPlayerMoney", persistantPlayerMoney);
+        PlayerPrefs.SetInt("persistantPlayerCoins", persistantPlayerCoins);
         PlayerPrefs.SetInt("persistantMaxHealth", persistantMaxHealth);
         PlayerPrefs.SetInt("persistantEngineUpgrade", persistantEngineUpgrade);
         PlayerPrefs.SetInt("persistantBoosterEngineUpgrade", persistantBoosterEngineUpgrade);
@@ -125,7 +125,7 @@ public class RocketGameManager : MonoBehaviour
     }
     private void RetrievePersistatStats()
     {
-        persistantPlayerMoney = PlayerPrefs.GetInt("persistantPlayerMoney");
+        persistantPlayerCoins = PlayerPrefs.GetInt("persistantPlayerCoins");
         persistantMaxHealth = PlayerPrefs.GetInt("persistantMaxHealth");
         persistantEngineUpgrade = PlayerPrefs.GetInt("persistantEngineUpgrade");
         persistantBoosterEngineUpgrade = PlayerPrefs.GetInt("persistantBoosterEngineUpgrade");
@@ -260,8 +260,19 @@ public class RocketGameManager : MonoBehaviour
             diamonValueStatValue.Add(dvVals[x]);
             diamonValueCost.Add(dvCost[x]);
         }
-        /*
+    }
 
-         */
+    public bool PurchaseWithCoins(int cost)
+    {
+        bool canPurchase = false;
+
+        if (cost <= persistantPlayerCoins)
+        {
+            persistantPlayerCoins -= cost;
+
+            canPurchase = true;
+        }
+
+        return canPurchase;
     }
 }

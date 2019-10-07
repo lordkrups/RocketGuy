@@ -153,7 +153,7 @@ MonoBehaviour:
   health: 0
   money: 1
   timeToDie: 0
-  value: 25
+  value: 50
 --- !u!65 &6637855831284235624
 BoxCollider:
   m_ObjectHideFlags: 0
