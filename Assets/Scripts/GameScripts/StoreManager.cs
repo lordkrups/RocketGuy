@@ -30,19 +30,19 @@ public class StoreManager : MonoBehaviour
     // Start is called before the first frame update
     public void Init()
     {
-        healthLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantMaxHealth.ToString() + "/" + (RocketGameManager.Instance.healthStatValues.Count).ToString();
+        healthLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantMaxHealth.ToString() + "/" + (RocketGameManager.Instance.healthStatValues.Count-1).ToString();
 
-        engineLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantEngineUpgrade.ToString() + "/" + (RocketGameManager.Instance.mainEngineStatValue.Count).ToString();
-        boosterEngineLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantBoosterEngineUpgrade.ToString() + "/" + (RocketGameManager.Instance.boosterEngineStatValue.Count).ToString();
-        controlLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantTurnSpeed.ToString() + "/" + (RocketGameManager.Instance.turnSpeedStatValue.Count).ToString();
-        armourLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantDamageMultiplier.ToString() + "/" + (RocketGameManager.Instance.damageMultiplierStatValue.Count).ToString();
-        fuelTankLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantMaxFuel.ToString() + "/" + (RocketGameManager.Instance.maxFuelStatValue.Count).ToString();
-        boosterTankLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantMaxBoosterFuel.ToString() + "/" + (RocketGameManager.Instance.maxBoosterFuelStatValue.Count).ToString(); ;
-        airResistanceLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantAirReistance.ToString() + "/" + (RocketGameManager.Instance.airReistanceStatValue.Count).ToString(); ;
-        nummmyLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantNummyMultiplier.ToString() + "/" + (RocketGameManager.Instance.nummyMultiplierStatValue.Count).ToString(); ;
-        fuelConsumptionLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantFuelConsumptionRate.ToString() + "/" + (RocketGameManager.Instance.fuelConsumptionRateStatValue.Count).ToString(); ;
-        boosterFuelConsumptionLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantBoosterFuelConsumptionRate.ToString() + "/" + (RocketGameManager.Instance.boosterFuelConsumptionRateStatValue.Count).ToString(); ;
-        diamondValueLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantDiamonValue.ToString() + "/" + (RocketGameManager.Instance.diamonValueStatValue.Count).ToString(); ;
+        engineLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantEngineUpgrade.ToString() + "/" + (RocketGameManager.Instance.mainEngineStatValue.Count-1).ToString();
+        boosterEngineLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantBoosterEngineUpgrade.ToString() + "/" + (RocketGameManager.Instance.boosterEngineStatValue.Count-1).ToString();
+        controlLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantTurnSpeed.ToString() + "/" + (RocketGameManager.Instance.turnSpeedStatValue.Count-1).ToString();
+        armourLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantDamageMultiplier.ToString() + "/" + (RocketGameManager.Instance.damageMultiplierStatValue.Count-1).ToString();
+        fuelTankLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantMaxFuel.ToString() + "/" + (RocketGameManager.Instance.maxFuelStatValue.Count-1).ToString();
+        boosterTankLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantMaxBoosterFuel.ToString() + "/" + (RocketGameManager.Instance.maxBoosterFuelStatValue.Count-1).ToString(); 
+        airResistanceLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantAirReistance.ToString() + "/" + (RocketGameManager.Instance.airReistanceStatValue.Count-1).ToString(); 
+        nummmyLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantNummyMultiplier.ToString() + "/" + (RocketGameManager.Instance.nummyMultiplierStatValue.Count-1).ToString(); 
+        fuelConsumptionLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantFuelConsumptionRate.ToString() + "/" + (RocketGameManager.Instance.fuelConsumptionRateStatValue.Count-1).ToString(); 
+        boosterFuelConsumptionLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantBoosterFuelConsumptionRate.ToString() + "/" + (RocketGameManager.Instance.boosterFuelConsumptionRateStatValue.Count-1).ToString(); 
+        diamondValueLvlLabel.text = "Lv: " + RocketGameManager.Instance.persistantDiamonValue.ToString() + "/" + (RocketGameManager.Instance.diamonValueStatValue.Count-1).ToString(); 
 
         UpdateItemInfoBox();
     }
@@ -91,13 +91,14 @@ public class StoreManager : MonoBehaviour
 
         itemName.text = RocketGameManager.Instance.StoreStatsInfos[highlightedItem].statname;
         itemImage.spriteName = RocketGameManager.Instance.StoreStatsInfos[highlightedItem].sprite;
-        itemLevel.text = "LVL " + statLevel.ToString() + "/" + (RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemStat.Count).ToString();
-        if ((statLevel + 1) > RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost.Count)
-        {
-            statLevel -= 1;
-        }
+        itemLevel.text = "LVL " + statLevel.ToString() + "/" + (RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemStat.Count-1).ToString();
 
-        itemCost.text = RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel].ToString();
+        itemCost.text = "Maxed Out";
+
+        if ((statLevel) < (RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost.Count - 1))
+        {
+            itemCost.text = RocketGameManager.Instance.StoreStatsInfos[highlightedItem].itemCost[statLevel + 1].ToString();
+        }
         itemDescription.text = RocketGameManager.Instance.StoreStatsInfos[highlightedItem].description;
     }
 
@@ -119,73 +120,73 @@ public class StoreManager : MonoBehaviour
         switch (highlightedItem)
         {
             case 0:
-                if (RocketGameManager.Instance.persistantMaxHealth < RocketGameManager.Instance.healthStatValues.Count)
+                if (RocketGameManager.Instance.persistantMaxHealth < RocketGameManager.Instance.healthStatValues.Count - 1)
                 {
                     RocketGameManager.Instance.persistantMaxHealth += 1;
                 }
                 break;
             case 1:
-                if (RocketGameManager.Instance.persistantEngineUpgrade < RocketGameManager.Instance.mainEngineStatValue.Count)
+                if (RocketGameManager.Instance.persistantEngineUpgrade < RocketGameManager.Instance.mainEngineStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantEngineUpgrade += 1;
                 }
                 break;
             case 2:
-                if (RocketGameManager.Instance.persistantBoosterEngineUpgrade < RocketGameManager.Instance.boosterEngineStatValue.Count)
+                if (RocketGameManager.Instance.persistantBoosterEngineUpgrade < RocketGameManager.Instance.boosterEngineStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantBoosterEngineUpgrade += 1;
                 }
                 break;
             case 3:
-                if (RocketGameManager.Instance.persistantTurnSpeed < RocketGameManager.Instance.turnSpeedStatValue.Count)
+                if (RocketGameManager.Instance.persistantTurnSpeed < RocketGameManager.Instance.turnSpeedStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantTurnSpeed += 1;
                 }
                 break;
             case 4:
-                if (RocketGameManager.Instance.persistantDamageMultiplier < RocketGameManager.Instance.damageMultiplierStatValue.Count)
+                if (RocketGameManager.Instance.persistantDamageMultiplier < RocketGameManager.Instance.damageMultiplierStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantDamageMultiplier += 1;
                 }
                 break;
             case 5:
-                if (RocketGameManager.Instance.persistantMaxFuel < RocketGameManager.Instance.maxFuelStatValue.Count)
+                if (RocketGameManager.Instance.persistantMaxFuel < RocketGameManager.Instance.maxFuelStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantMaxFuel += 1;
                 }
                 break;
             case 6:
-                if (RocketGameManager.Instance.persistantMaxBoosterFuel < RocketGameManager.Instance.maxBoosterFuelStatValue.Count)
+                if (RocketGameManager.Instance.persistantMaxBoosterFuel < RocketGameManager.Instance.maxBoosterFuelStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantMaxBoosterFuel += 1;
                 }
                 break;
             case 7:
-                if (RocketGameManager.Instance.persistantAirReistance < RocketGameManager.Instance.airReistanceStatValue.Count)
+                if (RocketGameManager.Instance.persistantAirReistance < RocketGameManager.Instance.airReistanceStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantAirReistance += 1;
                 }
                 break;
             case 8:
-                if (RocketGameManager.Instance.persistantNummyMultiplier < RocketGameManager.Instance.nummyMultiplierStatValue.Count)
+                if (RocketGameManager.Instance.persistantNummyMultiplier < RocketGameManager.Instance.nummyMultiplierStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantNummyMultiplier += 1;
                 }
                 break;
             case 9:
-                if (RocketGameManager.Instance.persistantFuelConsumptionRate < RocketGameManager.Instance.fuelConsumptionRateStatValue.Count)
+                if (RocketGameManager.Instance.persistantFuelConsumptionRate < RocketGameManager.Instance.fuelConsumptionRateStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantFuelConsumptionRate += 1;
                 }
                 break;
             case 10:
-                if (RocketGameManager.Instance.persistantBoosterFuelConsumptionRate < RocketGameManager.Instance.boosterFuelConsumptionRateStatValue.Count)
+                if (RocketGameManager.Instance.persistantBoosterFuelConsumptionRate < RocketGameManager.Instance.boosterFuelConsumptionRateStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantBoosterFuelConsumptionRate += 1;
                 }
                 break;
             case 11:
-                if (RocketGameManager.Instance.persistantDiamonValue < RocketGameManager.Instance.diamonValueStatValue.Count)
+                if (RocketGameManager.Instance.persistantDiamonValue < RocketGameManager.Instance.diamonValueStatValue.Count - 1)
                 {
                     RocketGameManager.Instance.persistantDiamonValue += 1;
                 }

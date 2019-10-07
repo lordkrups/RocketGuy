@@ -1,25 +1,32 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/StoreManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Xml/store_stats.xml">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="1" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="21" Column="26" />
-      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="107" Column="1" />
-      <File FileName="Assets/Resources/Xml/store_stats.xml" Line="32" Column="31" />
-      <File FileName="Assets/Scripts/GameScripts/XML Loaders/StoreStats.cs" Line="14" Column="28" />
-      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" Line="92" Column="89" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="1" Column="1" NotebookId="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="21" Column="26" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="107" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/XML Loaders/StoreStats.cs" Line="14" Column="28" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" Line="98" Column="23" NotebookId="2" />
     </Files>
+    <FloatingWindows>
+      <FloatingWindow WindowId="1" X="959" Y="23" Width="960" Height="823">
+        <Files>
+          <File FileName="Assets/Resources/Xml/store_stats.xml" Line="32" Column="31" />
+        </Files>
+      </FloatingWindow>
+    </FloatingWindows>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RocketGuy" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Resources" expanded="True">
-                <Node name="Xml" expanded="True" />
+                <Node name="Xml" expanded="True">
+                  <Node name="store_stats.xml" selected="True" />
+                </Node>
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="StoreManager.cs" selected="True" />
                 </Node>
                 <Node name="Loaders" expanded="True" />
                 <Node name="Managers" expanded="True" />
