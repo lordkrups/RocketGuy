@@ -17,6 +17,8 @@ public class MainMenuManager : MonoBehaviour
 
     private void Awake()
     {
+        MenuPanel.On();
+        StorePanel.Off();
     }
     public void StartGame()
     {

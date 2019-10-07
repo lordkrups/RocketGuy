@@ -21,6 +21,8 @@ public class RocketGameManager : MonoBehaviour
 
     public int playedBefore;
 
+    public int persistantPlayerMoney;
+
     public int persistantMaxHealth;
     public int persistantEngineUpgrade;
     public int persistantBoosterEngineUpgrade;
@@ -58,14 +60,14 @@ public class RocketGameManager : MonoBehaviour
     public List<float> airReistanceStatValue;
     public List<int> airReistanceCost;
 
+    public List<float> nummyMultiplierStatValue;
+    public List<int> nummyMultiplierCost;
+
     public List<float> fuelConsumptionRateStatValue;
     public List<int> fuelConsumptionRateCost;
 
     public List<float> boosterFuelConsumptionRateStatValue;
     public List<int> boosterFuelConsumptionRateCost;
-
-    public List<float> nummyMultiplierStatValue;
-    public List<int> nummyMultiplierCost;
 
     public List<float> diamonValueStatValue;
     public List<int> diamonValueCost;
@@ -85,6 +87,7 @@ public class RocketGameManager : MonoBehaviour
         {
             playedBefore = 1;
             //PlayerPrefs.GetInt("FirstPlay", 1);
+            PlayerPrefs.SetInt("persistantPlayerMoney", 100000);
             PlayerPrefs.SetInt("persistantMaxHealth", 1);
             PlayerPrefs.SetInt("persistantEngineUpgrade", 1);
             PlayerPrefs.SetInt("persistantBoosterEngineUpgrade", 1);
@@ -106,6 +109,7 @@ public class RocketGameManager : MonoBehaviour
     public void SavePersistatStats()
     {
         PlayerPrefs.SetInt("FirstPlay", playedBefore);
+        PlayerPrefs.SetInt("persistantPlayerMoney", persistantPlayerMoney);
         PlayerPrefs.SetInt("persistantMaxHealth", persistantMaxHealth);
         PlayerPrefs.SetInt("persistantEngineUpgrade", persistantEngineUpgrade);
         PlayerPrefs.SetInt("persistantBoosterEngineUpgrade", persistantBoosterEngineUpgrade);
@@ -121,6 +125,7 @@ public class RocketGameManager : MonoBehaviour
     }
     private void RetrievePersistatStats()
     {
+        persistantPlayerMoney = PlayerPrefs.GetInt("persistantPlayerMoney");
         persistantMaxHealth = PlayerPrefs.GetInt("persistantMaxHealth");
         persistantEngineUpgrade = PlayerPrefs.GetInt("persistantEngineUpgrade");
         persistantBoosterEngineUpgrade = PlayerPrefs.GetInt("persistantBoosterEngineUpgrade");
@@ -216,8 +221,18 @@ public class RocketGameManager : MonoBehaviour
             airReistanceCost.Add(arCost[x]);
         }
 
-        float[] fcrVals = Array.ConvertAll(StoreStatsInfos[8].stat.Split(','), float.Parse);
-        int[] fcrCost = Array.ConvertAll(StoreStatsInfos[8].cost.Split(','), int.Parse);
+        float[] nmVals = Array.ConvertAll(StoreStatsInfos[8].stat.Split(','), float.Parse);
+        int[] nmCost = Array.ConvertAll(StoreStatsInfos[8].cost.Split(','), int.Parse);
+        for (int x = 0; x < nmVals.Length; x++)
+        {
+            //Debug.Log("unlockedGods 1");
+
+            nummyMultiplierStatValue.Add(nmVals[x]);
+            nummyMultiplierCost.Add(nmCost[x]);
+        }
+
+        float[] fcrVals = Array.ConvertAll(StoreStatsInfos[9].stat.Split(','), float.Parse);
+        int[] fcrCost = Array.ConvertAll(StoreStatsInfos[9].cost.Split(','), int.Parse);
         for (int x = 0; x < fcrVals.Length; x++)
         {
             //Debug.Log("unlockedGods 1");
@@ -226,24 +241,14 @@ public class RocketGameManager : MonoBehaviour
             fuelConsumptionRateCost.Add(fcrCost[x]);
         }
 
-        float[] bfcrVals = Array.ConvertAll(StoreStatsInfos[9].stat.Split(','), float.Parse);
-        int[] bfcrCost = Array.ConvertAll(StoreStatsInfos[9].cost.Split(','), int.Parse);
+        float[] bfcrVals = Array.ConvertAll(StoreStatsInfos[10].stat.Split(','), float.Parse);
+        int[] bfcrCost = Array.ConvertAll(StoreStatsInfos[10].cost.Split(','), int.Parse);
         for (int x = 0; x < bfcrVals.Length; x++)
         {
             //Debug.Log("unlockedGods 1");
 
             boosterFuelConsumptionRateStatValue.Add(bfcrVals[x]);
             boosterFuelConsumptionRateCost.Add(bfcrCost[x]);
-        }
-
-        float[] nmVals = Array.ConvertAll(StoreStatsInfos[10].stat.Split(','), float.Parse);
-        int[] nmCost = Array.ConvertAll(StoreStatsInfos[10].cost.Split(','), int.Parse);
-        for (int x = 0; x < nmVals.Length; x++)
-        {
-            //Debug.Log("unlockedGods 1");
-
-            nummyMultiplierStatValue.Add(nmVals[x]);
-            nummyMultiplierCost.Add(nmCost[x]);
         }
 
         float[] dvVals = Array.ConvertAll(StoreStatsInfos[11].stat.Split(','), float.Parse);

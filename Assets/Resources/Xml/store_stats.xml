@@ -53,9 +53,9 @@ heal percentage is 10% by default
               cost = "0,0, 4000, 9000, 15000" sprite="Icon Stopwatch Gold"
               description = "Booster engine uses fuel more efficiently!"
               /> 
-        <Stat id="11" name = "Diamon Value" stat ="0,1, 1.2, 1.5, 2"
+        <Stat id="11" name = "Diamond Converter" stat ="0,1, 1.2, 1.5, 2"
               cost = "0,0, 2000, 5000, 15000" sprite="Icon MoneyBag Yellow"
-              description = "Booster engine uses fuel more efficiently!"
+              description = "Diamonds are converted to more coins at the end of the level!"
               />   
        </StoreStat>
 </StoreStats>
