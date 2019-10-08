@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 9565285}
   - component: {fileID: 9565284}
   - component: {fileID: 9565287}
+  - component: {fileID: 9565288}
   m_Layer: 5
   m_Name: Booster Tank
   m_TagString: Untagged
@@ -270,6 +271,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 6
   stringToPass: 
+--- !u!114 &9565288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9565282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &31216506
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +472,7 @@ GameObject:
   - component: {fileID: 132651641}
   - component: {fileID: 132651640}
   - component: {fileID: 132651643}
+  - component: {fileID: 132651644}
   m_Layer: 5
   m_Name: Controls
   m_TagString: Untagged
@@ -594,6 +610,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 3
   stringToPass: 
+--- !u!114 &132651644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 132651638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &168588600
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,6 +1754,7 @@ GameObject:
   - component: {fileID: 362721811}
   - component: {fileID: 362721810}
   - component: {fileID: 362721813}
+  - component: {fileID: 362721814}
   m_Layer: 5
   m_Name: Armor
   m_TagString: Untagged
@@ -1861,6 +1892,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 4
   stringToPass: 
+--- !u!114 &362721814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 362721808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &380348077
 GameObject:
   m_ObjectHideFlags: 0
@@ -2884,7 +2929,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658387176}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -80, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 238104832}
@@ -2922,13 +2967,13 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 0.79607844}
   mPivot: 4
   mWidth: 612
-  mHeight: 1000
+  mHeight: 1150
   mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 0.612
+  aspectRatio: 0.53217393
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -3081,6 +3126,7 @@ GameObject:
   - component: {fileID: 712090459}
   - component: {fileID: 712090458}
   - component: {fileID: 712090461}
+  - component: {fileID: 712090462}
   m_Layer: 5
   m_Name: Engine
   m_TagString: Untagged
@@ -3218,6 +3264,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 1
   stringToPass: 
+--- !u!114 &712090462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712090456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &717089345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3320,6 +3380,7 @@ GameObject:
   - component: {fileID: 778803804}
   - component: {fileID: 778803806}
   - component: {fileID: 778803805}
+  - component: {fileID: 778803807}
   m_Layer: 5
   m_Name: Buy Button
   m_TagString: Untagged
@@ -3440,6 +3501,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 190, y: 60, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &778803807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778803802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &864866539
 GameObject:
   m_ObjectHideFlags: 0
@@ -3955,13 +4030,13 @@ MonoBehaviour:
   mColor: {r: 0.7735849, g: 0.7699359, b: 0.7699359, a: 1}
   mPivot: 4
   mWidth: 500
-  mHeight: 400
+  mHeight: 425
   mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.25
+  aspectRatio: 1.1764706
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -4643,6 +4718,7 @@ GameObject:
   - component: {fileID: 1056352502}
   - component: {fileID: 1056352501}
   - component: {fileID: 1056352504}
+  - component: {fileID: 1056352505}
   m_Layer: 5
   m_Name: Booster Engine
   m_TagString: Untagged
@@ -4780,6 +4856,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 2
   stringToPass: 
+--- !u!114 &1056352505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056352499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1064002008
 GameObject:
   m_ObjectHideFlags: 0
@@ -4941,6 +5031,7 @@ GameObject:
   - component: {fileID: 1077125264}
   - component: {fileID: 1077125263}
   - component: {fileID: 1077125266}
+  - component: {fileID: 1077125267}
   m_Layer: 5
   m_Name: Fuel Tank
   m_TagString: Untagged
@@ -5078,6 +5169,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 5
   stringToPass: 
+--- !u!114 &1077125267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077125261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1093652836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5177,6 +5282,7 @@ GameObject:
   - component: {fileID: 1122066716}
   - component: {fileID: 1122066715}
   - component: {fileID: 1122066717}
+  - component: {fileID: 1122066718}
   m_Layer: 5
   m_Name: Playbutton
   m_TagString: Untagged
@@ -5298,6 +5404,20 @@ MonoBehaviour:
     mMethodName: StartGame
     mParameters: []
     oneShot: 0
+--- !u!114 &1122066718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1122066713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.1, y: 1.1, z: 1}
+  time: 0.1
 --- !u!1 &1136827722
 GameObject:
   m_ObjectHideFlags: 0
@@ -5323,7 +5443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136827722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -285, z: 0}
+  m_LocalPosition: {x: 0, y: -245, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 940502685}
@@ -5678,6 +5798,7 @@ GameObject:
   - component: {fileID: 1228438632}
   - component: {fileID: 1228438631}
   - component: {fileID: 1228438634}
+  - component: {fileID: 1228438635}
   m_Layer: 5
   m_Name: Booster Consumption
   m_TagString: Untagged
@@ -5815,6 +5936,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 10
   stringToPass: 
+--- !u!114 &1228438635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1228438629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1238078529
 GameObject:
   m_ObjectHideFlags: 0
@@ -5997,6 +6132,7 @@ GameObject:
   - component: {fileID: 1393801138}
   - component: {fileID: 1393801137}
   - component: {fileID: 1393801136}
+  - component: {fileID: 1393801139}
   m_Layer: 5
   m_Name: CloseStoreButton
   m_TagString: Untagged
@@ -6012,7 +6148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393801134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -574, z: 0}
+  m_LocalPosition: {x: 0, y: -500, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 245680787}
@@ -6095,7 +6231,7 @@ MonoBehaviour:
   mPivot: 4
   mWidth: 206
   mHeight: 86
-  mDepth: 1
+  mDepth: 3
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
@@ -6118,6 +6254,20 @@ MonoBehaviour:
   mSpriteName: bt_common_red
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1393801139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1393801134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1432121215
 GameObject:
   m_ObjectHideFlags: 0
@@ -6131,6 +6281,7 @@ GameObject:
   - component: {fileID: 1432121218}
   - component: {fileID: 1432121217}
   - component: {fileID: 1432121220}
+  - component: {fileID: 1432121221}
   m_Layer: 5
   m_Name: HealthOBj
   m_TagString: Untagged
@@ -6268,6 +6419,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 0
   stringToPass: 
+--- !u!114 &1432121221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432121215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1445473292
 GameObject:
   m_ObjectHideFlags: 0
@@ -6281,6 +6446,7 @@ GameObject:
   - component: {fileID: 1445473295}
   - component: {fileID: 1445473294}
   - component: {fileID: 1445473297}
+  - component: {fileID: 1445473298}
   m_Layer: 5
   m_Name: Air Resistance
   m_TagString: Untagged
@@ -6418,6 +6584,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 7
   stringToPass: 
+--- !u!114 &1445473298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1445473292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1462748282
 GameObject:
   m_ObjectHideFlags: 0
@@ -7092,6 +7272,7 @@ GameObject:
   - component: {fileID: 1559259980}
   - component: {fileID: 1559259979}
   - component: {fileID: 1559259982}
+  - component: {fileID: 1559259983}
   m_Layer: 5
   m_Name: Fuel Consumption
   m_TagString: Untagged
@@ -7229,6 +7410,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 9
   stringToPass: 
+--- !u!114 &1559259983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559259977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1594010134
 GameObject:
   m_ObjectHideFlags: 0
@@ -8179,6 +8374,7 @@ GameObject:
   - component: {fileID: 1925134557}
   - component: {fileID: 1925134556}
   - component: {fileID: 1925134559}
+  - component: {fileID: 1925134560}
   m_Layer: 5
   m_Name: Nummy
   m_TagString: Untagged
@@ -8316,6 +8512,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 8
   stringToPass: 
+--- !u!114 &1925134560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925134554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1937025738
 GameObject:
   m_ObjectHideFlags: 0
@@ -8329,6 +8539,7 @@ GameObject:
   - component: {fileID: 1937025741}
   - component: {fileID: 1937025740}
   - component: {fileID: 1937025743}
+  - component: {fileID: 1937025744}
   m_Layer: 5
   m_Name: Diamond Value
   m_TagString: Untagged
@@ -8466,6 +8677,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   valueToPass: 11
   stringToPass: 
+--- !u!114 &1937025744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1937025738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1939067114
 GameObject:
   m_ObjectHideFlags: 0
@@ -8555,6 +8780,7 @@ GameObject:
   - component: {fileID: 1950475216}
   - component: {fileID: 1950475215}
   - component: {fileID: 1950475214}
+  - component: {fileID: 1950475217}
   m_Layer: 5
   m_Name: StoreButton
   m_TagString: Untagged
@@ -8570,7 +8796,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1950475212}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -498, z: 0}
+  m_LocalPosition: {x: 0, y: -500, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 496369282}
@@ -8676,6 +8902,20 @@ MonoBehaviour:
   mSpriteName: bt_common_blue
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!114 &1950475217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1950475212}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4541154419920a94192e06df6ee2d393, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toScale: {x: 1.05, y: 1.05, z: 1}
+  time: 0.1
 --- !u!1 &1978325359
 GameObject:
   m_ObjectHideFlags: 0

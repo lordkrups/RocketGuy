@@ -11,6 +11,7 @@ public class CollectibleObj : MonoBehaviour
     public bool boosterFuel;
     public bool health;
     public bool money;
+    public bool diamond;
 
     public bool timeToDie;
 

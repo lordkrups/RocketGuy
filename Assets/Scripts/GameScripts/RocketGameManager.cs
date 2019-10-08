@@ -87,7 +87,7 @@ public class RocketGameManager : MonoBehaviour
         {
             playedBefore = 1;
             //PlayerPrefs.GetInt("FirstPlay", 1);
-            PlayerPrefs.SetInt("persistantPlayerCoins", 10000);
+            PlayerPrefs.SetInt("persistantPlayerCoins", 100);
             PlayerPrefs.SetInt("persistantMaxHealth", 1);
             PlayerPrefs.SetInt("persistantEngineUpgrade", 1);
             PlayerPrefs.SetInt("persistantBoosterEngineUpgrade", 1);
@@ -261,7 +261,11 @@ public class RocketGameManager : MonoBehaviour
             diamonValueCost.Add(dvCost[x]);
         }
     }
-
+    public void SaveEarnedCoins(int cost)
+    {
+        persistantPlayerCoins += cost;
+        PlayerPrefs.SetInt("persistantPlayerCoins", persistantPlayerCoins);
+    }
     public bool PurchaseWithCoins(int cost)
     {
         bool canPurchase = false;
@@ -271,6 +275,7 @@ public class RocketGameManager : MonoBehaviour
             persistantPlayerCoins -= cost;
 
             canPurchase = true;
+            PlayerPrefs.SetInt("persistantPlayerCoins", persistantPlayerCoins);
         }
 
         return canPurchase;

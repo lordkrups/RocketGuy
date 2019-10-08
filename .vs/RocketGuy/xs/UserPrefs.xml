@@ -1,18 +1,12 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketMotorNGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketGameManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="314" Column="42" NotebookId="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="21" Column="26" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="90" Column="60" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" Line="7" Column="23" NotebookId="2" />
+      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="54" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="90" Column="57" />
+      <File FileName="Assets/Scripts/GameScripts/CollectibleObj.cs" Line="37" Column="51" />
+      <File FileName="Assets/Resources/Xml/store_stats.xml" Line="16" Column="72" />
+      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="265" Column="1" />
     </Files>
-    <FloatingWindows>
-      <FloatingWindow WindowId="1" X="2464" Y="337" Width="960" Height="823">
-        <Files>
-          <File FileName="Assets/Resources/Xml/store_stats.xml" Line="53" Column="44" />
-        </Files>
-      </FloatingWindow>
-    </FloatingWindows>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -24,11 +18,12 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="RocketMotorNGUI.cs" selected="True" />
+                  <Node name="RocketGameManager.cs" selected="True" />
                 </Node>
                 <Node name="Helper" expanded="True" />
                 <Node name="Loaders" expanded="True" />
                 <Node name="Managers" expanded="True" />
+                <Node name="NguiExtension" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -38,7 +33,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="07c0afec-ffe6-4b7a-9f4e-fbfba5e321eb" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9f7f7747-e904-4ffa-a1a0-13fc7a65d716" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

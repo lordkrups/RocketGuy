@@ -255,7 +255,10 @@ public class RocketMotorNGUI : MonoBehaviour
             {
                 moneyEarned += colObj.value;
             }
-
+            if (colObj.diamond)
+            {
+                moneyEarned += colObj.value * (int)RocketGameManager.Instance.diamonValueStatValue[RocketGameManager.Instance.persistantDiamonValue];
+            }
             Destroy(colObj);
             Destroy(collision.gameObject);
         }

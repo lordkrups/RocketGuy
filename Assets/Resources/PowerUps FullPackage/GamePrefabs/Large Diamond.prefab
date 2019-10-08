@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1969183682440219200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 6, z: 6}
+  m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 1969183682440543780}
   m_Father: {fileID: 0}
@@ -51,7 +51,8 @@ MonoBehaviour:
   fuel: 0
   boosterFuel: 0
   health: 0
-  money: 1
+  money: 0
+  diamond: 1
   timeToDie: 0
   value: 200
 --- !u!65 &6757644136164018235
@@ -65,8 +66,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.15, z: 0.05}
-  m_Center: {x: 0, y: 0.01, z: 0}
+  m_Size: {x: 0.2, y: 0.15, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &4307463937230902967
 Rigidbody:
   m_ObjectHideFlags: 0
