@@ -177,6 +177,8 @@ public class RocketMotorNGUI : MonoBehaviour
 
         if (isRocketing)
         {
+            //gameSceneManager.audioPlayer.PlaySFXClip("rocketBlast");
+
             flamesList[0].Play();
             flamesList[1].Play();
             flamesList[2].Play();
@@ -200,7 +202,7 @@ public class RocketMotorNGUI : MonoBehaviour
         if (!isRocketing)
         {
             fallTimer += Time.deltaTime;
-
+            //gameSceneManager.audioPlayer.PauseRocketSound();
             flamesList[0].Pause();
             flamesList[0].Clear();
             flamesList[1].Pause();
@@ -234,6 +236,8 @@ public class RocketMotorNGUI : MonoBehaviour
     {
         if (collision.gameObject.tag == "Collectible")
         {
+            gameSceneManager.audioPlayer.PlaySFXClip("getItem");
+
             Physics.IgnoreCollision(smallCollider, collision.gameObject.GetComponent<Collider>());
             Physics.IgnoreCollision(bigCollider, collision.gameObject.GetComponent<Collider>());
 
@@ -264,6 +268,8 @@ public class RocketMotorNGUI : MonoBehaviour
         }
         if (collision.gameObject.tag == "Obstacle")
         {
+            gameSceneManager.audioPlayer.PlaySFXClip("crash");
+
             if (canTakeDmg && !isDead)
             {
                 health = health - (1f * dmgMultiplier);
@@ -273,6 +279,10 @@ public class RocketMotorNGUI : MonoBehaviour
                     isDead = true;
                 }
             }
+        }
+        if (collision.gameObject.tag == "Enviroment")
+        {
+            gameSceneManager.audioPlayer.PlaySFXClip("crash");
         }
     }
     private void TakeDamage()

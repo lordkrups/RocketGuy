@@ -7,6 +7,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
 {
     public string currentPhase;
 
+    public AudioPlayer audioPlayer;
     public RocketMotorNGUI playerRocket;
     public Transform floor;
 

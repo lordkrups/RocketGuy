@@ -232,11 +232,13 @@
     <Compile Include="Assets\Scripts\Characters\WeaponStats.cs" />
     <Compile Include="Assets\Scripts\CloudObj.cs" />
     <Compile Include="Assets\Scripts\EditorGUILayoutPopup.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\AudioPlayer.cs" />
     <Compile Include="Assets\Scripts\GameScripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\GameScripts\CollectibleObj.cs" />
     <Compile Include="Assets\Scripts\GameScripts\GameSceneManagerNGUI.cs" />
     <Compile Include="Assets\Scripts\GameScripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\GameScripts\MenuRocket.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\MenuSceneAudio.cs" />
     <Compile Include="Assets\Scripts\GameScripts\PlaneMotor.cs" />
     <Compile Include="Assets\Scripts\GameScripts\RocketGameManager.cs" />
     <Compile Include="Assets\Scripts\GameScripts\RocketMotorNGUI.cs" />
