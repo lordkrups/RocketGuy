@@ -29,12 +29,12 @@ public class TopPanelReporterNGUI : MonoBehaviour
     void Update()
     {
         healthValue.text = gameSceneManager.playerRocket.health.ToString() + "/" + gameSceneManager.playerRocket.maxHealth.ToString();
-        healthSlider.value = gameSceneManager.playerRocket.health / gameSceneManager.playerRocket.maxHealth;
+        //healthSlider.value = gameSceneManager.playerRocket.health / gameSceneManager.playerRocket.maxHealth;
         fuelValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.fuel)).ToString() + "/" + gameSceneManager.playerRocket.maxFuel.ToString();
-        fuelSlider.value = gameSceneManager.playerRocket.fuel / gameSceneManager.playerRocket.maxFuel;
+        //fuelSlider.value = gameSceneManager.playerRocket.fuel / gameSceneManager.playerRocket.maxFuel;
 
         boosterValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.boosterFuel)).ToString() + "/" + gameSceneManager.playerRocket.maxBoosterFuel.ToString();
-        boosterFuelSlider.value = gameSceneManager.playerRocket.boosterFuel / gameSceneManager.playerRocket.maxBoosterFuel;
+        //boosterFuelSlider.value = gameSceneManager.playerRocket.boosterFuel / gameSceneManager.playerRocket.maxBoosterFuel;
 
         timeValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.flightTime)).ToString() + " s";
         speedValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.rb.velocity.y)).ToString() + " m/s";

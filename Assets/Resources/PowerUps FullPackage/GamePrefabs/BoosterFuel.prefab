@@ -113,7 +113,7 @@ GameObject:
   - component: {fileID: 1830645414713811460}
   - component: {fileID: 6346454423622254212}
   m_Layer: 9
-  m_Name: Battery Yellow
+  m_Name: BoosterFuel
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,8 +152,9 @@ MonoBehaviour:
   boosterFuel: 1
   health: 0
   money: 0
+  diamond: 0
   timeToDie: 0
-  value: 5
+  value: 10
 --- !u!54 &1830645414713811460
 Rigidbody:
   m_ObjectHideFlags: 0

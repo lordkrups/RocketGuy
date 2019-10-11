@@ -88,10 +88,11 @@ public class GameSceneManagerNGUI : MonoBehaviour
         goMoneyValue.text = playerRocket.moneyEarned.ToString() + "G";
         goHeightValue.text = (((int)playerRocket.maxHeightReached).ToString() + " M");
 
-        RocketGameManager.Instance.SaveEarnedCoins(playerRocket.moneyEarned);
     }
     public void ReturnToMenu()
     {
+        RocketGameManager.Instance.SaveEarnedCoins(playerRocket.moneyEarned);
+
         SceneManager.LoadScene("MenuScene");
         Time.timeScale = 1;
     }

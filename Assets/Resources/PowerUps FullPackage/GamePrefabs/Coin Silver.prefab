@@ -155,7 +155,7 @@ MonoBehaviour:
   money: 1
   diamond: 0
   timeToDie: 0
-  value: 5
+  value: 25
 --- !u!136 &6076724414541944315
 CapsuleCollider:
   m_ObjectHideFlags: 0

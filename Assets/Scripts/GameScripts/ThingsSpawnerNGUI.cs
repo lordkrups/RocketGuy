@@ -20,9 +20,10 @@ public class ThingsSpawnerNGUI : MonoBehaviour
     public int numberOfCloudsToSpawn;
     public int numberOfGoodThingsToSpawn;
     public int numberOfBadThingsToSpawn;
-    public int xDist;
-    public int yDist;
-
+    public int goodXDist;
+    public int goodYDist;
+    public int badXDist;
+    public int badYDist;
     public CloudObj cloudObj;
 
     public List<CollectibleObj> lowCollectibleList;
@@ -108,25 +109,25 @@ public class ThingsSpawnerNGUI : MonoBehaviour
 
                 if (dirToSpawn == "Up")
                 {
-                    xPos = Random.Range(-xDist, xDist + 1);
-                    yPos = Random.Range(yDist / 2, yDist);
+                    xPos = Random.Range(-goodXDist, goodXDist + 1);
+                    yPos = Random.Range(goodYDist / 2, goodYDist);
                 }
                 if (dirToSpawn == "Down")
                 {
-                    xPos = Random.Range(-xDist, xDist + 1);
-                    yPos = Random.Range(-yDist, -yDist / 2);
+                    xPos = Random.Range(-goodXDist, goodXDist + 1);
+                    yPos = Random.Range(-goodYDist, -goodYDist / 2);
                 }
 
                 if (dirToSpawn == "Left")
                 {
-                    xPos = Random.Range(-xDist, -xDist / 2);
-                    yPos = Random.Range(-yDist, yDist + 1);
+                    xPos = Random.Range(-goodXDist, -goodXDist / 2);
+                    yPos = Random.Range(-goodYDist, goodYDist + 1);
                 }
 
                 if (dirToSpawn == "Right")
                 {
-                    xPos = Random.Range(xDist / 2, xDist);
-                    yPos = Random.Range(-yDist, yDist + 1);
+                    xPos = Random.Range(goodXDist / 2, goodXDist);
+                    yPos = Random.Range(-goodYDist, goodYDist + 1);
                 }
 
                 int zPos = Random.Range(15, 40);
@@ -153,25 +154,25 @@ public class ThingsSpawnerNGUI : MonoBehaviour
 
             if (dirToSpawn == "Up")
             {
-                xPos = Random.Range(-xDist, xDist + 1);
-                yPos = Random.Range(yDist / 2, yDist);
+                xPos = Random.Range(-goodXDist, goodXDist + 1);
+                yPos = Random.Range(goodYDist / 2, goodYDist);
             }
             if (dirToSpawn == "Down")
             {
-                xPos = Random.Range(-xDist, xDist + 1);
-                yPos = Random.Range(-yDist, -yDist / 2);
+                xPos = Random.Range(-goodXDist, goodXDist + 1);
+                yPos = Random.Range(-goodYDist, -goodYDist / 2);
             }
 
             if (dirToSpawn == "Left")
             {
-                xPos = Random.Range(-xDist, -xDist / 2);
-                yPos = Random.Range(-yDist, yDist + 1);
+                xPos = Random.Range(-(2*goodXDist), -goodXDist / 2);
+                yPos = Random.Range(-goodYDist, goodYDist + 1);
             }
 
             if (dirToSpawn == "Right")
             {
-                xPos = Random.Range(xDist / 2, xDist);
-                yPos = Random.Range(-yDist, yDist + 1);
+                xPos = Random.Range(goodXDist, goodXDist*2);
+                yPos = Random.Range(-goodYDist, goodYDist + 1);
             }
 
             Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,
@@ -215,25 +216,25 @@ public class ThingsSpawnerNGUI : MonoBehaviour
 
                 if (dirToSpawn == "Up")
                 {
-                    xPos = Random.Range(-xDist, xDist + 1);
-                    yPos = Random.Range(yDist / 2, yDist);
+                    xPos = Random.Range(-badXDist, badXDist + 1);
+                    yPos = Random.Range(badYDist / 2, badYDist);
                 }
                 if (dirToSpawn == "Down")
                 {
-                    xPos = Random.Range(-xDist, xDist + 1);
-                    yPos = Random.Range(-yDist, -yDist / 2);
+                    xPos = Random.Range(-badXDist, badXDist + 1);
+                    yPos = Random.Range(-badYDist, -badYDist / 2);
                 }
 
                 if (dirToSpawn == "Left")
                 {
-                    xPos = Random.Range(-xDist, -xDist / 2);
-                    yPos = Random.Range(-yDist, yDist+1);
+                    xPos = Random.Range(-badXDist, -badXDist / 2);
+                    yPos = Random.Range(-badYDist, badYDist+1);
                 }
 
                 if (dirToSpawn == "Right")
                 {
-                    xPos = Random.Range(xDist / 2, xDist);
-                    yPos = Random.Range(-yDist, yDist+1);
+                    xPos = Random.Range(badXDist / 2, badXDist);
+                    yPos = Random.Range(-badYDist, badYDist+1);
                 }
 
                 Vector3 pos = new Vector3(gameSceneManager.playerRocket.transform.position.x + xPos,

@@ -40,7 +40,7 @@ public class AudioPlayer : MonoBehaviour
 
     public void PlaySFXClip(string clip)
     {
-        Debug.Log("PlaySFXClip: " + clip);
+        //Debug.Log("PlaySFXClip: " + clip);
         //if (EverythingLoader.Instance.gameManager.sfxMuted == 1)
         //{
             switch (clip)

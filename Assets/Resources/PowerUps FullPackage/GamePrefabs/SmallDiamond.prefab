@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 772264445121818703}
   m_Layer: 9
   m_Name: Diamond Lightblue
-  m_TagString: Untagged
+  m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -32,6 +32,7 @@ public class RocketMotorNGUI : MonoBehaviour
     public float maxHealth;
     public float liftSpeed;//determines how much force to apply
     public float maxForce;//determines how much force to apply
+    public float boosterLift;//determines how much force to apply
     public float turnSpeed;//determines how much torque to apply
     public float dmgMultiplier;
     public float maxFuel;
@@ -52,8 +53,8 @@ public class RocketMotorNGUI : MonoBehaviour
     private void Start()
     {
         maxHealth = RocketGameManager.Instance.StoreStatsInfos[0].itemStat[RocketGameManager.Instance.persistantMaxHealth];
-        liftSpeed = RocketGameManager.Instance.StoreStatsInfos[1].itemStat[RocketGameManager.Instance.persistantEngineUpgrade];
-        maxForce = RocketGameManager.Instance.StoreStatsInfos[2].itemStat[RocketGameManager.Instance.persistantBoosterEngineUpgrade];
+        maxForce = RocketGameManager.Instance.StoreStatsInfos[1].itemStat[RocketGameManager.Instance.persistantEngineUpgrade];
+        boosterLift = RocketGameManager.Instance.StoreStatsInfos[2].itemStat[RocketGameManager.Instance.persistantBoosterEngineUpgrade];
         turnSpeed = RocketGameManager.Instance.StoreStatsInfos[3].itemStat[RocketGameManager.Instance.persistantTurnSpeed];
         dmgMultiplier = RocketGameManager.Instance.StoreStatsInfos[4].itemStat[RocketGameManager.Instance.persistantDamageMultiplier];
         maxFuel = RocketGameManager.Instance.StoreStatsInfos[5].itemStat[RocketGameManager.Instance.persistantMaxFuel];
@@ -81,19 +82,19 @@ public class RocketMotorNGUI : MonoBehaviour
             force.y = force.y + liftSpeed;
         }
 
-        if (boosterFuel > 0)
+        //Debug.Log("isBoosting: " + isBoosting);
+        //Debug.Log("force.y: " + force.y);
+        //Debug.Log("maxForce + boosterLift: " + (maxForce + boosterLift));
+        if (isBoosting)
         {
-            if (isBoosting)
+            boosterFuel = boosterFuel - boosterFuelConsumptionRate;
+            flamesList[3].Play();
+
+            if (force.y <= (maxForce + boosterLift))
             {
                 force.y = force.y + (liftSpeed / 2);
-                boosterFuel = boosterFuel - boosterFuelConsumptionRate;
                 rb.AddRelativeForce(force);
-                flamesList[3].Play();
             }
-        }
-        else
-        {
-            isBoosting = false;
         }
 
         if (fuel > 0)
@@ -192,7 +193,13 @@ public class RocketMotorNGUI : MonoBehaviour
         }
         if (boostTimer >= 3f)
         {
-            isBoosting = true;
+            if (boosterFuel > 0)
+            {
+                isBoosting = true;
+            } else
+            {
+                isBoosting = false;
+            }
         }
         if (!isBoosting)
         {

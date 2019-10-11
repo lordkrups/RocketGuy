@@ -152,8 +152,9 @@ MonoBehaviour:
   boosterFuel: 0
   health: 0
   money: 0
+  diamond: 0
   timeToDie: 0
-  value: 25
+  value: 50
 --- !u!65 &2011018517077549192
 BoxCollider:
   m_ObjectHideFlags: 0

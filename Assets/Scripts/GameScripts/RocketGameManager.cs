@@ -87,7 +87,7 @@ public class RocketGameManager : MonoBehaviour
         {
             playedBefore = 1;
             //PlayerPrefs.GetInt("FirstPlay", 1);
-            PlayerPrefs.SetInt("persistantPlayerCoins", 100);
+            PlayerPrefs.SetInt("persistantPlayerCoins", 0);
             PlayerPrefs.SetInt("persistantMaxHealth", 1);
             PlayerPrefs.SetInt("persistantEngineUpgrade", 1);
             PlayerPrefs.SetInt("persistantBoosterEngineUpgrade", 1);
@@ -263,6 +263,8 @@ public class RocketGameManager : MonoBehaviour
     }
     public void SaveEarnedCoins(int cost)
     {
+        Debug.Log("SaveEarnedCoins: " + cost);
+
         persistantPlayerCoins += cost;
         PlayerPrefs.SetInt("persistantPlayerCoins", persistantPlayerCoins);
     }

@@ -52,6 +52,8 @@ public class StoreManager : MonoBehaviour
 
     public void UpdateItemInfoBox()
     {
+        playerMoneyLabel.text = RocketGameManager.Instance.persistantPlayerCoins.ToString();
+
         switch (highlightedItem)
         {
             case 0:

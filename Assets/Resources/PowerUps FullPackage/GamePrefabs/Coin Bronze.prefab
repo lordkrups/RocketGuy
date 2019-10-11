@@ -4770,7 +4770,7 @@ MonoBehaviour:
   money: 1
   diamond: 0
   timeToDie: 0
-  value: 1
+  value: 10
 --- !u!136 &2793920204001392509
 CapsuleCollider:
   m_ObjectHideFlags: 0

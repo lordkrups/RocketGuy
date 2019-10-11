@@ -7,50 +7,50 @@
 <StoreStats>
 	<StoreStat>
         <Stat id="0" name = "Rocket HP" stat ="0,50,100,150,200,250,300,350,400,450,500"
-              cost = "0,0,500,1000,1500,2000,2500,3000,3500,4000,4500" sprite="Icon Heart Red"
+              cost = "0,0,100,250,400,600,850,1000,1300,1500,2000" sprite="Icon Heart Red"
               description = "More hitpoints your rocket has, the more damage it can take!"
               />
-        <Stat id="1" name = "Main Engine" stat ="0,0.5,1,1.25,1.5,1.75"
-              cost = "0,0, 500, 1000, 1500, 2000" sprite="Icon Gear Gold"
+        <Stat id="1" name = "Main Engine" stat ="0,16, 18, 20, 22, 24"
+              cost = "0,0, 100, 300, 700, 1200" sprite="Icon Gear Gold"
               description = "Upgrade the power of the main engine!"
               />               
-        <Stat id="2" name = "Booster Engine" stat ="0,20, 25, 30, 35, 40"
-              cost = "0,0, 500, 1000, 1500, 2000" sprite="Icon Lightning Yellow"
+        <Stat id="2" name = "Booster Engine" stat ="0,2,4,6,8,10"
+              cost = "0,0, 200, 500, 900, 1500" sprite="Icon Lightning Yellow"
               description = "Upgrade the power of the booster engine!"
               />  
-        <Stat id="3" name = "Rocket Controls" stat ="0,0.25, 0.5, 1, 2, 3"
-              cost = "0,0, 500, 1000, 1500, 2000" sprite="Icon Magnet RedBlue"
+        <Stat id="3" name = "Rocket Controls" stat ="0,0.12, 0.15, 0.16, 0.17, 0.18"
+              cost = "0,0, 150, 300, 500, 1000" sprite="Icon Magnet RedBlue"
               description = "Increase your control of the rockets turning ability!"
               />  
         <Stat id="4" name = "Rocket Armour" stat ="0,10, 9, 8, 7, 6, 5, 4, 3, 2, 1"
-              cost = "0,0,500,1000,1500,2000,2500,3000,3500,4000,4500" sprite="Icon Shield Green"
+              cost = "0,0,200,400,700,1000,1300,1600,1900,2100,2500" sprite="Icon Shield Green"
               description = "Remake the rocket from stronger bits, now it takes less damage!"
               />      
         <Stat id="5" name = "Fuel Tank" stat ="0,100,150,200,250,300,350,400,450,500,550"
-              cost = "0,0,500,1000,1500,2000,2500,3000,3500,4000,4500" sprite="Icon JerryCan Red"
+              cost = "0,0,100,250,400,600,850,1000,1300,1500,2000" sprite="Icon JerryCan Red"
               description = "Increase the size of the fuel tank!"
               />  
-        <Stat id="6" name = "Booster Fuel Tank" stat ="0,50,100,150,200,250,300,350,400,450,500"
-              cost = "0,0,500,1000,1500,2000,2500,3000,3500,4000,4500" sprite="Icon Battery Yellow"
+        <Stat id="6" name = "Booster Fuel Tank" stat ="0,10,50,100,150,200,250,300,350,400,450"
+              cost = "0,0,150,300,450,650,900,1150,1400,1650,2150" sprite="Icon Battery Yellow"
               description = "Increase the size of the booster fuel tank!"
               /> 
         <Stat id="7" name = "Air Resistance" stat ="0,0.65, 0.55, 0.45, 0.35, 0.25"
-              cost = "0,0,500,1000,1500,2000,2500,3000,3500,4000,4500" sprite="Icon Wings White"
-              description = "Increase the size of the booster fuel tank!"
+              cost = "0,0,500,1000,1500,2000" sprite="Icon Wings White"
+              description = "Decrease the air resistance on your rocket!"
               /> 
-        <Stat id="8" name = "Nummy Multiplier" stat ="0,1,2,3,4,5"
+        <Stat id="8" name = "Coin Multiplier" stat ="0,1,2,3,4,5"
               cost = "0,0, 500, 1500, 2500, 3500" sprite="Icon Star Yellow"
-              description = "Nummys are worth more!"
+              description = "Multiply the value of the coins collected!"
               /> 
-        <Stat id="9" name = "Fuel Consumption" stat ="0,0.2,0.15, 0.125, 0.1"
-              cost = "0,0,2000,4000,9000" sprite="Icon Wrenches Red"
+        <Stat id="9" name = "Fuel Consumption" stat ="0, 0.18, 0.175, 0.15, 0.125, 0.1"
+              cost = "0,0,500, 1200,2800, 5600" sprite="Icon Wrenches Red"
               description = "Main engine uses fuel more efficiently!"
               /> 
-        <Stat id="10" name = "Booster Fuel Consumption" stat ="0,0.5, 0.45, 0.4, 0.35"
-              cost = "0,0, 4000, 9000, 15000" sprite="Icon Stopwatch Gold"
+        <Stat id="10" name = "Booster Fuel Consumption" stat ="0, 0.26, 0.22, 0.2, 0.18, 0.14"
+              cost = "0,0, 500, 1000, 2500, 5000" sprite="Icon Stopwatch Gold"
               description = "Booster engine uses fuel more efficiently!"
               /> 
-        <Stat id="11" name = "Diamond Converter" stat ="0,1,2,3,4"
+        <Stat id="11" name = "Diamond Multiplier" stat ="0,1,2,3,4"
               cost = "0,0, 2000, 5000, 15000" sprite="Icon MoneyBag Yellow"
               description = "Diamonds are converted to more coins at the end of the level!"
               />   
