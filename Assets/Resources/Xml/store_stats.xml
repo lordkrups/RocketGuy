@@ -35,11 +35,11 @@
               description = "Increase the size of the booster fuel tank!"
               /> 
         <Stat id="7" name = "Air Resistance" stat ="0,0.65, 0.55, 0.45, 0.35, 0.25"
-              cost = "0,0,500,1000,1500,2000" sprite="Icon Wings White"
+              cost = "0,0,500,1000,1500,2000" sprite="Icon Arrows Blue"
               description = "Decrease the air resistance on your rocket!"
               /> 
         <Stat id="8" name = "Coin Multiplier" stat ="0,1,2,3,4,5"
-              cost = "0,0, 500, 1500, 2500, 3500" sprite="Icon Star Yellow"
+              cost = "0,0, 500, 1500, 2500, 3500" sprite="Icon Coin Yellow"
               description = "Multiply the value of the coins collected!"
               /> 
         <Stat id="9" name = "Fuel Consumption" stat ="0, 0.18, 0.175, 0.15, 0.125, 0.1"
@@ -51,7 +51,7 @@
               description = "Booster engine uses fuel more efficiently!"
               /> 
         <Stat id="11" name = "Diamond Multiplier" stat ="0,1,2,3,4"
-              cost = "0,0, 2000, 5000, 15000" sprite="Icon MoneyBag Yellow"
+              cost = "0,0, 2000, 5000, 15000" sprite="Icon Diamond Blue"
               description = "Diamonds are converted to more coins at the end of the level!"
               />   
        </StoreStat>

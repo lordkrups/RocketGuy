@@ -21,6 +21,8 @@ public class RocketMotorNGUI : MonoBehaviour
 
     public float height;
     public float maxHeightReached;
+    public float maxSpeedReached;
+    public int numberOfCollectedCoins;
     public bool isRocketing;
     public bool isBoosting;
     public bool isFalling;
@@ -135,7 +137,7 @@ public class RocketMotorNGUI : MonoBehaviour
 
         if (!isDead)
         {
-            if (Input.GetKey(KeyCode.Space) || gameSceneManager.flyPressed)
+            if (gameSceneManager.flyPressed)
             {
                 FireEngine();
             }
@@ -144,25 +146,20 @@ public class RocketMotorNGUI : MonoBehaviour
                 force.y = 0f;
                 isRocketing = false;
             }
-            if (Input.GetKey(KeyCode.A) || gameSceneManager.rotLeft)
+            if (gameSceneManager.rotLeft)
             {
                 relativeTorque.z = relativeTorque.z + turnSpeed;
                 Quaternion deltaRotation = Quaternion.Euler(relativeTorque * Time.deltaTime);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
-            if (Input.GetKey(KeyCode.D) || gameSceneManager.rotRight)
+            if (gameSceneManager.rotRight)
             {
                 relativeTorque.z = relativeTorque.z + turnSpeed;
                 Quaternion deltaRotation = Quaternion.Euler(-relativeTorque * Time.deltaTime);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
 
-            if (Input.GetKeyUp(KeyCode.Space))
-            {
-                force.y = 0f;
-                isRocketing = false;
-            }
-            if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.D))
+            if (!gameSceneManager.rotLeft && !gameSceneManager.rotRight)
             {
                 relativeTorque.z = 0;
             }
@@ -229,7 +226,10 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             maxHeightReached = height;
         }
-
+        if (maxSpeedReached <= rb.velocity.y)
+        {
+            maxSpeedReached = rb.velocity.y;
+        }
         if (isDead)
         {
             if (gameStarted)
@@ -264,6 +264,7 @@ public class RocketMotorNGUI : MonoBehaviour
             }
             if (colObj.money)
             {
+                numberOfCollectedCoins++;
                 moneyEarned += colObj.value;
             }
             if (colObj.diamond)
@@ -328,10 +329,11 @@ public class RocketMotorNGUI : MonoBehaviour
     IEnumerator PlayerDied()
     {
         gameStarted = false;
+        //Time.timeScale = 0.5f;
         yield return new WaitForSeconds(1f);
         gameSceneManager.ShowGameOver();
         rb.drag = rb.drag / 4;
         yield return new WaitForSeconds(1f);
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
     }
 }

@@ -248,6 +248,9 @@
     <Compile Include="Assets\Scripts\GameScripts\TopPanelReporterNGUI.cs" />
     <Compile Include="Assets\Scripts\GameScripts\UpgradesStore.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ValueToPass.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\XML Loaders\Objectives.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\XML Loaders\ObjectivesContainer.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\XML Loaders\ObjectivesLoader.cs" />
     <Compile Include="Assets\Scripts\GameScripts\XML Loaders\StoreStats.cs" />
     <Compile Include="Assets\Scripts\GameScripts\XML Loaders\StoreStatsContainer.cs" />
     <Compile Include="Assets\Scripts\GameScripts\XML Loaders\StoreStatsLoader.cs" />
@@ -335,6 +338,7 @@
     <None Include="Assets\Resources\NGUI\Examples\Models\Orc\Orc Skin.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
     <None Include="Assets\Resources\NGUI\Examples\Atlases\Wooden\Arimo14.txt" />
+    <None Include="Assets\Resources\Xml\objectives.xml" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Text 1.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Premultiplied Colored (TextureClip).shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Transparent Colored (Packed) (TextureClip).shader" />

@@ -18,23 +18,25 @@ public class RocketGameManager : MonoBehaviour
         Init();
     }
     public Dictionary<int, StoreStats> StoreStatsInfos { get; private set; }
+    public Dictionary<int, Objectives> ObjectiveInfos { get; private set; }
 
     public int playedBefore;
 
-    public int persistantPlayerCoins;
+    public int persistantObjectiveCounter;
 
-    public int persistantMaxHealth;
-    public int persistantEngineUpgrade;
-    public int persistantBoosterEngineUpgrade;
-    public int persistantTurnSpeed;
-    public int persistantDamageMultiplier;
-    public int persistantMaxFuel;
-    public int persistantMaxBoosterFuel;
-    public int persistantAirReistance;
-    public int persistantNummyMultiplier;
-    public int persistantFuelConsumptionRate;
-    public int persistantBoosterFuelConsumptionRate;
-    public int persistantDiamonValue;
+    public int persistantPlayerCoins;
+    public int persistantMaxHealth = 1;
+    public int persistantEngineUpgrade = 1;
+    public int persistantBoosterEngineUpgrade = 1;
+    public int persistantTurnSpeed = 1;
+    public int persistantDamageMultiplier = 1;
+    public int persistantMaxFuel = 1;
+    public int persistantMaxBoosterFuel = 1;
+    public int persistantAirReistance = 1;
+    public int persistantNummyMultiplier = 1;
+    public int persistantFuelConsumptionRate = 1;
+    public int persistantBoosterFuelConsumptionRate = 1;
+    public int persistantDiamonValue = 1;
 
     public List<int> healthStatValues;
     public List<int> healthStatCost;
@@ -80,13 +82,17 @@ public class RocketGameManager : MonoBehaviour
         Debug.Log("LOAD XMLs");
         StoreStatsLoader storeStatsLoader = new StoreStatsLoader();
         StoreStatsInfos = storeStatsLoader.GetDict();
+        ObjectivesLoader objectivesLoader = new ObjectivesLoader();
+        ObjectiveInfos = objectivesLoader.GetDict();
 
+        /*
         playedBefore = PlayerPrefs.GetInt("FirstPlay");
 
         if (PlayerPrefs.GetInt("FirstPlay") == 0)
         {
             playedBefore = 1;
             //PlayerPrefs.GetInt("FirstPlay", 1);
+            PlayerPrefs.SetInt("persistantObjectiveCounter", 0);
             PlayerPrefs.SetInt("persistantPlayerCoins", 0);
             PlayerPrefs.SetInt("persistantMaxHealth", 1);
             PlayerPrefs.SetInt("persistantEngineUpgrade", 1);
@@ -101,13 +107,14 @@ public class RocketGameManager : MonoBehaviour
             PlayerPrefs.SetInt("persistantNummyMultiplier", 1);
             PlayerPrefs.SetInt("persistantDiamonValue", 1);
         }    
-
+        */
 
         RetrievePersistatStats();
 
     }
     public void SavePersistatStats()
     {
+        PlayerPrefs.SetInt("persistantObjectiveCounter", persistantObjectiveCounter);
         PlayerPrefs.SetInt("FirstPlay", playedBefore);
         PlayerPrefs.SetInt("persistantPlayerCoins", persistantPlayerCoins);
         PlayerPrefs.SetInt("persistantMaxHealth", persistantMaxHealth);
@@ -125,19 +132,20 @@ public class RocketGameManager : MonoBehaviour
     }
     private void RetrievePersistatStats()
     {
-        persistantPlayerCoins = PlayerPrefs.GetInt("persistantPlayerCoins");
-        persistantMaxHealth = PlayerPrefs.GetInt("persistantMaxHealth");
-        persistantEngineUpgrade = PlayerPrefs.GetInt("persistantEngineUpgrade");
-        persistantBoosterEngineUpgrade = PlayerPrefs.GetInt("persistantBoosterEngineUpgrade");
-        persistantTurnSpeed = PlayerPrefs.GetInt("persistantTurnSpeed");
-        persistantDamageMultiplier =PlayerPrefs.GetInt("persistantDamageMultiplier");
-        persistantMaxFuel =PlayerPrefs.GetInt("persistantMaxFuel");
-        persistantMaxBoosterFuel = PlayerPrefs.GetInt("persistantMaxBoosterFuel");
-        persistantAirReistance = PlayerPrefs.GetInt("persistantAirReistance");
-        persistantFuelConsumptionRate = PlayerPrefs.GetInt("persistantFuelConsumptionRate");
-        persistantBoosterFuelConsumptionRate = PlayerPrefs.GetInt("persistantBoosterFuelConsumptionRate");
-        persistantNummyMultiplier = PlayerPrefs.GetInt("persistantNummyMultiplier");
-        persistantDiamonValue = PlayerPrefs.GetInt("persistantDiamonValue");
+        persistantObjectiveCounter = PlayerPrefs.GetInt("persistantObjectiveCounter", persistantObjectiveCounter);
+        persistantPlayerCoins = PlayerPrefs.GetInt("persistantPlayerCoins", persistantPlayerCoins);
+        persistantMaxHealth = PlayerPrefs.GetInt("persistantMaxHealth", persistantMaxHealth);
+        persistantEngineUpgrade = PlayerPrefs.GetInt("persistantEngineUpgrade", persistantEngineUpgrade);
+        persistantBoosterEngineUpgrade = PlayerPrefs.GetInt("persistantBoosterEngineUpgrade", persistantBoosterEngineUpgrade);
+        persistantTurnSpeed = PlayerPrefs.GetInt("persistantTurnSpeed", persistantTurnSpeed);
+        persistantDamageMultiplier =PlayerPrefs.GetInt("persistantDamageMultiplier", persistantDamageMultiplier);
+        persistantMaxFuel =PlayerPrefs.GetInt("persistantMaxFuel", persistantMaxFuel);
+        persistantMaxBoosterFuel = PlayerPrefs.GetInt("persistantMaxBoosterFuel", persistantMaxBoosterFuel);
+        persistantAirReistance = PlayerPrefs.GetInt("persistantAirReistance", persistantAirReistance);
+        persistantFuelConsumptionRate = PlayerPrefs.GetInt("persistantFuelConsumptionRate", persistantFuelConsumptionRate);
+        persistantBoosterFuelConsumptionRate = PlayerPrefs.GetInt("persistantBoosterFuelConsumptionRate", persistantBoosterFuelConsumptionRate);
+        persistantNummyMultiplier = PlayerPrefs.GetInt("persistantNummyMultiplier", persistantNummyMultiplier);
+        persistantDiamonValue = PlayerPrefs.GetInt("persistantDiamonValue", persistantDiamonValue);
 
 
         int[] hpVals = Array.ConvertAll(StoreStatsInfos[0].stat.Split(','), int.Parse);
@@ -261,11 +269,11 @@ public class RocketGameManager : MonoBehaviour
             diamonValueCost.Add(dvCost[x]);
         }
     }
-    public void SaveEarnedCoins(int cost)
+    public void SaveEarnedCoins(int coins)
     {
-        Debug.Log("SaveEarnedCoins: " + cost);
+        Debug.Log("SaveEarnedCoins: " + coins);
 
-        persistantPlayerCoins += cost;
+        persistantPlayerCoins += coins;
         PlayerPrefs.SetInt("persistantPlayerCoins", persistantPlayerCoins);
     }
     public bool PurchaseWithCoins(int cost)
@@ -281,5 +289,11 @@ public class RocketGameManager : MonoBehaviour
         }
 
         return canPurchase;
+    }
+
+    public void ObjectiveComplete()
+    {
+        persistantObjectiveCounter++;
+        PlayerPrefs.SetInt("persistantObjectiveCounter", persistantObjectiveCounter);
     }
 }

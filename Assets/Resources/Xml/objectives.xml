@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+
+<!--explanation of columns
+
+-->
+
+<ObjectiveList>
+	<Objectives>
+         <Objective id="0" 
+                   obj = "Reach 100m" 
+                   objtype = "flight" 
+                   objvalue = "100" 
+                   objdescription = "Fly 100 meters up!" 
+                   objreward = "250"
+
+                   />
+         <Objective id="1" 
+                   obj = "Fly for more than 10 seconds" 
+                   objtype = "time" 
+                   objvalue = "10" 
+                   objdescription = "Stay in the air for more than 10 seconds!"  
+                   objreward = "250"
+                   />
+         <Objective id="2" 
+                   obj = "Collect 3 coins" 
+                   objtype = "coin" 
+                   objvalue = "3" 
+                   objdescription = "Collect 3 coins!" 
+                   objreward = "250"
+                   />
+         <Objective id="3" 
+                   obj = "Speed over 15 m/s"
+                   objtype = "speed" 
+                   objvalue = "10" 
+                   objdescription = "Get your speed over 15 m/s!"  
+                   objreward = "250"
+                   />
+
+
+       </Objectives>
+</ObjectiveList>
+ 

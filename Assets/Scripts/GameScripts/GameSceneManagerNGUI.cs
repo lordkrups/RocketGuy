@@ -26,6 +26,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public bool flyPressed;
     public bool rotLeft;
     public bool rotRight;
+    public bool completedObjective;
 
     void Start()
     {
@@ -34,6 +35,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
         pauseMenuPanel.gameObject.SetActive(false);
         gameOverPanel.gameObject.SetActive(false);
         currentPhase = "Ground";
+
 
         StartCoroutine(CloseBlind());
     }
@@ -45,6 +47,8 @@ public class GameSceneManagerNGUI : MonoBehaviour
             blindSprite.alpha -= 0.1f;
             yield return new WaitForSeconds(0.1f);
         }
+        Debug.Log(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objdescription);
+
     }
     void Update()
     {
@@ -64,9 +68,51 @@ public class GameSceneManagerNGUI : MonoBehaviour
         {
             currentPhase = "Space";
         }
+        if (!completedObjective)
+        {
+            CheckCurrentObjective();
+        }
     }
-
-        public void TogglePause()
+    public void CheckCurrentObjective()
+    {
+        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "flight")
+        {
+            if (playerRocket.maxHeightReached >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            {
+                Debug.Log("flight Objective Complete");
+                completedObjective = true;
+                RocketGameManager.Instance.ObjectiveComplete();
+            }
+        }
+        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "time")
+        {
+            if (playerRocket.flightTime >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            {
+                Debug.Log("time Objective Complete");
+                completedObjective = true;
+                RocketGameManager.Instance.ObjectiveComplete();
+            }
+        }
+        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "coin")
+        {
+            if (!completedObjective && playerRocket.numberOfCollectedCoins >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            {
+                Debug.Log("Coins Objective Complete");
+                completedObjective = true;
+                RocketGameManager.Instance.ObjectiveComplete();
+            }
+        }
+        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "speed")
+        {
+            if (playerRocket.maxSpeedReached >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            {
+                Debug.Log("Speed Objective Complete");
+                completedObjective = true;
+                RocketGameManager.Instance.ObjectiveComplete();
+            }
+        }
+    }
+    public void TogglePause()
     {
         isGamePaused = !isGamePaused;
 

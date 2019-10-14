@@ -369,7 +369,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Icon Star Yellow
+  mSpriteName: Icon Coin Gold
   mFixedAspect: 0
   mFillCenter: 1
 --- !u!1 &121230543
@@ -1115,7 +1115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &238104832
 Transform:
   m_ObjectHideFlags: 0
@@ -2836,7 +2836,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &650552321
 Transform:
   m_ObjectHideFlags: 0
@@ -2893,7 +2893,7 @@ MonoBehaviour:
   anchorOffset: 0
   softBorderPadding: 1
   renderQueue: 0
-  startingRenderQueue: 3000
+  startingRenderQueue: 3004
   mClipTexture: {fileID: 0}
   mAlpha: 1
   mClipping: 0
@@ -3396,7 +3396,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778803802}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -155, z: 0}
+  m_LocalPosition: {x: 0, y: -160, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1012211961}
@@ -4029,14 +4029,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0.7735849, g: 0.7699359, b: 0.7699359, a: 1}
   mPivot: 4
-  mWidth: 500
+  mWidth: 520
   mHeight: 425
   mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1.1764706
+  aspectRatio: 1.2235295
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -5443,7 +5443,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136827722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -245, z: 0}
+  m_LocalPosition: {x: 0, y: -250, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 940502685}
@@ -6034,7 +6034,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Icon Wings White
+  mSpriteName: Icon Arrows Blue
   mFixedAspect: 0
   mFillCenter: 1
 --- !u!1 &1384856569
@@ -6148,7 +6148,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1393801134}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -500, z: 0}
+  m_LocalPosition: {x: 0, y: -510, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 245680787}
@@ -7033,19 +7033,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playedBefore: 0
+  persistantObjectiveCounter: 0
   persistantPlayerCoins: 0
-  persistantMaxHealth: 0
-  persistantEngineUpgrade: 0
-  persistantBoosterEngineUpgrade: 0
-  persistantTurnSpeed: 0
-  persistantDamageMultiplier: 0
-  persistantMaxFuel: 0
-  persistantMaxBoosterFuel: 0
-  persistantAirReistance: 0
-  persistantNummyMultiplier: 0
-  persistantFuelConsumptionRate: 0
-  persistantBoosterFuelConsumptionRate: 0
-  persistantDiamonValue: 0
+  persistantMaxHealth: 1
+  persistantEngineUpgrade: 1
+  persistantBoosterEngineUpgrade: 1
+  persistantTurnSpeed: 1
+  persistantDamageMultiplier: 1
+  persistantMaxFuel: 1
+  persistantMaxBoosterFuel: 1
+  persistantAirReistance: 1
+  persistantNummyMultiplier: 1
+  persistantFuelConsumptionRate: 1
+  persistantBoosterFuelConsumptionRate: 1
+  persistantDiamonValue: 1
   healthStatValues: 
   healthStatCost: 
   mainEngineStatValue: []
@@ -7235,13 +7236,13 @@ MonoBehaviour:
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
   mWidth: 100
-  mHeight: 100
+  mHeight: 140
   mDepth: 6
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 1
+  aspectRatio: 0.71428573
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -7256,7 +7257,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Icon MoneyBag Yellow
+  mSpriteName: Icon Diamond Blue
   mFixedAspect: 0
   mFillCenter: 1
 --- !u!1 &1559259977
@@ -7907,7 +7908,7 @@ MonoBehaviour:
   mText: 123456
   mFontSize: 50
   mFontStyle: 0
-  mAlignment: 1
+  mAlignment: 2
   mEncoding: 1
   mMaxLineCount: 0
   mEffectStyle: 2
