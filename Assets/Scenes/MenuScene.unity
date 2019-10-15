@@ -3076,7 +3076,7 @@ MonoBehaviour:
     relative: 1
     absolute: 0
   updateAnchors: 1
-  mColor: {r: 1, g: 1, b: 1, a: 0.49019608}
+  mColor: {r: 1, g: 1, b: 1, a: 0.78431374}
   mPivot: 4
   mWidth: 512
   mHeight: 200
@@ -3100,7 +3100,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: Paper Background
+  mSpriteName: Window
   mFixedAspect: 0
   mFillCenter: 1
 --- !u!1 &528625939

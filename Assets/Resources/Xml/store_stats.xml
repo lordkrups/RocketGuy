@@ -10,12 +10,12 @@
               cost = "0,0,100,250,400,600,850,1000,1300,1500,2000" sprite="Icon Heart Red"
               description = "More hitpoints your rocket has, the more damage it can take!"
               />
-        <Stat id="1" name = "Main Engine" stat ="0,16, 18, 20, 22, 24"
-              cost = "0,0, 100, 300, 700, 1200" sprite="Icon Gear Gold"
+        <Stat id="1" name = "Main Engine" stat ="0,16,17,18,19,20,21,22,23,24,28"
+              cost = "0,0, 100,300,600,1000,1500,2100,2800,3600,5000" sprite="Icon Gear Gold"
               description = "Upgrade the power of the main engine!"
               />               
-        <Stat id="2" name = "Booster Engine" stat ="0,2,4,6,8,10"
-              cost = "0,0, 200, 500, 900, 1500" sprite="Icon Lightning Yellow"
+        <Stat id="2" name = "Booster Engine" stat ="0,1,2,3,4,5,6,7,8,9,10,14"
+              cost = "0,0,100,200,400,700,1100,1600,2200,2900,3700,5500" sprite="Icon Lightning Yellow"
               description = "Upgrade the power of the booster engine!"
               />  
         <Stat id="3" name = "Rocket Controls" stat ="0,0.12, 0.15, 0.16, 0.17, 0.18"
