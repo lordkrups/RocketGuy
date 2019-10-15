@@ -1,9 +1,9 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Xml/objectives.xml">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketMotorNGUI.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="320" Column="1" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="269" Column="103" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="165" Column="47" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="175" Column="17" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="215" Column="19" NotebookId="1" />
       <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="49" Column="53" NotebookId="1" />
       <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="23" Column="17" NotebookId="1" />
       <File FileName="Assets/Scripts/GameScripts/Toast.cs" Line="34" Column="44" NotebookId="1" />
@@ -13,8 +13,8 @@
       <FloatingWindow WindowId="1" X="222" Y="23" Width="1692" Height="1056">
         <Files>
           <File FileName="Assets/Scripts/GameScripts/XML Loaders/Objectives.cs" Line="17" Column="1" />
-          <File FileName="Assets/Resources/Xml/objectives.xml" Line="63" Column="35" />
-          <File FileName="Assets/Resources/Xml/store_stats.xml" Line="13" Column="59" />
+          <File FileName="Assets/Resources/Xml/objectives.xml" Line="42" Column="37" />
+          <File FileName="Assets/Resources/Xml/store_stats.xml" Line="37" Column="78" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -24,13 +24,12 @@
           <Node name="RocketGuy" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Resources" expanded="True">
-                <Node name="Xml" expanded="True">
-                  <Node name="objectives.xml" selected="True" />
-                </Node>
+                <Node name="Xml" expanded="True" />
               </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
+                  <Node name="RocketMotorNGUI.cs" selected="True" />
                 </Node>
                 <Node name="Helper" expanded="True" />
                 <Node name="Loaders" expanded="True" />

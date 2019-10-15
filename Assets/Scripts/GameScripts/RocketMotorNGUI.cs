@@ -14,6 +14,7 @@ public class RocketMotorNGUI : MonoBehaviour
 
     public Light lightOne;
     public List<ParticleSystem> flamesList;
+    public ParticleSystem leftFlame, rightFlame;
 
     public Vector3 force;//variable for lift
     public Vector3 relativeTorque;//variable for torque
@@ -71,6 +72,8 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             flamesList[i].gameObject.SetActive(true);
         }
+        leftFlame.gameObject.SetActive(true);
+        rightFlame.gameObject.SetActive(true);
         // lightOne.gameObject.SetActive(false);
         health = maxHealth;
         fuel = maxFuel;
@@ -90,7 +93,7 @@ public class RocketMotorNGUI : MonoBehaviour
         //Debug.Log("maxForce + boosterLift: " + (maxForce + boosterLift));
         if (isBoosting)
         {
-            boosterFuel = boosterFuel - boosterFuelConsumptionRate;
+            boosterFuel = boosterFuel - boosterFuelConsumptionRate/2;
             flamesList[3].Play();
 
             if (force.y <= (maxForce + boosterLift))
@@ -110,8 +113,35 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             isRocketing = false;
         }
+    }
+    private void FireSideEngine()
+    {
+        if (gameSceneManager.rocketLeft)
+        {
+            if (force.x < maxForce)
+            {
+                force.x = force.x + 0.1f;
+            }
+        }
+        if (gameSceneManager.rocketRight)
+        {
+            if (force.x < maxForce)
+            {
+                force.x = force.x - 0.1f;
+            }
+        }
 
-
+        if (fuel > 0)
+        {
+            fuel = fuel - fuelConsumptionRate;
+            rb.AddRelativeForce(force);
+            isRocketing = true;
+            fallTimer = 0;
+        }
+        else
+        {
+            isRocketing = false;
+        }
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -138,6 +168,12 @@ public class RocketMotorNGUI : MonoBehaviour
 
         if (!isDead)
         {
+            if (rb.velocity.x < -2f || rb.velocity.x > 2f)
+            {
+                force.x = -rb.velocity.x;
+
+                rb.AddRelativeForce(force);
+            }
             if (gameSceneManager.flyPressed)
             {
                 FireEngine();
@@ -147,6 +183,12 @@ public class RocketMotorNGUI : MonoBehaviour
                 force.y = 0f;
                 isRocketing = false;
             }
+
+            if (gameSceneManager.rocketLeft || gameSceneManager.rocketRight)
+            {
+                FireSideEngine();
+            }
+
             if (gameSceneManager.rotLeft)
             {
                 relativeTorque.z = relativeTorque.z + turnSpeed;
@@ -159,7 +201,6 @@ public class RocketMotorNGUI : MonoBehaviour
                 Quaternion deltaRotation = Quaternion.Euler(-relativeTorque * Time.deltaTime);
                 rb.MoveRotation(rb.rotation * deltaRotation);
             }
-
             if (!gameSceneManager.rotLeft && !gameSceneManager.rotRight)
             {
                 relativeTorque.z = 0;
@@ -178,11 +219,30 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             //gameSceneManager.audioPlayer.PlaySFXClip("rocketBlast");
 
-            flamesList[0].Play();
-            flamesList[1].Play();
-            flamesList[2].Play();
-            //lightOne.gameObject.SetActive(true);
-            boostTimer += Time.deltaTime;
+            if (gameSceneManager.rocketLeft)
+            {
+                leftFlame.Play();
+            } else
+            {
+                leftFlame.Pause();
+                leftFlame.Clear();
+            }
+            if (gameSceneManager.rocketRight)
+            {
+                rightFlame.Play();
+            }
+            else
+            {
+                rightFlame.Pause();
+                rightFlame.Clear();
+            }            //lightOne.gameObject.SetActive(true);
+            if (!gameSceneManager.rocketLeft && !gameSceneManager.rocketRight)
+            {
+                flamesList[0].Play();
+                flamesList[1].Play();
+                flamesList[2].Play();
+                boostTimer += Time.deltaTime;
+            }
             isFalling = false;
         }
         if (fallTimer >= 3f)
@@ -214,6 +274,11 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[1].Clear();
             flamesList[2].Pause();
             flamesList[2].Clear();
+
+            leftFlame.Pause();
+            leftFlame.Clear();
+            rightFlame.Pause();
+            rightFlame.Clear();
 
             isBoosting = false;
             boostTimer = 0f;
@@ -254,14 +319,26 @@ public class RocketMotorNGUI : MonoBehaviour
             if (colObj.fuel)
             {
                 fuel += colObj.value;
+                if (fuel > maxFuel)
+                {
+                    fuel = maxFuel;
+                }
             }
             if (colObj.boosterFuel)
             {
                 boosterFuel += colObj.value;
+                if (boosterFuel > maxBoosterFuel)
+                {
+                    boosterFuel = maxBoosterFuel;
+                }
             }
             if (colObj.health)
             {
                 health += colObj.value;
+                if (health > maxHealth)
+                {
+                    health = maxHealth;
+                }
             }
             if (colObj.money)
             {

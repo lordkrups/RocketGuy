@@ -31,6 +31,8 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public bool flyPressed;
     public bool rotLeft;
     public bool rotRight;
+    public bool rocketLeft;
+    public bool rocketRight;
     public bool completedObjective;
 
     void Start()
@@ -204,6 +206,25 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public void RightButtonReleased()
     {
         rotRight = false;
+    }
+
+
+
+    public void FlyLeftPressed()
+    {
+        rocketLeft = true;
+    }
+    public void FlyLeftReleased()
+    {
+        rocketLeft = false;
+    }
+    public void FlyRightPressed()
+    {
+        rocketRight = true;
+    }
+    public void FlyRightReleased()
+    {
+        rocketRight = false;
     }
 }
 

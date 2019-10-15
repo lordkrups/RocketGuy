@@ -34,7 +34,7 @@
               cost = "0,0,150,300,450,650,900,1150,1400,1650,2150" sprite="Icon Battery Yellow"
               description = "Increase the size of the booster fuel tank!"
               /> 
-        <Stat id="7" name = "Air Resistance" stat ="0,0.65, 0.55, 0.45, 0.35, 0.25"
+        <Stat id="7" name = "Air Resistance" stat ="0,0.7, 0.6, 0.5, 0.4, 0.3"
               cost = "0,0,500,1000,1500,2000" sprite="Icon Arrows Blue"
               description = "Decrease the air resistance on your rocket!"
               /> 

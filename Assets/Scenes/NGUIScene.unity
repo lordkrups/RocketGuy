@@ -873,12 +873,6 @@ MonoBehaviour:
   mSpriteName: upgrade_pan
   mFixedAspect: 0
   mFillCenter: 1
---- !u!198 &195216822 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3123994898713545073, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-    type: 3}
-  m_PrefabInstance: {fileID: 972692236}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &198636465
 GameObject:
   m_ObjectHideFlags: 0
@@ -1617,12 +1611,12 @@ MonoBehaviour:
   onHoverOut: []
   onPress:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: RightButtonPressed
+    mMethodName: FlyRightPressed
     mParameters: []
     oneShot: 0
   onRelease:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: RightButtonReleased
+    mMethodName: FlyRightReleased
     mParameters: []
     oneShot: 0
   onSelect: []
@@ -1633,12 +1627,12 @@ MonoBehaviour:
   onDragEnd: []
   onDragOver:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: RightButtonPressed
+    mMethodName: FlyRightPressed
     mParameters: []
     oneShot: 0
   onDragOut:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: RightButtonReleased
+    mMethodName: FlyRightReleased
     mParameters: []
     oneShot: 0
   onDrag: []
@@ -1910,7 +1904,7 @@ GameObject:
   - component: {fileID: 336180987}
   - component: {fileID: 336180986}
   m_Layer: 0
-  m_Name: Directional Light (1)
+  m_Name: MainLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4906,26 +4900,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket Red
       objectReference: {fileID: 0}
-    - target: {fileID: 8746584519837045782, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123994898713545073, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.r
-      value: 0.21799032
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123994898713545073, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.8679245
-      objectReference: {fileID: 0}
-    - target: {fileID: 3123994898713545073, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8746584519837335670, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4983,64 +4957,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
-      propertyPath: flamesList.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
       propertyPath: gameSceneManager
       value: 
       objectReference: {fileID: 1611845907110888659}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: flamesList.Array.data[3]
-      value: 
-      objectReference: {fileID: 195216822}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: maxHealth
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: boosterFuelConsumptionRate
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: boosterFuel
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: maxFuel
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: maxBoosterFuel
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: fuelConsumptionRate
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: liftSpeed
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: turnSpeed
-      value: 0.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: maxForce
-      value: 12
-      objectReference: {fileID: 0}
     - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
       propertyPath: launchPad
@@ -5048,69 +4967,43 @@ PrefabInstance:
       objectReference: {fileID: 1845024561}
     - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
-      propertyPath: fuel
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 61547945720048302, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
+      propertyPath: rightFlame
+      value: 
+      objectReference: {fileID: 972692237}
+    - target: {fileID: 4775134670131495445, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
-      propertyPath: m_Radius
-      value: 0.01
-      objectReference: {fileID: 0}
+      propertyPath: leftFlame
+      value: 
+      objectReference: {fileID: 972692238}
     - target: {fileID: 3932371409181539739, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
       propertyPath: m_Drag
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 3932371409181539739, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3932371409181539739, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.65
-      objectReference: {fileID: 0}
-    - target: {fileID: 1697679353, guid: 4cda551fc6f8949eebc0a8749e1cb24e, type: 3}
-      propertyPath: m_Radius
-      value: 0.031
-      objectReference: {fileID: 0}
-    - target: {fileID: 8746584519837045784, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 631759499321921645, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 631759499321921645, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
+    - target: {fileID: 4230773890771657209, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 672260315, guid: 4cda551fc6f8949eebc0a8749e1cb24e, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4455857911008956820, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
+    - target: {fileID: 7925242729121043088, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
         type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 876937820318100871, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 513415828988738351, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 11
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cda551fc6f8949eebc0a8749e1cb24e, type: 3}
+--- !u!198 &972692237 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6509752383453840663, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
+    type: 3}
+  m_PrefabInstance: {fileID: 972692236}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &972692238 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 2478628042713471132, guid: 4cda551fc6f8949eebc0a8749e1cb24e,
+    type: 3}
+  m_PrefabInstance: {fileID: 972692236}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &995722843
 GameObject:
   m_ObjectHideFlags: 0
@@ -10455,7 +10348,7 @@ GameObject:
   - component: {fileID: 1863393701}
   - component: {fileID: 1863393700}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: LightTowardsPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10813,12 +10706,12 @@ MonoBehaviour:
   onHoverOut: []
   onPress:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: LeftButtonPressed
+    mMethodName: FlyLeftPressed
     mParameters: []
     oneShot: 0
   onRelease:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: LeftButtonReleased
+    mMethodName: FlyLeftReleased
     mParameters: []
     oneShot: 0
   onSelect: []
@@ -10829,12 +10722,12 @@ MonoBehaviour:
   onDragEnd: []
   onDragOver:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: LeftButtonPressed
+    mMethodName: FlyLeftPressed
     mParameters: []
     oneShot: 0
   onDragOut:
   - mTarget: {fileID: 1611845907110888659}
-    mMethodName: LeftButtonReleased
+    mMethodName: FlyLeftReleased
     mParameters: []
     oneShot: 0
   onDrag: []
@@ -11451,6 +11344,8 @@ MonoBehaviour:
   flyPressed: 0
   rotLeft: 0
   rotRight: 0
+  rocketLeft: 0
+  rocketRight: 0
   completedObjective: 0
 --- !u!114 &1611845907110888660
 MonoBehaviour:

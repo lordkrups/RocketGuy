@@ -1,6 +1,7 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - AudioPlayer
     - CameraFollow
     - CloudObj
     - CollectibleObj
@@ -9,14 +10,17 @@ ScriptsOnlyBuild:
     - InvAttachmentPoint
     - InvEquipment
     - MainMenuManager
-    - MenuRocket
     - NGUIAtlas
     - NGUIFont
     - PlaneMotor
     - PlayIdleAnimations
+    - RocketGameManager
     - RocketMotorNGUI
+    - S2ButtonScale
     - SpinWithMouse
+    - StoreManager
     - ThingsSpawnerNGUI
+    - Toast
     - TopPanelReporterNGUI
     - TypewriterEffect
     - UIButton
@@ -38,6 +42,7 @@ ScriptsOnlyBuild:
     - UIStorageSlot
     - UIToggle
     - UIWidget
+    - ValueToPass
     - VisCircle.PowerUpAnimation
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
@@ -99,77 +104,85 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9364}
+      Script: {instanceID: 9334}
     - Class: 114
-      Script: {instanceID: 9380}
+      Script: {instanceID: 9366}
     - Class: 114
-      Script: {instanceID: 9386}
+      Script: {instanceID: 9388}
     - Class: 114
-      Script: {instanceID: 9432}
+      Script: {instanceID: 9434}
     - Class: 114
-      Script: {instanceID: 9474}
+      Script: {instanceID: 9476}
     - Class: 114
-      Script: {instanceID: 9524}
+      Script: {instanceID: 9526}
     - Class: 114
-      Script: {instanceID: 9574}
+      Script: {instanceID: 9576}
     - Class: 114
-      Script: {instanceID: 9598}
+      Script: {instanceID: 9600}
     - Class: 114
-      Script: {instanceID: 9904}
+      Script: {instanceID: 9910}
     - Class: 114
-      Script: {instanceID: 9938}
+      Script: {instanceID: 9944}
     - Class: 114
-      Script: {instanceID: 9950}
+      Script: {instanceID: 9956}
     - Class: 114
-      Script: {instanceID: 9958}
+      Script: {instanceID: 9962}
     - Class: 114
-      Script: {instanceID: 10008}
+      Script: {instanceID: 9964}
     - Class: 114
-      Script: {instanceID: 10046}
+      Script: {instanceID: 9986}
     - Class: 114
-      Script: {instanceID: 10184}
+      Script: {instanceID: 10016}
     - Class: 114
-      Script: {instanceID: 10264}
+      Script: {instanceID: 10054}
+    - Class: 114
+      Script: {instanceID: 10194}
+    - Class: 114
+      Script: {instanceID: 10196}
     - Class: 114
       Script: {instanceID: 10276}
     - Class: 114
-      Script: {instanceID: 10302}
+      Script: {instanceID: 10288}
     - Class: 114
-      Script: {instanceID: 10326}
+      Script: {instanceID: 10314}
     - Class: 114
-      Script: {instanceID: 10336}
+      Script: {instanceID: 10338}
     - Class: 114
-      Script: {instanceID: 10352}
+      Script: {instanceID: 10348}
     - Class: 114
-      Script: {instanceID: 10436}
+      Script: {instanceID: 10364}
     - Class: 114
-      Script: {instanceID: 10460}
+      Script: {instanceID: 10448}
     - Class: 114
-      Script: {instanceID: 10524}
+      Script: {instanceID: 10474}
     - Class: 114
       Script: {instanceID: 10540}
     - Class: 114
-      Script: {instanceID: 10788}
+      Script: {instanceID: 10556}
     - Class: 114
-      Script: {instanceID: 10792}
+      Script: {instanceID: 10808}
     - Class: 114
-      Script: {instanceID: 10930}
+      Script: {instanceID: 10812}
     - Class: 114
-      Script: {instanceID: 10978}
+      Script: {instanceID: 10952}
     - Class: 114
-      Script: {instanceID: 11060}
+      Script: {instanceID: 11000}
     - Class: 114
-      Script: {instanceID: 11206}
+      Script: {instanceID: 11082}
     - Class: 114
-      Script: {instanceID: 11222}
+      Script: {instanceID: 11228}
     - Class: 114
-      Script: {instanceID: 11230}
+      Script: {instanceID: 11244}
     - Class: 114
-      Script: {instanceID: 11296}
+      Script: {instanceID: 11252}
     - Class: 114
-      Script: {instanceID: 11330}
+      Script: {instanceID: 11318}
     - Class: 114
-      Script: {instanceID: 11360}
+      Script: {instanceID: 11352}
+    - Class: 114
+      Script: {instanceID: 11382}
+    - Class: 114
+      Script: {instanceID: 11400}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -217,6 +230,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
     - Class: 90
@@ -232,41 +249,45 @@ ScriptsOnlyBuild:
     - Class: 111
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9364}
+      Script: {instanceID: 9366}
     - Class: 114
-      Script: {instanceID: 9386}
+      Script: {instanceID: 9388}
     - Class: 114
-      Script: {instanceID: 9474}
+      Script: {instanceID: 9476}
     - Class: 114
-      Script: {instanceID: 9736}
+      Script: {instanceID: 9632}
     - Class: 114
-      Script: {instanceID: 9880}
+      Script: {instanceID: 9742}
     - Class: 114
-      Script: {instanceID: 9904}
+      Script: {instanceID: 9886}
     - Class: 114
-      Script: {instanceID: 9938}
+      Script: {instanceID: 9910}
     - Class: 114
-      Script: {instanceID: 10046}
+      Script: {instanceID: 9944}
     - Class: 114
-      Script: {instanceID: 10184}
+      Script: {instanceID: 9986}
     - Class: 114
-      Script: {instanceID: 10302}
+      Script: {instanceID: 10054}
     - Class: 114
-      Script: {instanceID: 10336}
+      Script: {instanceID: 10194}
     - Class: 114
-      Script: {instanceID: 10610}
+      Script: {instanceID: 10314}
     - Class: 114
-      Script: {instanceID: 10878}
+      Script: {instanceID: 10348}
     - Class: 114
-      Script: {instanceID: 11060}
+      Script: {instanceID: 10628}
     - Class: 114
-      Script: {instanceID: 11206}
+      Script: {instanceID: 10898}
     - Class: 114
-      Script: {instanceID: 11222}
+      Script: {instanceID: 11082}
     - Class: 114
-      Script: {instanceID: 11230}
+      Script: {instanceID: 11228}
     - Class: 114
-      Script: {instanceID: 11330}
+      Script: {instanceID: 11244}
+    - Class: 114
+      Script: {instanceID: 11252}
+    - Class: 114
+      Script: {instanceID: 11352}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -304,6 +325,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkillsMenuManager
+  - hash:
+      serializedVersion: 2
+      Hash: a1208f17c3948d62850e6e791aeee40d
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StoreManager
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -756,6 +783,18 @@ ScriptsOnlyBuild:
     className: TMP_InputField
   - hash:
       serializedVersion: 2
+      Hash: 4c985d0bcb871fbcaf6743dbcca8c3e9
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MenuSceneAudio
+  - hash:
+      serializedVersion: 2
+      Hash: 6fc7f0d98f4a3b7b0e92015e1082c0c4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioPlayer
+  - hash:
+      serializedVersion: 2
       Hash: 1696a0d89f8a752ee49d67e468778906
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -972,7 +1011,7 @@ ScriptsOnlyBuild:
     className: UIButtonColor
   - hash:
       serializedVersion: 2
-      Hash: 0054e6c74fb798bbff24b253cf21eeda
+      Hash: 4ca76dc64bd0b52643161d2984c57c85
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ThingsSpawnerNGUI
@@ -1086,7 +1125,7 @@ ScriptsOnlyBuild:
     className: GameOverPanel
   - hash:
       serializedVersion: 2
-      Hash: 5cf5449156a6649bff1e92d7456388cb
+      Hash: 8f8d6dbb48cb3863f901e0b343f1912f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameSceneManagerNGUI
@@ -1104,7 +1143,7 @@ ScriptsOnlyBuild:
     className: PlayerProjectile
   - hash:
       serializedVersion: 2
-      Hash: cac358055695aaa59461be86abbff0be
+      Hash: 94c645d2323577b5dd90867de7aab148
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RocketMotorNGUI
@@ -1218,6 +1257,12 @@ ScriptsOnlyBuild:
     className: UIDraggableCamera
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StoreProduct
+  - hash:
+      serializedVersion: 2
       Hash: c54d9230a6331f23c9da0591566b64c5
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -1260,7 +1305,7 @@ ScriptsOnlyBuild:
     className: UILocalize
   - hash:
       serializedVersion: 2
-      Hash: 323b51ed224cb2a7aa0ba557aa253ff9
+      Hash: 08c8ada288c23264783dfdaffa325b49
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: CollectibleObj
@@ -1402,6 +1447,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIRoot
+  - hash:
+      serializedVersion: 2
+      Hash: f670f79620bb9e9275e4388602de06b4
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RocketGameManager
   - hash:
       serializedVersion: 2
       Hash: cdb111c4aaa19d99269213a76a5a0697
@@ -1548,7 +1599,7 @@ ScriptsOnlyBuild:
     className: UIDrawCall
   - hash:
       serializedVersion: 2
-      Hash: a30add63c77b485d95c78f6866b3673f
+      Hash: c141132631027b0a6ee228dcf1a31e44
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenuManager
@@ -1638,7 +1689,7 @@ ScriptsOnlyBuild:
     className: UITooltip
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 4f9f092039d4d1fa9eab37cba2736d58
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UpgradesStore
@@ -2058,7 +2109,7 @@ ScriptsOnlyBuild:
     className: UISpriteAnimation
   - hash:
       serializedVersion: 2
-      Hash: 6cf1d8b5a760e749e75b3a3d7a0defee
+      Hash: 8f70010c77fab9d1fd6f7591660aa22c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TopPanelReporterNGUI
@@ -2516,4 +2567,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
   - Assets/Scenes/NGUIScene.unity
-  playerPath: /Users/DayaMac01/Documents/RocketGuy/Builds/RocketGuy v0.2.apk
+  playerPath: /Users/DayaMac01/Documents/RocketGuy/Builds/RocketGuy v0.5.apk
