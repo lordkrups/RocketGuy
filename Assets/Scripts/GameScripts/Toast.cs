@@ -31,7 +31,7 @@ public class Toast : MonoBehaviour
             //break;
         }
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         while (toastSprite.alpha > 0f)
         {

@@ -12,7 +12,6 @@
                    objvalue = "100" 
                    objdescription = "Fly 100 meters up!" 
                    objreward = "250"
-
                    />
          <Objective id="1" 
                    obj = "Fly for more than 10 seconds" 
@@ -22,21 +21,76 @@
                    objreward = "250"
                    />
          <Objective id="2" 
-                   obj = "Collect 3 coins" 
-                   objtype = "coin" 
-                   objvalue = "3" 
-                   objdescription = "Collect 3 coins!" 
-                   objreward = "250"
-                   />
-         <Objective id="3" 
                    obj = "Speed over 15 m/s"
                    objtype = "speed" 
                    objvalue = "10" 
                    objdescription = "Get your speed over 15 m/s!"  
                    objreward = "250"
                    />
+         <Objective id="3" 
+                   obj = "Collect 3 coins" 
+                   objtype = "coin" 
+                   objvalue = "3" 
+                   objdescription = "Collect 3 coins!" 
+                   objreward = "250"
 
-
+                   />
+         <Objective id="4" 
+                   obj = "Reach 200m" 
+                   objtype = "flight" 
+                   objvalue = "200" 
+                   objdescription = "Fly 200 meters up!" 
+                   objreward = "450"
+                   />
+         <Objective id="5" 
+                    obj = "Fly for more than 30 seconds" 
+                   objtype = "time" 
+                   objvalue = "30" 
+                   objdescription = "Stay in the air for more than 30 seconds!"  
+                   objreward = "300"
+                   />
+         <Objective id="6" 
+                   obj = "Speed over 15 m/s"
+                   objtype = "speed" 
+                   objvalue = "10" 
+                   objdescription = "Get your speed over 15 m/s!"  
+                   objreward = "250"
+                   />
+         <Objective id="7" 
+                   obj = "Speed over 15 m/s"
+                   objtype = "speed" 
+                   objvalue = "10" 
+                   objdescription = "Get your speed over 15 m/s!"  
+                   objreward = "250"
+                   />
+         <Objective id="8" 
+                   obj = "Speed over 15 m/s"
+                   objtype = "speed" 
+                   objvalue = "10" 
+                   objdescription = "Get your speed over 15 m/s!"  
+                   objreward = "250"
+                   />
+         <Objective id="9" 
+                   obj = "Speed over 15 m/s"
+                   objtype = "speed" 
+                   objvalue = "10" 
+                   objdescription = "Get your speed over 15 m/s!"  
+                   objreward = "250"
+                   />
+         <Objective id="10" 
+                   obj = "Speed over 15 m/s"
+                   objtype = "speed" 
+                   objvalue = "10" 
+                   objdescription = "Get your speed over 15 m/s!"  
+                   objreward = "250"
+                   />
+         <Objective id="11" 
+                   obj = "MISSIONS COMPLETE"
+                   objtype = "none" 
+                   objvalue = "0" 
+                   objdescription = "MISSIONS COMPLETE"  
+                   objreward = "0"
+                   />
        </Objectives>
 </ObjectiveList>
  

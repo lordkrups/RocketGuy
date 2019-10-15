@@ -39,7 +39,7 @@
               description = "Decrease the air resistance on your rocket!"
               /> 
         <Stat id="8" name = "Coin Multiplier" stat ="0,1,2,3,4,5"
-              cost = "0,0, 500, 1500, 2500, 3500" sprite="Icon Coin Yellow"
+              cost = "0,0, 500, 1500, 2500, 3500" sprite="Icon Coin Gold"
               description = "Multiply the value of the coins collected!"
               /> 
         <Stat id="9" name = "Fuel Consumption" stat ="0, 0.18, 0.175, 0.15, 0.125, 0.1"
@@ -50,7 +50,7 @@
               cost = "0,0, 500, 1000, 2500, 5000" sprite="Icon Stopwatch Gold"
               description = "Booster engine uses fuel more efficiently!"
               /> 
-        <Stat id="11" name = "Diamond Multiplier" stat ="0,1,2,3,4"
+        <Stat id="11" name = "Diamond Multiplier" stat ="0,1,1.5,2,2.5"
               cost = "0,0, 2000, 5000, 15000" sprite="Icon Diamond Blue"
               description = "Diamonds are converted to more coins at the end of the level!"
               />   

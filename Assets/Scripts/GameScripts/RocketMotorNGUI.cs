@@ -22,7 +22,6 @@ public class RocketMotorNGUI : MonoBehaviour
     public float height;
     public float maxHeightReached;
     public float maxSpeedReached;
-    public int numberOfCollectedCoins;
     public bool isRocketing;
     public bool isBoosting;
     public bool isFalling;
@@ -30,6 +29,8 @@ public class RocketMotorNGUI : MonoBehaviour
     public float fallTimer;
 
     public int moneyEarned;
+    public int coinsCollected;
+    public int diamondsCollected;
 
     public float maxHealth;
     public float liftSpeed;//determines how much force to apply
@@ -264,11 +265,12 @@ public class RocketMotorNGUI : MonoBehaviour
             }
             if (colObj.money)
             {
-                numberOfCollectedCoins++;
-                moneyEarned += colObj.value;
+                coinsCollected++;
+                moneyEarned += colObj.value * (int)RocketGameManager.Instance.nummyMultiplierStatValue[RocketGameManager.Instance.persistantNummyMultiplier];
             }
             if (colObj.diamond)
             {
+                diamondsCollected++;
                 moneyEarned += colObj.value * (int)RocketGameManager.Instance.diamonValueStatValue[RocketGameManager.Instance.persistantDiamonValue];
             }
             Destroy(colObj);

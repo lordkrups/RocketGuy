@@ -16,6 +16,7 @@ public class TopPanelReporterNGUI : MonoBehaviour
     public UILabel speedValue;
     public UILabel heightValue;
     public UILabel phaseValue;
+    public UILabel objectiveTrackerValue;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +41,12 @@ public class TopPanelReporterNGUI : MonoBehaviour
         speedValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.rb.velocity.y)).ToString() + " m/s";
         heightValue.text = ((int)Mathf.Abs(gameSceneManager.playerRocket.height)).ToString() + " M";
         phaseValue.text = gameSceneManager.currentPhase;
+        if (!gameSceneManager.completedObjective)
+        {
+            objectiveTrackerValue.text = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objdescription;
+        } else
+        {
+            objectiveTrackerValue.text = "Completed";
+        }
     }
 }

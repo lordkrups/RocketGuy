@@ -296,4 +296,27 @@ public class RocketGameManager : MonoBehaviour
         persistantObjectiveCounter++;
         PlayerPrefs.SetInt("persistantObjectiveCounter", persistantObjectiveCounter);
     }
+    public void ResetAllStats()
+    {
+        PlayerPrefs.DeleteAll();
+
+        persistantObjectiveCounter = 0;
+
+        persistantPlayerCoins = 0;
+        persistantMaxHealth = 1;
+        persistantEngineUpgrade = 1;
+        persistantBoosterEngineUpgrade = 1;
+        persistantTurnSpeed = 1;
+        persistantDamageMultiplier = 1;
+        persistantMaxFuel = 1;
+        persistantMaxBoosterFuel = 1;
+        persistantAirReistance = 1;
+        persistantNummyMultiplier = 1;
+        persistantFuelConsumptionRate = 1;
+        persistantBoosterFuelConsumptionRate = 1;
+        persistantDiamonValue = 1;
+
+        //RetrievePersistatStats();
+
+    }
 }

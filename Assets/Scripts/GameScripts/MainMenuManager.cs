@@ -8,6 +8,7 @@ public class MainMenuManager : MonoBehaviour
     public StoreManager storeManager;
     public UIPanel MenuPanel;
     public UIPanel StorePanel;
+    public UIPanel resetBox;
 
     public List<PlaneMotor> thingsToSpawn;
     public CloudObj cloudObj;
@@ -19,6 +20,7 @@ public class MainMenuManager : MonoBehaviour
     {
         MenuPanel.On();
         StorePanel.Off();
+        resetBox.Off();
     }
     public void StartGame()
     {
@@ -36,6 +38,24 @@ public class MainMenuManager : MonoBehaviour
         MenuPanel.On();
         StorePanel.Off();
         RocketGameManager.Instance.SavePersistatStats();
+    }
+    public void OpenResetBox()
+    {
+        resetBox.On();
+    }
+    public void CloseResetBox()
+    {
+        resetBox.Off();
+    }
+    public void ResetStats()
+    {
+        RocketGameManager.Instance.ResetAllStats();
+        SceneManager.LoadScene("MenuScene");
+
+    }
+    public void AddMoney()
+    {
+        RocketGameManager.Instance.SaveEarnedCoins(1000);
     }
     private void Update()
     {

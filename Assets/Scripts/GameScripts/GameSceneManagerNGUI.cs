@@ -16,6 +16,11 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public UIPanel pauseMenuPanel;
     public UIPanel gameOverPanel;
     public UILabel goHeightValue;
+    public UILabel goFlightTimeValue;
+    public UILabel goMaxSpeedValue;
+    public UILabel goCoinsCollectedValue;
+    public UILabel goDiamondsCollectedValue;
+    public UILabel goObjectiveRewardValue;
     public UILabel goMoneyValue;
 
     public float lowHeight;
@@ -81,6 +86,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
             {
                 Debug.Log("flight Objective Complete");
                 completedObjective = true;
+                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
                 RocketGameManager.Instance.ObjectiveComplete();
             }
         }
@@ -90,15 +96,27 @@ public class GameSceneManagerNGUI : MonoBehaviour
             {
                 Debug.Log("time Objective Complete");
                 completedObjective = true;
+                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
                 RocketGameManager.Instance.ObjectiveComplete();
             }
         }
         if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "coin")
         {
-            if (!completedObjective && playerRocket.numberOfCollectedCoins >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            if (!completedObjective && playerRocket.coinsCollected >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
             {
                 Debug.Log("Coins Objective Complete");
                 completedObjective = true;
+                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
+                RocketGameManager.Instance.ObjectiveComplete();
+            }
+        }
+        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "diamond")
+        {
+            if (!completedObjective && playerRocket.diamondsCollected >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            {
+                Debug.Log("Coins Objective Complete");
+                completedObjective = true;
+                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
                 RocketGameManager.Instance.ObjectiveComplete();
             }
         }
@@ -108,6 +126,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
             {
                 Debug.Log("Speed Objective Complete");
                 completedObjective = true;
+                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
                 RocketGameManager.Instance.ObjectiveComplete();
             }
         }
@@ -129,10 +148,25 @@ public class GameSceneManagerNGUI : MonoBehaviour
     }
     public void ShowGameOver()
     {
+        int objMoney = 0;
         gameOverPanel.gameObject.SetActive(true);
         //goHeightValue.text = ((int)Mathf.Abs(playerRocket.height)).ToString() + "Meters";
-        goMoneyValue.text = playerRocket.moneyEarned.ToString() + "G";
         goHeightValue.text = (((int)playerRocket.maxHeightReached).ToString() + " M");
+        goFlightTimeValue.text = (((int)playerRocket.flightTime).ToString() + " S");
+        goMaxSpeedValue.text = (((int)playerRocket.maxSpeedReached).ToString() + " M/S");
+        goCoinsCollectedValue.text = playerRocket.coinsCollected.ToString();
+        goDiamondsCollectedValue.text = playerRocket.diamondsCollected.ToString();
+        if (completedObjective)
+        {
+            goObjectiveRewardValue.text = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter - 1].objreward.ToString();
+            objMoney = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter - 1].objreward;
+        } else
+        {
+            goObjectiveRewardValue.text = "0";
+        }
+
+        int totalMoney = playerRocket.moneyEarned + objMoney;
+        goMoneyValue.text = totalMoney.ToString() + "G";
 
     }
     public void ReturnToMenu()
