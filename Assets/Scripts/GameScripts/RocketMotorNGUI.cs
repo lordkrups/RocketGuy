@@ -168,12 +168,6 @@ public class RocketMotorNGUI : MonoBehaviour
 
         if (!isDead)
         {
-            if (rb.velocity.x < -2f || rb.velocity.x > 2f)
-            {
-                force.x = -rb.velocity.x;
-
-                rb.AddRelativeForce(force);
-            }
             if (gameSceneManager.flyPressed)
             {
                 FireEngine();
@@ -182,11 +176,6 @@ public class RocketMotorNGUI : MonoBehaviour
             {
                 force.y = 0f;
                 isRocketing = false;
-            }
-
-            if (gameSceneManager.rocketLeft || gameSceneManager.rocketRight)
-            {
-                FireSideEngine();
             }
 
             if (gameSceneManager.rotLeft)
@@ -214,28 +203,28 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             rb.drag = dragAirResis;
         }
+        if (gameSceneManager.rocketLeft)
+        {
+            leftFlame.Play();
+        }
+        else
+        {
+            leftFlame.Pause();
+            leftFlame.Clear();
+        }
 
+        if (gameSceneManager.rocketRight)
+        {
+            rightFlame.Play();
+        }
+        else
+        {
+            rightFlame.Pause();
+            rightFlame.Clear();
+        }
         if (isRocketing)
         {
             //gameSceneManager.audioPlayer.PlaySFXClip("rocketBlast");
-
-            if (gameSceneManager.rocketLeft)
-            {
-                leftFlame.Play();
-            } else
-            {
-                leftFlame.Pause();
-                leftFlame.Clear();
-            }
-            if (gameSceneManager.rocketRight)
-            {
-                rightFlame.Play();
-            }
-            else
-            {
-                rightFlame.Pause();
-                rightFlame.Clear();
-            }            //lightOne.gameObject.SetActive(true);
             if (!gameSceneManager.rocketLeft && !gameSceneManager.rocketRight)
             {
                 flamesList[0].Play();
@@ -274,11 +263,6 @@ public class RocketMotorNGUI : MonoBehaviour
             flamesList[1].Clear();
             flamesList[2].Pause();
             flamesList[2].Clear();
-
-            leftFlame.Pause();
-            leftFlame.Clear();
-            rightFlame.Pause();
-            rightFlame.Clear();
 
             isBoosting = false;
             boostTimer = 0f;

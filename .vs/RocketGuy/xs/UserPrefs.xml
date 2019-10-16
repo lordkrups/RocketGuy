@@ -1,20 +1,20 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketMotorNGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketGameManager.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="320" Column="1" NotebookId="1" />
       <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="175" Column="17" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="215" Column="19" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="49" Column="53" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="23" Column="17" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameScripts/Toast.cs" Line="34" Column="44" NotebookId="1" />
-      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/Toast.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" NotebookId="1" />
     </Files>
     <FloatingWindows>
       <FloatingWindow WindowId="1" X="222" Y="23" Width="1692" Height="1056">
         <Files>
           <File FileName="Assets/Scripts/GameScripts/XML Loaders/Objectives.cs" Line="17" Column="1" />
-          <File FileName="Assets/Resources/Xml/objectives.xml" Line="42" Column="37" />
-          <File FileName="Assets/Resources/Xml/store_stats.xml" Line="37" Column="78" />
+          <File FileName="Assets/Resources/Xml/objectives.xml" />
+          <File FileName="Assets/Resources/Xml/store_stats.xml" />
         </Files>
       </FloatingWindow>
     </FloatingWindows>
@@ -29,7 +29,7 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="RocketMotorNGUI.cs" selected="True" />
+                  <Node name="RocketGameManager.cs" selected="True" />
                 </Node>
                 <Node name="Helper" expanded="True" />
                 <Node name="Loaders" expanded="True" />
@@ -44,7 +44,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="77ad3685-1fc9-4664-9997-16d499ddf356" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="47af7e1a-0986-4f9e-8153-7e17dd9bce6e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

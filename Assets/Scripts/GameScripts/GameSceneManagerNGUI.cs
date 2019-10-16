@@ -194,17 +194,22 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public void LeftButtonPressed()
     {
         rotLeft = true;
+        rocketLeft = true;
+
     }
     public void LeftButtonReleased()
     {
+        rocketLeft = false;
         rotLeft = false;
     }
     public void RightButtonPressed()
     {
+        rocketRight = true;
         rotRight = true;
     }
     public void RightButtonReleased()
     {
+        rocketRight = false;
         rotRight = false;
     }
 
@@ -213,18 +218,22 @@ public class GameSceneManagerNGUI : MonoBehaviour
     public void FlyLeftPressed()
     {
         rocketLeft = true;
+        rotLeft = true;
     }
     public void FlyLeftReleased()
     {
         rocketLeft = false;
+        rotLeft = false;
     }
     public void FlyRightPressed()
     {
         rocketRight = true;
+        rotRight = true;
     }
     public void FlyRightReleased()
     {
         rocketRight = false;
+        rotRight = false;
     }
 }
 
