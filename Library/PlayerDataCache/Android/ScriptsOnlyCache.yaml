@@ -2567,4 +2567,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/MenuScene.unity
   - Assets/Scenes/NGUIScene.unity
-  playerPath: /Users/DayaMac01/Documents/RocketGuy/Builds/RocketGuy v0.5.apk
+  playerPath: /Users/DayaMac01/Documents/RocketGuy/Builds/RocketGuy v0.5.1.apk

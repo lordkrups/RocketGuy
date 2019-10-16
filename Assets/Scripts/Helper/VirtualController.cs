@@ -22,7 +22,7 @@ public class VirtualController : MonoBehaviour
 
     public bool IsPlaying { get => isPlaying; set => isPlaying = value; }
 
-    public void Init(Camera uiCamera, Action<Vector2> holdingAction, Action releaseAction)
+    public void Init(Camera uiCamera, Action<Vector2> holdingAction = null, Action releaseAction = null)
     {
         _uiCamera = uiCamera;
         _holdingAction = holdingAction;

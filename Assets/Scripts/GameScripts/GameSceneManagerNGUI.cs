@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManagerNGUI : MonoBehaviour
 {
+    public VirtualController virtualController;
+    public Camera uiCamera;
+
     public string currentPhase;
 
     public AudioPlayer audioPlayer;
@@ -37,6 +40,8 @@ public class GameSceneManagerNGUI : MonoBehaviour
 
     void Start()
     {
+        virtualController.Init(uiCamera);
+
         blindSprite.On();
         Time.timeScale = 1;
         pauseMenuPanel.gameObject.SetActive(false);
@@ -116,7 +121,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
         {
             if (!completedObjective && playerRocket.diamondsCollected >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
             {
-                Debug.Log("Coins Objective Complete");
+                Debug.Log("Diamond Objective Complete");
                 completedObjective = true;
                 RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
                 RocketGameManager.Instance.ObjectiveComplete();
@@ -160,11 +165,11 @@ public class GameSceneManagerNGUI : MonoBehaviour
         goDiamondsCollectedValue.text = playerRocket.diamondsCollected.ToString();
         if (completedObjective)
         {
-            goObjectiveRewardValue.text = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter - 1].objreward.ToString();
+            goObjectiveRewardValue.text = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter - 1].objreward.ToString() + " G";
             objMoney = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter - 1].objreward;
         } else
         {
-            goObjectiveRewardValue.text = "0";
+            goObjectiveRewardValue.text = "0 GP";
         }
 
         int totalMoney = playerRocket.moneyEarned + objMoney;
@@ -213,27 +218,15 @@ public class GameSceneManagerNGUI : MonoBehaviour
         rotRight = false;
     }
 
-
-
-    public void FlyLeftPressed()
+    public void PressScreenToControl()
     {
-        rocketLeft = true;
-        rotLeft = true;
-    }
-    public void FlyLeftReleased()
-    {
-        rocketLeft = false;
-        rotLeft = false;
-    }
-    public void FlyRightPressed()
-    {
-        rocketRight = true;
-        rotRight = true;
-    }
-    public void FlyRightReleased()
-    {
-        rocketRight = false;
-        rotRight = false;
+        //Debug.Log("LM PressToControl");
+        if (virtualController.IsPlaying)
+        {
+            return;
+            //virtualController.Stop();
+        }
+        virtualController.StartControlling();
     }
 }
 

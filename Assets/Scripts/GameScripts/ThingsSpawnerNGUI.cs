@@ -206,7 +206,7 @@ public class ThingsSpawnerNGUI : MonoBehaviour
 
     private void SpawnObstaclesInFrontOfPlayer(string dirToSpawn)
     {
-        Debug.Log("dirToSpawn: " + dirToSpawn);
+        //Debug.Log("dirToSpawn: " + dirToSpawn);
         //yield return new WaitForSeconds(0.5f);
 
         for (int i = 0; i < numberOfBadThingsToSpawn; i++)

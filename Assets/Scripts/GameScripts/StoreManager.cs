@@ -290,6 +290,7 @@ public class StoreManager : MonoBehaviour
                     }
                     break;
             }
+        RocketGameManager.Instance.SavePersistatStats();
         Init();
         //UpdateItemInfoBox();
     }
