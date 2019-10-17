@@ -40,7 +40,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
 
     void Start()
     {
-        virtualController.Init(uiCamera);
+        virtualController.Init(uiCamera, Move, Stop);
 
         blindSprite.On();
         Time.timeScale = 1;
@@ -227,6 +227,60 @@ public class GameSceneManagerNGUI : MonoBehaviour
             //virtualController.Stop();
         }
         virtualController.StartControlling();
+    }
+    private void Move(Vector2 vec)
+    {
+        Debug.Log("Move");
+        Debug.Log("vec.y " + vec.y);
+        Debug.Log("vec.x " + vec.x);
+        if (vec.y > 0)
+        {
+            flyPressed = true;
+
+            rocketLeft = false;
+            rotLeft = false;
+            rocketRight = false;
+            rotRight = false;
+
+            if (vec.x > 0.35)
+            {
+                rocketRight = true;
+                rotRight = true;
+            }
+            if (vec.x < -0.35)
+            {
+                rocketLeft = true;
+                rotLeft = true;
+            }
+        }
+        if (vec.y < 0)
+        {
+            flyPressed = false;
+            rocketLeft = false;
+            rotLeft = false;
+            rocketRight = false;
+            rotRight = false;
+
+            if (vec.x > 0.30)
+            {
+                rocketRight = true;
+                rotRight = true;
+            }
+            if (vec.x < -0.30)
+            {
+                rocketLeft = true;
+                rotLeft = true;
+            }
+        }
+    }
+    private void Stop()
+    {
+        Debug.Log("Stop");
+        flyPressed = false;
+        rocketLeft = false;
+        rotLeft = false;
+        rocketRight = false;
+        rotRight = false;
     }
 }
 

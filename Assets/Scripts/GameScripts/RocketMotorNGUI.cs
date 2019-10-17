@@ -397,6 +397,11 @@ public class RocketMotorNGUI : MonoBehaviour
         gameSceneManager.ShowGameOver();
         rb.drag = rb.drag / 4;
         yield return new WaitForSeconds(1f);
+        while (Time.timeScale > 0)
+        {
+            yield return new WaitForSeconds(0.5f);
+            Time.timeScale = Time.timeScale - 0.25f;
+        }
         //Time.timeScale = 0;
     }
 }

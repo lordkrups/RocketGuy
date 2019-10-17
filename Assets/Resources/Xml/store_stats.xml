@@ -18,12 +18,12 @@
               cost = "0,0,100,200,400,700,1100,1600,2200,2900,3700,5500" sprite="Icon Lightning Yellow"
               description = "Upgrade the power of the booster engine!"
               />  
-        <Stat id="3" name = "Rocket Controls" stat ="0,0.20, 0.20, 0.21, 0.22, 0.23"
+        <Stat id="3" name = "Rocket Controls" stat ="0,0.3, 0.4, 0.5, 0.6, 0.7"
               cost = "0,0, 150, 300, 500, 1000" sprite="Icon Magnet RedBlue"
               description = "Increase your control of the rockets turning ability!"
               />  
-        <Stat id="4" name = "Rocket Armour" stat ="0,10, 9, 8, 7, 6, 5, 4, 3, 2, 1"
-              cost = "0,0,200,400,700,1000,1300,1600,1900,2100,2500" sprite="Icon Shield Green"
+        <Stat id="4" name = "Rocket Armour" stat ="0,10, 9, 8, 7, 6, 5"
+              cost = "0,0,200,400,700,1000,1300" sprite="Icon Shield Green"
               description = "Remake the rocket from stronger bits, now it takes less damage!"
               />      
         <Stat id="5" name = "Fuel Tank" stat ="0,100,150,200,250,300,350,400,450,500,550"

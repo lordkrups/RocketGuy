@@ -4698,6 +4698,93 @@ MonoBehaviour:
   hideIfOffScreen: 0
   keepAspectRatio: 0
   aspectRatio: 2.96
+--- !u!1 &896169850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 896169851}
+  - component: {fileID: 896169852}
+  m_Layer: 5
+  m_Name: GuidePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &896169851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896169850}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1878386698}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &896169852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 896169850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b3dc54f924693f41b5cbecb267e647a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 100
+  mHeight: 100
+  mDepth: 10
+  mMat: {fileID: 0}
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 1
+  mType: 1
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  mApplyGradient: 0
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 0.7, g: 0.7, b: 0.7, a: 1}
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
+  mSpriteName: CircleSettingNormal
+  mFixedAspect: 0
+  mFillCenter: 1
 --- !u!1 &960970569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4730,7 +4817,7 @@ Transform:
   - {fileID: 962739068}
   - {fileID: 1396188648}
   m_Father: {fileID: 1878386698}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &960970571
 MonoBehaviour:
@@ -4763,8 +4850,8 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 200
-  mHeight: 200
+  mWidth: 150
+  mHeight: 150
   mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
@@ -4785,6 +4872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj: {fileID: 960970569}
   point: {fileID: 1396188649}
+  guidePoint: {fileID: 896169852}
   canBeUsed: 1
   isPlaying: 0
 --- !u!1 &962739067
@@ -4803,7 +4891,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &962739068
 Transform:
   m_ObjectHideFlags: 0
@@ -8036,7 +8124,7 @@ GameObject:
   - component: {fileID: 1396188648}
   - component: {fileID: 1396188649}
   m_Layer: 5
-  m_Name: Sprite (1)
+  m_Name: MovingPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8343,7 +8431,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1429637452
 Transform:
   m_ObjectHideFlags: 0
@@ -8389,14 +8477,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 740
-  mHeight: 260
-  mDepth: 102
+  mWidth: 256
+  mHeight: 256
+  mDepth: 1
   mMat: {fileID: 0}
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.8461537
+  aspectRatio: 1
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -8411,7 +8499,7 @@ MonoBehaviour:
   bottomType: 1
   topType: 1
   mAtlas: {fileID: 11400000, guid: f95e07e3d350bf748b0c42b453a69d2e, type: 2}
-  mSpriteName: white
+  mSpriteName: Icon Pearl White
   mFixedAspect: 0
   mFillCenter: 1
 --- !u!1 &1430489135
@@ -10893,7 +10981,7 @@ GameObject:
   - component: {fileID: 1878386700}
   - component: {fileID: 1878386699}
   m_Layer: 5
-  m_Name: Container
+  m_Name: VCContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10911,6 +10999,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1429637452}
+  - {fileID: 896169851}
   - {fileID: 960970570}
   m_Father: {fileID: 1337732691}
   m_RootOrder: 5
@@ -10955,7 +11044,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 740, y: 260, z: 0}
+  m_Size: {x: 220, y: 220, z: 0}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1878386701
 MonoBehaviour:
@@ -10988,14 +11077,14 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 740
-  mHeight: 260
+  mWidth: 220
+  mHeight: 220
   mDepth: 101
   mMat: {fileID: 0}
   autoResizeBoxCollider: 1
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 2.8461537
+  aspectRatio: 1
 --- !u!1 &1932888325
 GameObject:
   m_ObjectHideFlags: 0
@@ -11833,9 +11922,9 @@ MonoBehaviour:
   collectibleContainer: {fileID: 7050432820230211984}
   obstacleContainer: {fileID: 999078785128455330}
   despawnHeight: 3
-  maxDespawnDistance: 85
+  maxDespawnDistance: 65
   firstSpawned: 0
-  spawnOffset: 30
+  spawnOffset: 35
   curHeight: 0
   curWidth: 0
   prevHeight: -55
@@ -11843,10 +11932,10 @@ MonoBehaviour:
   numberOfCloudsToSpawn: 5
   numberOfGoodThingsToSpawn: 10
   numberOfBadThingsToSpawn: 5
-  goodXDist: 30
-  goodYDist: 80
-  badXDist: 40
-  badYDist: 60
+  goodXDist: 70
+  goodYDist: 70
+  badXDist: 70
+  badYDist: 70
   cloudObj: {fileID: 6162382454825405854, guid: 6d438fac0e59e434da94903b4b4f806a,
     type: 3}
   lowCollectibleList:
