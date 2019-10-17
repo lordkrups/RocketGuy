@@ -350,6 +350,7 @@ public class RocketMotorNGUI : MonoBehaviour
                     isDead = true;
                 }
             }
+            collision.gameObject.GetComponent<PlaneMotor>().timeToDie = true;
         }
         if (collision.gameObject.tag == "Enviroment")
         {
@@ -399,8 +400,8 @@ public class RocketMotorNGUI : MonoBehaviour
         yield return new WaitForSeconds(1f);
         while (Time.timeScale > 0)
         {
-            yield return new WaitForSeconds(0.5f);
-            Time.timeScale = Time.timeScale - 0.25f;
+            yield return new WaitForSeconds(0.4f);
+            Time.timeScale = Time.timeScale - 0.20f;
         }
         //Time.timeScale = 0;
     }

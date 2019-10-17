@@ -11895,9 +11895,9 @@ MonoBehaviour:
   goDiamondsCollectedValue: {fileID: 1720465270}
   goObjectiveRewardValue: {fileID: 1859581216}
   goMoneyValue: {fileID: 1361989060}
-  lowHeight: 1000
-  medHeight: 4000
-  highHeight: 8000
+  lowHeight: 200
+  medHeight: 400
+  highHeight: 600
   spaceHeight: 10000
   flyPressed: 0
   rotLeft: 0
@@ -11922,20 +11922,20 @@ MonoBehaviour:
   collectibleContainer: {fileID: 7050432820230211984}
   obstacleContainer: {fileID: 999078785128455330}
   despawnHeight: 3
-  maxDespawnDistance: 65
+  maxDespawnDistance: 55
   firstSpawned: 0
-  spawnOffset: 35
+  spawnOffset: 25
   curHeight: 0
   curWidth: 0
   prevHeight: -55
   prevWidth: 0
-  numberOfCloudsToSpawn: 5
+  numberOfCloudsToSpawn: 8
   numberOfGoodThingsToSpawn: 10
   numberOfBadThingsToSpawn: 5
-  goodXDist: 70
-  goodYDist: 70
-  badXDist: 70
-  badYDist: 70
+  goodXDist: 40
+  goodYDist: 50
+  badXDist: 40
+  badYDist: 50
   cloudObj: {fileID: 6162382454825405854, guid: 6d438fac0e59e434da94903b4b4f806a,
     type: 3}
   lowCollectibleList:

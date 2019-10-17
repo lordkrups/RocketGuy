@@ -19,6 +19,31 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7290245091773500017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2929910992101024765}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  minSpeed: 1
+  maxSpeed: 5
+  minRotationSpeed: 90
+  maxRotationSpeed: 360
+  fadeWaitTime: 0.5
+  fadeTime: 2
+  useGravity: 0
+  colliderThickness: 0.125
+  useNormals: 0
+  useMeshBoundsCenter: 0
+  allowShadows: 0
+  shadersAlreadyHandleTransparency: 0
 --- !u!1 &6976266898757942790
 GameObject:
   m_ObjectHideFlags: 0
@@ -65,6 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b8474d2f1584bc4835b4ba7eb2b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshExploder: {fileID: 7290245091773500017}
   rb: {fileID: 439463027631988226}
   thingsSpawnerNGUI: {fileID: 0}
   velocity: 1
@@ -75,6 +101,7 @@ MonoBehaviour:
   flyUp: 0
   flyDown: 0
   timeToDie: 1
+  demoMode: 0
 --- !u!54 &439463027631988226
 Rigidbody:
   m_ObjectHideFlags: 0

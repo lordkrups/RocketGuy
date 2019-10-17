@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlaneMotor : MonoBehaviour
 {
+    public MeshExploder meshExploder;
     public Rigidbody rb;
     public ThingsSpawnerNGUI thingsSpawnerNGUI;
 
@@ -118,9 +119,6 @@ public class PlaneMotor : MonoBehaviour
                 rb.MovePosition(transform.position + transform.forward * (velocity * Time.fixedDeltaTime));
             }
 
-
-        
-
         if (timeToDie == true)
         {
             DestroySoon();
@@ -141,7 +139,8 @@ public class PlaneMotor : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         rb.constraints = RigidbodyConstraints.None;
-        StartCoroutine(RemoveCollider());
+        meshExploder.Explode();
+        //StartCoroutine(RemoveCollider());
     }
     IEnumerator RemoveCollider()
     {

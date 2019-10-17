@@ -63,6 +63,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Resources\Mesh Explosion\Demo\ClickOrTapToExplode.cs" />
+    <Compile Include="Assets\Resources\Mesh Explosion\Demo\ReloadScene.cs" />
+    <Compile Include="Assets\Resources\Mesh Explosion\Internal\DestroyAfterTime.cs" />
+    <Compile Include="Assets\Resources\Mesh Explosion\Internal\DestroyOnFadeCompletion.cs" />
+    <Compile Include="Assets\Resources\Mesh Explosion\Internal\Fade.cs" />
+    <Compile Include="Assets\Resources\Mesh Explosion\Internal\MeshExplosion.cs" />
+    <Compile Include="Assets\Resources\Mesh Explosion\MeshExploder.cs" />
     <Compile Include="Assets\Resources\NGUI\Examples\Scripts\InventorySystem\Game\EquipItems.cs" />
     <Compile Include="Assets\Resources\NGUI\Examples\Scripts\InventorySystem\Game\EquipRandomItem.cs" />
     <Compile Include="Assets\Resources\NGUI\Examples\Scripts\InventorySystem\Game\UICursor.cs" />
@@ -372,6 +379,7 @@
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Text (TextureClip).shader" />
     <None Include="Assets\Resources\NGUI\Examples\Shaders\Unlit - Depth.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
+    <None Include="Assets\Resources\Mesh Explosion\Read Me.txt" />
     <None Include="Assets\Resources\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Resources\Localization.txt" />
     <Reference Include="Unity.Timeline.Editor">

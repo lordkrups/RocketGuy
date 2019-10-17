@@ -263,6 +263,17 @@ public class ThingsSpawnerNGUI : MonoBehaviour
 
                     spawnedObstacleList.Add(thingToSpawn);
                 }
+            if (gameSceneManager.currentPhase == "High")
+            {
+                int ran = Random.Range(0, highObstacleList.Count);
+                //var thingToSpawn = medObstacleList[ran];
+                var thingToSpawn = Instantiate(highObstacleList[ran], obstacleContainer.transform, true);
+                thingToSpawn.Init(this);
+
+                thingToSpawn.transform.position = pos;
+
+                spawnedObstacleList.Add(thingToSpawn);
+            }
         }
         firstSpawned = true;
         //yield return new WaitForSeconds(0f);

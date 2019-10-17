@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3320558133011784713}
   - component: {fileID: 3320558133008917547}
   - component: {fileID: 3320558133009884907}
+  - component: {fileID: 4146779723289249463}
   m_Layer: 8
   m_Name: PA_BiplaneBody
   m_TagString: Untagged
@@ -77,6 +78,31 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &4146779723289249463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3320558133011822633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 0
+  minSpeed: 1
+  maxSpeed: 5
+  minRotationSpeed: 90
+  maxRotationSpeed: 360
+  fadeWaitTime: 0.5
+  fadeTime: 2
+  useGravity: 0
+  colliderThickness: 0.125
+  useNormals: 0
+  useMeshBoundsCenter: 0
+  allowShadows: 0
+  shadersAlreadyHandleTransparency: 0
 --- !u!1 &3320558133011822635
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,9 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b8474d2f1584bc4835b4ba7eb2b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshExploder: {fileID: 4146779723289249463}
   rb: {fileID: 417856470764085162}
   thingsSpawnerNGUI: {fileID: 0}
-  despawnHeight: 3
   velocity: 3.5
   flyReversed: 0
   dirChange: 0
@@ -135,7 +161,7 @@ MonoBehaviour:
   flyUp: 0
   flyDown: 0
   timeToDie: 0
-  maxDespawnDistance: 10
+  demoMode: 0
 --- !u!54 &417856470764085162
 Rigidbody:
   m_ObjectHideFlags: 0
