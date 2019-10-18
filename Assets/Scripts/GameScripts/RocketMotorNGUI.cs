@@ -14,7 +14,9 @@ public class RocketMotorNGUI : MonoBehaviour
 
     public Light lightOne;
     public List<ParticleSystem> flamesList;
-    public ParticleSystem leftFlame, rightFlame;
+    public ParticleSystem mainFlame, leftFlame, rightFlame;
+    public GameObject[] Prefabs;
+    private GameObject deathExplosion;
 
     public Vector3 force;//variable for lift
     public Vector3 relativeTorque;//variable for torque
@@ -51,6 +53,7 @@ public class RocketMotorNGUI : MonoBehaviour
 
     public float flightTime;
     public bool gameStarted;
+    public bool deathCalled;
     public bool isDead;
     public bool canTakeDmg;
 
@@ -71,9 +74,18 @@ public class RocketMotorNGUI : MonoBehaviour
         for (int i = 0; i < flamesList.Count; i++)
         {
             flamesList[i].gameObject.SetActive(true);
+            flamesList[i].Pause();
+            flamesList[i].Clear();
         }
+        mainFlame.gameObject.SetActive(true);
         leftFlame.gameObject.SetActive(true);
         rightFlame.gameObject.SetActive(true);
+        mainFlame.Pause();
+        mainFlame.Clear();
+        leftFlame.Pause();
+        leftFlame.Clear();
+        rightFlame.Pause();
+        rightFlame.Clear();
         // lightOne.gameObject.SetActive(false);
         health = maxHealth;
         fuel = maxFuel;
@@ -95,7 +107,7 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             boosterFuel = boosterFuel - boosterFuelConsumptionRate/2;
             flamesList[3].Play();
-
+            mainFlame.Play();
             if (force.y <= (maxForce + boosterLift))
             {
                 force.y = force.y + (liftSpeed / 2);
@@ -227,9 +239,12 @@ public class RocketMotorNGUI : MonoBehaviour
             //gameSceneManager.audioPlayer.PlaySFXClip("rocketBlast");
             if (!gameSceneManager.rocketLeft && !gameSceneManager.rocketRight)
             {
+                /*
                 flamesList[0].Play();
                 flamesList[1].Play();
                 flamesList[2].Play();
+                */
+                mainFlame.Play();
                 boostTimer += Time.deltaTime;
             }
             isFalling = false;
@@ -257,13 +272,16 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             fallTimer += Time.deltaTime;
             //gameSceneManager.audioPlayer.PauseRocketSound();
+            /*
             flamesList[0].Pause();
             flamesList[0].Clear();
             flamesList[1].Pause();
             flamesList[1].Clear();
             flamesList[2].Pause();
             flamesList[2].Clear();
-
+            */
+            mainFlame.Pause();
+            mainFlame.Clear();
             isBoosting = false;
             boostTimer = 0f;
 
@@ -280,12 +298,10 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             maxSpeedReached = rb.velocity.y;
         }
-        if (isDead)
+        if (isDead && !deathCalled)
         {
-            if (gameStarted)
-            {
-                StartCoroutine(PlayerDied());
-            }
+            StartCoroutine(PlayerDied());
+            deathCalled = true;
         }
     }
 
@@ -392,17 +408,20 @@ public class RocketMotorNGUI : MonoBehaviour
 
     IEnumerator PlayerDied()
     {
+        Debug.Log("PlayerDied");
         gameStarted = false;
-        //Time.timeScale = 0.5f;
-        yield return new WaitForSeconds(1f);
-        gameSceneManager.ShowGameOver();
+        Vector3 trans = new Vector3(0, 0, -1f);
+        trans = transform.position + trans;
+        deathExplosion = Instantiate(Prefabs[0], trans, new Quaternion(), transform) as GameObject;
+        //yield return new WaitForSeconds(0.4f);
+        //trans = new Vector3(0, 0, -1f);
+        //trans = transform.position + trans;
+        //deathExplosion = Instantiate(Prefabs[1], trans, new Quaternion(), transform) as GameObject;
+
+        yield return new WaitForSeconds(1.2f);
         rb.drag = rb.drag / 4;
-        yield return new WaitForSeconds(1f);
-        while (Time.timeScale > 0)
-        {
-            yield return new WaitForSeconds(0.4f);
-            Time.timeScale = Time.timeScale - 0.20f;
-        }
+        gameSceneManager.ShowGameOver();
+        Time.timeScale = 0;
         //Time.timeScale = 0;
     }
 }

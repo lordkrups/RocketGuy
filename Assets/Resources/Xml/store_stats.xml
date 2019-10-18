@@ -7,7 +7,7 @@
 <StoreStats>
 	<StoreStat>
         <Stat id="0" name = "Rocket HP" stat ="0,50,100,150,200,250,300,350,400,450,500"
-              cost = "0,0,100,250,400,600,850,1000,1300,1500,2000" sprite="Icon Heart Red"
+              cost = "0,0,150,250,400,600,850,1000,1300,1500,2000" sprite="Icon Heart Red"
               description = "More hitpoints your rocket has, the more damage it can take!"
               />
         <Stat id="1" name = "Main Engine" stat ="0,16,17,18,19,20,21,22,23,24,28"
@@ -23,7 +23,7 @@
               description = "Increase your control of the rockets turning ability!"
               />  
         <Stat id="4" name = "Rocket Armour" stat ="0,10, 9, 8, 7, 6, 5"
-              cost = "0,0,200,400,700,1000,1300" sprite="Icon Shield Green"
+              cost = "0,0,100,400,700,1000,1300" sprite="Icon Shield Green"
               description = "Remake the rocket from stronger bits, now it takes less damage!"
               />      
         <Stat id="5" name = "Fuel Tank" stat ="0,100,150,200,250,300,350,400,450,500,550"

@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Editor\ImageEffects\BloomEditor.cs" />
     <Compile Include="Assets\Resources\Mesh Explosion\Editor\MeshExploderEditor.cs" />
     <Compile Include="Assets\Resources\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
     <Compile Include="Assets\Resources\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
@@ -759,6 +760,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{C89C9E1B-CBAA-F33B-E539-851CE7CD23C5}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{47EC3C3B-0FB0-C017-827A-3875157BD760}</Project>
       <Name>Assembly-CSharp</Name>

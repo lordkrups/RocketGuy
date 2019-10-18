@@ -63,6 +63,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\KriptoFX\DemoSources\ExplosionDemoGUI.cs" />
+    <Compile Include="Assets\KriptoFX\DemoSources\ExplosionDemoReactivator.cs" />
+    <Compile Include="Assets\KriptoFX\DemoSources\ExplosionPlatformActivator.cs" />
+    <Compile Include="Assets\KriptoFX\DemoSources\ExplosionsFPS.cs" />
+    <Compile Include="Assets\KriptoFX\Scripts\ExplosionsBillboard.cs" />
+    <Compile Include="Assets\KriptoFX\Scripts\ExplosionsDeactivateRendererByTime.cs" />
+    <Compile Include="Assets\KriptoFX\Scripts\ExplosionsLightCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Scripts\ExplosionsParticleSystemScaler.cs" />
+    <Compile Include="Assets\KriptoFX\Scripts\ExplosionsScaleCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Scripts\ExplosionsShaderColorGradient.cs" />
+    <Compile Include="Assets\KriptoFX\Scripts\ExplosionsShaderFloatCurves.cs" />
+    <Compile Include="Assets\KriptoFX\Scripts\ExplosionsShaderQueue.cs" />
+    <Compile Include="Assets\KriptoFX\Scripts\ExplosionsSpriteSheetAnimation.cs" />
     <Compile Include="Assets\Resources\Mesh Explosion\Demo\ClickOrTapToExplode.cs" />
     <Compile Include="Assets\Resources\Mesh Explosion\Demo\ReloadScene.cs" />
     <Compile Include="Assets\Resources\Mesh Explosion\Internal\DestroyAfterTime.cs" />
@@ -337,10 +350,13 @@
     <Compile Include="Assets\Scripts\RotationController.cs" />
     <Compile Include="Assets\Scripts\S2InputManager.cs" />
     <Compile Include="Assets\Scripts\SpriteAnims.cs" />
+    <None Include="Assets\KriptoFX\Shaders\ExplosionsDistortionParticlesCutout.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Shaders\Unlit - Depth Cutout.shader" />
     <None Include="Assets\Resources\NGUI\ReadMe - 2018.3.0.txt" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Transparent Masked 1.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Text 2.shader" />
+    <None Include="Assets\KriptoFX\Shaders\ExplosionsParticleBlendInterpolated.shader" />
+    <None Include="Assets\KriptoFX\Shaders\ExplosionsDistortionCullBack.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Transparent Masked 2.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Models\Orc\Orc Skin.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Atlases\Wooden\Arimo20.txt" />
@@ -361,6 +377,7 @@
     <None Include="Assets\Resources\NGUI\Examples\Atlases\Fantasy\Fantasy Font - Normal.txt" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Transparent Colored 3.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Atlases\Refractive\Refractive Font - Normal.txt" />
+    <None Include="Assets\KriptoFX\Shaders\ExplosionsParticleBlendLightSoft.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 2.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Text 3.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Transparent Packed 2.shader" />
@@ -369,10 +386,13 @@
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Premultiplied Colored 1.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Premultiplied Colored.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Transparent Colored.shader" />
+    <None Include="Assets\KriptoFX\Shaders\ExplosionsGlowAdditive.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Text.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Transparent Packed.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Transparent Packed 3.shader" />
+    <None Include="Assets\KriptoFX\Readme.txt" />
     <None Include="Assets\Resources\NGUI\Examples\Shaders\Unlit - Additive Colored.shader" />
+    <None Include="Assets\KriptoFX\Shaders\ExplosionsGlowAdditiveMobile.shader" />
     <None Include="Assets\Resources\NGUI\Resources\Shaders\Unlit - Transparent Masked.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Atlases\Refractive\Refractive Font - Header.txt" />
     <None Include="Assets\Resources\NGUI\Examples\Shaders\Refractive.shader" />
@@ -380,6 +400,7 @@
     <None Include="Assets\Resources\NGUI\Examples\Shaders\Unlit - Depth.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Atlases\SciFi\SciFi Font - Normal.txt" />
     <None Include="Assets\Resources\Mesh Explosion\Read Me.txt" />
+    <None Include="Assets\KriptoFX\Shaders\ExplosionsParticleBlendLight.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Models\Orc Armor\Orc Armor.shader" />
     <None Include="Assets\Resources\NGUI\Examples\Resources\Localization.txt" />
     <Reference Include="Unity.Timeline.Editor">
@@ -934,6 +955,12 @@
     <Reference Include="mscorlib">
       <HintPath>/Applications/Unity/Hub/Editor/2019.1.8f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{C89C9E1B-CBAA-F33B-E539-851CE7CD23C5}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

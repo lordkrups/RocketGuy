@@ -139,7 +139,7 @@ public class PlaneMotor : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         rb.constraints = RigidbodyConstraints.None;
-        meshExploder.Explode();
+        //meshExploder.Explode();
         //StartCoroutine(RemoveCollider());
     }
     IEnumerator RemoveCollider()

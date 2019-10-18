@@ -261,12 +261,12 @@ public class GameSceneManagerNGUI : MonoBehaviour
             rocketRight = false;
             rotRight = false;
 
-            if (vec.x > 0.30)
+            if (vec.x > 0.20)
             {
                 rocketRight = true;
                 rotRight = true;
             }
-            if (vec.x < -0.30)
+            if (vec.x < -0.20)
             {
                 rocketLeft = true;
                 rotLeft = true;

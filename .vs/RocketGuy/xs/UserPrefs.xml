@@ -1,23 +1,29 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/PlaneMotor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/KriptoFX/DemoSources/ExplosionDemoGUI.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="73" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="245" Column="30" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" />
       <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="24" Column="6" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" />
       <File FileName="Assets/Scripts/GameScripts/Toast.cs" />
-      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" Line="46" Column="48" />
-      <File FileName="Assets/Resources/Xml/store_stats.xml" Line="21" Column="79" />
-      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="273" Column="55" />
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="365" Column="10" />
-      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" Line="140" Column="30" />
-      <File FileName="Assets/Resources/Mesh Explosion/MeshExploder.cs" Line="18" Column="35" />
+      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" />
+      <File FileName="Assets/Resources/Xml/store_stats.xml" />
+      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" />
+      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" />
+      <File FileName="Assets/Scripts/GameScripts/PlaneMotor.cs" Line="140" Column="6" />
+      <File FileName="Assets/Resources/Mesh Explosion/MeshExploder.cs" />
+      <File FileName="Assets/KriptoFX/DemoSources/ExplosionDemoGUI.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RocketGuy" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="KriptoFX" expanded="True">
+                <Node name="DemoSources" expanded="True">
+                  <Node name="ExplosionDemoGUI.cs" selected="True" />
+                </Node>
+              </Node>
               <Node name="Resources" expanded="True">
                 <Node name="Mesh Explosion" expanded="True" />
                 <Node name="Xml" expanded="True" />
@@ -25,7 +31,6 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="PlaneMotor.cs" selected="True" />
                 </Node>
                 <Node name="Helper" expanded="True" />
                 <Node name="Loaders" expanded="True" />
@@ -40,7 +45,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="3d0d8ad9-de48-4574-a328-780b10f93460" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0717ec44-ff67-4754-86f9-33fd48a167d5" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
