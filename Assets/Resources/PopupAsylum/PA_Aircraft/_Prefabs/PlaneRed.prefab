@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b8474d2f1584bc4835b4ba7eb2b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshExploder: {fileID: 3227393599465140748}
   rb: {fileID: 7694431798056567637}
   thingsSpawnerNGUI: {fileID: 0}
   velocity: 3
@@ -99,7 +98,6 @@ GameObject:
   - component: {fileID: 7694431797837337340}
   - component: {fileID: 7694431797838664412}
   - component: {fileID: 7694431797839761436}
-  - component: {fileID: 3227393599465140748}
   m_Layer: 8
   m_Name: PA_BiplaneBody
   m_TagString: Untagged
@@ -166,31 +164,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &3227393599465140748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7694431797837762268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 1
-  maxSpeed: 5
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 0.5
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: 0.125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!1 &7694431797837762270
 GameObject:
   m_ObjectHideFlags: 0

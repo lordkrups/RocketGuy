@@ -43,7 +43,7 @@ public class TopPanelReporterNGUI : MonoBehaviour
         phaseValue.text = gameSceneManager.currentPhase;
         if (!gameSceneManager.completedObjective)
         {
-            objectiveTrackerValue.text = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objdescription;
+            objectiveTrackerValue.text = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objdescription;
         } else
         {
             objectiveTrackerValue.text = "Completed";

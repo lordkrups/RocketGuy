@@ -64,7 +64,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\ImageEffects\BloomEditor.cs" />
-    <Compile Include="Assets\Resources\Mesh Explosion\Editor\MeshExploderEditor.cs" />
     <Compile Include="Assets\Resources\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
     <Compile Include="Assets\Resources\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
     <Compile Include="Assets\Resources\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />

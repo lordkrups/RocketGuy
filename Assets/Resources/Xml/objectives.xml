@@ -7,28 +7,28 @@
 <ObjectiveList>
 	<Objectives>
          <!--Wave 1-->
-         <Objective id="0" 
+         <Objective id="1" 
                    obj = "Reach 100m" 
                    objtype = "flight" 
                    objvalue = "100" 
                    objdescription = "Fly 100 meters up!" 
                    objreward = "100"
                    />
-         <Objective id="1" 
+         <Objective id="2" 
                    obj = "Fly for more than 10 seconds" 
                    objtype = "time" 
                    objvalue = "10" 
                    objdescription = "Stay in the air for more than 10 seconds!"  
                    objreward = "100"
                    />
-         <Objective id="2" 
+         <Objective id="3" 
                    obj = "Speed over 12 m/s"
                    objtype = "speed" 
                    objvalue = "12" 
                    objdescription = "Get your speed over 12 m/s!"  
                    objreward = "100"
                    />
-         <Objective id="3" 
+         <Objective id="4" 
                    obj = "Collect 3 coins" 
                    objtype = "coin" 
                    objvalue = "3" 
@@ -36,28 +36,28 @@
                    objreward = "100"
                    />
         <!--Wave 2-->
-         <Objective id="4" 
+         <Objective id="5" 
                    obj = "Reach 200m" 
                    objtype = "flight" 
                    objvalue = "200" 
                    objdescription = "Fly 200 meters up!" 
                    objreward = "200"
                    />
-         <Objective id="5" 
+         <Objective id="6" 
                     obj = "Fly for more than 30 seconds" 
                    objtype = "time" 
                    objvalue = "30" 
                    objdescription = "Stay in the air for more than 30 seconds!"  
                    objreward = "200"
                    />
-         <Objective id="6" 
+         <Objective id="7" 
                    obj = "Speed over 15 m/s"
                    objtype = "speed" 
                    objvalue = "15" 
                    objdescription = "Get your speed over 15 m/s!"  
                    objreward = "200"
                    />
-         <Objective id="7" 
+         <Objective id="8" 
                    obj = "Collect 1 diamonds" 
                    objtype = "diamond" 
                    objvalue = "3" 
@@ -65,28 +65,28 @@
                    objreward = "100"
                    />
          <!--Wave 3-->
-         <Objective id="8" 
+         <Objective id="9" 
                    obj = "Reach 500m" 
                    objtype = "flight" 
                    objvalue = "500" 
                    objdescription = "Fly 500 meters up!" 
                    objreward = "300"
                    />
-         <Objective id="9" 
+         <Objective id="10" 
                    obj = "Fly for more than 60 seconds" 
                    objtype = "time" 
                    objvalue = "60" 
                    objdescription = "Stay in the air for more than 60 seconds!"  
                    objreward = "300"
                    />
-         <Objective id="10" 
+         <Objective id="11" 
                    obj = "Speed over 25 m/s"
                    objtype = "speed" 
                    objvalue = "25" 
                    objdescription = "Get your speed over 25 m/s!"  
                    objreward = "300"
                    />
-         <Objective id="11" 
+         <Objective id="12" 
                    obj = "Collect 10 coins" 
                    objtype = "coin" 
                    objvalue = "3" 
@@ -94,7 +94,7 @@
                    objreward = "300"
                    />
         <!--Wave 4-->
-        <Objective id="12" 
+        <Objective id="13" 
                    obj = "MISSIONS COMPLETE"
                    objtype = "none" 
                    objvalue = "0" 

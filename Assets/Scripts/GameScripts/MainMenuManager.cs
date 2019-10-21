@@ -8,6 +8,7 @@ public class MainMenuManager : MonoBehaviour
     public StoreManager storeManager;
     public UIPanel MenuPanel;
     public UIPanel StorePanel;
+    public UIPanel flightSchoolPanel;
     public UIPanel resetBox;
 
     public List<PlaneMotor> thingsToSpawn;
@@ -20,11 +21,18 @@ public class MainMenuManager : MonoBehaviour
     {
         MenuPanel.On();
         StorePanel.Off();
+        flightSchoolPanel.Off();
         resetBox.Off();
     }
     public void StartGame()
     {
-        //SceneManager.LoadScene("GameScene");
+        RocketGameManager.Instance.numberOfPlays++;
+        RocketGameManager.Instance.currentObjectiveCounter = RocketGameManager.Instance.persistantObjectiveCounter;
+        SceneManager.LoadScene("NGUIScene");
+    }
+    public void StartTrainingLevel()
+    {
+        RocketGameManager.Instance.numberOfPlays++;
         SceneManager.LoadScene("NGUIScene");
     }
     public void OpenStore()
@@ -39,6 +47,16 @@ public class MainMenuManager : MonoBehaviour
         StorePanel.Off();
         RocketGameManager.Instance.SavePersistatStats();
     }
+    public void OpenSchool()
+    {
+        MenuPanel.Off();
+        flightSchoolPanel.On();
+    }
+    public void CloseSchool()
+    {
+        MenuPanel.On();
+        flightSchoolPanel.Off();
+    }
     public void OpenResetBox()
     {
         resetBox.On();
@@ -51,7 +69,6 @@ public class MainMenuManager : MonoBehaviour
     {
         RocketGameManager.Instance.ResetAllStats();
         SceneManager.LoadScene("MenuScene");
-
     }
     public void AddMoney()
     {
@@ -76,7 +93,7 @@ public class MainMenuManager : MonoBehaviour
             xPos = Random.Range(-xDist, xDist + 1);
 
             int ran = Random.Range(0, thingsToSpawn.Count);
-            var thingToSpawn = Instantiate(thingsToSpawn[ran], obstacleContainer.transform, true);
+            var thingToSpawn = Instantiate(thingsToSpawn[ran], obstacleContainer.transform);
             thingToSpawn.Init(null, true);
             Vector3 pos = new Vector3(xPos, yDist, 0f);
             thingToSpawn.transform.position = pos;
@@ -85,12 +102,18 @@ public class MainMenuManager : MonoBehaviour
 
             xPos = Random.Range(-xDist, xDist + 1);
             ran = Random.Range(10, 40);
-            var cloud = Instantiate(cloudObj, obstacleContainer.transform, true);
+            var cloud = Instantiate(cloudObj, obstacleContainer.transform);
             cloud.Init(null, true);
             pos = new Vector3(xPos, yDist, ran);
             cloud.transform.position = pos;
         }
 
         spawnThings = false;
+    }
+
+    public void StartFlightSchool()
+    {
+        RocketGameManager.Instance.isFlightSchool = true;
+        SceneManager.LoadScene("NGUIScene");
     }
 }

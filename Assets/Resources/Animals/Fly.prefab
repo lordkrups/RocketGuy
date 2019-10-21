@@ -1,49 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!95 &1306658630
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929910992101024765}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: c831b7f77bd984cfcb164513af83ce25, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7290245091773500017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2929910992101024765}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd71dcb0056342b08cb3e8851fac00b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  type: 0
-  minSpeed: 1
-  maxSpeed: 5
-  minRotationSpeed: 90
-  maxRotationSpeed: 360
-  fadeWaitTime: 0.5
-  fadeTime: 2
-  useGravity: 0
-  colliderThickness: 0.125
-  useNormals: 0
-  useMeshBoundsCenter: 0
-  allowShadows: 0
-  shadersAlreadyHandleTransparency: 0
 --- !u!1 &6976266898757942790
 GameObject:
   m_ObjectHideFlags: 0
@@ -90,7 +46,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b8474d2f1584bc4835b4ba7eb2b247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meshExploder: {fileID: 7290245091773500017}
   rb: {fileID: 439463027631988226}
   thingsSpawnerNGUI: {fileID: 0}
   velocity: 1
@@ -142,10 +97,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: fly
       objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 92b078da0694b324a95287b73fe57b1a, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 92b078da0694b324a95287b73fe57b1a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -192,12 +143,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92b078da0694b324a95287b73fe57b1a, type: 3}
---- !u!1 &2929910992101024765 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 92b078da0694b324a95287b73fe57b1a,
-    type: 3}
-  m_PrefabInstance: {fileID: 2929910992100926813}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2929910992101326813 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 92b078da0694b324a95287b73fe57b1a,

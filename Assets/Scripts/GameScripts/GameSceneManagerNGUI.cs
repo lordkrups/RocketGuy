@@ -87,54 +87,68 @@ public class GameSceneManagerNGUI : MonoBehaviour
     }
     public void CheckCurrentObjective()
     {
-        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "flight")
+        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "flight")
         {
-            if (playerRocket.maxHeightReached >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            if (playerRocket.maxHeightReached >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
                 Debug.Log("flight Objective Complete");
                 completedObjective = true;
-                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
-                RocketGameManager.Instance.ObjectiveComplete();
+                if (RocketGameManager.Instance.currentObjectiveCounter == RocketGameManager.Instance.persistantObjectiveCounter)
+                {
+                    RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objreward);
+                    //RocketGameManager.Instance.ObjectiveComplete();
+                }
             }
         }
-        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "time")
+        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "time")
         {
-            if (playerRocket.flightTime >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            if (playerRocket.flightTime >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
                 Debug.Log("time Objective Complete");
                 completedObjective = true;
-                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
-                RocketGameManager.Instance.ObjectiveComplete();
+                if (RocketGameManager.Instance.currentObjectiveCounter == RocketGameManager.Instance.persistantObjectiveCounter)
+                {
+                    RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objreward);
+                    RocketGameManager.Instance.ObjectiveComplete();
+                }
             }
         }
-        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "coin")
+        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "coin")
         {
-            if (!completedObjective && playerRocket.coinsCollected >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            if (!completedObjective && playerRocket.coinsCollected >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
                 Debug.Log("Coins Objective Complete");
                 completedObjective = true;
-                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
-                RocketGameManager.Instance.ObjectiveComplete();
+                if (RocketGameManager.Instance.currentObjectiveCounter == RocketGameManager.Instance.persistantObjectiveCounter)
+                {
+                    RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objreward);
+                    //RocketGameManager.Instance.ObjectiveComplete();
+                }
             }
         }
-        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "diamond")
+        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "diamond")
         {
-            if (!completedObjective && playerRocket.diamondsCollected >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            if (!completedObjective && playerRocket.diamondsCollected >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
                 Debug.Log("Diamond Objective Complete");
                 completedObjective = true;
-                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
-                RocketGameManager.Instance.ObjectiveComplete();
+                if (RocketGameManager.Instance.currentObjectiveCounter == RocketGameManager.Instance.persistantObjectiveCounter)
+                {
+                    RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objreward);
+                    //RocketGameManager.Instance.ObjectiveComplete();
+                }
             }
         }
-        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objtype == "speed")
+        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "speed")
         {
-            if (playerRocket.maxSpeedReached >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objvalue)
+            if (playerRocket.maxSpeedReached >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
                 Debug.Log("Speed Objective Complete");
                 completedObjective = true;
-                RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objreward);
-                RocketGameManager.Instance.ObjectiveComplete();
+                if (RocketGameManager.Instance.currentObjectiveCounter == RocketGameManager.Instance.persistantObjectiveCounter)
+                {
+                    RocketGameManager.Instance.SaveEarnedCoins(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objreward);
+                }
             }
         }
     }
@@ -165,15 +179,26 @@ public class GameSceneManagerNGUI : MonoBehaviour
         goDiamondsCollectedValue.text = playerRocket.diamondsCollected.ToString();
         if (completedObjective)
         {
-            goObjectiveRewardValue.text = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter - 1].objreward.ToString() + " G";
-            objMoney = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter - 1].objreward;
-        } else
+            if (RocketGameManager.Instance.currentObjectiveCounter == RocketGameManager.Instance.persistantObjectiveCounter)
+            {
+                RocketGameManager.Instance.ObjectiveComplete();
+                goObjectiveRewardValue.text = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter - 1].objreward.ToString() + " G";
+                objMoney = RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter - 1].objreward;
+            }
+            else
+            {
+                goObjectiveRewardValue.text = "Already rewarded";
+            }
+        }
+        else
         {
             goObjectiveRewardValue.text = "0 GP";
         }
 
         int totalMoney = playerRocket.moneyEarned + objMoney;
         goMoneyValue.text = totalMoney.ToString() + "G";
+
+        RocketGameManager.Instance.SavePersistatStats();
 
     }
     public void ReturnToMenu()
@@ -230,9 +255,9 @@ public class GameSceneManagerNGUI : MonoBehaviour
     }
     private void Move(Vector2 vec)
     {
-        Debug.Log("Move");
-        Debug.Log("vec.y " + vec.y);
-        Debug.Log("vec.x " + vec.x);
+        //Debug.Log("Move");
+        //Debug.Log("vec.y " + vec.y);
+        //Debug.Log("vec.x " + vec.x);
         if (vec.y > 0)
         {
             flyPressed = true;
@@ -275,7 +300,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
     }
     private void Stop()
     {
-        Debug.Log("Stop");
+        //Debug.Log("Stop");
         flyPressed = false;
         rocketLeft = false;
         rotLeft = false;

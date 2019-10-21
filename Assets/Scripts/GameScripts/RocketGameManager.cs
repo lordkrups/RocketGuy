@@ -8,6 +8,7 @@ public class RocketGameManager : MonoBehaviour
 
     public static RocketGameManager Instance = null;
 
+    /*
     public void Awake()
     {
         if (Instance != null && Instance != this)
@@ -16,13 +17,30 @@ public class RocketGameManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this);
         Init();
+    } */
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            if (this != Instance)
+                Destroy(this.gameObject);
+        }
+        Init();
+
     }
     public Dictionary<int, StoreStats> StoreStatsInfos { get; private set; }
     public Dictionary<int, Objectives> ObjectiveInfos { get; private set; }
 
-    public int playedBefore;
+    public int numberOfPlays;
+    public bool isFlightSchool;
 
     public int persistantObjectiveCounter;
+    public int currentObjectiveCounter;
 
     public int persistantPlayerCoins;
     public int persistantMaxHealth = 1;
@@ -85,15 +103,21 @@ public class RocketGameManager : MonoBehaviour
         ObjectivesLoader objectivesLoader = new ObjectivesLoader();
         ObjectiveInfos = objectivesLoader.GetDict();
 
-        /*
-        playedBefore = PlayerPrefs.GetInt("FirstPlay");
 
-        if (PlayerPrefs.GetInt("FirstPlay") == 0)
+        numberOfPlays = PlayerPrefs.GetInt("NumberOfPlays");
+
+        //playedBefore = 1;
+
+        if (numberOfPlays == 0)
         {
-            playedBefore = 1;
+            Debug.Log("FIRST PLAY");
+
+            //numberOfPlays = 1;
             //PlayerPrefs.GetInt("FirstPlay", 1);
-            PlayerPrefs.SetInt("persistantObjectiveCounter", 0);
+            PlayerPrefs.SetInt("persistantObjectiveCounter", 1);
+
             PlayerPrefs.SetInt("persistantPlayerCoins", 0);
+
             PlayerPrefs.SetInt("persistantMaxHealth", 1);
             PlayerPrefs.SetInt("persistantEngineUpgrade", 1);
             PlayerPrefs.SetInt("persistantBoosterEngineUpgrade", 1);
@@ -106,16 +130,20 @@ public class RocketGameManager : MonoBehaviour
             PlayerPrefs.SetInt("persistantBoosterFuelConsumptionRate", 1);
             PlayerPrefs.SetInt("persistantNummyMultiplier", 1);
             PlayerPrefs.SetInt("persistantDiamonValue", 1);
-        }    
-        */
+        }
+        else
+        {
+            Debug.Log("NOT FIRST PLAY");
+            RetrievePersistatStats();
 
-        RetrievePersistatStats();
+        }
+
 
     }
     public void SavePersistatStats()
     {
         PlayerPrefs.SetInt("persistantObjectiveCounter", persistantObjectiveCounter);
-        PlayerPrefs.SetInt("FirstPlay", playedBefore);
+        PlayerPrefs.SetInt("NumberOfPlays", numberOfPlays);
         PlayerPrefs.SetInt("persistantPlayerCoins", persistantPlayerCoins);
         PlayerPrefs.SetInt("persistantMaxHealth", persistantMaxHealth);
         PlayerPrefs.SetInt("persistantEngineUpgrade", persistantEngineUpgrade);
@@ -132,6 +160,7 @@ public class RocketGameManager : MonoBehaviour
     }
     private void RetrievePersistatStats()
     {
+        numberOfPlays = PlayerPrefs.GetInt("persistantObjectiveCounter", numberOfPlays);
         persistantObjectiveCounter = PlayerPrefs.GetInt("persistantObjectiveCounter", persistantObjectiveCounter);
         persistantPlayerCoins = PlayerPrefs.GetInt("persistantPlayerCoins", persistantPlayerCoins);
         persistantMaxHealth = PlayerPrefs.GetInt("persistantMaxHealth", persistantMaxHealth);
@@ -300,9 +329,13 @@ public class RocketGameManager : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
 
-        persistantObjectiveCounter = 0;
+        numberOfPlays = 0;
+
+        persistantObjectiveCounter = 1;
+        currentObjectiveCounter = 1;
 
         persistantPlayerCoins = 0;
+
         persistantMaxHealth = 1;
         persistantEngineUpgrade = 1;
         persistantBoosterEngineUpgrade = 1;
@@ -317,6 +350,6 @@ public class RocketGameManager : MonoBehaviour
         persistantDiamonValue = 1;
 
         //RetrievePersistatStats();
-
+        Init();
     }
 }

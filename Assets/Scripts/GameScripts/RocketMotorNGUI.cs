@@ -418,7 +418,7 @@ public class RocketMotorNGUI : MonoBehaviour
         //trans = transform.position + trans;
         //deathExplosion = Instantiate(Prefabs[1], trans, new Quaternion(), transform) as GameObject;
 
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1.4f);
         rb.drag = rb.drag / 4;
         gameSceneManager.ShowGameOver();
         Time.timeScale = 0;
