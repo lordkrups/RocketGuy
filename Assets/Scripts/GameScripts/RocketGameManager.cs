@@ -37,6 +37,7 @@ public class RocketGameManager : MonoBehaviour
     public Dictionary<int, Objectives> ObjectiveInfos { get; private set; }
 
     public int numberOfPlays;
+    public bool showTutorial;
     public bool isFlightSchool;
 
     public int persistantObjectiveCounter;
@@ -114,7 +115,7 @@ public class RocketGameManager : MonoBehaviour
 
             //numberOfPlays = 1;
             //PlayerPrefs.GetInt("FirstPlay", 1);
-            PlayerPrefs.SetInt("persistantObjectiveCounter", 1);
+            PlayerPrefs.SetInt("persistantObjectiveCounter", 0);
 
             PlayerPrefs.SetInt("persistantPlayerCoins", 0);
 
@@ -131,13 +132,8 @@ public class RocketGameManager : MonoBehaviour
             PlayerPrefs.SetInt("persistantNummyMultiplier", 1);
             PlayerPrefs.SetInt("persistantDiamonValue", 1);
         }
-        else
-        {
-            Debug.Log("NOT FIRST PLAY");
-            RetrievePersistatStats();
-
-        }
-
+        //Debug.Log("NOT FIRST PLAY");
+        RetrievePersistatStats();
 
     }
     public void SavePersistatStats()
@@ -331,8 +327,8 @@ public class RocketGameManager : MonoBehaviour
 
         numberOfPlays = 0;
 
-        persistantObjectiveCounter = 1;
-        currentObjectiveCounter = 1;
+        persistantObjectiveCounter = 0;
+        currentObjectiveCounter = 0;
 
         persistantPlayerCoins = 0;
 
@@ -350,6 +346,7 @@ public class RocketGameManager : MonoBehaviour
         persistantDiamonValue = 1;
 
         //RetrievePersistatStats();
+        SavePersistatStats();
         Init();
     }
 }

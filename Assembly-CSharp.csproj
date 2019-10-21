@@ -261,6 +261,7 @@
     <Compile Include="Assets\Scripts\GameScripts\Toast.cs" />
     <Compile Include="Assets\Scripts\GameScripts\TopPanelReporterNGUI.cs" />
     <Compile Include="Assets\Scripts\GameScripts\TrainingLevelWidget.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\TutorialManager.cs" />
     <Compile Include="Assets\Scripts\GameScripts\UpgradesStore.cs" />
     <Compile Include="Assets\Scripts\GameScripts\ValueToPass.cs" />
     <Compile Include="Assets\Scripts\GameScripts\XML Loaders\NewBehaviourScript.cs" />

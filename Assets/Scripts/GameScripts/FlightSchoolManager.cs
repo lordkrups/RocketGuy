@@ -12,7 +12,7 @@ public class FlightSchoolManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 1; i < RocketGameManager.Instance.ObjectiveInfos.Count; i++)
+        for (int i = 0; i < RocketGameManager.Instance.ObjectiveInfos.Count; i++)
         {
             var lvlWidg = Instantiate(trainingLevelWidget, gridContainer.transform);
             lvlWidg.Init(RocketGameManager.Instance.ObjectiveInfos[i].id,

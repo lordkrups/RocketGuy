@@ -7,6 +7,13 @@
 <ObjectiveList>
 	<Objectives>
          <!--Wave 1-->
+        <Objective id="0" 
+                   obj = "Play tutorial" 
+                   objtype = "flight" 
+                   objvalue = "50" 
+                   objdescription = "Tutorial: fly up 50m" 
+                   objreward = "100"
+                   />
          <Objective id="1" 
                    obj = "Reach 100m" 
                    objtype = "flight" 

@@ -2023,7 +2023,7 @@ MonoBehaviour:
     height: 219
     borderLeft: 0
     borderRight: 0
-    borderTop: 0
+    borderTop: 112
     borderBottom: 0
     paddingLeft: 18
     paddingRight: 18
