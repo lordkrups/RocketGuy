@@ -26,7 +26,7 @@ public class TrainingLevelWidget : MonoBehaviour
         if (objLevel < RocketGameManager.Instance.persistantObjectiveCounter)
         {
             rewardTotal.text = "completed";
-            playButtonLabel.text = "completed";
+            playButtonLabel.text = "fly again";
 
         }
 
