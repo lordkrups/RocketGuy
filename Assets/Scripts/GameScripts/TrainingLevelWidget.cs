@@ -14,12 +14,12 @@ public class TrainingLevelWidget : MonoBehaviour
     public UILabel playButtonLabel;
 
     // Start is called before the first frame update
-    public void Init(int lvlTitle, string lvlDesc, int rwdTotal, MainMenuManager mMM)
+    public void Init(int lvlNumber,string lvlTitle, string lvlDesc, int rwdTotal, MainMenuManager mMM)
     {
         mainMenuManager = mMM;
-        objLevel = lvlTitle;
+        objLevel = lvlNumber;
 
-        levelTitle.text = "Flight plan " + lvlTitle.ToString();
+        levelTitle.text = lvlTitle;
         levelDescription.text = lvlDesc;
         rewardTotal.text = "reward " +  rwdTotal.ToString() + "gp";
 

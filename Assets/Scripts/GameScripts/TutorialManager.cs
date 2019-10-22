@@ -16,6 +16,7 @@ public class TutorialManager : MonoBehaviour
     public UISprite upInfo;
     public UISprite upSidesInfo;
     public UISprite downInfo;
+    public UISprite finalInfo;
 
     public int tutorialStage;
 
@@ -24,8 +25,8 @@ public class TutorialManager : MonoBehaviour
     {
         if (RocketGameManager.Instance.currentObjectiveCounter == 0)
         {
-            ProgressTutorial();
             blind.On();
+            ProgressTutorial();
         }
     }
 
@@ -85,6 +86,11 @@ public class TutorialManager : MonoBehaviour
         if (tutorialStage == 11)
         {
             downInfo.Off();
+            finalInfo.On();
+        }
+        if (tutorialStage == 12)
+        {
+            finalInfo.Off();
             blind.Off();
         }
     }

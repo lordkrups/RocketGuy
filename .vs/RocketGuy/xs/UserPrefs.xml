@@ -2,20 +2,19 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/TutorialManager.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="143" Column="35" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="96" Column="81" />
-      <File FileName="Assets/Scripts/GameScripts/TrainingLevelWidget.cs" Line="29" Column="46" />
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="260" Column="11" />
-      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="46" Column="134" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="120" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/TrainingLevelWidget.cs" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" />
+      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" />
       <File FileName="Assets/Scripts/GameScripts/Toast.cs" />
-      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" Line="22" Column="1" />
-      <File FileName="Assets/Resources/Xml/store_stats.xml" Line="42" Column="37" />
-      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" Line="259" Column="107" />
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="379" Column="1" />
-      <File FileName="Assets/Resources/Mesh Explosion/MeshExploder.cs" />
+      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" />
+      <File FileName="Assets/Resources/Xml/store_stats.xml" />
+      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" />
+      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" />
       <File FileName="Assets/KriptoFX/DemoSources/ExplosionDemoGUI.cs" />
-      <File FileName="Assets/Resources/Xml/objectives.xml" Line="97" Column="26" />
-      <File FileName="Assets/Scripts/GameScripts/FlightSchoolManager.cs" Line="9" Column="31" />
-      <File FileName="Assets/Scripts/GameScripts/TutorialManager.cs" Line="7" Column="16" />
+      <File FileName="Assets/Resources/Xml/objectives.xml" />
+      <File FileName="Assets/Scripts/GameScripts/FlightSchoolManager.cs" />
+      <File FileName="Assets/Scripts/GameScripts/TutorialManager.cs" Line="28" Column="32" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -51,7 +50,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cd82debd-1d80-41b4-9a10-5304129237ab" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4c9557e5-d55a-4b44-9901-574967ecf938" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

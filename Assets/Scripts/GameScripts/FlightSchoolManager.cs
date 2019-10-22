@@ -17,6 +17,7 @@ public class FlightSchoolManager : MonoBehaviour
             var lvlWidg = Instantiate(trainingLevelWidget, gridContainer.transform);
             lvlWidg.Init(RocketGameManager.Instance.ObjectiveInfos[i].id,
                 RocketGameManager.Instance.ObjectiveInfos[i].obj,
+                RocketGameManager.Instance.ObjectiveInfos[i].objdescription,
                 RocketGameManager.Instance.ObjectiveInfos[i].objreward,
                 mainMenuManager);
 
