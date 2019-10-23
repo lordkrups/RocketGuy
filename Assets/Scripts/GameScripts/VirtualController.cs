@@ -9,6 +9,7 @@ public class VirtualController : MonoBehaviour
 
     public GameObject obj;
     public UISprite point;
+    public UISprite guidePoint;
     //public UISprite bg;
 
     private const float MaxRange = 80;
@@ -22,7 +23,7 @@ public class VirtualController : MonoBehaviour
 
     public bool IsPlaying { get => isPlaying; set => isPlaying = value; }
 
-    public void Init(Camera uiCamera, Action<Vector2> holdingAction, Action releaseAction)
+    public void Init(Camera uiCamera, Action<Vector2> holdingAction = null, Action releaseAction = null)
     {
         _uiCamera = uiCamera;
         _holdingAction = holdingAction;
@@ -35,6 +36,7 @@ public class VirtualController : MonoBehaviour
     {
         Stop();
         obj.Off();
+        guidePoint.On();
     }
 
     public void Stop()
@@ -127,12 +129,13 @@ public class VirtualController : MonoBehaviour
             if (touchId >= 0 && canBeUsed)
             {
                 obj.On();
+                guidePoint.Off();
                 IsPlaying = true;
                 Vector2 touchPos;
                 S2InputManager.GetTouchPosition(touchId, out touchPos);
                 Vector3 pos = _uiCamera.ScreenToWorldPoint(touchPos);
                 var dir = UpdatePoint(transform.InverseTransformPoint(pos));
-                transform.position = pos;
+                //transform.position = pos;
                 _coPlayControlling = StartCoroutine(CoPlayControlling(touchId));
                 /*
                             if (_holdingAction != null)

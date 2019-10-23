@@ -17142,9 +17142,9 @@ MonoBehaviour:
   goDiamondsCollectedValue: {fileID: 1720465270}
   goObjectiveRewardValue: {fileID: 1859581216}
   goMoneyValue: {fileID: 1361989060}
-  lowHeight: 500
-  medHeight: 1000
-  highHeight: 5000
+  lowHeight: 100
+  medHeight: 200
+  highHeight: 300
   spaceHeight: 10000
   flyPressed: 0
   rotLeft: 0

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7694431798056567642}
   - component: {fileID: 7694431798056567637}
   - component: {fileID: 4281965638383476154}
+  - component: {fileID: 9050547961881903350}
   m_Layer: 8
   m_Name: PlaneRed
   m_TagString: Obstacle
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7694431797837762266}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 29.102085, y: 1540.6085, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 7694431797837337340}
@@ -87,6 +88,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 6.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9050547961881903350
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7694431797837762266}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 03c9298f4279f40e2b131db61dba3634, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7694431797837762268
 GameObject:
   m_ObjectHideFlags: 0
