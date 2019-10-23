@@ -1,22 +1,7 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/VirtualController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/MainMenuManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="353" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="120" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/TrainingLevelWidget.cs" />
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="53" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/Toast.cs" />
-      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" />
-      <File FileName="Assets/Resources/Xml/store_stats.xml" />
-      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" />
-      <File FileName="Assets/Resources/Xml/objectives.xml" />
-      <File FileName="Assets/Scripts/GameScripts/FlightSchoolManager.cs" />
-      <File FileName="Assets/Scripts/GameScripts/TutorialManager.cs" Line="98" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/XML Loaders/Objectives.cs" Line="41" Column="1" />
-      <File FileName="Assets/Scripts/CloudObj.cs" Line="70" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/VirtualController.cs" Line="11" Column="20" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="120" Column="1" IsPinned="True" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -34,7 +19,7 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="VirtualController.cs" selected="True" />
+                  <Node name="MainMenuManager.cs" selected="True" />
                 </Node>
                 <Node name="NguiExtension" expanded="True" />
               </Node>
