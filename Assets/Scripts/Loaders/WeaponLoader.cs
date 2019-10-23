@@ -1,3 +1,0 @@
-﻿using System.Collections.Generic; using UnityEngine; using System.Linq; using System.Xml.Linq;  public class WeaponLoader {     public const string path = "projectile_data";      public Dictionary<int, Weapon> WeaponInfos { get; private set; }      public void Init()     {         XElement wc = WeaponContainer.Load(path);          WeaponInfos = wc.Element("Weapons").Elements("Weapon").Select(c => new Weapon().Set(c)).ToDictionary(info => info.id);      }
-
-    public Dictionary<int, Weapon> GetDict()     {         XElement wc = WeaponContainer.Load(path);          WeaponInfos = wc.Element("Weapons").Elements("Weapon").Select(c => new Weapon().Set(c)).ToDictionary(info => info.id);          return WeaponInfos;     } }
