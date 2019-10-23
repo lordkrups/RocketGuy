@@ -1,20 +1,37 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/MainMenuManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/VirtualController.cs">
     <Files>
+<<<<<<< HEAD
       <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="143" Column="35" />
       <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="120" Column="1" />
       <File FileName="Assets/Scripts/GameScripts/TrainingLevelWidget.cs" />
       <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" />
       <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" />
+=======
+      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="353" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="120" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/TrainingLevelWidget.cs" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" />
+      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" Line="53" Column="1" />
+>>>>>>> parent of 8553e947... reducing size
       <File FileName="Assets/Scripts/GameScripts/Toast.cs" />
       <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" />
       <File FileName="Assets/Resources/Xml/store_stats.xml" />
       <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" />
       <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" />
+<<<<<<< HEAD
       <File FileName="Assets/KriptoFX/DemoSources/ExplosionDemoGUI.cs" />
       <File FileName="Assets/Resources/Xml/objectives.xml" />
       <File FileName="Assets/Scripts/GameScripts/FlightSchoolManager.cs" />
       <File FileName="Assets/Scripts/GameScripts/TutorialManager.cs" Line="28" Column="24" />
+=======
+      <File FileName="Assets/Resources/Xml/objectives.xml" />
+      <File FileName="Assets/Scripts/GameScripts/FlightSchoolManager.cs" />
+      <File FileName="Assets/Scripts/GameScripts/TutorialManager.cs" Line="98" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/XML Loaders/Objectives.cs" Line="41" Column="1" />
+      <File FileName="Assets/Scripts/CloudObj.cs" Line="70" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/VirtualController.cs" Line="11" Column="20" />
+>>>>>>> parent of 8553e947... reducing size
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -35,7 +52,7 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="MainMenuManager.cs" selected="True" />
+                  <Node name="VirtualController.cs" selected="True" />
                 </Node>
                 <Node name="Helper" expanded="True" />
                 <Node name="Loaders" expanded="True" />
