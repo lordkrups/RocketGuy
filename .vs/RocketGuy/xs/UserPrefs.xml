@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/TutorialManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/MainMenuManager.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="143" Column="35" />
       <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="120" Column="1" />
@@ -14,7 +14,7 @@
       <File FileName="Assets/KriptoFX/DemoSources/ExplosionDemoGUI.cs" />
       <File FileName="Assets/Resources/Xml/objectives.xml" />
       <File FileName="Assets/Scripts/GameScripts/FlightSchoolManager.cs" />
-      <File FileName="Assets/Scripts/GameScripts/TutorialManager.cs" Line="28" Column="32" />
+      <File FileName="Assets/Scripts/GameScripts/TutorialManager.cs" Line="28" Column="24" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -35,7 +35,7 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="TutorialManager.cs" selected="True" />
+                  <Node name="MainMenuManager.cs" selected="True" />
                 </Node>
                 <Node name="Helper" expanded="True" />
                 <Node name="Loaders" expanded="True" />
@@ -50,7 +50,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4c9557e5-d55a-4b44-9901-574967ecf938" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0cab1c3a-aabc-43d0-8bca-2c7486ef89f8" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
