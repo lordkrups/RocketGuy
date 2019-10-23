@@ -85,7 +85,6 @@ public class MainMenuManager : MonoBehaviour
 
     IEnumerator SpawnThings()
     {
-
         for (int i = 0; i < 10; i++)
         {
             int xPos;

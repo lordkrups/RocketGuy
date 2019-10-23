@@ -1,29 +1,13 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/MainMenuManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="143" Column="35" />
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="120" Column="1" />
-      <File FileName="Assets/Scripts/GameScripts/TrainingLevelWidget.cs" />
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/TopPanelReporterNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/Toast.cs" />
-      <File FileName="Assets/Scripts/GameScripts/StoreManager.cs" />
-      <File FileName="Assets/Resources/Xml/store_stats.xml" />
-      <File FileName="Assets/Scripts/GameScripts/ThingsSpawnerNGUI.cs" />
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" />
-      <File FileName="Assets/KriptoFX/DemoSources/ExplosionDemoGUI.cs" />
-      <File FileName="Assets/Resources/Xml/objectives.xml" />
-      <File FileName="Assets/Scripts/GameScripts/FlightSchoolManager.cs" />
-      <File FileName="Assets/Scripts/GameScripts/TutorialManager.cs" Line="28" Column="24" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="120" Column="1" IsPinned="True" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RocketGuy" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="KriptoFX" expanded="True">
-                <Node name="Scripts" expanded="True" />
-              </Node>
               <Node name="Resources" expanded="True">
                 <Node name="NGUI" expanded="True">
                   <Node name="Scripts" expanded="True">
@@ -37,9 +21,6 @@
                   <Node name="XML Loaders" expanded="True" />
                   <Node name="MainMenuManager.cs" selected="True" />
                 </Node>
-                <Node name="Helper" expanded="True" />
-                <Node name="Loaders" expanded="True" />
-                <Node name="Managers" expanded="True" />
                 <Node name="NguiExtension" expanded="True" />
               </Node>
             </Node>

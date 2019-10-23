@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 423892454440921365}
   - component: {fileID: 423892454440921364}
   - component: {fileID: 423892454440921367}
+  - component: {fileID: 8838985434766212089}
   m_Layer: 8
   m_Name: CargoPlane
   m_TagString: Obstacle
@@ -247,6 +248,25 @@ CapsuleCollider:
   m_Height: 23
   m_Direction: 2
   m_Center: {x: 0, y: 1.2, z: 0}
+--- !u!95 &8838985434766212089
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 423892454440921366}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a484b920a74b841cfa0341f08b71c747, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &913321205804614311
 GameObject:
   m_ObjectHideFlags: 0

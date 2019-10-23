@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 3355510661707306940}
   - component: {fileID: 417856470764085162}
   - component: {fileID: 9016648296300643942}
+  - component: {fileID: 1249699899662964810}
   m_Layer: 8
   m_Name: PlaneGreen
   m_TagString: Obstacle
@@ -164,6 +165,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 6.5}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &1249699899662964810
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3320558133011822635}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e72759f2c1b6b4645a8ab6bbd93c9db2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3320558133011822639
 GameObject:
   m_ObjectHideFlags: 0

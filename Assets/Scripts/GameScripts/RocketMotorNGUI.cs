@@ -107,7 +107,7 @@ public class RocketMotorNGUI : MonoBehaviour
         {
             boosterFuel = boosterFuel - boosterFuelConsumptionRate/2;
             flamesList[3].Play();
-            mainFlame.Play();
+            //mainFlame.Play();
             if (force.y <= (maxForce + boosterLift))
             {
                 force.y = force.y + (liftSpeed / 2);
@@ -236,17 +236,8 @@ public class RocketMotorNGUI : MonoBehaviour
         }
         if (isRocketing)
         {
-            //gameSceneManager.audioPlayer.PlaySFXClip("rocketBlast");
-            if (!gameSceneManager.rocketLeft && !gameSceneManager.rocketRight)
-            {
-                /*
-                flamesList[0].Play();
-                flamesList[1].Play();
-                flamesList[2].Play();
-                */
-                mainFlame.Play();
-                boostTimer += Time.deltaTime;
-            }
+            mainFlame.Play();
+            boostTimer += Time.deltaTime;
             isFalling = false;
         }
         if (fallTimer >= 3f)

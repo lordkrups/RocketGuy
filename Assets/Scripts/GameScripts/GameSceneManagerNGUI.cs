@@ -256,46 +256,36 @@ public class GameSceneManagerNGUI : MonoBehaviour
     private void Move(Vector2 vec)
     {
         //Debug.Log("Move");
-        //Debug.Log("vec.y " + vec.y);
-        //Debug.Log("vec.x " + vec.x);
+        Debug.Log("vec.y " + vec.y);
+        Debug.Log("vec.x " + vec.x);
         if (vec.y > 0)
         {
             flyPressed = true;
-
-            rocketLeft = false;
-            rotLeft = false;
-            rocketRight = false;
-            rotRight = false;
-
-            if (vec.x > 0.35)
-            {
-                rocketRight = true;
-                rotRight = true;
-            }
-            if (vec.x < -0.35)
-            {
-                rocketLeft = true;
-                rotLeft = true;
-            }
         }
         if (vec.y < 0)
         {
             flyPressed = false;
-            rocketLeft = false;
-            rotLeft = false;
+        }
+
+        if (vec.x > 0.3f)
+        {
+            rocketRight = true;
+            rotRight = true;
+        }
+        else
+        {
             rocketRight = false;
             rotRight = false;
-
-            if (vec.x > 0.20)
-            {
-                rocketRight = true;
-                rotRight = true;
-            }
-            if (vec.x < -0.20)
-            {
-                rocketLeft = true;
-                rotLeft = true;
-            }
+        }
+        if (vec.x < -0.3f)
+        {
+            rocketLeft = true;
+            rotLeft = true;
+        }
+        else
+        {
+            rocketLeft = false;
+            rotLeft = false;
         }
     }
     private void Stop()
