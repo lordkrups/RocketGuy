@@ -328,7 +328,7 @@ public class RocketGameManager : MonoBehaviour
         //RELEASE
         //string banner_ID = BANNER_ID;
         string banner_ID = "ca-app-pub-3940256099942544/6300978111";
-        bannerAd = new BannerView(banner_ID, AdSize.Banner,0,0);
+        bannerAd = new BannerView(banner_ID, AdSize.Banner,AdPosition.Bottom);
 
         //RELEASE
         //AdRequest adRequest = new AdRequest.Builder().Build();
