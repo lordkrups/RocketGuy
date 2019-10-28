@@ -388,6 +388,18 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.125.0">
+      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.125.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.IOSResolver_v1.2.125.0">
+      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.125.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.125.0">
+      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.125.0.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.Advertisements">
       <HintPath>/Users/DayaMac01/Documents/RocketGuy/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll</HintPath>
     </Reference>
@@ -402,18 +414,6 @@
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>/Users/DayaMac01/Documents/RocketGuy/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.JarResolver_v1.2.125.0">
-      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.125.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandlerImpl_v1.2.125.0">
-      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.125.0.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.VersionHandler">
-      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.IOSResolver_v1.2.125.0">
-      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.125.0.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/2019.1.8f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
