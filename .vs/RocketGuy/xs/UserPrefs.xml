@@ -1,11 +1,12 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketGameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoogleMobileAds/Api/AdSize.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="36" Column="45" IsPinned="True" />
       <File FileName="Assets/Scripts/GameScripts/MenuSceneAudio.cs" />
       <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" />
-      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="33" Column="31" />
+      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="331" Column="59" />
       <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" Line="28" Column="10" />
+      <File FileName="Assets/GoogleMobileAds/Api/AdSize.cs" Line="24" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,7 +14,9 @@
           <Node name="RocketGuy" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="GoogleMobileAds" expanded="True">
-                <Node name="Api" expanded="True" />
+                <Node name="Api" expanded="True">
+                  <Node name="AdSize.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="Resources" expanded="True">
                 <Node name="NGUI" expanded="True">
@@ -26,7 +29,6 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="RocketGameManager.cs" selected="True" />
                 </Node>
                 <Node name="NguiExtension" expanded="True" />
               </Node>
