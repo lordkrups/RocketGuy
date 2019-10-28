@@ -8,16 +8,6 @@ public class RocketGameManager : MonoBehaviour
 
     public static RocketGameManager Instance = null;
 
-    /*
-    public void Awake()
-    {
-        if (Instance != null && Instance != this)
-            Destroy(gameObject);    // Ensures that there aren't multiple Singletons
-
-        Instance = this;
-        DontDestroyOnLoad(this);
-        Init();
-    } */
     void Awake()
     {
         if (Instance == null)
@@ -107,14 +97,10 @@ public class RocketGameManager : MonoBehaviour
 
         numberOfPlays = PlayerPrefs.GetInt("NumberOfPlays");
 
-        //playedBefore = 1;
-
         if (numberOfPlays == 0)
         {
             Debug.Log("FIRST PLAY");
 
-            //numberOfPlays = 1;
-            //PlayerPrefs.GetInt("FirstPlay", 1);
             PlayerPrefs.SetInt("persistantObjectiveCounter", 0);
 
             PlayerPrefs.SetInt("persistantPlayerCoins", 0);
@@ -132,7 +118,6 @@ public class RocketGameManager : MonoBehaviour
             PlayerPrefs.SetInt("persistantNummyMultiplier", 1);
             PlayerPrefs.SetInt("persistantDiamonValue", 1);
         }
-        //Debug.Log("NOT FIRST PLAY");
         RetrievePersistatStats();
 
     }
@@ -177,9 +162,6 @@ public class RocketGameManager : MonoBehaviour
         int[] hpCosts = Array.ConvertAll(StoreStatsInfos[0].cost.Split(','), int.Parse);
         for (int x = 0; x < hpVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-            //StoreStatsInfos[0].itemStat.Add(hpVals[x]);
-            //StoreStatsInfos[0].itemCost.Add(hpCosts[x]);
             healthStatValues.Add(hpVals[x]);
             healthStatCost.Add(hpCosts[x]);
         }
@@ -188,8 +170,6 @@ public class RocketGameManager : MonoBehaviour
         int[] meCost = Array.ConvertAll(StoreStatsInfos[1].cost.Split(','), int.Parse);
         for (int x = 0; x < meVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             mainEngineStatValue.Add(meVals[x]);
             mainEngineCost.Add(meCost[x]);
         }
@@ -198,8 +178,6 @@ public class RocketGameManager : MonoBehaviour
         int[] beCost = Array.ConvertAll(StoreStatsInfos[2].cost.Split(','), int.Parse);
         for (int x = 0; x < beVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             boosterEngineStatValue.Add(beVals[x]);
             boosterEngineCost.Add(beCost[x]);
         }
@@ -208,8 +186,6 @@ public class RocketGameManager : MonoBehaviour
         int[] tsCost = Array.ConvertAll(StoreStatsInfos[3].cost.Split(','), int.Parse);
         for (int x = 0; x < tsVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             turnSpeedStatValue.Add(tsVals[x]);
             turnSpeedCost.Add(tsCost[x]);
         }
@@ -218,8 +194,6 @@ public class RocketGameManager : MonoBehaviour
         int[] dmCost = Array.ConvertAll(StoreStatsInfos[4].cost.Split(','), int.Parse);
         for (int x = 0; x < dmVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             damageMultiplierStatValue.Add(dmVals[x]);
             damageMultiplierCost.Add(dmCost[x]);
         }
@@ -228,8 +202,6 @@ public class RocketGameManager : MonoBehaviour
         int[] mfCost = Array.ConvertAll(StoreStatsInfos[5].cost.Split(','), int.Parse);
         for (int x = 0; x < mfVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             maxFuelStatValue.Add(mfVals[x]);
             maxFuelCost.Add(mfCost[x]);
         }
@@ -238,8 +210,6 @@ public class RocketGameManager : MonoBehaviour
         int[] mbfCost = Array.ConvertAll(StoreStatsInfos[6].cost.Split(','), int.Parse);
         for (int x = 0; x < mbfVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             maxBoosterFuelStatValue.Add(mbfVals[x]);
             maxBoosterFuelCost.Add(mbfCost[x]);
         }
@@ -248,8 +218,6 @@ public class RocketGameManager : MonoBehaviour
         int[] arCost = Array.ConvertAll(StoreStatsInfos[7].cost.Split(','), int.Parse);
         for (int x = 0; x < arVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             airReistanceStatValue.Add(arVals[x]);
             airReistanceCost.Add(arCost[x]);
         }
@@ -258,8 +226,6 @@ public class RocketGameManager : MonoBehaviour
         int[] nmCost = Array.ConvertAll(StoreStatsInfos[8].cost.Split(','), int.Parse);
         for (int x = 0; x < nmVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             nummyMultiplierStatValue.Add(nmVals[x]);
             nummyMultiplierCost.Add(nmCost[x]);
         }
@@ -268,8 +234,6 @@ public class RocketGameManager : MonoBehaviour
         int[] fcrCost = Array.ConvertAll(StoreStatsInfos[9].cost.Split(','), int.Parse);
         for (int x = 0; x < fcrVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             fuelConsumptionRateStatValue.Add(fcrVals[x]);
             fuelConsumptionRateCost.Add(fcrCost[x]);
         }
@@ -278,8 +242,6 @@ public class RocketGameManager : MonoBehaviour
         int[] bfcrCost = Array.ConvertAll(StoreStatsInfos[10].cost.Split(','), int.Parse);
         for (int x = 0; x < bfcrVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             boosterFuelConsumptionRateStatValue.Add(bfcrVals[x]);
             boosterFuelConsumptionRateCost.Add(bfcrCost[x]);
         }
@@ -288,8 +250,6 @@ public class RocketGameManager : MonoBehaviour
         int[] dvCost = Array.ConvertAll(StoreStatsInfos[11].cost.Split(','), int.Parse);
         for (int x = 0; x < dvVals.Length; x++)
         {
-            //Debug.Log("unlockedGods 1");
-
             diamonValueStatValue.Add(dvVals[x]);
             diamonValueCost.Add(dvCost[x]);
         }
@@ -345,7 +305,6 @@ public class RocketGameManager : MonoBehaviour
         persistantBoosterFuelConsumptionRate = 1;
         persistantDiamonValue = 1;
 
-        //RetrievePersistatStats();
         SavePersistatStats();
         Init();
     }

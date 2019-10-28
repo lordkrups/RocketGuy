@@ -1,7 +1,10 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/MainMenuManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="120" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="36" Column="45" IsPinned="True" />
+      <File FileName="Assets/Scripts/GameScripts/MenuSceneAudio.cs" />
+      <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" Line="27" Column="26" />
+      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="303" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -27,11 +30,16 @@
           </Node>
         </State>
       </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="RocketGuy" expanded="True" selected="True" />
+        </State>
+      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="0cab1c3a-aabc-43d0-8bca-2c7486ef89f8" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b44ff9d5-d6f7-4a0c-bf75-1e28d9b6b8ca" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
