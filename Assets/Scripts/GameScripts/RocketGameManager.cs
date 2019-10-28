@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoogleMobileAds;
+using GoogleMobileAds.Api;
 
 public class RocketGameManager : MonoBehaviour
 {
@@ -23,6 +25,14 @@ public class RocketGameManager : MonoBehaviour
         Init();
 
     }
+    private string APP_ID = "ca-app-pub-1031182463803224~9625329531";
+    private string BANNER_ID = "ca-app-pub-1031182463803224/8336298598";
+    private string INTERSTITIAL_ID = "ca-app-pub-1031182463803224/3881708953";
+    private string REWARDVIDEOAD_ID = "ca-app-pub-1031182463803224/5103630597";
+    private BannerView bannerAd;
+    private InterstitialAd interstitialAd;
+    private RewardBasedVideoAd rewardBasedVideoAd;
+
     public Dictionary<int, StoreStats> StoreStatsInfos { get; private set; }
     public Dictionary<int, Objectives> ObjectiveInfos { get; private set; }
 
@@ -87,6 +97,10 @@ public class RocketGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Init()
     {
+        //MobileAds.Initialize(APP_ID);
+        RequestBanner();
+        RequestInterstitial();
+        RequestVideoAd();
 
         Debug.Log("LOAD XMLs");
         StoreStatsLoader storeStatsLoader = new StoreStatsLoader();
@@ -307,5 +321,140 @@ public class RocketGameManager : MonoBehaviour
 
         SavePersistatStats();
         Init();
+    }
+
+    void RequestBanner()
+    {
+        //RELEASE
+        //string banner_ID = BANNER_ID;
+        string banner_ID = "ca-app-pub-3940256099942544/6300978111";
+        bannerAd = new BannerView(banner_ID, AdSize.SmartBanner, AdPosition.Top);
+
+        //RELEASE
+        //AdRequest adRequest = new AdRequest.Builder().Build();
+
+        //FOR TESTING
+        AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
+
+        bannerAd.LoadAd(adRequest);
+    }
+    void RequestInterstitial()
+    {
+        //RELEASE
+        //string interstitial_ID = INTERSTITIAL_ID;
+        string interstitial_ID = "ca-app-pub-3940256099942544/1033173712";
+        interstitialAd = new InterstitialAd(interstitial_ID);
+
+        //RELEASE
+        //AdRequest adRequest = new AdRequest.Builder().Build();
+
+        //FOR TESTING
+        AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
+
+        interstitialAd.LoadAd(adRequest);
+    }
+
+    void RequestVideoAd()
+    {
+        //RELEASE
+        //string video_ID = REWARDVIDEOAD_ID;
+        string video_ID = "ca-app-pub-3940256099942544/5224354917";
+        rewardBasedVideoAd = RewardBasedVideoAd.Instance;
+
+        //RELEASE
+        //AdRequest adRequest = new AdRequest.Builder().Build();
+
+        //FOR TESTING
+        AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
+
+        rewardBasedVideoAd.LoadAd(adRequest, video_ID);
+    }
+
+    public void Display_Banner()
+    {
+        bannerAd.Show();
+    }
+    public void Display_Interstitial()
+    {
+        if (interstitialAd.IsLoaded())
+        {
+            interstitialAd.Show();
+        }
+    }
+    public void Display_Reward_Video()
+    {
+        if (rewardBasedVideoAd.IsLoaded())
+        {
+            rewardBasedVideoAd.Show();
+        }
+    }
+
+    //Handle Events
+    public void HandleOnAdLoaded(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdLoaded event received");
+        Display_Banner();
+    }
+
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+        MonoBehaviour.print("HandleFailedToReceiveAd event received with message: "
+                            + args.Message);
+        //Ad failed to load
+        RequestBanner();
+    }
+
+    public void HandleOnAdOpened(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdOpened event received");
+    }
+
+    public void HandleOnAdClosed(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdClosed event received");
+    }
+
+    public void HandleOnAdLeavingApplication(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdLeavingApplication event received");
+    }
+
+    void HandleBannerAdEvents(bool subcribe)
+    {
+        if (subcribe)
+        {
+            // Called when an ad request has successfully loaded.
+            bannerAd.OnAdLoaded += HandleOnAdLoaded;
+            // Called when an ad request failed to load.
+            bannerAd.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+            // Called when an ad is clicked.
+            bannerAd.OnAdOpening += HandleOnAdOpened;
+            // Called when the user returned from the app after an ad click.
+            bannerAd.OnAdClosed += HandleOnAdClosed;
+            // Called when the ad click caused the user to leave the application.
+            bannerAd.OnAdLeavingApplication += HandleOnAdLeavingApplication;
+        }
+        else
+        {
+            // Called when an ad request has successfully loaded.
+            bannerAd.OnAdLoaded -= HandleOnAdLoaded;
+            // Called when an ad request failed to load.
+            bannerAd.OnAdFailedToLoad -= HandleOnAdFailedToLoad;
+            // Called when an ad is clicked.
+            bannerAd.OnAdOpening -= HandleOnAdOpened;
+            // Called when the user returned from the app after an ad click.
+            bannerAd.OnAdClosed -= HandleOnAdClosed;
+            // Called when the ad click caused the user to leave the application.
+            bannerAd.OnAdLeavingApplication -= HandleOnAdLeavingApplication;
+        }
+    }
+
+    private void OnEnable()
+    {
+        HandleBannerAdEvents(true);
+    }
+    private void OnDisable()
+    {
+        HandleBannerAdEvents(false);
     }
 }

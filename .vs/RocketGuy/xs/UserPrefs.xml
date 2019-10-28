@@ -1,16 +1,20 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/MainMenuManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketGameManager.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="36" Column="45" IsPinned="True" />
       <File FileName="Assets/Scripts/GameScripts/MenuSceneAudio.cs" />
-      <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" Line="27" Column="26" />
-      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="303" Column="39" />
+      <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" />
+      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="33" Column="31" />
+      <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" Line="28" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="RocketGuy" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="GoogleMobileAds" expanded="True">
+                <Node name="Api" expanded="True" />
+              </Node>
               <Node name="Resources" expanded="True">
                 <Node name="NGUI" expanded="True">
                   <Node name="Scripts" expanded="True">
@@ -22,7 +26,7 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="MainMenuManager.cs" selected="True" />
+                  <Node name="RocketGameManager.cs" selected="True" />
                 </Node>
                 <Node name="NguiExtension" expanded="True" />
               </Node>
@@ -30,16 +34,11 @@
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="RocketGuy" expanded="True" selected="True" />
-        </State>
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b44ff9d5-d6f7-4a0c-bf75-1e28d9b6b8ca" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6c27601b-770f-472c-8482-c6cfdc68207f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

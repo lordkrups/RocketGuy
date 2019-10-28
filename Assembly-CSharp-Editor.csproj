@@ -64,6 +64,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\ImageEffects\BloomEditor.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Editor\GoogleMobileAdsSettings.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Editor\GoogleMobileAdsSettingsEditor.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Editor\ManifestProcessor.cs" />
+    <Compile Include="Assets\GoogleMobileAds\Editor\PListProcessor.cs" />
     <Compile Include="Assets\Resources\NGUI\Examples\Scripts\InventorySystem\Editor\InvDatabaseInspector.cs" />
     <Compile Include="Assets\Resources\NGUI\Examples\Scripts\InventorySystem\Editor\InvFindItem.cs" />
     <Compile Include="Assets\Resources\NGUI\Scripts\Editor\ActiveAnimationEditor.cs" />
@@ -154,6 +158,8 @@
     <Compile Include="Assets\Resources\NGUI\Scripts\Editor\UIWidgetInspector.cs" />
     <Compile Include="Assets\Resources\NGUI\Scripts\Editor\UIWrapContentEditor.cs" />
     <Compile Include="Assets\Resources\PowerUps FullPackage\Scripts\Editor\PowerUpAnimationInspector.cs" />
+    <None Include="Assets\GoogleMobileAds\Editor\GoogleMobileAdsDependencies.xml" />
+    <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.125.0.txt" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/Users/DayaMac01/Documents/RocketGuy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -396,6 +402,18 @@
     </Reference>
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>/Users/DayaMac01/Documents/RocketGuy/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.JarResolver_v1.2.125.0">
+      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.JarResolver_v1.2.125.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandlerImpl_v1.2.125.0">
+      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.VersionHandlerImpl_v1.2.125.0.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.VersionHandler">
+      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.VersionHandler.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.IOSResolver_v1.2.125.0">
+      <HintPath>/Users/DayaMac01/Documents/RocketGuy/Assets/PlayServicesResolver/Editor/Google.IOSResolver_v1.2.125.0.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>/Applications/Unity/Hub/Editor/2019.1.8f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>

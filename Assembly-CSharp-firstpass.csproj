@@ -65,6 +65,7 @@
   <ItemGroup>
     <Compile Include="Assets\Standard Assets\Effects\ImageEffects\Scripts\Bloom.cs" />
     <Compile Include="Assets\Standard Assets\Effects\ImageEffects\Scripts\PostEffectsBase.cs" />
+    <None Include="Assets\Plugins\Android\GoogleMobileAdsPlugin\AndroidManifest.xml" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BrightPassFilter2.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\LensFlareCreate.shader" />
     <None Include="Assets\Standard Assets\Effects\ImageEffects\Shaders\_BloomAndFlares\BlurAndFlares.shader" />
