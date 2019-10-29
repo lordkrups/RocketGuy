@@ -4,7 +4,7 @@
       <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="36" Column="45" />
       <File FileName="Assets/Scripts/GameScripts/MenuSceneAudio.cs" />
       <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" />
-      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="365" Column="9" />
+      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="402" Column="66" />
       <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" />
       <File FileName="Assets/GoogleMobileAds/Api/AdSize.cs" />
       <File FileName="Assets/GoogleMobileAds/Common/DummyClient.cs" />
@@ -41,7 +41,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a7d61bfd-8547-418e-bf78-14a8f4c4354b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1c22d596-d5ed-482c-a96d-29ef2024ab19" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
