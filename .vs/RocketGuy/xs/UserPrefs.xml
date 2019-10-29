@@ -1,12 +1,13 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketGameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="36" Column="45" IsPinned="True" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="36" Column="45" />
       <File FileName="Assets/Scripts/GameScripts/MenuSceneAudio.cs" />
       <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" />
-      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="358" Column="6" />
-      <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" />
-      <File FileName="Assets/GoogleMobileAds/Api/AdSize.cs" Line="24" Column="39" />
+      <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="365" Column="9" />
+      <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" Line="132" Column="1" />
+      <File FileName="Assets/GoogleMobileAds/Api/AdSize.cs" />
+      <File FileName="Assets/GoogleMobileAds/Common/DummyClient.cs" Line="158" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,7 +15,10 @@
           <Node name="RocketGuy" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="GoogleMobileAds" expanded="True">
-                <Node name="Api" expanded="True" />
+                <Node name="Api" expanded="True">
+                  <Node name="RewardBasedVideoAd.cs" selected="True" />
+                </Node>
+                <Node name="Common" expanded="True" />
               </Node>
               <Node name="Resources" expanded="True">
                 <Node name="NGUI" expanded="True">
@@ -27,7 +31,6 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="RocketGameManager.cs" selected="True" />
                 </Node>
                 <Node name="NguiExtension" expanded="True" />
               </Node>
@@ -39,7 +42,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="1817e45b-103f-41dd-bb7c-02461fbb511e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="abd74eb6-8259-4913-8553-70ddbe164ccb" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
