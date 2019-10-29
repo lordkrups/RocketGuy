@@ -5,7 +5,7 @@
       <File FileName="Assets/Scripts/GameScripts/MenuSceneAudio.cs" />
       <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" />
       <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="365" Column="9" />
-      <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" Line="132" Column="1" />
+      <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" />
       <File FileName="Assets/GoogleMobileAds/Api/AdSize.cs" />
       <File FileName="Assets/GoogleMobileAds/Common/DummyClient.cs" />
     </Files>

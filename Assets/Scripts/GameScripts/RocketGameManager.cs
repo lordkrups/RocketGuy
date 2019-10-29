@@ -454,11 +454,16 @@ public class RocketGameManager : MonoBehaviour
         MonoBehaviour.print("HandleAdOpened event received");
     }
 
-    public void HandleOnAdClosed(object sender, EventArgs args)
+    public void HandleBannerOnAdClosed(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdClosed event received");
+        Hide_Banner();
     }
-
+    public void HandleInterstitialOnAdClosed(object sender, EventArgs args)
+    {
+        MonoBehaviour.print("HandleAdClosed event received");
+        Hide_Interstitial();
+    }
     public void HandleOnAdLeavingApplication(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdLeavingApplication event received");
@@ -475,7 +480,7 @@ public class RocketGameManager : MonoBehaviour
             // Called when an ad is clicked.
             bannerAd.OnAdOpening += HandleOnAdOpened;
             // Called when the user returned from the app after an ad click.
-            bannerAd.OnAdClosed += HandleOnAdClosed;
+            bannerAd.OnAdClosed += HandleBannerOnAdClosed;
             // Called when the ad click caused the user to leave the application.
             bannerAd.OnAdLeavingApplication += HandleOnAdLeavingApplication;
         }
@@ -488,7 +493,7 @@ public class RocketGameManager : MonoBehaviour
             // Called when an ad is clicked.
             bannerAd.OnAdOpening -= HandleOnAdOpened;
             // Called when the user returned from the app after an ad click.
-            bannerAd.OnAdClosed -= HandleOnAdClosed;
+            bannerAd.OnAdClosed -= HandleBannerOnAdClosed;
             // Called when the ad click caused the user to leave the application.
             bannerAd.OnAdLeavingApplication -= HandleOnAdLeavingApplication;
         }
@@ -504,7 +509,7 @@ public class RocketGameManager : MonoBehaviour
             // Called when an ad is clicked.
             interstitialAd.OnAdOpening += HandleOnAdOpened;
             // Called when the user returned from the app after an ad click.
-            interstitialAd.OnAdClosed += HandleOnAdClosed;
+            interstitialAd.OnAdClosed += HandleInterstitialOnAdClosed;
             // Called when the ad click caused the user to leave the application.
             interstitialAd.OnAdLeavingApplication += HandleOnAdLeavingApplication;
         }
@@ -517,7 +522,7 @@ public class RocketGameManager : MonoBehaviour
             // Called when an ad is clicked.
             interstitialAd.OnAdOpening -= HandleOnAdOpened;
             // Called when the user returned from the app after an ad click.
-            interstitialAd.OnAdClosed -= HandleOnAdClosed;
+            interstitialAd.OnAdClosed -= HandleInterstitialOnAdClosed;
             // Called when the ad click caused the user to leave the application.
             interstitialAd.OnAdLeavingApplication -= HandleOnAdLeavingApplication;
         }
@@ -533,7 +538,7 @@ public class RocketGameManager : MonoBehaviour
             // Called when an ad is clicked.
             rewardBasedVideoAd.OnAdOpening += HandleOnAdOpened;
             // Called when the user returned from the app after an ad click.
-            rewardBasedVideoAd.OnAdClosed += HandleOnAdClosed;
+            //rewardBasedVideoAd.OnAdClosed += HandleOnAdClosed;
             // Called when the ad click caused the user to leave the application.
             rewardBasedVideoAd.OnAdRewarded += Finished_Reward_Video;
         }
@@ -546,7 +551,7 @@ public class RocketGameManager : MonoBehaviour
             // Called when an ad is clicked.
             rewardBasedVideoAd.OnAdOpening -= HandleOnAdOpened;
             // Called when the user returned from the app after an ad click.
-            rewardBasedVideoAd.OnAdClosed -= HandleOnAdClosed;
+            //rewardBasedVideoAd.OnAdClosed -= HandleOnAdClosed;
             // Called when the ad click caused the user to leave the application.
 
             rewardBasedVideoAd.OnAdRewarded -= Finished_Reward_Video;
