@@ -36,6 +36,7 @@ public class RocketGameManager : MonoBehaviour
     public Dictionary<int, StoreStats> StoreStatsInfos { get; private set; }
     public Dictionary<int, Objectives> ObjectiveInfos { get; private set; }
 
+    public UILabel label;
     public int numberOfPlays;
     public bool showTutorial;
     public bool isFlightSchool;
@@ -412,10 +413,13 @@ public class RocketGameManager : MonoBehaviour
             rewardBasedVideoAd.Show();
         }
     }
-    public void Finished_Reward_Video(object sender, EventArgs args)
+    public void Finished_Reward_Video(object sender, Reward args)
     {
         MonoBehaviour.print("Finished_Reward_Video event received");
+        label.text = args.Amount.ToString();
+        
         SaveEarnedCoins(696969);
+        
     }
     //Handle Events
     public void HandleOnAdLoaded(object sender, EventArgs args)
@@ -531,7 +535,7 @@ public class RocketGameManager : MonoBehaviour
             // Called when the user returned from the app after an ad click.
             rewardBasedVideoAd.OnAdClosed += HandleOnAdClosed;
             // Called when the ad click caused the user to leave the application.
-            rewardBasedVideoAd.OnAdLeavingApplication += Finished_Reward_Video;
+            rewardBasedVideoAd.OnAdRewarded += Finished_Reward_Video;
         }
         else
         {
@@ -544,7 +548,6 @@ public class RocketGameManager : MonoBehaviour
             // Called when the user returned from the app after an ad click.
             rewardBasedVideoAd.OnAdClosed -= HandleOnAdClosed;
             // Called when the ad click caused the user to leave the application.
-            rewardBasedVideoAd.OnAdLeavingApplication -= HandleOnAdLeavingApplication;
 
             rewardBasedVideoAd.OnAdRewarded -= Finished_Reward_Video;
         }
