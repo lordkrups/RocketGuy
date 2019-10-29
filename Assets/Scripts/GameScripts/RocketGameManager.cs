@@ -373,54 +373,29 @@ public class RocketGameManager : MonoBehaviour
 
     public void Display_Banner()
     {
-        OnBannerEnable();
+        OnEnable();
         bannerAd.Show();
     }
     public void Hide_Banner()
     {
-        OnBannerDisable();
-        bannerAd.Destroy();
+        OnDisable();
+        bannerAd.Hide();
     }
     public void Display_Interstitial()
     {
         if (interstitialAd.IsLoaded())
         {
-            OnInterstitialEnable();
             interstitialAd.Show();
-        }
-    }
-    public void Hide_Interstitial()
-    {
-        if (interstitialAd.IsLoaded())
-        {
-            OnInterstitialDisable();
-            interstitialAd.Destroy();
         }
     }
     public void Display_Reward_Video()
     {
         if (rewardBasedVideoAd.IsLoaded())
         {
-            OnVideoEnable();
             rewardBasedVideoAd.Show();
         }
     }
-    public void Hide_Reward_Video()
-    {
-        if (rewardBasedVideoAd.IsLoaded())
-        {
-            OnVideoDisable();
-            rewardBasedVideoAd.Show();
-        }
-    }
-    public void Finished_Reward_Video(object sender, Reward args)
-    {
-        MonoBehaviour.print("Finished_Reward_Video event received");
-        label.text = args.Amount.ToString();
-        
-        SaveEarnedCoins(696969);
-        
-    }
+
     //Handle Events
     public void HandleOnAdLoaded(object sender, EventArgs args)
     {
@@ -428,42 +403,26 @@ public class RocketGameManager : MonoBehaviour
         Display_Banner();
     }
 
-    public void HandleOnBannerAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
     {
         MonoBehaviour.print("HandleFailedToReceiveAd event received with message: "
                             + args.Message);
         //Ad failed to load
         RequestBanner();
     }
-    public void HandleOnInterstitialAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    {
-        MonoBehaviour.print("HandleFailedToReceiveAd event received with message: "
-                            + args.Message);
-        //Ad failed to load
-        RequestInterstitial();
-    }
-    public void HandleOnVideoAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    {
-        MonoBehaviour.print("HandleFailedToReceiveAd event received with message: "
-                            + args.Message);
-        //Ad failed to load
-        RequestVideoAd();
-    }
+
     public void HandleOnAdOpened(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdOpened event received");
+        label.text = "opened banner";
     }
 
-    public void HandleBannerOnAdClosed(object sender, EventArgs args)
+    public void HandleOnAdClosed(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdClosed event received");
-        Hide_Banner();
+        label.text = "closed banner";
     }
-    public void HandleInterstitialOnAdClosed(object sender, EventArgs args)
-    {
-        MonoBehaviour.print("HandleAdClosed event received");
-        Hide_Interstitial();
-    }
+
     public void HandleOnAdLeavingApplication(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdLeavingApplication event received");
@@ -476,11 +435,11 @@ public class RocketGameManager : MonoBehaviour
             // Called when an ad request has successfully loaded.
             bannerAd.OnAdLoaded += HandleOnAdLoaded;
             // Called when an ad request failed to load.
-            bannerAd.OnAdFailedToLoad += HandleOnBannerAdFailedToLoad;
+            bannerAd.OnAdFailedToLoad += HandleOnAdFailedToLoad;
             // Called when an ad is clicked.
             bannerAd.OnAdOpening += HandleOnAdOpened;
             // Called when the user returned from the app after an ad click.
-            bannerAd.OnAdClosed += HandleBannerOnAdClosed;
+            bannerAd.OnAdClosed += HandleOnAdClosed;
             // Called when the ad click caused the user to leave the application.
             bannerAd.OnAdLeavingApplication += HandleOnAdLeavingApplication;
         }
@@ -489,96 +448,22 @@ public class RocketGameManager : MonoBehaviour
             // Called when an ad request has successfully loaded.
             bannerAd.OnAdLoaded -= HandleOnAdLoaded;
             // Called when an ad request failed to load.
-            bannerAd.OnAdFailedToLoad -= HandleOnBannerAdFailedToLoad;
+            bannerAd.OnAdFailedToLoad -= HandleOnAdFailedToLoad;
             // Called when an ad is clicked.
             bannerAd.OnAdOpening -= HandleOnAdOpened;
             // Called when the user returned from the app after an ad click.
-            bannerAd.OnAdClosed -= HandleBannerOnAdClosed;
+            bannerAd.OnAdClosed -= HandleOnAdClosed;
             // Called when the ad click caused the user to leave the application.
             bannerAd.OnAdLeavingApplication -= HandleOnAdLeavingApplication;
         }
     }
-    void HandleInterstitialAdEvents(bool subcribe)
-    {
-        if (subcribe)
-        {
-            // Called when an ad request has successfully loaded.
-            interstitialAd.OnAdLoaded += HandleOnAdLoaded;
-            // Called when an ad request failed to load.
-            interstitialAd.OnAdFailedToLoad += HandleOnInterstitialAdFailedToLoad;
-            // Called when an ad is clicked.
-            interstitialAd.OnAdOpening += HandleOnAdOpened;
-            // Called when the user returned from the app after an ad click.
-            interstitialAd.OnAdClosed += HandleInterstitialOnAdClosed;
-            // Called when the ad click caused the user to leave the application.
-            interstitialAd.OnAdLeavingApplication += HandleOnAdLeavingApplication;
-        }
-        else
-        {
-            // Called when an ad request has successfully loaded.
-            interstitialAd.OnAdLoaded -= HandleOnAdLoaded;
-            // Called when an ad request failed to load.
-            interstitialAd.OnAdFailedToLoad -= HandleOnInterstitialAdFailedToLoad;
-            // Called when an ad is clicked.
-            interstitialAd.OnAdOpening -= HandleOnAdOpened;
-            // Called when the user returned from the app after an ad click.
-            interstitialAd.OnAdClosed -= HandleInterstitialOnAdClosed;
-            // Called when the ad click caused the user to leave the application.
-            interstitialAd.OnAdLeavingApplication -= HandleOnAdLeavingApplication;
-        }
-    }
-    void HandleVideoAdEvents(bool subcribe)
-    {
-        if (subcribe)
-        {
-            // Called when an ad request has successfully loaded.
-            rewardBasedVideoAd.OnAdLoaded += HandleOnAdLoaded;
-            // Called when an ad request failed to load.
-            rewardBasedVideoAd.OnAdFailedToLoad += HandleOnVideoAdFailedToLoad;
-            // Called when an ad is clicked.
-            rewardBasedVideoAd.OnAdOpening += HandleOnAdOpened;
-            // Called when the user returned from the app after an ad click.
-            //rewardBasedVideoAd.OnAdClosed += HandleOnAdClosed;
-            // Called when the ad click caused the user to leave the application.
-            rewardBasedVideoAd.OnAdRewarded += Finished_Reward_Video;
-        }
-        else
-        {
-            // Called when an ad request has successfully loaded.
-            rewardBasedVideoAd.OnAdLoaded -= HandleOnAdLoaded;
-            // Called when an ad request failed to load.
-            rewardBasedVideoAd.OnAdFailedToLoad -= HandleOnVideoAdFailedToLoad;
-            // Called when an ad is clicked.
-            rewardBasedVideoAd.OnAdOpening -= HandleOnAdOpened;
-            // Called when the user returned from the app after an ad click.
-            //rewardBasedVideoAd.OnAdClosed -= HandleOnAdClosed;
-            // Called when the ad click caused the user to leave the application.
 
-            rewardBasedVideoAd.OnAdRewarded -= Finished_Reward_Video;
-        }
-    }
-    private void OnBannerEnable()
+    private void OnEnable()
     {
         HandleBannerAdEvents(true);
     }
-    private void OnBannerDisable()
+    private void OnDisable()
     {
         HandleBannerAdEvents(false);
-    }
-    private void OnInterstitialEnable()
-    {
-        HandleInterstitialAdEvents(true);
-    }
-    private void OnInterstitialDisable()
-    {
-        HandleInterstitialAdEvents(false);
-    }
-    private void OnVideoEnable()
-    {
-        HandleVideoAdEvents(true);
-    }
-    private void OnVideoDisable()
-    {
-        HandleVideoAdEvents(false);
     }
 }
