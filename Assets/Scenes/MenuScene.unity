@@ -9713,6 +9713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberOfPlays: 0
   playsSinceLastAd: 2
+  readyToLoadNextLevel: 0
   showTutorial: 0
   isFlightSchool: 0
   persistantObjectiveCounter: 0
