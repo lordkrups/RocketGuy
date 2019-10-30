@@ -48,17 +48,14 @@ public class GameSceneManagerNGUI : MonoBehaviour
         gameOverPanel.gameObject.SetActive(false);
         currentPhase = "Ground";
 
-        if (RocketGameManager.Instance.numberOfPlays == RocketGameManager.Instance.playsSinceLastAd)
+        if (RocketGameManager.Instance.numberOfPlays >= RocketGameManager.Instance.playsSinceLastAd)
         {
             RocketGameManager.Instance.Display_Interstitial();
             RocketGameManager.Instance.playsSinceLastAd += 3;
         }
         else
         {
-            if (!RocketGameManager.Instance.interstitialAd.IsLoaded())
-            {
-                RocketGameManager.Instance.RequestInterstitial();
-            }
+            RocketGameManager.Instance.RequestInterstitial();
         }
 
         StartCoroutine(CloseBlind());
