@@ -137,10 +137,14 @@ public class RocketGameManager : MonoBehaviour
         if (numberOfPlays == playsSinceLastAd)
         {
             Display_Interstitial();
+            playsSinceLastAd += 3;
         }
         else
         {
-            RequestInterstitial();
+            if (!interstitialAd.IsLoaded())
+            {
+                RequestInterstitial();
+            }
         }
 
     }
@@ -335,8 +339,8 @@ public class RocketGameManager : MonoBehaviour
     void RequestBanner()
     {
         //RELEASE
-        string banner_ID = BANNER_ID;
-        //string banner_ID = "ca-app-pub-3940256099942544/6300978111";
+        //string banner_ID = BANNER_ID;
+        string banner_ID = "ca-app-pub-3940256099942544/6300978111";
         bannerAd = new BannerView(banner_ID, AdSize.Banner,AdPosition.Bottom);
 
         //RELEASE
@@ -350,8 +354,8 @@ public class RocketGameManager : MonoBehaviour
     void RequestInterstitial()
     {
         //RELEASE
-        string interstitial_ID = INTERSTITIAL_ID;
-        //string interstitial_ID = "ca-app-pub-3940256099942544/1033173712";
+        //string interstitial_ID = INTERSTITIAL_ID;
+        string interstitial_ID = "ca-app-pub-3940256099942544/1033173712";
         interstitialAd = new InterstitialAd(interstitial_ID);
 
         //RELEASE
@@ -411,7 +415,6 @@ public class RocketGameManager : MonoBehaviour
     {
         if (interstitialAd.IsLoaded())
         {
-            interstitialAd.Show();
             interstitialAd.Show();
             // Called when an ad request has successfully loaded.
             interstitialAd.OnAdLoaded += HandleInterstitialOnAdLoaded;
@@ -476,6 +479,7 @@ public class RocketGameManager : MonoBehaviour
     public void HandleOnAdClosed(object sender, EventArgs args)
     {
         MonoBehaviour.print("HandleAdClosed event received");
+        Hide_Interstitial();
     }
 
     public void HandleOnAdLeavingApplication(object sender, EventArgs args)
