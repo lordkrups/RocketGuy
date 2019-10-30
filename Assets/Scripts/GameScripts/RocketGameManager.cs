@@ -29,15 +29,16 @@ public class RocketGameManager : MonoBehaviour
     private string BANNER_ID = "ca-app-pub-1031182463803224/8336298598";
     private string INTERSTITIAL_ID = "ca-app-pub-1031182463803224/3881708953";
     private string REWARDVIDEOAD_ID = "ca-app-pub-1031182463803224/5103630597";
-    private BannerView bannerAd;
-    private InterstitialAd interstitialAd;
-    private RewardBasedVideoAd rewardBasedVideoAd;
+    public BannerView bannerAd;
+    public InterstitialAd interstitialAd;
+    public RewardBasedVideoAd rewardBasedVideoAd;
 
     public Dictionary<int, StoreStats> StoreStatsInfos { get; private set; }
     public Dictionary<int, Objectives> ObjectiveInfos { get; private set; }
 
     public int numberOfPlays;
     public int playsSinceLastAd = 2;
+    public bool readyToLoadNextLevel;
     public bool showTutorial;
     public bool isFlightSchool;
 
@@ -133,19 +134,6 @@ public class RocketGameManager : MonoBehaviour
             PlayerPrefs.SetInt("persistantDiamonValue", 1);
         }
         RetrievePersistatStats();
-
-        if (numberOfPlays == playsSinceLastAd)
-        {
-            Display_Interstitial();
-            playsSinceLastAd += 3;
-        }
-        else
-        {
-            if (!interstitialAd.IsLoaded())
-            {
-                RequestInterstitial();
-            }
-        }
 
     }
     public void SavePersistatStats()
@@ -334,9 +322,9 @@ public class RocketGameManager : MonoBehaviour
 
         SavePersistatStats();
         Init();
-    } 
+    }
 
-    void RequestBanner()
+    public void RequestBanner()
     {
         //RELEASE
         //string banner_ID = BANNER_ID;
@@ -351,7 +339,7 @@ public class RocketGameManager : MonoBehaviour
 
         bannerAd.LoadAd(adRequest);
     }
-    void RequestInterstitial()
+    public void RequestInterstitial()
     {
         //RELEASE
         //string interstitial_ID = INTERSTITIAL_ID;
@@ -415,6 +403,8 @@ public class RocketGameManager : MonoBehaviour
     {
         if (interstitialAd.IsLoaded())
         {
+            Time.timeScale = 0;
+
             interstitialAd.Show();
             // Called when an ad request has successfully loaded.
             interstitialAd.OnAdLoaded += HandleInterstitialOnAdLoaded;
@@ -432,6 +422,8 @@ public class RocketGameManager : MonoBehaviour
     {
         if (interstitialAd.IsLoaded())
         {
+            Time.timeScale = 1;
+
             interstitialAd.Destroy();
             // Called when an ad request has successfully loaded.
             interstitialAd.OnAdLoaded -= HandleInterstitialOnAdLoaded;
