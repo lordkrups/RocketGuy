@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioPlayer : MonoBehaviour
 {
-    public AudioClip bgmClip, rocketClip, crashClip, getItemClip;
+    public AudioClip bgmClip, rocketClip, crashClip, getItemClip, explosion;
 
     public AudioSource bgmSource, sfxSource, rocketSource;
 
@@ -17,11 +17,11 @@ public class AudioPlayer : MonoBehaviour
         crashClip = Resources.Load<AudioClip>("Audio/crash");
         getItemClip = Resources.Load<AudioClip>("Audio/getItem");
 
-        //if (EverythingLoader.Instance.gameManager.bgmMuted == 1)
-        //{
-        PlayBGM();
-        //}
-        //rocketSource.Play();
+        if (RocketGameManager.Instance.persistantBGM == 1)
+        {
+            PlayBGM();
+        }
+        rocketSource.volume = 0.2f;
     }
 
     public void PlayBGM()
@@ -37,17 +37,22 @@ public class AudioPlayer : MonoBehaviour
     {
         rocketSource.Stop();
     }
-
+    public void StopRocketSFX()
+    {
+        sfxSource.Stop();
+    }
     public void PlaySFXClip(string clip)
     {
-        //Debug.Log("PlaySFXClip: " + clip);
-        //if (EverythingLoader.Instance.gameManager.sfxMuted == 1)
-        //{
+        if (RocketGameManager.Instance.persistantSFX == 1)
+        {
             switch (clip)
             {
                 case "rocketBlast":
                     //sfxSource.pit
-                    sfxSource.PlayOneShot(rocketClip);
+                    if (!rocketSource.isPlaying)
+                    {
+                        rocketSource.PlayOneShot(rocketClip);
+                    }
                     break;
                 case "crash":
                     sfxSource.PlayOneShot(crashClip);
@@ -55,9 +60,13 @@ public class AudioPlayer : MonoBehaviour
                 case "getItem":
                     sfxSource.PlayOneShot(getItemClip);
                     break;
+                case "explosion":
+                    rocketSource.volume = 1f;
+                    rocketSource.PlayOneShot(explosion);
+                    break;
                 default:
                     break;
             }
-        //}
+        }
     }
 }

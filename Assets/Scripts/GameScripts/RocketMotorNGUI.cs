@@ -239,6 +239,7 @@ public class RocketMotorNGUI : MonoBehaviour
             mainFlame.Play();
             boostTimer += Time.deltaTime;
             isFalling = false;
+            gameSceneManager.audioPlayer.PlaySFXClip("rocketBlast");
         }
         if (fallTimer >= 3f)
         {
@@ -275,6 +276,7 @@ public class RocketMotorNGUI : MonoBehaviour
             mainFlame.Clear();
             isBoosting = false;
             boostTimer = 0f;
+            gameSceneManager.audioPlayer.StopRocketSFX();
 
             //tailLight.gameObject.SetActive(false);
         }
@@ -408,7 +410,7 @@ public class RocketMotorNGUI : MonoBehaviour
         //trans = new Vector3(0, 0, -1f);
         //trans = transform.position + trans;
         //deathExplosion = Instantiate(Prefabs[1], trans, new Quaternion(), transform) as GameObject;
-
+        gameSceneManager.audioPlayer.PlaySFXClip("explosion");
         yield return new WaitForSeconds(1.4f);
         rb.drag = rb.drag / 4;
         gameSceneManager.ShowGameOver();

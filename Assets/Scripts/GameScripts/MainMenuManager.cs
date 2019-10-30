@@ -8,8 +8,12 @@ public class MainMenuManager : MonoBehaviour
     public StoreManager storeManager;
     public UIPanel MenuPanel;
     public UIPanel StorePanel;
+    public UIPanel OptionsPanel;
     public UIPanel flightSchoolPanel;
     public UIPanel resetBox;
+
+    public UILabel bgmMusicLabel;
+    public UILabel sfxMusicLabel;
 
     public List<PlaneMotor> thingsToSpawn;
     public CloudObj cloudObj;
@@ -22,6 +26,7 @@ public class MainMenuManager : MonoBehaviour
         MenuPanel.On();
         StorePanel.Off();
         flightSchoolPanel.Off();
+        OptionsPanel.Off();
         resetBox.Off();
     }
     public void StartGame()
@@ -56,6 +61,63 @@ public class MainMenuManager : MonoBehaviour
     {
         MenuPanel.On();
         flightSchoolPanel.Off();
+    }
+    public void OpenOptions()
+    {
+
+        MenuPanel.Off();
+        OptionsPanel.On();
+        UpdateSoundDisplay();
+    }
+    public void UpdateSoundDisplay()
+    {
+        if (RocketGameManager.Instance.CheckBGMStatus())
+        {
+            bgmMusicLabel.text = "On";
+        }
+        else
+        {
+            bgmMusicLabel.text = "Off";
+        }
+        if (RocketGameManager.Instance.CheckSFXStatus())
+        {
+            sfxMusicLabel.text = "On";
+        }
+        else
+        {
+            sfxMusicLabel.text = "Off";
+        }
+    }
+    public void ToggleBGM()
+    {
+        if (RocketGameManager.Instance.CheckBGMStatus())
+        {
+            RocketGameManager.Instance.persistantBGM = 0;
+        }
+        else
+        {
+            RocketGameManager.Instance.persistantBGM = 1;
+        }
+        RocketGameManager.Instance.SavePersistatStats();
+        UpdateSoundDisplay();
+    }
+    public void ToggleSFX()
+    {
+        if (RocketGameManager.Instance.CheckSFXStatus())
+        {
+            RocketGameManager.Instance.persistantSFX = 0;
+        }
+        else
+        {
+            RocketGameManager.Instance.persistantSFX = 1;
+        }
+        RocketGameManager.Instance.SavePersistatStats();
+        UpdateSoundDisplay();
+    }
+    public void CloseOptions()
+    {
+        MenuPanel.On();
+        OptionsPanel.Off();
     }
     public void OpenResetBox()
     {

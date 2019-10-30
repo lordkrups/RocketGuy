@@ -36,6 +36,9 @@ public class RocketGameManager : MonoBehaviour
     public Dictionary<int, StoreStats> StoreStatsInfos { get; private set; }
     public Dictionary<int, Objectives> ObjectiveInfos { get; private set; }
 
+    public int persistantBGM = 1;
+    public int persistantSFX = 1;
+
     public int numberOfPlays;
     public int playsSinceLastAd = 2;
     public bool readyToLoadNextLevel;
@@ -132,6 +135,8 @@ public class RocketGameManager : MonoBehaviour
             PlayerPrefs.SetInt("persistantBoosterFuelConsumptionRate", 1);
             PlayerPrefs.SetInt("persistantNummyMultiplier", 1);
             PlayerPrefs.SetInt("persistantDiamonValue", 1);
+            //PlayerPrefs.SetInt("persistantBGM", 1);
+            //PlayerPrefs.SetInt("persistantSFX", 1);
         }
         RetrievePersistatStats();
 
@@ -153,6 +158,26 @@ public class RocketGameManager : MonoBehaviour
         PlayerPrefs.SetInt("persistantBoosterFuelConsumptionRate", persistantBoosterFuelConsumptionRate);
         PlayerPrefs.SetInt("persistantNummyMultiplier", persistantNummyMultiplier);
         PlayerPrefs.SetInt("persistantDiamonValue", persistantDiamonValue);
+        PlayerPrefs.SetInt("persistantBGM", persistantBGM);
+        PlayerPrefs.SetInt("persistantSFX", persistantSFX);
+    }
+    public bool CheckBGMStatus()
+    {
+        bool playBGM = true;
+        if (persistantBGM == 0)
+        {
+            playBGM = false;
+        }
+        return playBGM;
+    }
+    public bool CheckSFXStatus()
+    {
+        bool playBGM = true;
+        if (persistantSFX == 0)
+        {
+            playBGM = false;
+        }
+        return playBGM;
     }
     private void RetrievePersistatStats()
     {
@@ -171,6 +196,8 @@ public class RocketGameManager : MonoBehaviour
         persistantBoosterFuelConsumptionRate = PlayerPrefs.GetInt("persistantBoosterFuelConsumptionRate", persistantBoosterFuelConsumptionRate);
         persistantNummyMultiplier = PlayerPrefs.GetInt("persistantNummyMultiplier", persistantNummyMultiplier);
         persistantDiamonValue = PlayerPrefs.GetInt("persistantDiamonValue", persistantDiamonValue);
+        persistantBGM = PlayerPrefs.GetInt("persistantBGM", persistantBGM);
+        persistantSFX = PlayerPrefs.GetInt("persistantSFX", persistantSFX);
 
 
         int[] hpVals = Array.ConvertAll(StoreStatsInfos[0].stat.Split(','), int.Parse);
@@ -403,8 +430,6 @@ public class RocketGameManager : MonoBehaviour
     {
         if (interstitialAd.IsLoaded())
         {
-            Time.timeScale = 0;
-
             interstitialAd.Show();
             // Called when an ad request has successfully loaded.
             interstitialAd.OnAdLoaded += HandleInterstitialOnAdLoaded;
@@ -422,8 +447,6 @@ public class RocketGameManager : MonoBehaviour
     {
         if (interstitialAd.IsLoaded())
         {
-            Time.timeScale = 1;
-
             interstitialAd.Destroy();
             // Called when an ad request has successfully loaded.
             interstitialAd.OnAdLoaded -= HandleInterstitialOnAdLoaded;

@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketGameManager.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="59" Column="6" />
       <File FileName="Assets/Scripts/GameScripts/MenuSceneAudio.cs" />
@@ -8,7 +8,7 @@
       <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" />
       <File FileName="Assets/GoogleMobileAds/Api/AdSize.cs" />
       <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="57" Column="10" />
-      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" Line="416" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -30,7 +30,7 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="GameSceneManagerNGUI.cs" selected="True" />
+                  <Node name="RocketGameManager.cs" selected="True" />
                 </Node>
                 <Node name="NguiExtension" expanded="True" />
               </Node>
@@ -42,7 +42,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="5d87d68b-ba9f-4fcf-b62a-4f8ac71f949b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4ce98f9f-e57b-4232-a8a5-991d979a4873" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
