@@ -734,7 +734,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1659597299}
   - component: {fileID: 1659597300}
-  - component: {fileID: 1659597301}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -807,18 +806,95 @@ MonoBehaviour:
   mSortingLayerName: 
   mClipOffset: {x: 0, y: 0}
   useSortingOrder: 0
---- !u!114 &1659597301
+--- !u!1 &1678426109
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678426111}
+  - component: {fileID: 1678426110}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1678426110
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1659597298}
+  m_GameObject: {fileID: 1678426109}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dca7fdfad789408d8a88b296df9eed9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f8e306613e5047548cb82dc81a7d9a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  persistantBGM: 1
+  persistantSFX: 1
+  numberOfPlays: 0
+  playsSinceLastAd: 2
+  readyToLoadNextLevel: 0
+  showTutorial: 0
+  isFlightSchool: 0
+  persistantObjectiveCounter: 0
+  currentObjectiveCounter: 0
+  persistantPlayerCoins: 0
+  persistantMaxHealth: 1
+  persistantEngineUpgrade: 1
+  persistantBoosterEngineUpgrade: 1
+  persistantTurnSpeed: 1
+  persistantDamageMultiplier: 1
+  persistantMaxFuel: 1
+  persistantMaxBoosterFuel: 1
+  persistantAirReistance: 1
+  persistantNummyMultiplier: 1
+  persistantFuelConsumptionRate: 1
+  persistantBoosterFuelConsumptionRate: 1
+  persistantDiamonValue: 1
+  healthStatValues: 
+  healthStatCost: 
+  mainEngineStatValue: []
+  mainEngineCost: 
+  boosterEngineStatValue: []
+  boosterEngineCost: 
+  turnSpeedStatValue: []
+  turnSpeedCost: 
+  damageMultiplierStatValue: []
+  damageMultiplierCost: 
+  maxFuelStatValue: []
+  maxFuelCost: 
+  maxBoosterFuelStatValue: []
+  maxBoosterFuelCost: 
+  airReistanceStatValue: []
+  airReistanceCost: 
+  nummyMultiplierStatValue: []
+  nummyMultiplierCost: 
+  fuelConsumptionRateStatValue: []
+  fuelConsumptionRateCost: 
+  boosterFuelConsumptionRateStatValue: []
+  boosterFuelConsumptionRateCost: 
+  diamonValueStatValue: []
+  diamonValueCost: 
+--- !u!4 &1678426111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678426109}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05507741, y: -0.0006580838, z: -3.4329805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2088562443
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,3 +982,46 @@ MonoBehaviour:
   mSpriteName: KGC LOGO 512
   mFixedAspect: 0
   mFillCenter: 1
+--- !u!1 &2144663592
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2144663594}
+  - component: {fileID: 2144663593}
+  m_Layer: 0
+  m_Name: IntroSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2144663593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144663592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dca7fdfad789408d8a88b296df9eed9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &2144663594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144663592}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.05507741, y: -0.0006580838, z: -3.4329805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

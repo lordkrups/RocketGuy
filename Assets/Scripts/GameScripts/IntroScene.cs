@@ -14,7 +14,7 @@ public class IntroScene : MonoBehaviour
     IEnumerator LoadMainMenu()
     {
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(1.5f);
 
         SceneManager.LoadScene("MenuScene");
 
