@@ -7565,7 +7565,7 @@ MonoBehaviour:
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 33.636364
+  aspectRatio: 3.288889
 --- !u!1 &896169850
 GameObject:
   m_ObjectHideFlags: 0
@@ -17221,9 +17221,9 @@ MonoBehaviour:
   goDiamondsCollectedValue: {fileID: 1720465270}
   goObjectiveRewardValue: {fileID: 1859581216}
   goMoneyValue: {fileID: 1361989060}
-  lowHeight: 100
-  medHeight: 200
-  highHeight: 300
+  lowHeight: 500
+  medHeight: 1500
+  highHeight: 6000
   spaceHeight: 10000
   flyPressed: 0
   rotLeft: 0
@@ -17294,6 +17294,10 @@ MonoBehaviour:
   - {fileID: 3355510661707306940, guid: ef181409ac55f4140bb6554ac2d8fe60, type: 3}
   highObstacleList:
   - {fileID: 423892454440921365, guid: 61a099e623774457d877b18ee14c6117, type: 3}
+  - {fileID: 6597177161207537675, guid: e7f4c5a10a5bce445a2038e6cdb8da49, type: 3}
+  - {fileID: 2680859288980110832, guid: e1ad79737b8feef4daa4b2ba75b19e90, type: 3}
+  - {fileID: 7827307528631393428, guid: 260e4ed22c0983c439635986c767b346, type: 3}
+  - {fileID: 4253810678660138669, guid: 7037d43289f50484f9b697463f99cabd, type: 3}
   spawnedCollectibleList: []
   spawnedObstacleList: []
   spawnedCloudsList: []
