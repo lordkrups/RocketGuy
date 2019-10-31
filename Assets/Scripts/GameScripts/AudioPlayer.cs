@@ -43,6 +43,7 @@ public class AudioPlayer : MonoBehaviour
     }
     public void EndAllSound()
     {
+        bgmSource.Stop();
         sfxSource.Stop();
         rocketSource.Stop();
         bgmSource.Stop();

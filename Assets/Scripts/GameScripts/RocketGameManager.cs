@@ -103,9 +103,8 @@ public class RocketGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Init()
     {
-        //MobileAds.Initialize(APP_ID);
+        MobileAds.Initialize(APP_ID);
         RequestBanner();
-        //RequestVideoAd();
 
         Debug.Log("LOAD XMLs");
         StoreStatsLoader storeStatsLoader = new StoreStatsLoader();
@@ -355,30 +354,30 @@ public class RocketGameManager : MonoBehaviour
     public void RequestBanner()
     {
         //RELEASE
-        //string banner_ID = BANNER_ID;
-        string banner_ID = "ca-app-pub-3940256099942544/6300978111";
+        string banner_ID = BANNER_ID;
+        //string banner_ID = "ca-app-pub-3940256099942544/6300978111";
         bannerAd = new BannerView(banner_ID, AdSize.Banner,AdPosition.Bottom);
 
         //RELEASE
-        //AdRequest adRequest = new AdRequest.Builder().Build();
+        AdRequest adRequest = new AdRequest.Builder().Build();
 
         //FOR TESTING
-        AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
+        //AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
 
         bannerAd.LoadAd(adRequest);
     }
     public void RequestInterstitial()
     {
         //RELEASE
-        //string interstitial_ID = INTERSTITIAL_ID;
-        string interstitial_ID = "ca-app-pub-3940256099942544/1033173712";
+        string interstitial_ID = INTERSTITIAL_ID;
+        //string interstitial_ID = "ca-app-pub-3940256099942544/1033173712";
         interstitialAd = new InterstitialAd(interstitial_ID);
 
         //RELEASE
-        //AdRequest adRequest = new AdRequest.Builder().Build();
+        AdRequest adRequest = new AdRequest.Builder().Build();
 
         //FOR TESTING
-        AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
+        //AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
 
         interstitialAd.LoadAd(adRequest);
     }
