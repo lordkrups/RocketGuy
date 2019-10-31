@@ -1,16 +1,16 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketGameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/IntroScene.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="133" Column="11" />
-      <File FileName="Assets/Scripts/GameScripts/MenuSceneAudio.cs" />
-      <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" Line="46" Column="23" />
+      <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="134" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" />
       <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="108" Column="1" />
       <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" />
       <File FileName="Assets/GoogleMobileAds/Api/AdSize.cs" />
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" />
       <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" />
       <File FileName="Assets/Resources/Xml/objectives.xml" />
-      <File FileName="Assets/Resources/Xml/store_stats.xml" Line="1" Column="1" />
+      <File FileName="Assets/Resources/Xml/store_stats.xml" />
+      <File FileName="Assets/Scripts/GameScripts/IntroScene.cs" Line="23" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -32,7 +32,7 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="RocketGameManager.cs" selected="True" />
+                  <Node name="IntroScene.cs" selected="True" />
                 </Node>
                 <Node name="NguiExtension" expanded="True" />
               </Node>

@@ -266,6 +266,7 @@
     <Compile Include="Assets\Scripts\GameScripts\CollectibleObj.cs" />
     <Compile Include="Assets\Scripts\GameScripts\FlightSchoolManager.cs" />
     <Compile Include="Assets\Scripts\GameScripts\GameSceneManagerNGUI.cs" />
+    <Compile Include="Assets\Scripts\GameScripts\IntroScene.cs" />
     <Compile Include="Assets\Scripts\GameScripts\MainMenuManager.cs" />
     <Compile Include="Assets\Scripts\GameScripts\MenuRocket.cs" />
     <Compile Include="Assets\Scripts\GameScripts\MenuSceneAudio.cs" />
