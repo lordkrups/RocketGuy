@@ -130,7 +130,7 @@ public class MainMenuManager : MonoBehaviour
     public void ResetStats()
     {
         RocketGameManager.Instance.ResetAllStats();
-        SceneManager.LoadScene("MenuScene");
+        //SceneManager.LoadScene("MenuScene");
     }
     public void AddMoney()
     {

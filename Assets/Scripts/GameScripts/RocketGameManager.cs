@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using GoogleMobileAds;
 using GoogleMobileAds.Api;
+using UnityEngine.SceneManagement;
 
 public class RocketGameManager : MonoBehaviour
 {
@@ -348,7 +349,7 @@ public class RocketGameManager : MonoBehaviour
         persistantDiamonValue = 1;
 
         SavePersistatStats();
-        Init();
+        SceneManager.LoadScene("MenuScene");
     }
 
     public void RequestBanner()
