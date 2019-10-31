@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{47EC3C3B-0FB0-C017-827A-3875157BD760}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/RocketGameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScripts/AudioPlayer.cs">
     <Files>
       <File FileName="Assets/Scripts/GameScripts/MainMenuManager.cs" Line="59" Column="6" />
       <File FileName="Assets/Scripts/GameScripts/MenuSceneAudio.cs" />
-      <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" />
+      <File FileName="Assets/Scripts/GameScripts/AudioPlayer.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/GameScripts/RocketGameManager.cs" Line="466" Column="1" />
       <File FileName="Assets/GoogleMobileAds/Api/RewardBasedVideoAd.cs" />
       <File FileName="Assets/GoogleMobileAds/Api/AdSize.cs" />
-      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" Line="57" Column="10" />
+      <File FileName="Assets/Scripts/GameScripts/GameSceneManagerNGUI.cs" />
       <File FileName="Assets/Scripts/GameScripts/RocketMotorNGUI.cs" />
     </Files>
     <Pads>
@@ -30,7 +30,7 @@
               <Node name="Scripts" expanded="True">
                 <Node name="GameScripts" expanded="True">
                   <Node name="XML Loaders" expanded="True" />
-                  <Node name="RocketGameManager.cs" selected="True" />
+                  <Node name="AudioPlayer.cs" selected="True" />
                 </Node>
                 <Node name="NguiExtension" expanded="True" />
               </Node>
@@ -42,7 +42,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4ce98f9f-e57b-4232-a8a5-991d979a4873" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8c165fa4-513a-47c2-82cf-f39ddc5a7f9c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

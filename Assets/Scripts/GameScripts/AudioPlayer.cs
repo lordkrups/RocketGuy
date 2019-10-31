@@ -21,7 +21,7 @@ public class AudioPlayer : MonoBehaviour
         {
             PlayBGM();
         }
-        rocketSource.volume = 0.2f;
+        rocketSource.volume = 1f;
     }
 
     public void PlayBGM()
@@ -33,13 +33,19 @@ public class AudioPlayer : MonoBehaviour
     {
         rocketSource.Play();
     }
-    public void PauseRocketSound()
+    public void StopRocketSound()
     {
         rocketSource.Stop();
     }
     public void StopRocketSFX()
     {
         sfxSource.Stop();
+    }
+    public void EndAllSound()
+    {
+        sfxSource.Stop();
+        rocketSource.Stop();
+        bgmSource.Stop();
     }
     public void PlaySFXClip(string clip)
     {
@@ -61,8 +67,8 @@ public class AudioPlayer : MonoBehaviour
                     sfxSource.PlayOneShot(getItemClip);
                     break;
                 case "explosion":
-                    rocketSource.volume = 1f;
-                    rocketSource.PlayOneShot(explosion);
+                    //rocketSource.volume = 1f;
+                    sfxSource.PlayOneShot(explosion);
                     break;
                 default:
                     break;

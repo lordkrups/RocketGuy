@@ -262,21 +262,12 @@ public class RocketMotorNGUI : MonoBehaviour
         }
         if (!isRocketing)
         {
+            gameSceneManager.audioPlayer.StopRocketSound();
             fallTimer += Time.deltaTime;
-            //gameSceneManager.audioPlayer.PauseRocketSound();
-            /*
-            flamesList[0].Pause();
-            flamesList[0].Clear();
-            flamesList[1].Pause();
-            flamesList[1].Clear();
-            flamesList[2].Pause();
-            flamesList[2].Clear();
-            */
             mainFlame.Pause();
             mainFlame.Clear();
             isBoosting = false;
             boostTimer = 0f;
-            gameSceneManager.audioPlayer.StopRocketSFX();
 
             //tailLight.gameObject.SetActive(false);
         }
@@ -410,11 +401,16 @@ public class RocketMotorNGUI : MonoBehaviour
         //trans = new Vector3(0, 0, -1f);
         //trans = transform.position + trans;
         //deathExplosion = Instantiate(Prefabs[1], trans, new Quaternion(), transform) as GameObject;
+        yield return new WaitForSeconds(0.4f);
         gameSceneManager.audioPlayer.PlaySFXClip("explosion");
-        yield return new WaitForSeconds(1.4f);
+        yield return new WaitForSeconds(1.0f);
         rb.drag = rb.drag / 4;
         gameSceneManager.ShowGameOver();
+        Time.timeScale = 0.5f;
+        yield return new WaitForSeconds(0.5f);
+        gameSceneManager.audioPlayer.EndAllSound();
+        Time.timeScale = 0.25f;
+        yield return new WaitForSeconds(0.5f);
         Time.timeScale = 0;
-        //Time.timeScale = 0;
     }
 }
