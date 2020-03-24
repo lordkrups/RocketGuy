@@ -15,6 +15,8 @@ public class MainMenuManager : MonoBehaviour
     public UILabel bgmMusicLabel;
     public UILabel sfxMusicLabel;
 
+    public UISprite addMoneyButton;
+
     public List<PlaneMotor> thingsToSpawn;
     public CloudObj cloudObj;
     public bool spawnThings;
@@ -28,6 +30,17 @@ public class MainMenuManager : MonoBehaviour
         flightSchoolPanel.Off();
         OptionsPanel.Off();
         resetBox.Off();
+        addMoneyButton.Off();
+
+#if UNITY_EDITOR
+        if (Application.platform == RuntimePlatform.OSXEditor || Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            Debug.Log("You're on a editor not a device!");
+            Debug.Log("Use the 'Add Money' button in the bottom right if you want =] ");
+            addMoneyButton.On();
+        }
+#endif
+
     }
     public void StartGame()
     {

@@ -40,14 +40,20 @@ public class GameSceneManagerNGUI : MonoBehaviour
 
     void Start()
     {
+        //Initialise joy stick controller
         virtualController.Init(uiCamera, Move, Stop);
-
+         //Blind sprite = black screen which fades on game start
         blindSprite.On();
+        //Reset game scene speed
         Time.timeScale = 1;
+        //Hide any open menus e.g. if left open while editing etc
         pauseMenuPanel.gameObject.SetActive(false);
         gameOverPanel.gameObject.SetActive(false);
+        //Set the current score phase
         currentPhase = "Ground";
 
+        //Check if a sufficient number of plays have occured to play an ad,
+        //the game timer does not start until the player interacts with the game proper.
         if (RocketGameManager.Instance.numberOfPlays >= RocketGameManager.Instance.playsSinceLastAd)
         {
             RocketGameManager.Instance.Display_Interstitial();
@@ -58,6 +64,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
             RocketGameManager.Instance.RequestInterstitial();
         }
 
+        //Start to show the game
         StartCoroutine(CloseBlind());
     }
 
@@ -68,11 +75,13 @@ public class GameSceneManagerNGUI : MonoBehaviour
             blindSprite.alpha -= 0.1f;
             yield return new WaitForSeconds(0.1f);
         }
+        //Show current objective in the log
         Debug.Log(RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.persistantObjectiveCounter].objdescription);
 
     }
     void Update()
     {
+        //Check and change the current 'phase' of the game, based on the height of the rocket.
         if (playerRocket.rb.position.y > 2.5f && playerRocket.rb.position.y < lowHeight)
         {
             currentPhase = "Low";
@@ -89,6 +98,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
         {
             currentPhase = "Space";
         }
+        //While the current obecjctive is not complete, check the conditions
         if (!completedObjective)
         {
             CheckCurrentObjective();
@@ -96,7 +106,8 @@ public class GameSceneManagerNGUI : MonoBehaviour
     }
     public void CheckCurrentObjective()
     {
-        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "flight")
+        //There are 5 kinds of objectives, this section checks what kind the current objective is, then does the relavant check to see if complete.
+        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "flight")//1st kind
         {
             if (playerRocket.maxHeightReached >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
@@ -109,7 +120,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
                 }
             }
         }
-        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "time")
+        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "time")//2nd kind
         {
             if (playerRocket.flightTime >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
@@ -122,7 +133,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
                 }
             }
         }
-        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "coin")
+        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "coin")//3rd kind
         {
             if (!completedObjective && playerRocket.coinsCollected >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
@@ -135,7 +146,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
                 }
             }
         }
-        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "diamond")
+        if (RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "diamond")//4 th kind
         {
             if (!completedObjective && playerRocket.diamondsCollected >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
@@ -148,7 +159,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
                 }
             }
         }
-        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "speed")
+        if (!completedObjective && RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objtype == "speed")//5th kind
         {
             if (playerRocket.maxSpeedReached >= RocketGameManager.Instance.ObjectiveInfos[RocketGameManager.Instance.currentObjectiveCounter].objvalue)
             {
@@ -161,6 +172,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
             }
         }
     }
+    //Function to pause the game by setting the time scale to 0
     public void TogglePause()
     {
         isGamePaused = !isGamePaused;
@@ -176,6 +188,7 @@ public class GameSceneManagerNGUI : MonoBehaviour
             pauseMenuPanel.gameObject.SetActive(false);
         }
     }
+    //Game over function
     public void ShowGameOver()
     {
         int objMoney = 0;

@@ -118,7 +118,7 @@ public class RocketGameManager : MonoBehaviour
         if (numberOfPlays == 0)
         {
             Debug.Log("FIRST PLAY");
-
+             //Strting value of each persistant variable
             PlayerPrefs.SetInt("persistantObjectiveCounter", 0);
 
             PlayerPrefs.SetInt("persistantPlayerCoins", 0);
@@ -143,6 +143,7 @@ public class RocketGameManager : MonoBehaviour
     }
     public void SavePersistatStats()
     {
+        //Saving of persistant variables
         PlayerPrefs.SetInt("persistantObjectiveCounter", persistantObjectiveCounter);
         PlayerPrefs.SetInt("NumberOfPlays", numberOfPlays);
         PlayerPrefs.SetInt("persistantPlayerCoins", persistantPlayerCoins);
@@ -381,23 +382,7 @@ public class RocketGameManager : MonoBehaviour
 
         interstitialAd.LoadAd(adRequest);
     }
-    /*
-    void RequestVideoAd()
-    {
-        //RELEASE
-        //string video_ID = REWARDVIDEOAD_ID;
-        string video_ID = "ca-app-pub-3940256099942544/5224354917";
-        rewardBasedVideoAd = RewardBasedVideoAd.Instance;
 
-        //RELEASE
-        //AdRequest adRequest = new AdRequest.Builder().Build();
-
-        //FOR TESTING
-        AdRequest adRequest = new AdRequest.Builder().AddTestDevice("2077ef9a63d2b398840261c8221a0c9b").Build();
-
-        rewardBasedVideoAd.LoadAd(adRequest, video_ID);
-    }
-    */
     public void Display_Banner()
     {
         bannerAd.Show();
