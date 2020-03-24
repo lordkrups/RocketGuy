@@ -6,6 +6,7 @@
 /nostdlib+
 /preferreduilang:en-US
 /langversion:latest
+/reference:"Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll"
 /reference:"Library/ScriptAssemblies/Assembly-CSharp.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll"
@@ -67,7 +68,6 @@
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/Unity.app/Contents/Managed/UnityEditor.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/Unity.app/Contents/Managed/Unity.Locator.dll"
-/reference:"Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll"
 /reference:"Library/ScriptAssemblies/Unity.Timeline.Editor.dll"
 /reference:"Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll"
 /reference:"Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll"
@@ -86,11 +86,11 @@
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.dll"
 /reference:"/Applications/Visual Studio.app/Contents/Resources/lib/monodevelop/AddIns/MonoDevelop.Unity/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll"
-/reference:"/Users/DayaMac01/Documents/RocketGuy/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll"
-/reference:"/Users/DayaMac01/Documents/RocketGuy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll"
-/reference:"/Users/DayaMac01/Documents/RocketGuy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll"
-/reference:"/Users/DayaMac01/Documents/RocketGuy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll"
-/reference:"/Users/DayaMac01/Documents/RocketGuy/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll"
+/reference:"/Users/krups/Unity Projects/RocketGuy/Library/PackageCache/com.unity.ads@2.0.8/Editor/UnityEditor.Advertisements.dll"
+/reference:"/Users/krups/Unity Projects/RocketGuy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Tracker.dll"
+/reference:"/Users/krups/Unity Projects/RocketGuy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.Editor.dll"
+/reference:"/Users/krups/Unity Projects/RocketGuy/Library/PackageCache/com.unity.analytics@3.3.2/Unity.Analytics.StandardEvents.dll"
+/reference:"/Users/krups/Unity Projects/RocketGuy/Library/PackageCache/com.unity.purchasing@2.0.6/Editor/UnityEditor.Purchasing.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Common.dll"
 /reference:"/Applications/Unity/Hub/Editor/2019.1.8f1/Unity.app/Contents/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll"
@@ -314,7 +314,6 @@
 /define:ENABLE_BURST_AOT
 /define:UNITY_TEAM_LICENSE
 /define:ENABLE_VSTU
-/define:UNITY_PRO_LICENSE
 /define:CSHARP_7_OR_LATER
 /define:CSHARP_7_3_OR_NEWER
 "Assets/Editor/ImageEffects/BloomEditor.cs"
